@@ -1,0 +1,115 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Register new Social Group</h:title>
+    <model>
+      <instance>
+        <data id="social_group_registration">
+          <socialGroupId/>
+          <name/>
+          <type/>
+          <socialGroupHead/>
+          <fieldWorkerId/>
+          <respondentId/>
+          <dateOfInterview/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/socialGroupId:label">
+            <value>Social Group Id</value>
+          </text>
+          <text id="/data/socialGroupId:hint">
+            <value/>
+          </text>
+          <text id="/data/name:label">
+            <value>Social Group Name</value>
+          </text>
+          <text id="/data/name:hint">
+            <value/>
+          </text>
+          <text id="/data/type:label">
+            <value>Type</value>
+          </text>
+          <text id="/data/type:hint">
+            <value/>
+          </text>
+          <text id="/data/type:option0">
+            <value>Cohort</value>
+          </text>
+          <text id="/data/type:option1">
+            <value>Family</value>
+          </text>
+          <text id="/data/socialGroupHead:label">
+            <value>Social Group Head</value>
+          </text>
+          <text id="/data/socialGroupHead:hint">
+            <value/>
+          </text>
+          <text id="/data/fieldWorkerId:label">
+            <value>Field Worker Id</value>
+          </text>
+          <text id="/data/fieldWorkerId:hint">
+            <value/>
+          </text>
+          <text id="/data/respondentId:label">
+            <value>Respondent Id</value>
+          </text>
+          <text id="/data/respondentId:hint">
+            <value/>
+          </text>
+          <text id="/data/dateOfInterview:label">
+            <value>Date of Interview</value>
+          </text>
+          <text id="/data/dateOfInterview:hint">
+            <value/>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/socialGroupId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format"/>
+      <bind nodeset="/data/name" type="string" required="true()" />
+      <bind nodeset="/data/type" type="select1" required="true()" />
+      <bind nodeset="/data/socialGroupHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
+      <bind nodeset="/data/fieldWorkerId" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')" jr:constraintMsg="Field Worker Id is not the right format"/>
+      <bind nodeset="/data/respondentId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+      <bind nodeset="/data/dateOfInterview" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date of interview cannot be in the future"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/socialGroupId">
+      <label ref="jr:itext('/data/socialGroupId:label')"/>
+      <hint ref="jr:itext('/data/socialGroupId:hint')"/>
+    </input>
+    <input ref="/data/name">
+      <label ref="jr:itext('/data/name:label')"/>
+      <hint ref="jr:itext('/data/name:hint')"/>
+    </input>
+    <select1 ref="/data/type">
+      <label ref="jr:itext('/data/type:label')"/>
+      <hint ref="jr:itext('/data/type:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/type:option0')"/>
+        <value>COH</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/type:option1')"/>
+        <value>FAM</value>
+      </item>
+    </select1>
+    <input ref="/data/socialGroupHead">
+      <label ref="jr:itext('/data/socialGroupHead:label')"/>
+      <hint ref="jr:itext('/data/socialGroupHead:hint')"/>
+    </input>
+    <input ref="/data/fieldWorkerId">
+      <label ref="jr:itext('/data/fieldWorkerId:label')"/>
+      <hint ref="jr:itext('/data/fieldWorkerId:hint')"/>
+    </input>
+    <input ref="/data/respondentId">
+      <label ref="jr:itext('/data/respondentId:label')"/>
+      <hint ref="jr:itext('/data/respondentId:hint')"/>
+    </input>
+    <input ref="/data/dateOfInterview">
+      <label ref="jr:itext('/data/dateOfInterview:label')"/>
+      <hint ref="jr:itext('/data/dateOfInterview:hint')"/>
+    </input>
+  </h:body>
+</h:html>
