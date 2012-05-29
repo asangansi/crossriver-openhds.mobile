@@ -1,0 +1,393 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Out Migration v3</h:title>
+		<model>
+			<instance>
+				<data id="migration_out_registration_v3">
+          <derivedFromUri />
+					<processedByMirth>0</processedByMirth>
+					<formRetired>0</formRetired>
+					<validationFailed>0</validationFailed>
+          <supervisorStatus />
+					<basicInfo>
+						<collectedBy />
+						<interviewDate />
+						<migrationDate />
+						<permId />
+						<migrantName />
+						<sex />
+					</basicInfo>
+					<moveAwayFrom>
+						<moveAwayFromHouseId />
+						<moveAwayFromHouseName />
+						<moveAwayFromHouseholdId />
+						<moveAwayFromHouseholdName />
+					</moveAwayFrom>
+					<moveAwayTo>
+						<placeMovedTo />
+						<placeMovedToOther />
+						<placeMovedToHouseName />
+						<placeMovedToSection />
+						<placeMovedToVillage />
+						<placeMovedToPhoneNumber />
+						<placeMovedToReason />
+						<placeMovedToReasonOther />
+					</moveAwayTo>
+				</data>
+			</instance>
+			<itext>
+				<translation lang="eng">
+					<text id="/data/basicInfo:label">
+						<value>Basic Information</value>
+					</text>
+					<text id="/data/basicInfo/collectedBy:label">
+						<value>Field Worker Id</value>
+					</text>
+					<text id="/data/basicInfo/collectedBy:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/interviewDate:label">
+						<value>Date of Interview</value>
+					</text>
+					<text id="/data/basicInfo/interviewDate:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/migrationDate:label">
+						<value>Date of Migration</value>
+					</text>
+					<text id="/data/basicInfo/migrationDate:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/permId:label">
+						<value>Permanent Id</value>
+					</text>
+					<text id="/data/basicInfo/permId:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/migrantName:label">
+						<value>Name of Migrant</value>
+					</text>
+					<text id="/data/basicInfo/migrantName:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/sex:label">
+						<value>Sex</value>
+					</text>
+					<text id="/data/basicInfo/sex:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/sex:option0">
+						<value>Male</value>
+					</text>
+					<text id="/data/basicInfo/sex:option1">
+						<value>Female</value>
+					</text>
+					<text id="/data/moveAwayFrom:label">
+						<value>Move Away From</value>
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseId:label">
+						<value>House Id</value>
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseId:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseName:label">
+						<value>House Name</value>
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseName:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseholdId:label">
+						<value>Household Id</value>
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseholdId:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseholdName:label">
+						<value>Household Name</value>
+					</text>
+					<text id="/data/moveAwayFrom/moveAwayFromHouseholdName:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo:label">
+						<value>Moved Away To</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:label">
+						<value>Place Moved To</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:option0">
+						<value>Akpabuyo LGA</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:option1">
+						<value>Within Cross River (Outside Akpabuyo)</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:option2">
+						<value>Outside CRS (Within Nigeria)</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:option3">
+						<value>Cameroun</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:option4">
+						<value>Other</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedTo:option5">
+						<value>NK</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToOther:label">
+						<value>Specify where they moved from</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToOther:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToHouseName:label">
+						<value>House Name</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToHouseName:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToSection:label">
+						<value>Section</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToSection:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToVillage:label">
+						<value>Village</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToVillage:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToPhoneNumber:label">
+						<value>Phone Number</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToPhoneNumber:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:label">
+						<value>Reason for Migration</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:hint">
+						<value />
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:option0">
+						<value>Marriage</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:option1">
+						<value>Farming</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:option2">
+						<value>Gone with relative(s)</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:option3">
+						<value>Moved to new house</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:option4">
+						<value>Gone to look for work</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReason:option5">
+						<value>Other</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReasonOther:label">
+						<value>Specify the reason</value>
+					</text>
+					<text id="/data/moveAwayTo/placeMovedToReasonOther:hint">
+						<value />
+					</text>
+				</translation>
+			</itext>
+			<bind nodeset="/data/processedByMirth" type="boolean" />
+			<bind nodeset="/data/formRetired" type="boolean" />
+			<bind nodeset="/data/validationFailed" type="boolean" />
+			<bind nodeset="/data/basicInfo/collectedBy" type="string"
+				required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+				jr:constraintMsg="Field Worker Id is not the right format" />
+			<bind nodeset="/data/basicInfo/interviewDate" type="date"
+				constraint=". &lt;= today()" required="true()"
+				jr:constraintMsg="Date of interview cannot be in the future" />
+			<bind nodeset="/data/basicInfo/migrationDate" type="date"
+				required="true()" constraint=". &lt; ../interviewDate"
+				jr:constraintMsg="The date of migration cannot be after the interview date" />
+			<bind nodeset="/data/basicInfo/permId" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/data/basicInfo/migrantName" type="string"
+				required="true()" />
+			<bind nodeset="/data/basicInfo/sex" type="select1" required="true()" />
+			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')"
+				jr:constraintMsg="House Id is not the right format" />
+			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseName" type="string"
+				required="true()" />
+			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseholdId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')"
+				jr:constraintMsg="Household Id is not the right format" />
+			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseholdName"
+				type="string" required="true()" />
+			<bind nodeset="/data/moveAwayTo/placeMovedTo" type="select1"
+				required="true()" />
+			<bind nodeset="/data/moveAwayTo/placeMovedToOther" type="string"
+				relevant="/data/moveAwayTo/placeMovedTo='5'" required="true()" />
+			<bind nodeset="/data/moveAwayTo/placeMovedToHouseName" type="string"
+				relevant="/data/moveAwayTo/placeMovedTo='1'" required="true()" />
+			<bind nodeset="/data/moveAwayTo/placeMovedToSection" type="string"
+				relevant="/data/moveAwayTo/placeMovedTo='1'" required="true()" />
+			<bind nodeset="/data/moveAwayTo/placeMovedToVillage" type="string"
+				relevant="/data/moveAwayTo/placeMovedTo='1'" required="true()" />
+			<bind nodeset="/data/moveAwayTo/placeMovedToPhoneNumber" type="int"
+				required="false()" relevant="/data/moveAwayTo/placeMovedTo='1'"
+				constraint="regex(., '^\d*$')" jr:constraintMsg="Phone number should only be numbers" />
+			<bind nodeset="/data/moveAwayTo/placeMovedToReason" type="select1"
+				required="true()" />
+			<bind nodeset="/data/moveAwayTo/placeMovedToReasonOther" type="string"
+				relevant="/data/moveAwayTo/placeMovedToReason='6'" required="true()" />
+			<bind nodeset="/data/derivedFromUri" type="string" />
+      <bind nodeset="/data/supervisorStatus" type="int" />
+		</model>
+	</h:head>
+	<h:body>
+		<group>
+			<label ref="jr:itext('/data/basicInfo:label')" />
+			<input ref="/data/basicInfo/collectedBy">
+				<label ref="jr:itext('/data/basicInfo/collectedBy:label')" />
+				<hint ref="jr:itext('/data/basicInfo/collectedBy:hint')" />
+			</input>
+			<input ref="/data/basicInfo/interviewDate">
+				<label ref="jr:itext('/data/basicInfo/interviewDate:label')" />
+				<hint ref="jr:itext('/data/basicInfo/interviewDate:hint')" />
+			</input>
+			<input ref="/data/basicInfo/migrationDate">
+				<label ref="jr:itext('/data/basicInfo/migrationDate:label')" />
+				<hint ref="jr:itext('/data/basicInfo/migrationDate:hint')" />
+			</input>
+			<input ref="/data/basicInfo/permId">
+				<label ref="jr:itext('/data/basicInfo/permId:label')" />
+				<hint ref="jr:itext('/data/basicInfo/permId:hint')" />
+			</input>
+			<input ref="/data/basicInfo/migrantName">
+				<label ref="jr:itext('/data/basicInfo/migrantName:label')" />
+				<hint ref="jr:itext('/data/basicInfo/migrantName:hint')" />
+			</input>
+			<select1 ref="/data/basicInfo/sex">
+				<label ref="jr:itext('/data/basicInfo/sex:label')" />
+				<hint ref="jr:itext('/data/basicInfo/sex:hint')" />
+				<item>
+					<label ref="jr:itext('/data/basicInfo/sex:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/basicInfo/sex:option1')" />
+					<value>2</value>
+				</item>
+			</select1>
+		</group>
+		<group>
+			<label ref="jr:itext('/data/moveAwayFrom:label')" />
+			<input ref="/data/moveAwayFrom/moveAwayFromHouseId">
+				<label ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseId:label')" />
+				<hint ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseId:hint')" />
+			</input>
+			<input ref="/data/moveAwayFrom/moveAwayFromHouseName">
+				<label ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseName:label')" />
+				<hint ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseName:hint')" />
+			</input>
+			<input ref="/data/moveAwayFrom/moveAwayFromHouseholdName">
+				<label
+					ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdName:label')" />
+				<hint
+					ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdName:hint')" />
+			</input>
+			<input ref="/data/moveAwayFrom/moveAwayFromHouseholdId">
+				<label
+					ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdId:label')" />
+				<hint ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdId:hint')" />
+			</input>
+		</group>
+		<group>
+			<label ref="jr:itext('/data/moveAwayTo:label')" />
+			<select1 ref="/data/moveAwayTo/placeMovedTo">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedTo:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedTo:hint')" />
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedTo:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedTo:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedTo:option2')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedTo:option3')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedTo:option4')" />
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedTo:option5')" />
+					<value>9</value>
+				</item>
+			</select1>
+			<input ref="/data/moveAwayTo/placeMovedToOther">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedToOther:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedToOther:hint')" />
+			</input>
+			<input ref="/data/moveAwayTo/placeMovedToHouseName">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedToHouseName:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedToHouseName:hint')" />
+			</input>
+			<input ref="/data/moveAwayTo/placeMovedToSection">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedToSection:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedToSection:hint')" />
+			</input>
+			<input ref="/data/moveAwayTo/placeMovedToVillage">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedToVillage:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedToVillage:hint')" />
+			</input>
+			<input ref="/data/moveAwayTo/placeMovedToPhoneNumber">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedToPhoneNumber:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedToPhoneNumber:hint')" />
+			</input>
+			<select1 ref="/data/moveAwayTo/placeMovedToReason">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedToReason:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedToReason:hint')" />
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedToReason:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedToReason:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedToReason:option2')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedToReason:option3')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedToReason:option4')" />
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/moveAwayTo/placeMovedToReason:option5')" />
+					<value>6</value>
+				</item>
+			</select1>
+			<input ref="/data/moveAwayTo/placeMovedToReasonOther">
+				<label ref="jr:itext('/data/moveAwayTo/placeMovedToReasonOther:label')" />
+				<hint ref="jr:itext('/data/moveAwayTo/placeMovedToReasonOther:hint')" />
+			</input>
+		</group>
+	</h:body>
+</h:html>

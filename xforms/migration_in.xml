@@ -1,0 +1,383 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events"
+	xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<h:head>
+		<h:title>In Migration v3</h:title>
+		<model>
+			<instance>
+				<migration_in id="migration_in_registration_v3">
+          <derivedFromUri />
+					<processedByMirth>0</processedByMirth>
+					<formRetired>0</formRetired>
+					<validationFailed>0</validationFailed>
+          <supervisorStatus />
+					<FW />
+					<DINT />
+					<DATE_MI />
+					<COMP_ID />
+					<CurrH_N />
+					<CurrHH_N />
+					<CurrHH_ID />
+					<EVER_REG />
+					<PERM_ID />
+					<TEMP_ID />
+					<relationshipToGroupHead />
+					<Reasonformigration />
+					<Reasonformigration_other />
+					<FROM_field />
+					<FROM_other />
+					<Old_name />
+					<MFROM_HN />
+					<MFROM_HH_N />
+					<MFROM_SEC />
+					<MFROM_VILL />
+					<MFROM_PN />
+					<Section5>
+						<FR_ON />
+						<FR_HN />
+						<FR_HH_N />
+						<FR_SEC />
+						<FR_VILL />
+						<FR_PN />
+					</Section5>
+					<Section6>
+						<MinPerson_FN />
+						<MinPerson_LN />
+						<Sex />
+						<MinPerson_Birthdate />
+						<MinPerson_MOTHER_ID />
+						<MinPerson_FATHER_ID />
+						<MinPerson_EDUCATION />
+					</Section6>
+				</migration_in>
+			</instance>
+			<bind nodeset="/migration_in/processedByMirth" type="boolean" />
+			<bind nodeset="/migration_in/formRetired" type="boolean" />
+			<bind nodeset="/migration_in/validationFailed" type="boolean" />
+			<bind nodeset="/migration_in/FW" type="string" required="true()"
+				constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+				jr:constraintMsg="Field Worker Id is not the right format" />
+			<bind nodeset="/migration_in/DINT" type="date" constraint=". &lt;= today()"
+				required="true()" jr:constraintMsg="Date of interview cannot be in the future" />
+			<bind nodeset="/migration_in/DATE_MI" type="date" required="true()"
+				constraint=". &lt; ../DINT"
+				jr:constraintMsg="The date of the in migration cannot be after the interview date" />
+			<bind nodeset="/migration_in/COMP_ID" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
+			<bind nodeset="/migration_in/CurrH_N" required="true()" type="string" />
+			<bind nodeset="/migration_in/CurrHH_N" type="string" required="true()" />
+			<bind nodeset="/migration_in/CurrHH_ID" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
+			<bind nodeset="/migration_in/EVER_REG" required="true()" type="select1" />
+			<bind nodeset="/migration_in/PERM_ID" required="false()" type="string"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/migration_in/TEMP_ID" type="int" required="true()"
+				constraint="regex(., '^[0-9]{0,2}[1-9]{1}$')" jr:constraintMsg="Current individual number must be 1, 2 or 3 digits" />
+			<bind nodeset="/migration_in/relationshipToGroupHead" required="true()"
+				type="select1" />
+			<bind nodeset="/migration_in/Reasonformigration" required="true()"
+				type="select1" />
+			<bind nodeset="/migration_in/Reasonformigration_other" relevant="../Reasonformigration = '6'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/FROM_field" required="true()" type="select1" />
+			<bind nodeset="/migration_in/FROM_other" relevant="../FROM_field = '5'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/Old_name" relevant="/migration_in/FROM_field='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/MFROM_HN" relevant="/migration_in/FROM_field='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/MFROM_HH_N" relevant="/migration_in/FROM_field='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/MFROM_SEC" relevant="/migration_in/FROM_field='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/MFROM_VILL" relevant="/migration_in/FROM_field='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/MFROM_PN" relevant="/migration_in/FROM_field='1'"
+				required="false()" type="int" constraint="regex(., '^\d*$')"
+				jr:constraintMsg="Phone number should only be numbers" />
+			<bind nodeset="/migration_in/Section5" relevant="/migration_in/EVER_REG='1'" />
+			<bind nodeset="/migration_in/Section5/FR_ON" relevant="/migration_in/EVER_REG='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/Section5/FR_HN" relevant="/migration_in/EVER_REG='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/Section5/FR_HH_N" relevant="/migration_in/EVER_REG='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/Section5/FR_SEC" relevant="/migration_in/EVER_REG='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/Section5/FR_VILL" relevant="/migration_in/EVER_REG='1'"
+				required="true()" type="string" />
+			<bind nodeset="/migration_in/Section5/FR_PN" relevant="/migration_in/EVER_REG='1'"
+				required="false()" type="int" constraint="regex(., '^\d*$')"
+				jr:constraintMsg="Phone number should only be numbers" />
+			<bind nodeset="/migration_in/Section6/MinPerson_FN" required="true()"
+				type="string" />
+			<bind nodeset="/migration_in/Section6/MinPerson_LN" required="true()"
+				type="string" />
+			<bind nodeset="/migration_in/Section6/Sex" required="true()"
+				type="select1" />
+			<bind nodeset="/migration_in/Section6/MinPerson_Birthdate"
+				required="true()" type="date" constraint=". &lt; /migration_in/DATE_MI"
+				jr:constraintMsg="The birth date must be before the in migration date" />
+			<bind nodeset="/migration_in/Section6/MinPerson_MOTHER_ID"
+				required="true()" type="string"
+				constraint="regex(., '^([A-Za-z]{3}[0-9]{7}$|^[Uu][Nn][Kk])$')"
+				jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/migration_in/Section6/MinPerson_FATHER_ID"
+				required="true()" type="string"
+				constraint="regex(., '^([A-Za-z]{3}[0-9]{7}$|^[Uu][Nn][Kk])$')"
+				jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/migration_in/Section6/MinPerson_EDUCATION"
+				required="true()" type="int" />
+			<bind nodeset="/migration_in/derivedFromUri" type="string" />
+      <bind nodeset="/migration_in/supervisorStatus" type="int" />
+		</model>
+	</h:head>
+	<h:body>
+		<group>
+			<label>Basic Information</label>
+			<input ref="/migration_in/FW">
+				<label>Field Worker ID</label>
+			</input>
+			<input ref="/migration_in/DINT">
+				<label>Date of Interview</label>
+			</input>
+			<input ref="/migration_in/DATE_MI">
+				<label>Date of Migration</label>
+			</input>
+			<input ref="/migration_in/COMP_ID">
+				<label>Current House ID</label>
+			</input>
+			<input ref="/migration_in/CurrH_N">
+				<label>Current House Name:</label>
+			</input>
+			<input ref="/migration_in/CurrHH_N">
+				<label>Current Household Name</label>
+			</input>
+			<input ref="/migration_in/CurrHH_ID">
+				<label>Current Household ID</label>
+			</input>
+			<select1 ref="/migration_in/EVER_REG">
+				<label>Has member ever been registered in to CRHDSS?</label>
+				<item>
+					<label>1. Yes</label>
+					<value>1</value>
+				</item>
+				<item>
+					<label>2. No</label>
+					<value>2</value>
+				</item>
+			</select1>
+			<input ref="/migration_in/PERM_ID">
+				<label>Permanent ID (if known):</label>
+			</input>
+			<input ref="/migration_in/TEMP_ID">
+				<label>Current Individual Number:</label>
+			</input>
+			<select1 ref="/migration_in/relationshipToGroupHead">
+				<label>Relationship to Group Head</label>
+				<item>
+					<label>Head</label>
+					<value>01</value>
+				</item>
+				<item>
+					<label>Spouse</label>
+					<value>02</value>
+				</item>
+				<item>
+					<label>Son/Daughter</label>
+					<value>03</value>
+				</item>
+				<item>
+					<label>Parent</label>
+					<value>04</value>
+				</item>
+				<item>
+					<label>Son/Daughter-in-law</label>
+					<value>05</value>
+				</item>
+				<item>
+					<label>Grandchild</label>
+					<value>06</value>
+				</item>
+				<item>
+					<label>Mother/father-in-law</label>
+					<value>07</value>
+				</item>
+				<item>
+					<label>Brother/Sister</label>
+					<value>08</value>
+				</item>
+				<item>
+					<label>Adopted/Foster Child/Stepchild</label>
+					<value>09</value>
+				</item>
+				<item>
+					<label>Not Related</label>
+					<value>10</value>
+				</item>
+				<item>
+					<label>Co-wife</label>
+					<value>11</value>
+				</item>
+				<item>
+					<label>Other Relative</label>
+					<value>12</value>
+				</item>
+				<item>
+					<label>Don't Know</label>
+					<value>99</value>
+				</item>
+			</select1>
+		</group>
+		<group>
+			<label>Reason for Migration</label>
+			<select1 ref="/migration_in/Reasonformigration">
+				<label>Reason for migration</label>
+				<item>
+					<label>1. Marriage</label>
+					<value>1</value>
+				</item>
+				<item>
+					<label>2. Farming</label>
+					<value>2</value>
+				</item>
+				<item>
+					<label>3. Came with Relative(s)</label>
+					<value>3</value>
+				</item>
+				<item>
+					<label>4. Moved to new house</label>
+					<value>4</value>
+				</item>
+				<item>
+					<label>5. To look for work</label>
+					<value>5</value>
+				</item>
+				<item>
+					<label>6. Other (Specify)</label>
+					<value>6</value>
+				</item>
+			</select1>
+			<input ref="/migration_in/Reasonformigration_other">
+				<label>Specify other.</label>
+			</input>
+		</group>
+		<group>
+			<label>Information on where member has moved from</label>
+			<select1 ref="/migration_in/FROM_field">
+				<label>Place</label>
+				<item>
+					<label>1. Akpabuyo LGA</label>
+					<value>1</value>
+				</item>
+				<item>
+					<label>2. Within Cross River (Outside Akpabuyo)</label>
+					<value>2</value>
+				</item>
+				<item>
+					<label>3. Outside CRS (Within Nigeria)</label>
+					<value>3</value>
+				</item>
+				<item>
+					<label>4. Cameroun</label>
+					<value>4</value>
+				</item>
+				<item>
+					<label>5. Other (Specify)</label>
+					<value>5</value>
+				</item>
+			</select1>
+			<input ref="/migration_in/FROM_other">
+				<label>Specify other.</label>
+			</input>
+		</group>
+		<group>
+			<label>Information on place where member is moving from</label>
+			<input ref="/migration_in/Old_name">
+				<label>Old Name</label>
+				<hint>Within Akabuyo</hint>
+			</input>
+			<input ref="/migration_in/MFROM_HN">
+				<label>House Name</label>
+				<hint>Within Akabuyo</hint>
+			</input>
+			<input ref="/migration_in/MFROM_HH_N">
+				<label>Household Name</label>
+				<hint>Within Akabuyo</hint>
+			</input>
+			<input ref="/migration_in/MFROM_SEC">
+				<label>Section</label>
+				<hint>Within Akabuyo</hint>
+			</input>
+			<input ref="/migration_in/MFROM_VILL">
+				<label>Village</label>
+				<hint>Within Akabuyo</hint>
+			</input>
+			<input ref="/migration_in/MFROM_PN">
+				<label>Cell Phone number</label>
+				<hint>Within Akabuyo (Enter numbers only)</hint>
+			</input>
+		</group>
+		<group nodeset="/migration_in/Section5">
+			<label>Information on place where member was first registered</label>
+			<input ref="/migration_in/Section5/FR_ON">
+				<label>Old Name</label>
+				<hint>First Registered</hint>
+			</input>
+			<input ref="/migration_in/Section5/FR_HN">
+				<label>House Name</label>
+				<hint>First Registered</hint>
+			</input>
+			<input ref="/migration_in/Section5/FR_HH_N">
+				<label>Household Name</label>
+				<hint>First Registered</hint>
+			</input>
+			<input ref="/migration_in/Section5/FR_SEC">
+				<label>Section</label>
+				<hint>First Registered</hint>
+			</input>
+			<input ref="/migration_in/Section5/FR_VILL">
+				<label>Village</label>
+				<hint>First Registered</hint>
+			</input>
+			<input ref="/migration_in/Section5/FR_PN">
+				<label>Cell Phone number</label>
+				<hint>First Registered (Enter numbers only)</hint>
+			</input>
+		</group>
+		<group>
+			<label>Detailed information on moved in person</label>
+			<input ref="/migration_in/Section6/MinPerson_FN">
+				<label>First Name:</label>
+			</input>
+			<input ref="/migration_in/Section6/MinPerson_LN">
+				<label>Last Name:</label>
+			</input>
+			<select1 ref="/migration_in/Section6/Sex">
+				<label>Sex:</label>
+				<item>
+					<label>Male</label>
+					<value>1</value>
+				</item>
+				<item>
+					<label>Female</label>
+					<value>2</value>
+				</item>
+			</select1>
+			<input ref="/migration_in/Section6/MinPerson_Birthdate">
+				<label>Date of birth:</label>
+			</input>
+			<input ref="/migration_in/Section6/MinPerson_MOTHER_ID">
+				<label>Mother's permanent ID:</label>
+				<hint>Use UNK for Unknown</hint>
+			</input>
+			<input ref="/migration_in/Section6/MinPerson_FATHER_ID">
+				<label>Father's permanent ID:</label>
+				<hint>Use UNK for Unknown</hint>
+			</input>
+			<input ref="/migration_in/Section6/MinPerson_EDUCATION">
+				<label>Number of years of Formal Education:</label>
+			</input>
+		</group>
+	</h:body>
+</h:html>

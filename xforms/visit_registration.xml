@@ -1,0 +1,80 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Visit Registration</h:title>
+		<model>
+			<instance>
+				<data id="visit_registration">
+          <derivedFromUri />
+					<validationFailed>0</validationFailed>
+					<houseId />
+					<visitDate />
+					<roundNumber />
+					<fieldWorker />
+          <supervisorStatus />
+					<processedByMirth>0</processedByMirth>
+				</data>
+			</instance>
+			<itext>
+				<translation lang="eng">
+					<text id="/data/houseId:label">
+						<value>House Id</value>
+					</text>
+					<text id="/data/houseId:hint">
+						<value />
+					</text>
+					<text id="/data/visitDate:label">
+						<value>Visit Date</value>
+					</text>
+					<text id="/data/visitDate:hint">
+						<value />
+					</text>
+					<text id="/data/roundNumber:label">
+						<value>Round Number</value>
+					</text>
+					<text id="/data/roundNumber:hint">
+						<value />
+					</text>
+					<text id="/data/fieldWorker:label">
+						<value>Field Worker Id</value>
+					</text>
+					<text id="/data/fieldWorker:hint">
+						<value />
+					</text>
+				</translation>
+			</itext>
+			<bind nodeset="/data/houseId" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
+			<bind nodeset="/data/visitDate" type="date" required="true()"
+				constraint=". &lt;= today()" jr:constraintMsg="Visit date cannot be in the future" />
+			<bind nodeset="/data/roundNumber" type="int" required="true()"
+				constraint=". &gt; 0" jr:constraintMsg="Round number should be greater than 0" />
+			<bind nodeset="/data/fieldWorker" type="string" required="true()"
+				constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+				jr:constraintMsg="Field Worker Id is not the right format" />
+			<bind nodeset="/data/processedByMirth" type="boolean" />
+			<bind nodeset="/data/validationFailed" type="boolean" />
+			<bind nodeset="/data/derivedFromUri" type="string" />
+      <bind nodeset="/data/supervisorStatus" type="int" />
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/houseId">
+			<label ref="jr:itext('/data/houseId:label')" />
+			<hint ref="jr:itext('/data/houseId:hint')" />
+		</input>
+		<input ref="/data/visitDate">
+			<label ref="jr:itext('/data/visitDate:label')" />
+			<hint ref="jr:itext('/data/visitDate:hint')" />
+		</input>
+		<input ref="/data/roundNumber">
+			<label ref="jr:itext('/data/roundNumber:label')" />
+			<hint ref="jr:itext('/data/roundNumber:hint')" />
+		</input>
+		<input ref="/data/fieldWorker">
+			<label ref="jr:itext('/data/fieldWorker:label')" />
+			<hint ref="jr:itext('/data/fieldWorker:hint')" />
+		</input>
+	</h:body>
+</h:html>

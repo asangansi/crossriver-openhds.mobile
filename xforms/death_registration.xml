@@ -1,0 +1,276 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Death Registration v3</h:title>
+		<model>
+			<instance>
+				<data id="death_registration_v3">
+          <derivedFromUri />
+					<processedByMirth>0</processedByMirth>
+					<formRetired>0</formRetired>
+					<validationFailed>0</validationFailed>
+          <supervisorStatus />
+					<basicInformation>
+						<fieldWorker />
+						<dateOfInterview />
+						<permanentId />
+						<houseId />
+						<householdName />
+						<householdId />
+						<dateOfDeath />
+						<deceasedName />
+						<sex>1</sex>
+						<placeOfDeath />
+						<placeOfDeathOther />
+					</basicInformation>
+					<sourceOfInformation>
+						<reportedBy />
+					</sourceOfInformation>
+				</data>
+			</instance>
+			<itext>
+				<translation lang="eng">
+					<text id="/data/basicInformation:label">
+						<value>1. Basic Information</value>
+					</text>
+					<text id="/data/sourceOfInformation:label">
+						<value>2. Source of Information</value>
+					</text>
+					<text id="/data/basicInformation/fieldWorker:label">
+						<value>Field Worker</value>
+					</text>
+					<text id="/data/basicInformation/fieldWorker:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/dateOfInterview:label">
+						<value>Date of Interview</value>
+					</text>
+					<text id="/data/basicInformation/dateOfInterview:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/permanentId:label">
+						<value>Permanent ID</value>
+					</text>
+					<text id="/data/basicInformation/permanentId:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/houseId:label">
+						<value>Current House Id</value>
+					</text>
+					<text id="/data/basicInformation/houseId:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/householdName:label">
+						<value>Household Name</value>
+					</text>
+					<text id="/data/basicInformation/householdName:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/householdId:label">
+						<value>Household Id</value>
+					</text>
+					<text id="/data/basicInformation/householdId:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/dateOfDeath:label">
+						<value>Date of Death</value>
+					</text>
+					<text id="/data/basicInformation/dateOfDeath:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/deceasedName:label">
+						<value>Deceased Name</value>
+					</text>
+					<text id="/data/basicInformation/deceasedName:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/sex:label">
+						<value>Sex</value>
+					</text>
+					<text id="/data/basicInformation/sex:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/sex:option0">
+						<value>Male</value>
+					</text>
+					<text id="/data/basicInformation/sex:option1">
+						<value>Female</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeath:label">
+						<value>Place of Death</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeath:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/placeOfDeath:option0">
+						<value>Hospital</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeath:option1">
+						<value>Health Centre or Clinic</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeath:option2">
+						<value>Home</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeath:option3">
+						<value>Traditional healer's home</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeath:option4">
+						<value>Other</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeathOther:label">
+						<value>Place of Death</value>
+					</text>
+					<text id="/data/basicInformation/placeOfDeathOther:hint">
+						<value>Specify the Place of Death</value>
+					</text>
+					<text id="/data/sourceOfInformation/reportedBy:label">
+						<value>Reported by</value>
+					</text>
+					<text id="/data/sourceOfInformation/reportedBy:hint">
+						<value />
+					</text>
+					<text id="/data/sourceOfInformation/reportedBy:option0">
+						<value>FW</value>
+					</text>
+					<text id="/data/sourceOfInformation/reportedBy:option1">
+						<value>FS</value>
+					</text>
+					<text id="/data/sourceOfInformation/reportedBy:option2">
+						<value>CKI</value>
+					</text>
+				</translation>
+			</itext>
+			<bind nodeset="/data/processedByMirth" type="boolean" />
+			<bind nodeset="/data/formRetired" type="boolean" />
+			<bind nodeset="/data/validationFailed" type="boolean" />
+			<bind nodeset="/data/derivedFromUri" type="string" />
+			<bind nodeset="/data/basicInformation/fieldWorker" type="string"
+				required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+				jr:constraintMsg="Field Worker Id is not the right format" />
+			<bind nodeset="/data/basicInformation/dateOfInterview" type="date"
+				required="true()" constraint=". &lt;= today()"
+				jr:constraintMsg="Date of interview cannot be in the future" />
+			<bind nodeset="/data/basicInformation/permanentId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')"
+				jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/data/basicInformation/houseId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')"
+				jr:constraintMsg="House Id is not the right format" />
+			<bind nodeset="/data/basicInformation/householdName" type="string"
+				required="true()" />
+			<bind nodeset="/data/basicInformation/householdId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')"
+				jr:constraintMsg="Household Id is not the right format" />
+			<bind nodeset="/data/basicInformation/dateOfDeath" type="date"
+				constraint=". &lt; /data/basicInformation/dateOfInterview" jr:constraintMsg="The date of death cannot be after the interview date" />
+			<bind nodeset="/data/basicInformation/deceasedName" type="string"
+				required="true()" />
+			<bind nodeset="/data/basicInformation/sex" type="select1"
+				required="true()" />
+			<bind nodeset="/data/basicInformation/placeOfDeath" type="select1"
+				required="true()" />
+			<bind nodeset="/data/basicInformation/placeOfDeathOther" type="string"
+				required="true()" relevant="/data/basicInformation/placeOfDeath = '5'" />
+			<bind nodeset="/data/sourceOfInformation/reportedBy" type="select1"
+				required="true()" />
+      <bind nodeset="/data/supervisorStatus" type="int" />
+		</model>
+	</h:head>
+	<h:body>
+		<group>
+			<label ref="jr:itext('/data/basicInformation:label')" />
+			<input ref="/data/basicInformation/fieldWorker">
+				<label ref="jr:itext('/data/basicInformation/fieldWorker:label')" />
+				<hint ref="jr:itext('/data/basicInformation/fieldWorker:hint')" />
+			</input>
+			<input ref="/data/basicInformation/dateOfInterview">
+				<label ref="jr:itext('/data/basicInformation/dateOfInterview:label')" />
+				<hint ref="jr:itext('/data/basicInformation/dateOfInterview:hint')" />
+			</input>
+			<input ref="/data/basicInformation/permanentId">
+				<label ref="jr:itext('/data/basicInformation/permanentId:label')" />
+				<hint ref="jr:itext('/data/basicInformation/permanentId:hint')" />
+			</input>
+			<input ref="/data/basicInformation/houseId">
+				<label ref="jr:itext('/data/basicInformation/houseId:label')" />
+				<hint ref="jr:itext('/data/basicInformation/houseId:hint')" />
+			</input>
+			<input ref="/data/basicInformation/householdName">
+				<label ref="jr:itext('/data/basicInformation/householdName:label')" />
+				<hint ref="jr:itext('/data/basicInformation/householdName:hint')" />
+			</input>
+			<input ref="/data/basicInformation/householdId">
+				<label ref="jr:itext('/data/basicInformation/householdId:label')" />
+				<hint ref="jr:itext('/data/basicInformation/householdId:hint')" />
+			</input>
+			<input ref="/data/basicInformation/dateOfDeath">
+				<label ref="jr:itext('/data/basicInformation/dateOfDeath:label')" />
+				<hint ref="jr:itext('/data/basicInformation/dateOfDeath:hint')" />
+			</input>
+			<input ref="/data/basicInformation/deceasedName">
+				<label ref="jr:itext('/data/basicInformation/deceasedName:label')" />
+				<hint ref="jr:itext('/data/basicInformation/deceasedName:hint')" />
+			</input>
+			<select1 ref="/data/basicInformation/sex">
+				<label ref="jr:itext('/data/basicInformation/sex:label')" />
+				<hint ref="jr:itext('/data/basicInformation/sex:hint')" />
+				<item>
+					<label ref="jr:itext('/data/basicInformation/sex:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/basicInformation/sex:option1')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<select1 ref="/data/basicInformation/placeOfDeath">
+				<label ref="jr:itext('/data/basicInformation/placeOfDeath:label')" />
+				<hint ref="jr:itext('/data/basicInformation/placeOfDeath:hint')" />
+				<item>
+					<label ref="jr:itext('/data/basicInformation/placeOfDeath:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/basicInformation/placeOfDeath:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/basicInformation/placeOfDeath:option2')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/basicInformation/placeOfDeath:option3')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/basicInformation/placeOfDeath:option4')" />
+					<value>5</value>
+				</item>
+			</select1>
+			<input ref="/data/basicInformation/placeOfDeathOther">
+				<label ref="jr:itext('/data/basicInformation/placeOfDeathOther:label')" />
+				<hint ref="jr:itext('/data/basicInformation/placeOfDeathOther:hint')" />
+			</input>
+		</group>
+		<group>
+			<label ref="jr:itext('/data/sourceOfInformation:label')" />
+			<select1 ref="/data/sourceOfInformation/reportedBy">
+				<label ref="jr:itext('/data/sourceOfInformation/reportedBy:label')" />
+				<hint ref="jr:itext('/data/sourceOfInformation/reportedBy:hint')" />
+				<item>
+					<label ref="jr:itext('/data/sourceOfInformation/reportedBy:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/sourceOfInformation/reportedBy:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/sourceOfInformation/reportedBy:option2')" />
+					<value>3</value>
+				</item>
+			</select1>
+		</group>
+	</h:body>
+</h:html>

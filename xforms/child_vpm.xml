@@ -1,0 +1,4263 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Child VPM</h:title>
+    <model>
+      <instance>
+        <data id="child_vpm">
+          <backgroundInfo>
+            <nameOfChild/>
+            <permIdOfChild/>
+            <houseId/>
+            <houseName/>
+            <fieldWorker/>
+            <interviewDate/>
+            <sexOfChild/>
+          </backgroundInfo>
+          <informant>
+            <nameOfMainRespondent/>
+            <relationshipToDeceased/>
+            <relationshipToDeceasedOther/>
+          </informant>
+          <circumstancesOfDeath>
+            <dobOfChild/>
+            <sourceOfDob/>
+            <sourceOfDobOther/>
+            <dateOfDeathOfChild/>
+            <deathLocation/>
+            <deathLocationOther/>
+            <hospitalName/>
+            <hospitalAddress/>
+          </circumstancesOfDeath>
+          <openHistoryQuestion>
+            <historyQuestion/>
+            <listSigns>
+              <sign/>
+              <startOfSign/>
+              <endOfSign/>
+              <signSeverity/>
+            </listSigns>
+            <daysIllnessStartedKnown/>
+            <daysIllnessStarted/>
+            <careSoughtOutsideHome/>
+            <daysAfterIllnessKnown/>
+            <daysAfterIllness/>
+            <traditionalHealer/>
+            <regligiousLeader/>
+            <hospital/>
+            <healthCenter/>
+            <community/>
+            <physician/>
+            <pharmacy/>
+            <drugSeller/>
+            <relatives/>
+            <other/>
+            <seekOther/>
+          </openHistoryQuestion>
+          <accidents>
+            <dieFromInjury/>
+            <kindOfInjury/>
+            <kindOfInjuryOther/>
+            <kindOfBite/>
+            <kindOfBiteOther/>
+            <dieAtSite/>
+            <surviveLength/>
+            <receiveMedicalCare/>
+            <ongoingIllness/>
+            <illnessType/>
+          </accidents>
+          <childhoodConditions>
+            <growingNormally/>
+            <moreSickness/>
+            <haveFever/>
+            <daysOfFeverKnown/>
+            <daysOfFever/>
+            <diarrhoea/>
+            <daysOfDiarrhoeaKnown/>
+            <daysOfDiarrhoea/>
+            <numberTimesKnown/>
+            <numberTimes/>
+            <bloodInStool/>
+            <sunkenEyes/>
+            <givenFluids/>
+            <vommiting/>
+            <daysVomittingKnown/>
+            <daysVomitting/>
+            <severeDayVomitKnown/>
+            <severeDayVomit/>
+            <vomitLook/>
+            <vomitLookOther/>
+            <abdominalPain/>
+            <painType/>
+            <daysOfAbdominalpainKnown/>
+            <daysOfAbdominalpain/>
+            <painLocation/>
+            <painLocationOther/>
+            <abdomenPainSeverity/>
+            <abdomenPassStool/>
+            <abdominalDistension/>
+            <daysOfAbdominalDistensionKnown/>
+            <daysOfAbdominalDistension/>
+            <distensionDevelopRapidly/>
+            <haveCough/>
+            <daysCoughKnown/>
+            <daysCough/>
+            <coughSevere/>
+            <difficultyBreathing/>
+            <daysOfDifficultBreathingKnown/>
+            <daysOfDifficultBreathing/>
+            <fastBreathing/>
+            <daysFastBreathingKnown/>
+            <daysFastBreathing/>
+            <skinRash/>
+            <rashAllOverBody/>
+            <rashOnFace/>
+            <daysRashKnown/>
+            <daysRash/>
+            <rashBlisters/>
+            <skinCrackRash/>
+            <measles/>
+            <childThin/>
+            <swollenLegsFeet/>
+            <daysSwellingKnown/>
+            <daysSwelling/>
+            <skinFlake/>
+            <hairColorChange/>
+            <generalizedBodySwelling/>
+            <childMiserable/>
+            <childWasting/>
+            <lackOfBlood/>
+            <palePalms/>
+            <whiteNails/>
+            <armpitSwelling/>
+            <groinSwellings/>
+            <neckSwelling/>
+            <whiteRash/>
+            <chestInDrawing/>
+            <wheezing/>
+            <convulsion/>
+            <unconscious/>
+            <stopGrasp/>
+            <longBeforeStopGrasp/>
+            <stopRespondToVoice/>
+            <longBeforeRespond/>
+            <unableToFollowMovements/>
+            <longBeforeUnableToFollow/>
+            <stiffNeck/>
+            <bulgingFontanel/>
+          </childhoodConditions>
+          <treatment>
+            <receiveDrugs/>
+            <receiveAntibiotics/>
+            <antiMalaria/>
+            <antiMalariaType/>
+          </treatment>
+          <interviewComments/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/backgroundInfo:label">
+            <value>Background Information on Deceased</value>
+          </text>
+          <text id="/data/backgroundInfo/nameOfChild:label">
+            <value>Name of Child</value>
+          </text>
+          <text id="/data/backgroundInfo/nameOfChild:hint">
+            <value/>
+          </text>
+          <text id="/data/backgroundInfo/permIdOfChild:label">
+            <value>Perm ID of child</value>
+          </text>
+          <text id="/data/backgroundInfo/permIdOfChild:hint">
+            <value/>
+          </text>
+          <text id="/data/backgroundInfo/houseId:label">
+            <value>House ID</value>
+          </text>
+          <text id="/data/backgroundInfo/houseId:hint">
+            <value/>
+          </text>
+          <text id="/data/backgroundInfo/houseName:label">
+            <value>House Name</value>
+          </text>
+          <text id="/data/backgroundInfo/houseName:hint">
+            <value/>
+          </text>
+          <text id="/data/backgroundInfo/fieldWorker:label">
+            <value>Interviewer</value>
+          </text>
+          <text id="/data/backgroundInfo/fieldWorker:hint">
+            <value/>
+          </text>
+          <text id="/data/backgroundInfo/interviewDate:label">
+            <value>Date of Interview</value>
+          </text>
+          <text id="/data/backgroundInfo/interviewDate:hint">
+            <value/>
+          </text>
+          <text id="/data/backgroundInfo/sexOfChild:label">
+            <value>Sex of child</value>
+          </text>
+          <text id="/data/backgroundInfo/sexOfChild:hint">
+            <value/>
+          </text>
+          <text id="/data/backgroundInfo/sexOfChild:option0">
+            <value>Male</value>
+          </text>
+          <text id="/data/backgroundInfo/sexOfChild:option1">
+            <value>Female</value>
+          </text>
+          <text id="/data/informant:label">
+            <value>Informant</value>
+          </text>
+          <text id="/data/informant/nameOfMainRespondent:label">
+            <value>What is the name of the main respondent</value>
+          </text>
+          <text id="/data/informant/nameOfMainRespondent:hint">
+            <value/>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:label">
+            <value>What is the relationship of the main respondent to the deceased child?</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:hint">
+            <value/>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:option0">
+            <value>Mother</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:option1">
+            <value>Father</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:option2">
+            <value>Grandmother</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:option3">
+            <value>Grandfather</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:option4">
+            <value>Aunt</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:option5">
+            <value>Uncle</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceased:option6">
+            <value>Other</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceasedOther:label">
+            <value>Specify Other</value>
+          </text>
+          <text id="/data/informant/relationshipToDeceasedOther:hint">
+            <value/>
+          </text>
+          <text id="/data/circumstancesOfDeath:label">
+            <value>Circumstances of the Death</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/dobOfChild:label">
+            <value>Date of birth of child</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/dobOfChild:hint">
+            <value/>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:label">
+            <value>Source of Date of birth</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:hint">
+            <value></value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option0">
+            <value>Birth Certificate</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option1">
+            <value>Baptism Certificate</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option2">
+            <value>Health Card</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option3">
+            <value>Other written record</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option4">
+            <value>Verbal report</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option5">
+            <value>CRHDSS ID card</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option6">
+            <value>Other</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDob:option7">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDobOther:label">
+            <value>Specify Other</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/sourceOfDobOther:hint">
+            <value/>
+          </text>
+          <text id="/data/circumstancesOfDeath/dateOfDeathOfChild:label">
+            <value>Date of death of child</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/dateOfDeathOfChild:hint">
+            <value/>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocation:label">
+            <value>Where did the child die?</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocation:hint">
+            <value/>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocation:option0">
+            <value>Hospital</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocation:option1">
+            <value>Other health facility</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocation:option2">
+            <value>On the way to a facility</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocation:option3">
+            <value>Home</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocation:option4">
+            <value>Other</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocationOther:label">
+            <value>Specify Other</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/deathLocationOther:hint">
+            <value/>
+          </text>
+          <text id="/data/circumstancesOfDeath/hospitalName:label">
+            <value>What is the hospital/health facility name?</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/hospitalName:hint">
+            <value/>
+          </text>
+          <text id="/data/circumstancesOfDeath/hospitalAddress:label">
+            <value>What is the hospital/health facility address?</value>
+          </text>
+          <text id="/data/circumstancesOfDeath/hospitalAddress:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion:label">
+            <value>Open History Question</value>
+          </text>
+          <text id="/data/openHistoryQuestion/historyQuestion:label">
+            <value>Could you tell me about the illness that led to the baby's death?</value>
+          </text>
+          <text id="/data/openHistoryQuestion/historyQuestion:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns:label">
+            <value>List all items from previous open history question</value>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/sign:label">
+            <value>Sign</value>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/sign:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/startOfSign:label">
+            <value>Start (From time of death)</value>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/startOfSign:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/endOfSign:label">
+            <value>End (From time of death)</value>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/endOfSign:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/signSeverity:label">
+            <value>Severity</value>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/signSeverity:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/signSeverity:option0">
+            <value>Mild</value>
+          </text>
+          <text id="/data/openHistoryQuestion/listSigns/signSeverity:option1">
+            <value>Severe</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysIllnessStartedKnown:label">
+            <value>Is the number of days of illness preceding the child's death known?</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysIllnessStartedKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/daysIllnessStartedKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysIllnessStartedKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysIllnessStartedKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysIllnessStarted:label">
+            <value>How many days did the illness start immediately preceding the child's death?</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysIllnessStarted:hint">
+            <value />
+          </text>
+          <text id="/data/openHistoryQuestion/careSoughtOutsideHome:label">
+            <value>Was care sought outside the home while s/he had this illness</value>
+          </text>
+          <text id="/data/openHistoryQuestion/careSoughtOutsideHome:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/careSoughtOutsideHome:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/careSoughtOutsideHome:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/careSoughtOutsideHome:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysAfterIllnessKnown:label">
+            <value>Is the number of days care was sought after illness started known?</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysAfterIllnessKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/daysAfterIllnessKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysAfterIllnessKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysAfterIllnessKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysAfterIllness:label">
+            <value>How many days after illness started was care sought?</value>
+          </text>
+          <text id="/data/openHistoryQuestion/daysAfterIllness:hint">
+            <value />
+          </text>
+          <text id="/data/openHistoryQuestion/traditionalHealer:label">
+            <value>Traditional Healer</value>
+          </text>
+          <text id="/data/openHistoryQuestion/traditionalHealer:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/traditionalHealer:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/traditionalHealer:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/traditionalHealer:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/regligiousLeader:label">
+            <value>Regligious Leader</value>
+          </text>
+          <text id="/data/openHistoryQuestion/regligiousLeader:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/regligiousLeader:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/regligiousLeader:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/regligiousLeader:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/hospital:label">
+            <value>Hospital</value>
+          </text>
+          <text id="/data/openHistoryQuestion/hospital:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/hospital:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/hospital:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/hospital:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/healthCenter:label">
+            <value>Health center/clinic</value>
+          </text>
+          <text id="/data/openHistoryQuestion/healthCenter:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/healthCenter:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/healthCenter:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/healthCenter:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/community:label">
+            <value>Community-based practitioner (CHO, YZ)</value>
+          </text>
+          <text id="/data/openHistoryQuestion/community:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/community:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/community:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/community:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/physician:label">
+            <value>Private physician or nurse</value>
+          </text>
+          <text id="/data/openHistoryQuestion/physician:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/physician:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/physician:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/physician:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/pharmacy:label">
+            <value>Pharmacy</value>
+          </text>
+          <text id="/data/openHistoryQuestion/pharmacy:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/pharmacy:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/pharmacy:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/pharmacy:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/drugSeller:label">
+            <value>Drug seller, store or market</value>
+          </text>
+          <text id="/data/openHistoryQuestion/drugSeller:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/drugSeller:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/drugSeller:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/drugSeller:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/relatives:label">
+            <value>Relatives or friends</value>
+          </text>
+          <text id="/data/openHistoryQuestion/relatives:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/relatives:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/openHistoryQuestion/relatives:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/openHistoryQuestion/relatives:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/openHistoryQuestion/other:label">
+            <value>Other specify</value>
+          </text>
+          <text id="/data/openHistoryQuestion/other:hint">
+            <value/>
+          </text>
+          <text id="/data/openHistoryQuestion/seekOther:label">
+            <value>Did you seek care anywhere else?</value>
+          </text>
+          <text id="/data/openHistoryQuestion/seekOther:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents:label">
+            <value>Accidents And Injuries</value>
+          </text>
+          <text id="/data/accidents/dieFromInjury:label">
+            <value>Did s/he die from an injury or accident?</value>
+          </text>
+          <text id="/data/accidents/dieFromInjury:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/dieFromInjury:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/accidents/dieFromInjury:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/accidents/dieFromInjury:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:label">
+            <value>What kind of injury or accident?</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option0">
+            <value>Transport accident (Pedestrian)</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option1">
+            <value>Transport accident (Passenger)</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option2">
+            <value>Fall</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option3">
+            <value>Drowning</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option4">
+            <value>Poisoning</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option5">
+            <value>Animal bite</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option6">
+            <value>Other bites or sting</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option7">
+            <value>Burn</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option8">
+            <value>Firearm</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option9">
+            <value>Sharp object (eg knife)</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option10">
+            <value>Circumcision</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option11">
+            <value>Assault/abuse</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option12">
+            <value>Other</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option13">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/accidents/kindOfInjury:option14">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/accidents/kindOfInjuryOther:label">
+            <value>Specify</value>
+          </text>
+          <text id="/data/accidents/kindOfInjuryOther:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/kindOfBite:label">
+            <value>What kind of animal bite?</value>
+          </text>
+          <text id="/data/accidents/kindOfBite:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/kindOfBite:option0">
+            <value>Dog</value>
+          </text>
+          <text id="/data/accidents/kindOfBite:option1">
+            <value>Snake</value>
+          </text>
+          <text id="/data/accidents/kindOfBite:option2">
+            <value>Other</value>
+          </text>
+          <text id="/data/accidents/kindOfBite:option3">
+            <value>Not available</value>
+          </text>
+          <text id="/data/accidents/kindOfBite:option4">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/accidents/kindOfBiteOther:label">
+            <value>Specify Other</value>
+          </text>
+          <text id="/data/accidents/kindOfBiteOther:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/dieAtSite:label">
+            <value>Did s/he die at the site where the accident or injury occurred?</value>
+          </text>
+          <text id="/data/accidents/dieAtSite:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/dieAtSite:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/accidents/dieAtSite:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/accidents/dieAtSite:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/accidents/dieAtSite:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/accidents/surviveLength:label">
+            <value>For how long after accident or injury did s/he survive?</value>
+          </text>
+          <text id="/data/accidents/surviveLength:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/surviveLength:option0">
+            <value>&lt; 24 Hours</value>
+          </text>
+          <text id="/data/accidents/surviveLength:option1">
+            <value>&gt; 24 Hours</value>
+          </text>
+          <text id="/data/accidents/surviveLength:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/accidents/surviveLength:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/accidents/receiveMedicalCare:label">
+            <value>Did the child receive medical care from the accident before death?</value>
+          </text>
+          <text id="/data/accidents/receiveMedicalCare:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/receiveMedicalCare:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/accidents/receiveMedicalCare:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/accidents/receiveMedicalCare:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/accidents/receiveMedicalCare:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/accidents/ongoingIllness:label">
+            <value>Did the child have an ongoing chronic illness or was s/he sick in the month before the accident or injury?</value>
+          </text>
+          <text id="/data/accidents/ongoingIllness:hint">
+            <value/>
+          </text>
+          <text id="/data/accidents/ongoingIllness:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/accidents/ongoingIllness:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/accidents/ongoingIllness:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/accidents/ongoingIllness:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/accidents/illnessType:label">
+            <value>What was the illness?</value>
+          </text>
+          <text id="/data/accidents/illnessType:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions:label">
+            <value>Other Childhood Conditions</value>
+          </text>
+          <text id="/data/childhoodConditions/growingNormally:label">
+            <value>Was the child growing normally for his/her age?</value>
+          </text>
+          <text id="/data/childhoodConditions/growingNormally:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/growingNormally:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/growingNormally:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/growingNormally:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/growingNormally:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/moreSickness:label">
+            <value>Did the child get more sicknesses or illnesses than other children in the family or in the community</value>
+          </text>
+          <text id="/data/childhoodConditions/moreSickness:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/moreSickness:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/moreSickness:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/moreSickness:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/moreSickness:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/haveFever:label">
+            <value>During the illness that led to death, did s/he have fever?</value>
+          </text>
+          <text id="/data/childhoodConditions/haveFever:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/haveFever:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/haveFever:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/haveFever:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/haveFever:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfFeverKnown:label">
+            <value>Is the number of days the fever lasted known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfFeverKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysOfFeverKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfFeverKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfFeverKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfFever:label">
+            <value>How many days did the fever last?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfFever:hint">
+            <value />
+          </text>
+          <text id="/data/childhoodConditions/diarrhoea:label">
+            <value>During the illness that led to death, did s/he have diarrhoea?</value>
+          </text>
+          <text id="/data/childhoodConditions/diarrhoea:hint">
+            <value>More frequent or more liquid stools than usual.</value>
+          </text>
+          <text id="/data/childhoodConditions/diarrhoea:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/diarrhoea:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/diarrhoea:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/diarrhoea:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDiarrhoeaKnown:label">
+            <value>Is the number of days stools were more frequent or liquid known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDiarrhoeaKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDiarrhoeaKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDiarrhoeaKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDiarrhoeaKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDiarrhoea:label">
+            <value>For how many days were the stools more frequent or liquid?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDiarrhoea:hint">
+            <value />
+          </text>
+          <text id="/data/childhoodConditions/numberTimesKnown:label">
+            <value>On the day when the diarrhoea was most severe, is the number of times s/he passed stool known?</value>
+          </text>
+          <text id="/data/childhoodConditions/numberTimesKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/numberTimesKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/numberTimesKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/numberTimesKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/numberTimes:label">
+            <value>How many times did he/she pass stool?</value>
+          </text>
+          <text id="/data/childhoodConditions/numberTimes:hint">
+            <value />
+          </text>
+          <text id="/data/childhoodConditions/bloodInStool:label">
+            <value>Was there visible blood in the stool?</value>
+          </text>
+          <text id="/data/childhoodConditions/bloodInStool:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/bloodInStool:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/bloodInStool:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/bloodInStool:option2">
+            <value>Not available</value>
+          </text>
+          <text id="/data/childhoodConditions/bloodInStool:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/sunkenEyes:label">
+            <value>Did the child have sunken eyes when he/she was ill with diarrhoea?</value>
+          </text>
+          <text id="/data/childhoodConditions/sunkenEyes:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/sunkenEyes:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/sunkenEyes:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/sunkenEyes:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/sunkenEyes:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/givenFluids:label">
+            <value>During the diarrhoea episode, was the child given any fluids such as ORS?</value>
+          </text>
+          <text id="/data/childhoodConditions/givenFluids:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/givenFluids:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/givenFluids:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/givenFluids:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/givenFluids:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/vommiting:label">
+            <value>Did s/he have vomiting?</value>
+          </text>
+          <text id="/data/childhoodConditions/vommiting:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/vommiting:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/vommiting:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/vommiting:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/vommiting:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysVomittingKnown:label">
+            <value>Is the number of days of s/he had vomiting known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysVomittingKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysVomittingKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysVomittingKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysVomittingKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysVomitting:label">
+            <value>How many days did s/he have vomiting?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysVomitting:hint">
+            <value />
+          </text>
+          <text id="/data/childhoodConditions/severeDayVomitKnown:label">
+            <value>When vomiting was severe, is the number of times s/he vomited known?</value>
+          </text>
+          <text id="/data/childhoodConditions/severeDayVomitKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/severeDayVomitKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/severeDayVomitKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/severeDayVomitKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/severeDayVomit:label">
+            <value>When vomiting was severe, how many times did s/he vomit in a day?</value>
+          </text>
+          <text id="/data/childhoodConditions/severeDayVomit:hint">
+            <value />
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:label">
+            <value>How did the vomit look like?</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option0">
+            <value>Watery fluid</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option1">
+            <value>Yellowish fluid</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option2">
+            <value>Coffee cloured</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option3">
+            <value>Blood</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option4">
+            <value>Faecal Matters</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option5">
+            <value>Other</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option6">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLook:option7">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLookOther:label">
+            <value>Specify Other</value>
+          </text>
+          <text id="/data/childhoodConditions/vomitLookOther:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/abdominalPain:label">
+            <value>During the illness that led to death, did the child have abdominal pains</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalPain:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/abdominalPain:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalPain:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalPain:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalPain:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/painType:label">
+            <value>What type of pain was it?</value>
+          </text>
+          <text id="/data/childhoodConditions/painType:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/painType:option0">
+            <value>Cramp</value>
+          </text>
+          <text id="/data/childhoodConditions/painType:option1">
+            <value>Dull ache</value>
+          </text>
+          <text id="/data/childhoodConditions/painType:option2">
+            <value>Burning pain</value>
+          </text>
+          <text id="/data/childhoodConditions/painType:option3">
+            <value>Others</value>
+          </text>
+          <text id="/data/childhoodConditions/painType:option4">
+            <value>Not available</value>
+          </text>
+          <text id="/data/childhoodConditions/painType:option5">
+            <value>Not known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalpainKnown:label">
+            <value>Is the number of days s/he had pain known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalpainKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalpainKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalpainKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalpainKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalpain:label">
+            <value>How many days did s/he have the pain?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalpain:hint">
+            <value />
+          </text>
+          <text id="/data/childhoodConditions/painLocation:label">
+            <value>Where exactly was the pain?</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:option0">
+            <value>Lower abdomen</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:option1">
+            <value>Upper adbomen</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:option2">
+            <value>Middle abdomen</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:option3">
+            <value>All over abdomen</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:option4">
+            <value>Other</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:option5">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocation:option6">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocationOther:label">
+            <value>Specify Other</value>
+          </text>
+          <text id="/data/childhoodConditions/painLocationOther:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPainSeverity:label">
+            <value>What was the severity of the pain?</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPainSeverity:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPainSeverity:option0">
+            <value>Mild/moderate</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPainSeverity:option1">
+            <value>Severe</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPainSeverity:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPainSeverity:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPassStool:label">
+            <value>Was s/he unable to pass stool for some days before day?</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPassStool:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPassStool:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPassStool:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPassStool:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/abdomenPassStool:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalDistension:label">
+            <value>During the illness that led to death, did the child have abdominal distension?</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalDistension:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/abdominalDistension:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalDistension:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalDistension:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/abdominalDistension:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalDistensionKnown:label">
+            <value>Is the number of days of abdominal distension known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalDistensionKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalDistensionKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalDistensionKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalDistensionKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalDistension:label">
+            <value>For how many days did s/he have abdominal distension?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfAbdominalDistension:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/distensionDevelopRapidly:label">
+            <value>Did the distension develop rapidly within days or slowly?</value>
+          </text>
+          <text id="/data/childhoodConditions/distensionDevelopRapidly:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/distensionDevelopRapidly:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/distensionDevelopRapidly:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/distensionDevelopRapidly:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/distensionDevelopRapidly:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/haveCough:label">
+            <value>During the illness that led to death, did the child have a cough?</value>
+          </text>
+          <text id="/data/childhoodConditions/haveCough:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/haveCough:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/haveCough:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/haveCough:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/haveCough:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysCoughKnown:label">
+            <value>Is the number of days cough lasted known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysCoughKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysCoughKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysCoughKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysCoughKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysCough:label">
+            <value>For how many days did the cough last?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysCough:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/coughSevere:label">
+            <value>Was the cough severe?</value>
+          </text>
+          <text id="/data/childhoodConditions/coughSevere:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/coughSevere:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/coughSevere:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/coughSevere:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/coughSevere:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/difficultyBreathing:label">
+            <value>During the illness that led to death, did the child have difficulty in breathing?</value>
+          </text>
+          <text id="/data/childhoodConditions/difficultyBreathing:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/difficultyBreathing:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/difficultyBreathing:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/difficultyBreathing:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/difficultyBreathing:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDifficultBreathingKnown:label">
+            <value>Is the number of days difficult breathing lasted known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDifficultBreathingKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDifficultBreathingKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDifficultBreathingKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDifficultBreathingKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDifficultBreathing:label">
+            <value>For how many days did the difficulty in breathing last?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysOfDifficultBreathing:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/fastBreathing:label">
+            <value>During the illness that led to death, did the child have fast breathing?</value>
+          </text>
+          <text id="/data/childhoodConditions/fastBreathing:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/fastBreathing:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/fastBreathing:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/fastBreathing:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/fastBreathing:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysFastBreathingKnown:label">
+            <value>Is the number of days fast breathing lasted known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysFastBreathingKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysFastBreathingKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysFastBreathingKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysFastBreathingKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysFastBreathing:label">
+            <value>For how many days did the fast breathing last?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysFastBreathing:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/skinRash:label">
+            <value>During the illness that led to death, did s/he have skin rash?</value>
+          </text>
+          <text id="/data/childhoodConditions/skinRash:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/skinRash:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/skinRash:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/skinRash:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/skinRash:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/rashAllOverBody:label">
+            <value>Was the rash all over the body?</value>
+          </text>
+          <text id="/data/childhoodConditions/rashAllOverBody:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/rashAllOverBody:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/rashAllOverBody:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/rashAllOverBody:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/rashAllOverBody:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/rashOnFace:label">
+            <value>Was the rash on the child's face?</value>
+          </text>
+          <text id="/data/childhoodConditions/rashOnFace:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/rashOnFace:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/rashOnFace:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/rashOnFace:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/rashOnFace:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysRashKnown:label">
+            <value>Is the number of days the rash lasted known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysRashKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysRashKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysRashKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysRashKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysRash:label">
+            <value>For how many days did the rash last?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysRash:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/rashBlisters:label">
+            <value>Did the rash have blisters containing clear fluids?</value>
+          </text>
+          <text id="/data/childhoodConditions/rashBlisters:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/rashBlisters:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/rashBlisters:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/rashBlisters:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/rashBlisters:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/skinCrackRash:label">
+            <value>Did the skin crack/split or peel after the rash started?</value>
+          </text>
+          <text id="/data/childhoodConditions/skinCrackRash:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/skinCrackRash:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/skinCrackRash:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/skinCrackRash:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/skinCrackRash:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/measles:label">
+            <value>Was the illness measles?</value>
+          </text>
+          <text id="/data/childhoodConditions/measles:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/measles:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/measles:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/measles:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/measles:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/childThin:label">
+            <value>During the illness that led to death, did the child become very thin?</value>
+          </text>
+          <text id="/data/childhoodConditions/childThin:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/childThin:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/childThin:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/childThin:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/childThin:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/swollenLegsFeet:label">
+            <value>During the illness that led to death, did the child have swollen legs or feet?</value>
+          </text>
+          <text id="/data/childhoodConditions/swollenLegsFeet:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/swollenLegsFeet:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/swollenLegsFeet:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/swollenLegsFeet:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/swollenLegsFeet:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysSwellingKnown:label">
+            <value>Is the number of days the swelling lasted known?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysSwellingKnown:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/daysSwellingKnown:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/daysSwellingKnown:option1">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/daysSwellingKnown:option2">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/daysSwelling:label">
+            <value>How long (days) did the swelling last?</value>
+          </text>
+          <text id="/data/childhoodConditions/daysSwelling:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/skinFlake:label">
+            <value>During the illness that lead to death, did the child's skin flake off in patches?</value>
+          </text>
+          <text id="/data/childhoodConditions/skinFlake:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/skinFlake:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/skinFlake:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/skinFlake:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/skinFlake:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/hairColorChange:label">
+            <value>Did the child's hair change in colour to a reddish (or yellowish) colour?</value>
+          </text>
+          <text id="/data/childhoodConditions/hairColorChange:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/hairColorChange:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/hairColorChange:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/hairColorChange:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/hairColorChange:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/generalizedBodySwelling:label">
+            <value>Did the child have generalized body swelling during the month before he/she died?</value>
+          </text>
+          <text id="/data/childhoodConditions/generalizedBodySwelling:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/generalizedBodySwelling:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/generalizedBodySwelling:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/generalizedBodySwelling:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/generalizedBodySwelling:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/childMiserable:label">
+            <value>Was the child miserable in the month prior to the death?</value>
+          </text>
+          <text id="/data/childhoodConditions/childMiserable:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/childMiserable:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/childMiserable:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/childMiserable:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/childMiserable:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/childWasting:label">
+            <value>Did the child have wasting and appears like an old man (marasmus) during the month before he/she died?</value>
+          </text>
+          <text id="/data/childhoodConditions/childWasting:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/childWasting:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/childWasting:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/childWasting:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/childWasting:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/lackOfBlood:label">
+            <value>During the illness that led to death, did the child suffer from lack of blood or appear pale?</value>
+          </text>
+          <text id="/data/childhoodConditions/lackOfBlood:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/lackOfBlood:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/lackOfBlood:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/lackOfBlood:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/lackOfBlood:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/palePalms:label">
+            <value>During the illness that led to death, did the child have pale palms?</value>
+          </text>
+          <text id="/data/childhoodConditions/palePalms:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/palePalms:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/palePalms:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/palePalms:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/palePalms:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteNails:label">
+            <value>During the illness that led to death, did the child have white nails?</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteNails:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/whiteNails:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteNails:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteNails:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteNails:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/armpitSwelling:label">
+            <value>During the illness that led to death, did the child have swellings in the armpit?</value>
+          </text>
+          <text id="/data/childhoodConditions/armpitSwelling:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/armpitSwelling:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/armpitSwelling:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/armpitSwelling:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/armpitSwelling:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/groinSwellings:label">
+            <value>During the illness that led to death, did the child have swellings in the groin?</value>
+          </text>
+          <text id="/data/childhoodConditions/groinSwellings:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/groinSwellings:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/groinSwellings:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/groinSwellings:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/groinSwellings:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/neckSwelling:label">
+            <value>During the illness that led to death, did the child have swellings in the neck?</value>
+          </text>
+          <text id="/data/childhoodConditions/neckSwelling:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/neckSwelling:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/neckSwelling:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/neckSwelling:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/neckSwelling:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteRash:label">
+            <value>During the illness that led to death, did the child have a whitish rash inside the mouth or on the tongue?</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteRash:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/whiteRash:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteRash:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteRash:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/whiteRash:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/chestInDrawing:label">
+            <value>During the illness that led to death, did s/he chest in drawing?</value>
+          </text>
+          <text id="/data/childhoodConditions/chestInDrawing:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/chestInDrawing:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/chestInDrawing:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/chestInDrawing:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/chestInDrawing:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/wheezing:label">
+            <value>During the illness that led to death, did s/he have wheezing?</value>
+          </text>
+          <text id="/data/childhoodConditions/wheezing:hint">
+            <value>Demonstrate sound</value>
+          </text>
+          <text id="/data/childhoodConditions/wheezing:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/wheezing:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/wheezing:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/wheezing:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/convulsion:label">
+            <value>Did the child experience any generalized convulsions/fits during the illness that led to death?</value>
+          </text>
+          <text id="/data/childhoodConditions/convulsion:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/convulsion:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/convulsion:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/convulsion:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/convulsion:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/unconscious:label">
+            <value>Was the child unconscious during the illness that led to death?</value>
+          </text>
+          <text id="/data/childhoodConditions/unconscious:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/unconscious:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/unconscious:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/unconscious:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/unconscious:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/stopGrasp:label">
+            <value>Any any time during the illness that led to death, did the child stop being able to grasp?</value>
+          </text>
+          <text id="/data/childhoodConditions/stopGrasp:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/stopGrasp:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/stopGrasp:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/stopGrasp:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/stopGrasp:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeStopGrasp:label">
+            <value>How long before s/he died did the child stop being able to grasp?</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeStopGrasp:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeStopGrasp:option0">
+            <value>&lt; 12 hours</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeStopGrasp:option1">
+            <value>&gt; 12 hours</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeStopGrasp:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeStopGrasp:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/stopRespondToVoice:label">
+            <value>At any time during the illness that led to death, did the child stop being able to respond to a voice?</value>
+          </text>
+          <text id="/data/childhoodConditions/stopRespondToVoice:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/stopRespondToVoice:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/stopRespondToVoice:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/stopRespondToVoice:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/stopRespondToVoice:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeRespond:label">
+            <value>How long before s/he die did the child stop being able to respond to a voice?</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeRespond:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeRespond:option0">
+            <value>&lt; 12 hours</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeRespond:option1">
+            <value>&gt; 12 hours</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeRespond:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeRespond:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/unableToFollowMovements:label">
+            <value>At any time during the illness that led to the death of child, was the child unable to follow movements with eyes?</value>
+          </text>
+          <text id="/data/childhoodConditions/unableToFollowMovements:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/unableToFollowMovements:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/unableToFollowMovements:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/unableToFollowMovements:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/unableToFollowMovements:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeUnableToFollow:label">
+            <value>How long before s/he died did the child stop being able to follow movements with eyes?</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeUnableToFollow:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeUnableToFollow:option0">
+            <value>&lt; 12 hours</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeUnableToFollow:option1">
+            <value>&gt; 12 hours</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeUnableToFollow:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/longBeforeUnableToFollow:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/stiffNeck:label">
+            <value>Did the child have stiff neck during the illness that led to death?</value>
+          </text>
+          <text id="/data/childhoodConditions/stiffNeck:hint">
+            <value>Demonstrate</value>
+          </text>
+          <text id="/data/childhoodConditions/stiffNeck:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/stiffNeck:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/stiffNeck:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/stiffNeck:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/childhoodConditions/bulgingFontanel:label">
+            <value>Did the child have bulging fontanel during the illness that led to death?</value>
+          </text>
+          <text id="/data/childhoodConditions/bulgingFontanel:hint">
+            <value/>
+          </text>
+          <text id="/data/childhoodConditions/bulgingFontanel:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/childhoodConditions/bulgingFontanel:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/childhoodConditions/bulgingFontanel:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/childhoodConditions/bulgingFontanel:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/treatment:label">
+            <value>Treatment and Records</value>
+          </text>
+          <text id="/data/treatment/receiveDrugs:label">
+            <value>Did s/he receive any drug during the illness</value>
+          </text>
+          <text id="/data/treatment/receiveDrugs:hint">
+            <value/>
+          </text>
+          <text id="/data/treatment/receiveDrugs:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/treatment/receiveDrugs:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/treatment/receiveDrugs:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/treatment/receiveDrugs:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/treatment/receiveAntibiotics:label">
+            <value>Did s/he receive any antibiotics during the illness?</value>
+          </text>
+          <text id="/data/treatment/receiveAntibiotics:hint">
+            <value/>
+          </text>
+          <text id="/data/treatment/receiveAntibiotics:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/treatment/receiveAntibiotics:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/treatment/receiveAntibiotics:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/treatment/receiveAntibiotics:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/treatment/antiMalaria:label">
+            <value>Did s/he receive any anti-malaria drug during the illness?</value>
+          </text>
+          <text id="/data/treatment/antiMalaria:hint">
+            <value/>
+          </text>
+          <text id="/data/treatment/antiMalaria:option0">
+            <value>Yes</value>
+          </text>
+          <text id="/data/treatment/antiMalaria:option1">
+            <value>No</value>
+          </text>
+          <text id="/data/treatment/antiMalaria:option2">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/treatment/antiMalaria:option3">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/treatment/antiMalariaType:label">
+            <value>Which anti-malaria drug did s/he receive?</value>
+          </text>
+          <text id="/data/treatment/antiMalariaType:hint">
+            <value/>
+          </text>
+          <text id="/data/treatment/antiMalariaType:option0">
+            <value>Chloroquine</value>
+          </text>
+          <text id="/data/treatment/antiMalariaType:option1">
+            <value>Fansidar</value>
+          </text>
+          <text id="/data/treatment/antiMalariaType:option2">
+            <value>Quinine</value>
+          </text>
+          <text id="/data/treatment/antiMalariaType:option3">
+            <value>Other</value>
+          </text>
+          <text id="/data/treatment/antiMalariaType:option4">
+            <value>Not Available</value>
+          </text>
+          <text id="/data/treatment/antiMalariaType:option5">
+            <value>Not Known</value>
+          </text>
+          <text id="/data/interviewComments:label">
+            <value>Interview's comments and observations</value>
+          </text>
+          <text id="/data/interviewComments:hint">
+            <value/>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/backgroundInfo/nameOfChild" type="string"/>
+      <bind nodeset="/data/backgroundInfo/permIdOfChild" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" 
+            jr:constraintMsg="Permanent Id is not the right format"/>
+      <bind nodeset="/data/backgroundInfo/houseId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" 
+            jr:constraintMsg="House Id is not the right format"/>
+      <bind nodeset="/data/backgroundInfo/houseName" type="string"/>
+      <bind nodeset="/data/backgroundInfo/fieldWorker" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+            jr:constraintMsg="Field Worker Id is not the right format"/>
+      <bind nodeset="/data/backgroundInfo/interviewDate" type="date" constraint=". &lt;= today()"
+            jr:constraintMsg="The date of the interview cannot be in the future"/>
+      <bind nodeset="/data/backgroundInfo/sexOfChild" type="select1" required="true()"/>
+      <bind nodeset="/data/informant/nameOfMainRespondent" type="string"/>
+      <bind nodeset="/data/informant/relationshipToDeceased" type="select1"/>
+      <bind nodeset="/data/informant/relationshipToDeceasedOther" type="string" relevant="../relationshipToDeceased = '7'" />
+      <bind nodeset="/data/circumstancesOfDeath/dobOfChild" type="date" constraint=". &lt; /data/backgroundInfo/interviewDate"
+            jr:constraintMsg="The date of the birth of child cannot be before the interview date"/>
+      <bind nodeset="/data/circumstancesOfDeath/sourceOfDob" type="select1"/>
+      <bind nodeset="/data/circumstancesOfDeath/sourceOfDobOther" type="string" relevant="../sourceOfDob = '7'"/>
+      <bind nodeset="/data/circumstancesOfDeath/dateOfDeathOfChild" type="date" constraint=". &gt; ../dobOfChild and . &lt;= /data/backgroundInfo/interviewDate"
+            jr:constraintMsg="The date of death must be between the date of birth and interview date"/>
+      <bind nodeset="/data/circumstancesOfDeath/deathLocation" type="select1"/>
+      <bind nodeset="/data/circumstancesOfDeath/deathLocationOther" type="string" relevant="../deathLocation = '5'"/>
+      <bind nodeset="/data/circumstancesOfDeath/hospitalName" type="string" relevant="../deathLocation = '1' or ../deathLocation ='2'" />
+      <bind nodeset="/data/circumstancesOfDeath/hospitalAddress" type="string" relevant="../deathLocation = '1' or ../deathLocation ='2'" />
+      <bind nodeset="/data/openHistoryQuestion/historyQuestion" type="string"/>
+      <bind nodeset="/data/openHistoryQuestion/listSigns/sign" type="string"/>
+      <bind nodeset="/data/openHistoryQuestion/listSigns/startOfSign" type="string"/>
+      <bind nodeset="/data/openHistoryQuestion/listSigns/endOfSign" type="string"/>
+      <bind nodeset="/data/openHistoryQuestion/listSigns/signSeverity" type="select1"/>
+      <bind nodeset="/data/openHistoryQuestion/daysIllnessStartedKnown" type="select1"/>
+      <bind nodeset="/data/openHistoryQuestion/daysIllnessStarted" type="int" relevant="../daysIllnessStartedKnown = '1'" />
+      <bind nodeset="/data/openHistoryQuestion/careSoughtOutsideHome" type="select1"/>
+      <bind nodeset="/data/openHistoryQuestion/daysAfterIllnessKnown" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/daysAfterIllness" type="int" relevant="../daysAfterIllnessKnown = '1'" />
+      <bind nodeset="/data/openHistoryQuestion/traditionalHealer" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/regligiousLeader" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/hospital" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/healthCenter" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/community" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/physician" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/pharmacy" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/drugSeller" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/relatives" type="select1" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/other" type="string" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/openHistoryQuestion/seekOther" type="string" relevant="../careSoughtOutsideHome = '1'"/>
+      <bind nodeset="/data/accidents/dieFromInjury" type="select1"/>
+      <bind nodeset="/data/accidents/kindOfInjury" type="select1" relevant="../dieFromInjury = '1'"/>
+      <bind nodeset="/data/accidents/kindOfInjuryOther" type="string" relevant="../kindOfInjury = '5' or ../kindOfInjury = '12' or ../kindOfInjury = '13'"/>
+      <bind nodeset="/data/accidents/kindOfBite" type="select1" relevant="../kindOfInjury = '6'"/>
+      <bind nodeset="/data/accidents/kindOfBiteOther" type="string" relevant="../kindOfBite = '3'"/>
+      <bind nodeset="/data/accidents/dieAtSite" type="select1" relevant="../dieFromInjury = '1'"/>
+      <bind nodeset="/data/accidents/surviveLength" type="select1" relevant="../dieFromInjury = '1'"/>
+      <bind nodeset="/data/accidents/receiveMedicalCare" type="select1" relevant="../dieFromInjury = '1'"/>
+      <bind nodeset="/data/accidents/ongoingIllness" type="select1" relevant="../dieFromInjury = '1'"/>
+      <bind nodeset="/data/accidents/illnessType" type="string" relevant="../ongoingIllness = '1'"/>
+      <bind nodeset="/data/childhoodConditions/growingNormally" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/moreSickness" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/haveFever" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfFeverKnown" type="select1" relevant="../haveFever = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfFever" type="int" relevant="../daysOfFeverKnown = '1'" />
+      <bind nodeset="/data/childhoodConditions/diarrhoea" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfDiarrhoeaKnown" type="select1" relevant="../diarrhoea = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfDiarrhoea" type="int" relevant="../daysOfDiarrhoeaKnown = '1'" />
+      <bind nodeset="/data/childhoodConditions/numberTimesKnown" type="select1" relevant="../diarrhoea = '1'" />
+      <bind nodeset="/data/childhoodConditions/numberTimes" type="int" relevant="../numberTimesKnown = '1'" />
+      <bind nodeset="/data/childhoodConditions/bloodInStool" type="select1" relevant="../diarrhoea = '1'" />
+      <bind nodeset="/data/childhoodConditions/sunkenEyes" type="select1" relevant="../diarrhoea = '1'" />
+      <bind nodeset="/data/childhoodConditions/givenFluids" type="select1" relevant="../diarrhoea = '1'" />
+      <bind nodeset="/data/childhoodConditions/vommiting" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysVomittingKnown" type="select1" relevant="../vommiting = '1'" />
+      <bind nodeset="/data/childhoodConditions/daysVomitting" type="int" relevant="../daysVomittingKnown = '1'"/>
+      <bind nodeset="/data/childhoodConditions/severeDayVomitKnown" type="select1" relevant="../vommiting = '1'"/>
+      <bind nodeset="/data/childhoodConditions/severeDayVomit" type="int" relevant="../severeDayVomitKnown = '1'" />
+      <bind nodeset="/data/childhoodConditions/vomitLook" type="select1" relevant="../vommiting = '1'"/>
+      <bind nodeset="/data/childhoodConditions/vomitLookOther" type="string" relevant="../vomitLook = '6'"/>
+      <bind nodeset="/data/childhoodConditions/abdominalPain" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/painType" type="select1" relevant="../abdominalPain = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfAbdominalpainKnown" type="select1" relevant="../abdominalPain = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfAbdominalpain" type="int" relevant="../daysOfAbdominalpainKnown = '1'" />
+      <bind nodeset="/data/childhoodConditions/painLocation" type="select1" relevant="../abdominalPain = '1'"/>
+      <bind nodeset="/data/childhoodConditions/painLocationOther" type="string" relevant="../painLocation = '5'"/>
+      <bind nodeset="/data/childhoodConditions/abdomenPainSeverity" type="select1" relevant="../abdominalPain = '1'"/>
+      <bind nodeset="/data/childhoodConditions/abdomenPassStool" type="select1" relevant="../abdominalPain = '1'"/>
+      <bind nodeset="/data/childhoodConditions/abdominalDistension" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfAbdominalDistensionKnown" type="select1" relevant="../abdominalDistension = '1'" />
+      <bind nodeset="/data/childhoodConditions/daysOfAbdominalDistension" type="int" relevant="../daysOfAbdominalDistensionKnown = '1'"/>
+      <bind nodeset="/data/childhoodConditions/distensionDevelopRapidly" type="select1" relevant="../abdominalDistension = '1'"/>
+      <bind nodeset="/data/childhoodConditions/haveCough" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysCoughKnown" type="select1" relevant="../haveCough = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysCough" type="int" relevant="../daysCoughKnown = '1'" />
+      <bind nodeset="/data/childhoodConditions/coughSevere" type="select1" relevant="../haveCough = '1'"/>
+      <bind nodeset="/data/childhoodConditions/difficultyBreathing" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysOfDifficultBreathingKnown" type="select1" relevant="../difficultyBreathing = '1'" />
+      <bind nodeset="/data/childhoodConditions/daysOfDifficultBreathing" type="int" relevant="../daysOfDifficultBreathingKnown = '1'"/>
+      <bind nodeset="/data/childhoodConditions/fastBreathing" type="select1" relevant="../difficultyBreathing = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysFastBreathingKnown" type="select1" relevant="../fastBreathing = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysFastBreathing" type="int" relevant="../daysFastBreathingKnown = '1'"/>
+      <bind nodeset="/data/childhoodConditions/skinRash" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/rashAllOverBody" type="select1" relevant="../skinRash = '1'"/>
+      <bind nodeset="/data/childhoodConditions/rashOnFace" type="select1" relevant="../skinRash = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysRashKnown" type="select1" relevant="../skinRash = '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysRash" type="int" relevant="../daysRashKnown = '1'"/>
+      <bind nodeset="/data/childhoodConditions/rashBlisters" type="select1" relevant="../skinRash = '1'"/>
+      <bind nodeset="/data/childhoodConditions/skinCrackRash" type="select1" relevant="../skinRash = '1'"/>
+      <bind nodeset="/data/childhoodConditions/measles" type="select1" relevant="../skinRash = '1'"/>
+      <bind nodeset="/data/childhoodConditions/childThin" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/swollenLegsFeet" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/daysSwellingKnown" type="select1" relevant="../swollenLegsFeet = '1'" />
+      <bind nodeset="/data/childhoodConditions/daysSwelling" type="int" relevant="../daysSwellingKnown = '1'"/>
+      <bind nodeset="/data/childhoodConditions/skinFlake" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/hairColorChange" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/generalizedBodySwelling" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/childMiserable" type="select1" relevant="../generalizedBodySwelling = '1'" />
+      <bind nodeset="/data/childhoodConditions/childWasting" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/lackOfBlood" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/palePalms" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/whiteNails" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/armpitSwelling" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/groinSwellings" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/neckSwelling" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/whiteRash" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/chestInDrawing" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/wheezing" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/convulsion" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/unconscious" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/stopGrasp" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/longBeforeStopGrasp" type="select1" relevant="../stopGrasp = '1'"/>
+      <bind nodeset="/data/childhoodConditions/stopRespondToVoice" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/longBeforeRespond" type="select1" relevant="../stopRespondToVoice = '1'"/>
+      <bind nodeset="/data/childhoodConditions/unableToFollowMovements" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/longBeforeUnableToFollow" type="select1" relevant="../unableToFollowMovements = '1'"/>
+      <bind nodeset="/data/childhoodConditions/stiffNeck" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/childhoodConditions/bulgingFontanel" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/treatment/receiveDrugs" type="select1" relevant="/data/accidents/dieFromInjury != '1'"/>
+      <bind nodeset="/data/treatment/receiveAntibiotics" type="select1" relevant="../receiveDrugs = '1'"/>
+      <bind nodeset="/data/treatment/antiMalaria" type="select1" relevant="../receiveDrugs = '1'"/>
+      <bind nodeset="/data/treatment/antiMalariaType" type="select1" relevant="../antiMalaria = '1'"/>
+      <bind nodeset="/data/interviewComments" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group>
+      <label ref="jr:itext('/data/backgroundInfo:label')"/>
+      <input ref="/data/backgroundInfo/nameOfChild">
+        <label ref="jr:itext('/data/backgroundInfo/nameOfChild:label')"/>
+        <hint ref="jr:itext('/data/backgroundInfo/nameOfChild:hint')"/>
+      </input>
+      <input ref="/data/backgroundInfo/permIdOfChild">
+        <label ref="jr:itext('/data/backgroundInfo/permIdOfChild:label')"/>
+        <hint ref="jr:itext('/data/backgroundInfo/permIdOfChild:hint')"/>
+      </input>
+      <input ref="/data/backgroundInfo/houseId">
+        <label ref="jr:itext('/data/backgroundInfo/houseId:label')"/>
+        <hint ref="jr:itext('/data/backgroundInfo/houseId:hint')"/>
+      </input>
+      <input ref="/data/backgroundInfo/houseName">
+        <label ref="jr:itext('/data/backgroundInfo/houseName:label')"/>
+        <hint ref="jr:itext('/data/backgroundInfo/houseName:hint')"/>
+      </input>
+      <input ref="/data/backgroundInfo/fieldWorker">
+        <label ref="jr:itext('/data/backgroundInfo/fieldWorker:label')"/>
+        <hint ref="jr:itext('/data/backgroundInfo/fieldWorker:hint')"/>
+      </input>
+      <input ref="/data/backgroundInfo/interviewDate">
+        <label ref="jr:itext('/data/backgroundInfo/interviewDate:label')"/>
+        <hint ref="jr:itext('/data/backgroundInfo/interviewDate:hint')"/>
+      </input>
+      <select1 ref="/data/backgroundInfo/sexOfChild">
+        <label ref="jr:itext('/data/backgroundInfo/sexOfChild:label')"/>
+        <hint ref="jr:itext('/data/backgroundInfo/sexOfChild:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/backgroundInfo/sexOfChild:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/backgroundInfo/sexOfChild:option1')"/>
+          <value>2</value>
+        </item>
+      </select1>
+    </group>
+    <group>
+      <label ref="jr:itext('/data/informant:label')"/>
+      <input ref="/data/informant/nameOfMainRespondent">
+        <label ref="jr:itext('/data/informant/nameOfMainRespondent:label')"/>
+        <hint ref="jr:itext('/data/informant/nameOfMainRespondent:hint')"/>
+      </input>
+      <select1 ref="/data/informant/relationshipToDeceased">
+        <label ref="jr:itext('/data/informant/relationshipToDeceased:label')"/>
+        <hint ref="jr:itext('/data/informant/relationshipToDeceased:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/informant/relationshipToDeceased:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/informant/relationshipToDeceased:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/informant/relationshipToDeceased:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/informant/relationshipToDeceased:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/informant/relationshipToDeceased:option4')"/>
+          <value>5</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/informant/relationshipToDeceased:option5')"/>
+          <value>6</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/informant/relationshipToDeceased:option6')"/>
+          <value>7</value>
+        </item>
+      </select1>
+      <input ref="/data/informant/relationshipToDeceasedOther">
+        <label ref="jr:itext('/data/informant/relationshipToDeceasedOther:label')"/>
+        <hint ref="jr:itext('/data/informant/relationshipToDeceasedOther:hint')"/>
+      </input>
+    </group>
+    <group>
+      <label ref="jr:itext('/data/circumstancesOfDeath:label')"/>
+      <input ref="/data/circumstancesOfDeath/dobOfChild">
+        <label ref="jr:itext('/data/circumstancesOfDeath/dobOfChild:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/dobOfChild:hint')"/>
+      </input>
+      <select1 ref="/data/circumstancesOfDeath/sourceOfDob">
+        <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option4')"/>
+          <value>5</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option5')"/>
+          <value>6</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option6')"/>
+          <value>7</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDob:option7')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/circumstancesOfDeath/sourceOfDobOther">
+        <label ref="jr:itext('/data/circumstancesOfDeath/sourceOfDobOther:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/sourceOfDobOther:hint')"/>
+      </input>
+      <input ref="/data/circumstancesOfDeath/dateOfDeathOfChild">
+        <label ref="jr:itext('/data/circumstancesOfDeath/dateOfDeathOfChild:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/dateOfDeathOfChild:hint')"/>
+      </input>
+      <select1 ref="/data/circumstancesOfDeath/deathLocation">
+        <label ref="jr:itext('/data/circumstancesOfDeath/deathLocation:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/deathLocation:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/deathLocation:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/deathLocation:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/deathLocation:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/deathLocation:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/circumstancesOfDeath/deathLocation:option4')"/>
+          <value>5</value>
+        </item>
+      </select1>
+      <input ref="/data/circumstancesOfDeath/deathLocationOther">
+        <label ref="jr:itext('/data/circumstancesOfDeath/deathLocationOther:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/deathLocationOther:hint')"/>
+      </input>
+      <input ref="/data/circumstancesOfDeath/hospitalName">
+        <label ref="jr:itext('/data/circumstancesOfDeath/hospitalName:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/hospitalName:hint')"/>
+      </input>
+      <input ref="/data/circumstancesOfDeath/hospitalAddress">
+        <label ref="jr:itext('/data/circumstancesOfDeath/hospitalAddress:label')"/>
+        <hint ref="jr:itext('/data/circumstancesOfDeath/hospitalAddress:hint')"/>
+      </input>
+    </group>
+    <group>
+      <label ref="jr:itext('/data/openHistoryQuestion:label')"/>
+      <input ref="/data/openHistoryQuestion/historyQuestion">
+        <label ref="jr:itext('/data/openHistoryQuestion/historyQuestion:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/historyQuestion:hint')"/>
+      </input>
+      <group>
+        <label ref="jr:itext('/data/openHistoryQuestion/listSigns:label')"/>
+        <repeat nodeset="/data/openHistoryQuestion/listSigns">
+          <input ref="/data/openHistoryQuestion/listSigns/sign">
+            <label ref="jr:itext('/data/openHistoryQuestion/listSigns/sign:label')"/>
+            <hint ref="jr:itext('/data/openHistoryQuestion/listSigns/sign:hint')"/>
+          </input>
+          <input ref="/data/openHistoryQuestion/listSigns/startOfSign">
+            <label ref="jr:itext('/data/openHistoryQuestion/listSigns/startOfSign:label')"/>
+            <hint ref="jr:itext('/data/openHistoryQuestion/listSigns/startOfSign:hint')"/>
+          </input>
+          <input ref="/data/openHistoryQuestion/listSigns/endOfSign">
+            <label ref="jr:itext('/data/openHistoryQuestion/listSigns/endOfSign:label')"/>
+            <hint ref="jr:itext('/data/openHistoryQuestion/listSigns/endOfSign:hint')"/>
+          </input>
+          <select1 ref="/data/openHistoryQuestion/listSigns/signSeverity">
+            <label ref="jr:itext('/data/openHistoryQuestion/listSigns/signSeverity:label')"/>
+            <hint ref="jr:itext('/data/openHistoryQuestion/listSigns/signSeverity:hint')"/>
+            <item>
+              <label ref="jr:itext('/data/openHistoryQuestion/listSigns/signSeverity:option0')"/>
+              <value>1</value>
+            </item>
+            <item>
+              <label ref="jr:itext('/data/openHistoryQuestion/listSigns/signSeverity:option1')"/>
+              <value>2</value>
+            </item>
+          </select1>
+        </repeat>
+      </group>
+      <select1 ref="/data/openHistoryQuestion/daysIllnessStartedKnown">
+        <label ref="jr:itext('/data/openHistoryQuestion/daysIllnessStartedKnown:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/daysIllnessStartedKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/daysIllnessStartedKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/daysIllnessStartedKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/daysIllnessStartedKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/openHistoryQuestion/daysIllnessStarted">
+        <label ref="jr:itext('/data/openHistoryQuestion/daysIllnessStarted:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/daysIllnessStarted:hint')"/>
+      </input>
+      <select1 ref="/data/openHistoryQuestion/careSoughtOutsideHome">
+        <label ref="jr:itext('/data/openHistoryQuestion/careSoughtOutsideHome:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/careSoughtOutsideHome:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/careSoughtOutsideHome:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/careSoughtOutsideHome:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/careSoughtOutsideHome:option2')"/>
+          <value>3</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/daysAfterIllnessKnown">
+        <label ref="jr:itext('/data/openHistoryQuestion/daysAfterIllnessKnown:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/daysAfterIllnessKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/daysAfterIllnessKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/daysAfterIllnessKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/daysAfterIllnessKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/openHistoryQuestion/daysAfterIllness">
+        <label ref="jr:itext('/data/openHistoryQuestion/daysAfterIllness:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/daysAfterIllness:hint')"/>
+      </input>
+      <select1 ref="/data/openHistoryQuestion/traditionalHealer">
+        <label ref="jr:itext('/data/openHistoryQuestion/traditionalHealer:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/traditionalHealer:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/traditionalHealer:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/traditionalHealer:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/traditionalHealer:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/regligiousLeader">
+        <label ref="jr:itext('/data/openHistoryQuestion/regligiousLeader:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/regligiousLeader:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/regligiousLeader:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/regligiousLeader:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/regligiousLeader:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/hospital">
+        <label ref="jr:itext('/data/openHistoryQuestion/hospital:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/hospital:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/hospital:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/hospital:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/hospital:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/healthCenter">
+        <label ref="jr:itext('/data/openHistoryQuestion/healthCenter:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/healthCenter:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/healthCenter:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/healthCenter:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/healthCenter:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/community">
+        <label ref="jr:itext('/data/openHistoryQuestion/community:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/community:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/community:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/community:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/community:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/physician">
+        <label ref="jr:itext('/data/openHistoryQuestion/physician:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/physician:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/physician:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/physician:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/physician:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/pharmacy">
+        <label ref="jr:itext('/data/openHistoryQuestion/pharmacy:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/pharmacy:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/pharmacy:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/pharmacy:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/pharmacy:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/drugSeller">
+        <label ref="jr:itext('/data/openHistoryQuestion/drugSeller:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/drugSeller:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/drugSeller:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/drugSeller:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/drugSeller:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/openHistoryQuestion/relatives">
+        <label ref="jr:itext('/data/openHistoryQuestion/relatives:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/relatives:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/relatives:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/relatives:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/openHistoryQuestion/relatives:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/openHistoryQuestion/other">
+        <label ref="jr:itext('/data/openHistoryQuestion/other:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/other:hint')"/>
+      </input>
+      <input ref="/data/openHistoryQuestion/seekOther">
+        <label ref="jr:itext('/data/openHistoryQuestion/seekOther:label')"/>
+        <hint ref="jr:itext('/data/openHistoryQuestion/seekOther:hint')"/>
+      </input>
+    </group>
+    <group>
+      <label ref="jr:itext('/data/accidents:label')"/>
+      <select1 ref="/data/accidents/dieFromInjury">
+        <label ref="jr:itext('/data/accidents/dieFromInjury:label')"/>
+        <hint ref="jr:itext('/data/accidents/dieFromInjury:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/accidents/dieFromInjury:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/dieFromInjury:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/dieFromInjury:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/accidents/kindOfInjury">
+        <label ref="jr:itext('/data/accidents/kindOfInjury:label')"/>
+        <hint ref="jr:itext('/data/accidents/kindOfInjury:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option4')"/>
+          <value>5</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option5')"/>
+          <value>6</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option6')"/>
+          <value>7</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option7')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option8')"/>
+          <value>9</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option9')"/>
+          <value>10</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option10')"/>
+          <value>11</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option11')"/>
+          <value>12</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option12')"/>
+          <value>13</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option13')"/>
+          <value>88</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfInjury:option14')"/>
+          <value>99</value>
+        </item>
+      </select1>
+      <input ref="/data/accidents/kindOfInjuryOther">
+        <label ref="jr:itext('/data/accidents/kindOfInjuryOther:label')"/>
+        <hint ref="jr:itext('/data/accidents/kindOfInjuryOther:hint')"/>
+      </input>
+      <select1 ref="/data/accidents/kindOfBite">
+        <label ref="jr:itext('/data/accidents/kindOfBite:label')"/>
+        <hint ref="jr:itext('/data/accidents/kindOfBite:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfBite:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfBite:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfBite:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfBite:option3')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/kindOfBite:option4')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/accidents/kindOfBiteOther">
+        <label ref="jr:itext('/data/accidents/kindOfBiteOther:label')"/>
+        <hint ref="jr:itext('/data/accidents/kindOfBiteOther:hint')"/>
+      </input>
+      <select1 ref="/data/accidents/dieAtSite">
+        <label ref="jr:itext('/data/accidents/dieAtSite:label')"/>
+        <hint ref="jr:itext('/data/accidents/dieAtSite:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/accidents/dieAtSite:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/dieAtSite:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/dieAtSite:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/dieAtSite:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/accidents/surviveLength">
+        <label ref="jr:itext('/data/accidents/surviveLength:label')"/>
+        <hint ref="jr:itext('/data/accidents/surviveLength:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/accidents/surviveLength:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/surviveLength:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/surviveLength:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/surviveLength:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/accidents/receiveMedicalCare">
+        <label ref="jr:itext('/data/accidents/receiveMedicalCare:label')"/>
+        <hint ref="jr:itext('/data/accidents/receiveMedicalCare:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/accidents/receiveMedicalCare:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/receiveMedicalCare:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/receiveMedicalCare:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/receiveMedicalCare:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/accidents/ongoingIllness">
+        <label ref="jr:itext('/data/accidents/ongoingIllness:label')"/>
+        <hint ref="jr:itext('/data/accidents/ongoingIllness:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/accidents/ongoingIllness:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/ongoingIllness:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/ongoingIllness:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/accidents/ongoingIllness:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/accidents/illnessType">
+        <label ref="jr:itext('/data/accidents/illnessType:label')"/>
+        <hint ref="jr:itext('/data/accidents/illnessType:hint')"/>
+      </input>
+    </group>
+    <group>
+      <label ref="jr:itext('/data/childhoodConditions:label')"/>
+      <select1 ref="/data/childhoodConditions/growingNormally">
+        <label ref="jr:itext('/data/childhoodConditions/growingNormally:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/growingNormally:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/growingNormally:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/growingNormally:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/growingNormally:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/growingNormally:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/moreSickness">
+        <label ref="jr:itext('/data/childhoodConditions/moreSickness:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/moreSickness:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/moreSickness:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/moreSickness:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/moreSickness:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/moreSickness:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/haveFever">
+        <label ref="jr:itext('/data/childhoodConditions/haveFever:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/haveFever:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveFever:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveFever:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveFever:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveFever:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysOfFeverKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfFeverKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfFeverKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfFeverKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfFeverKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfFeverKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysOfFever">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfFever:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfFever:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/diarrhoea">
+        <label ref="jr:itext('/data/childhoodConditions/diarrhoea:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/diarrhoea:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/diarrhoea:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/diarrhoea:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/diarrhoea:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/diarrhoea:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysOfDiarrhoeaKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfDiarrhoeaKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfDiarrhoeaKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfDiarrhoeaKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfDiarrhoeaKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfDiarrhoeaKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysOfDiarrhoea">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfDiarrhoea:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfDiarrhoea:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/numberTimesKnown">
+        <label ref="jr:itext('/data/childhoodConditions/numberTimesKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/numberTimesKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/numberTimesKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/numberTimesKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/numberTimesKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/numberTimes">
+        <label ref="jr:itext('/data/childhoodConditions/numberTimes:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/numberTimes:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/bloodInStool">
+        <label ref="jr:itext('/data/childhoodConditions/bloodInStool:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/bloodInStool:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bloodInStool:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bloodInStool:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bloodInStool:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bloodInStool:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/sunkenEyes">
+        <label ref="jr:itext('/data/childhoodConditions/sunkenEyes:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/sunkenEyes:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/sunkenEyes:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/sunkenEyes:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/sunkenEyes:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/sunkenEyes:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/givenFluids">
+        <label ref="jr:itext('/data/childhoodConditions/givenFluids:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/givenFluids:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/givenFluids:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/givenFluids:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/givenFluids:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/givenFluids:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/vommiting">
+        <label ref="jr:itext('/data/childhoodConditions/vommiting:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/vommiting:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vommiting:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vommiting:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vommiting:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vommiting:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysVomittingKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysVomittingKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysVomittingKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysVomittingKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysVomittingKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysVomittingKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysVomitting">
+        <label ref="jr:itext('/data/childhoodConditions/daysVomitting:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysVomitting:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/severeDayVomitKnown">
+        <label ref="jr:itext('/data/childhoodConditions/severeDayVomitKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/severeDayVomitKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/severeDayVomitKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/severeDayVomitKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/severeDayVomitKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/severeDayVomit">
+        <label ref="jr:itext('/data/childhoodConditions/severeDayVomit:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/severeDayVomit:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/vomitLook">
+        <label ref="jr:itext('/data/childhoodConditions/vomitLook:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/vomitLook:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option4')"/>
+          <value>5</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option5')"/>
+          <value>6</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option6')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/vomitLook:option7')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/vomitLookOther">
+        <label ref="jr:itext('/data/childhoodConditions/vomitLookOther:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/vomitLookOther:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/abdominalPain">
+        <label ref="jr:itext('/data/childhoodConditions/abdominalPain:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/abdominalPain:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalPain:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalPain:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalPain:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalPain:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/painType">
+        <label ref="jr:itext('/data/childhoodConditions/painType:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/painType:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painType:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painType:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painType:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painType:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painType:option4')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painType:option5')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysOfAbdominalpainKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalpainKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfAbdominalpainKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalpainKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalpainKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalpainKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysOfAbdominalpain">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalpain:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfAbdominalpain:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/painLocation">
+        <label ref="jr:itext('/data/childhoodConditions/painLocation:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/painLocation:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painLocation:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painLocation:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painLocation:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painLocation:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painLocation:option4')"/>
+          <value>5</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painLocation:option5')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/painLocation:option6')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/painLocationOther">
+        <label ref="jr:itext('/data/childhoodConditions/painLocationOther:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/painLocationOther:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/abdomenPainSeverity">
+        <label ref="jr:itext('/data/childhoodConditions/abdomenPainSeverity:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/abdomenPainSeverity:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPainSeverity:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPainSeverity:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPainSeverity:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPainSeverity:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/abdomenPassStool">
+        <label ref="jr:itext('/data/childhoodConditions/abdomenPassStool:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/abdomenPassStool:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPassStool:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPassStool:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPassStool:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdomenPassStool:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/abdominalDistension">
+        <label ref="jr:itext('/data/childhoodConditions/abdominalDistension:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/abdominalDistension:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalDistension:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalDistension:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalDistension:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/abdominalDistension:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysOfAbdominalDistensionKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalDistensionKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfAbdominalDistensionKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalDistensionKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalDistensionKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalDistensionKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysOfAbdominalDistension">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfAbdominalDistension:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfAbdominalDistension:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/distensionDevelopRapidly">
+        <label ref="jr:itext('/data/childhoodConditions/distensionDevelopRapidly:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/distensionDevelopRapidly:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/distensionDevelopRapidly:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/distensionDevelopRapidly:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/distensionDevelopRapidly:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/distensionDevelopRapidly:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/haveCough">
+        <label ref="jr:itext('/data/childhoodConditions/haveCough:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/haveCough:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveCough:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveCough:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveCough:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/haveCough:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysCoughKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysCoughKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysCoughKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysCoughKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysCoughKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysCoughKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysCough">
+        <label ref="jr:itext('/data/childhoodConditions/daysCough:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysCough:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/coughSevere">
+        <label ref="jr:itext('/data/childhoodConditions/coughSevere:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/coughSevere:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/coughSevere:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/coughSevere:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/coughSevere:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/coughSevere:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/difficultyBreathing">
+        <label ref="jr:itext('/data/childhoodConditions/difficultyBreathing:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/difficultyBreathing:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/difficultyBreathing:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/difficultyBreathing:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/difficultyBreathing:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/difficultyBreathing:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysOfDifficultBreathingKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfDifficultBreathingKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfDifficultBreathingKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfDifficultBreathingKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfDifficultBreathingKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysOfDifficultBreathingKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysOfDifficultBreathing">
+        <label ref="jr:itext('/data/childhoodConditions/daysOfDifficultBreathing:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysOfDifficultBreathing:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/fastBreathing">
+        <label ref="jr:itext('/data/childhoodConditions/fastBreathing:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/fastBreathing:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/fastBreathing:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/fastBreathing:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/fastBreathing:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/fastBreathing:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysFastBreathingKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysFastBreathingKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysFastBreathingKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysFastBreathingKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysFastBreathingKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysFastBreathingKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysFastBreathing">
+        <label ref="jr:itext('/data/childhoodConditions/daysFastBreathing:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysFastBreathing:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/skinRash">
+        <label ref="jr:itext('/data/childhoodConditions/skinRash:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/skinRash:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinRash:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinRash:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinRash:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinRash:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/rashAllOverBody">
+        <label ref="jr:itext('/data/childhoodConditions/rashAllOverBody:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/rashAllOverBody:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashAllOverBody:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashAllOverBody:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashAllOverBody:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashAllOverBody:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/rashOnFace">
+        <label ref="jr:itext('/data/childhoodConditions/rashOnFace:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/rashOnFace:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashOnFace:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashOnFace:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashOnFace:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashOnFace:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysRashKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysRashKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysRashKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysRashKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysRashKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysRashKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysRash">
+        <label ref="jr:itext('/data/childhoodConditions/daysRash:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysRash:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/rashBlisters">
+        <label ref="jr:itext('/data/childhoodConditions/rashBlisters:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/rashBlisters:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashBlisters:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashBlisters:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashBlisters:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/rashBlisters:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/skinCrackRash">
+        <label ref="jr:itext('/data/childhoodConditions/skinCrackRash:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/skinCrackRash:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinCrackRash:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinCrackRash:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinCrackRash:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinCrackRash:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/measles">
+        <label ref="jr:itext('/data/childhoodConditions/measles:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/measles:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/measles:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/measles:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/measles:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/measles:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/childThin">
+        <label ref="jr:itext('/data/childhoodConditions/childThin:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/childThin:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childThin:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childThin:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childThin:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childThin:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/swollenLegsFeet">
+        <label ref="jr:itext('/data/childhoodConditions/swollenLegsFeet:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/swollenLegsFeet:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/swollenLegsFeet:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/swollenLegsFeet:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/swollenLegsFeet:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/swollenLegsFeet:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/daysSwellingKnown">
+        <label ref="jr:itext('/data/childhoodConditions/daysSwellingKnown:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysSwellingKnown:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysSwellingKnown:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysSwellingKnown:option1')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/daysSwellingKnown:option2')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <input ref="/data/childhoodConditions/daysSwelling">
+        <label ref="jr:itext('/data/childhoodConditions/daysSwelling:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/daysSwelling:hint')"/>
+      </input>
+      <select1 ref="/data/childhoodConditions/skinFlake">
+        <label ref="jr:itext('/data/childhoodConditions/skinFlake:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/skinFlake:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinFlake:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinFlake:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinFlake:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/skinFlake:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/hairColorChange">
+        <label ref="jr:itext('/data/childhoodConditions/hairColorChange:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/hairColorChange:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/hairColorChange:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/hairColorChange:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/hairColorChange:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/hairColorChange:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/generalizedBodySwelling">
+        <label ref="jr:itext('/data/childhoodConditions/generalizedBodySwelling:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/generalizedBodySwelling:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/generalizedBodySwelling:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/generalizedBodySwelling:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/generalizedBodySwelling:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/generalizedBodySwelling:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/childMiserable">
+        <label ref="jr:itext('/data/childhoodConditions/childMiserable:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/childMiserable:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childMiserable:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childMiserable:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childMiserable:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childMiserable:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/childWasting">
+        <label ref="jr:itext('/data/childhoodConditions/childWasting:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/childWasting:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childWasting:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childWasting:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childWasting:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/childWasting:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/lackOfBlood">
+        <label ref="jr:itext('/data/childhoodConditions/lackOfBlood:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/lackOfBlood:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/lackOfBlood:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/lackOfBlood:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/lackOfBlood:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/lackOfBlood:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/palePalms">
+        <label ref="jr:itext('/data/childhoodConditions/palePalms:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/palePalms:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/palePalms:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/palePalms:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/palePalms:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/palePalms:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/whiteNails">
+        <label ref="jr:itext('/data/childhoodConditions/whiteNails:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/whiteNails:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteNails:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteNails:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteNails:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteNails:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/armpitSwelling">
+        <label ref="jr:itext('/data/childhoodConditions/armpitSwelling:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/armpitSwelling:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/armpitSwelling:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/armpitSwelling:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/armpitSwelling:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/armpitSwelling:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/groinSwellings">
+        <label ref="jr:itext('/data/childhoodConditions/groinSwellings:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/groinSwellings:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/groinSwellings:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/groinSwellings:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/groinSwellings:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/groinSwellings:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/neckSwelling">
+        <label ref="jr:itext('/data/childhoodConditions/neckSwelling:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/neckSwelling:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/neckSwelling:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/neckSwelling:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/neckSwelling:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/neckSwelling:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/whiteRash">
+        <label ref="jr:itext('/data/childhoodConditions/whiteRash:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/whiteRash:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteRash:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteRash:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteRash:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/whiteRash:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/chestInDrawing">
+        <label ref="jr:itext('/data/childhoodConditions/chestInDrawing:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/chestInDrawing:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/chestInDrawing:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/chestInDrawing:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/chestInDrawing:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/chestInDrawing:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/wheezing">
+        <label ref="jr:itext('/data/childhoodConditions/wheezing:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/wheezing:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/wheezing:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/wheezing:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/wheezing:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/wheezing:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/convulsion">
+        <label ref="jr:itext('/data/childhoodConditions/convulsion:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/convulsion:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/convulsion:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/convulsion:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/convulsion:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/convulsion:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/unconscious">
+        <label ref="jr:itext('/data/childhoodConditions/unconscious:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/unconscious:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unconscious:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unconscious:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unconscious:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unconscious:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/stopGrasp">
+        <label ref="jr:itext('/data/childhoodConditions/stopGrasp:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/stopGrasp:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopGrasp:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopGrasp:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopGrasp:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopGrasp:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/longBeforeStopGrasp">
+        <label ref="jr:itext('/data/childhoodConditions/longBeforeStopGrasp:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/longBeforeStopGrasp:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeStopGrasp:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeStopGrasp:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeStopGrasp:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeStopGrasp:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/stopRespondToVoice">
+        <label ref="jr:itext('/data/childhoodConditions/stopRespondToVoice:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/stopRespondToVoice:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopRespondToVoice:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopRespondToVoice:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopRespondToVoice:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stopRespondToVoice:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/longBeforeRespond">
+        <label ref="jr:itext('/data/childhoodConditions/longBeforeRespond:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/longBeforeRespond:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeRespond:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeRespond:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeRespond:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeRespond:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/unableToFollowMovements">
+        <label ref="jr:itext('/data/childhoodConditions/unableToFollowMovements:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/unableToFollowMovements:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unableToFollowMovements:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unableToFollowMovements:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unableToFollowMovements:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/unableToFollowMovements:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/longBeforeUnableToFollow">
+        <label ref="jr:itext('/data/childhoodConditions/longBeforeUnableToFollow:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/longBeforeUnableToFollow:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeUnableToFollow:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeUnableToFollow:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeUnableToFollow:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/longBeforeUnableToFollow:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/stiffNeck">
+        <label ref="jr:itext('/data/childhoodConditions/stiffNeck:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/stiffNeck:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stiffNeck:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stiffNeck:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stiffNeck:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/stiffNeck:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/childhoodConditions/bulgingFontanel">
+        <label ref="jr:itext('/data/childhoodConditions/bulgingFontanel:label')"/>
+        <hint ref="jr:itext('/data/childhoodConditions/bulgingFontanel:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bulgingFontanel:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bulgingFontanel:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bulgingFontanel:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/childhoodConditions/bulgingFontanel:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+    </group>
+    <group>
+      <label ref="jr:itext('/data/treatment:label')"/>
+      <select1 ref="/data/treatment/receiveDrugs">
+        <label ref="jr:itext('/data/treatment/receiveDrugs:label')"/>
+        <hint ref="jr:itext('/data/treatment/receiveDrugs:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveDrugs:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveDrugs:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveDrugs:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveDrugs:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/treatment/receiveAntibiotics">
+        <label ref="jr:itext('/data/treatment/receiveAntibiotics:label')"/>
+        <hint ref="jr:itext('/data/treatment/receiveAntibiotics:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveAntibiotics:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveAntibiotics:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveAntibiotics:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/receiveAntibiotics:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/treatment/antiMalaria">
+        <label ref="jr:itext('/data/treatment/antiMalaria:label')"/>
+        <hint ref="jr:itext('/data/treatment/antiMalaria:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalaria:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalaria:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalaria:option2')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalaria:option3')"/>
+          <value>9</value>
+        </item>
+      </select1>
+      <select1 ref="/data/treatment/antiMalariaType">
+        <label ref="jr:itext('/data/treatment/antiMalariaType:label')"/>
+        <hint ref="jr:itext('/data/treatment/antiMalariaType:hint')"/>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalariaType:option0')"/>
+          <value>1</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalariaType:option1')"/>
+          <value>2</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalariaType:option2')"/>
+          <value>3</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalariaType:option3')"/>
+          <value>4</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalariaType:option4')"/>
+          <value>8</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/data/treatment/antiMalariaType:option5')"/>
+          <value>9</value>
+        </item>
+      </select1>
+    </group>
+    <input ref="/data/interviewComments">
+      <label ref="jr:itext('/data/interviewComments:label')"/>
+      <hint ref="jr:itext('/data/interviewComments:hint')"/>
+    </input>
+  </h:body>
+</h:html>

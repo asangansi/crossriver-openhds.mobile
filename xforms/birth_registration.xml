@@ -1,0 +1,659 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Birth Registration v3</h:title>
+		<model>
+			<instance>
+				<data id="birth_registration_v3">
+          <derivedFromUri />
+					<processedByMirth>0</processedByMirth>
+					<formRetired>0</formRetired>
+					<validationFailed>0</validationFailed>
+          <supervisorStatus/>
+					<motherId />
+					<motherName />
+					<motherLineNumber />
+					<collectedBy />
+					<recordedDate />
+					<reportedBy />
+					<houseId />
+					<householdId />
+					<householdName />
+					<childDob />
+					<fatherId />
+					<fatherName />
+					<birthPlace />
+					<birthPlaceOther />
+					<umbilicalCordCutting />
+					<umbilicalCordCuttingOther />
+					<umbilicalCordApplied />
+					<umbilicalCordAppliedOther />
+					<firstLiveBirth />
+					<numLiveBirths />
+					<totalChildrenBorn />
+					<numLiveBirthsFromRecentPreg />
+					<children>
+						<firstChildId />
+						<firstChildFirstName />
+						<firstChildLastName />
+						<firstChildSex />
+						<secondChild />
+						<secondChildId />
+						<secondChildFirstName />
+						<secondChildLastName />
+						<secondChildSex />
+					</children>
+				</data>
+			</instance>
+			<itext>
+				<translation lang="eng">
+					<text id="/data/motherId:label">
+						<value>Permanent ID of Mother</value>
+					</text>
+					<text id="/data/motherId:hint">
+						<value />
+					</text>
+					<text id="/data/motherName:label">
+						<value>Name of Mother</value>
+					</text>
+					<text id="/data/motherName:hint">
+						<value />
+					</text>
+					<text id="/data/motherLineNumber:label">
+						<value>Mother's Line Number</value>
+					</text>
+					<text id="/data/motherLineNumber:hint">
+						<value />
+					</text>
+					<text id="/data/collectedBy:label">
+						<value>Field Worker Id</value>
+					</text>
+					<text id="/data/collectedBy:hint">
+						<value />
+					</text>
+					<text id="/data/recordedDate:label">
+						<value>Date of Interview</value>
+					</text>
+					<text id="/data/recordedDate:hint">
+						<value />
+					</text>
+					<text id="/data/reportedBy:label">
+						<value>Reported By</value>
+					</text>
+					<text id="/data/reportedBy:hint">
+						<value />
+					</text>
+					<text id="/data/reportedBy:option0">
+						<value>FW</value>
+					</text>
+					<text id="/data/reportedBy:option1">
+						<value>FS</value>
+					</text>
+					<text id="/data/reportedBy:option2">
+						<value>CKI</value>
+					</text>
+					<text id="/data/houseId:label">
+						<value>House Id</value>
+					</text>
+					<text id="/data/houseId:hint">
+						<value />
+					</text>
+					<text id="/data/householdId:label">
+						<value>Household Id</value>
+					</text>
+					<text id="/data/householdId:hint">
+						<value />
+					</text>
+					<text id="/data/householdName:label">
+						<value>Household Name</value>
+					</text>
+					<text id="/data/householdName:hint">
+						<value />
+					</text>
+					<text id="/data/childDob:label">
+						<value>Date of Birth of child</value>
+					</text>
+					<text id="/data/childDob:hint">
+						<value />
+					</text>
+					<text id="/data/fatherId:label">
+						<value>Permanent ID of Father</value>
+					</text>
+					<text id="/data/fatherId:hint">
+						<value>Enter UNK for Unknown</value>
+					</text>
+					<text id="/data/fatherName:label">
+						<value>Name of Father</value>
+					</text>
+					<text id="/data/fatherName:hint">
+						<value />
+					</text>
+					<text id="/data/birthPlace:label">
+						<value>Place of Birth</value>
+					</text>
+					<text id="/data/birthPlace:hint">
+						<value />
+					</text>
+					<text id="/data/birthPlace:option0">
+						<value>Hospital</value>
+					</text>
+					<text id="/data/birthPlace:option1">
+						<value>Health Centre or Clinic</value>
+					</text>
+					<text id="/data/birthPlace:option2">
+						<value>Home</value>
+					</text>
+					<text id="/data/birthPlace:option3">
+						<value>Traditional Birth Attendant's Home</value>
+					</text>
+					<text id="/data/birthPlace:option4">
+						<value>Other</value>
+					</text>
+					<text id="/data/birthPlaceOther:label">
+						<value>Please Specify the Birth Place</value>
+					</text>
+					<text id="/data/birthPlaceOther:hint">
+						<value />
+					</text>
+					<text id="/data/umbilicalCordCutting:label">
+						<value>What was used in cutting the umbilical cord</value>
+					</text>
+					<text id="/data/umbilicalCordCutting:hint">
+						<value />
+					</text>
+					<text id="/data/umbilicalCordCutting:option0">
+						<value>New razor blade</value>
+					</text>
+					<text id="/data/umbilicalCordCutting:option1">
+						<value>Old razor blade</value>
+					</text>
+					<text id="/data/umbilicalCordCutting:option2">
+						<value>Knife</value>
+					</text>
+					<text id="/data/umbilicalCordCutting:option3">
+						<value>Sharp Stone</value>
+					</text>
+					<text id="/data/umbilicalCordCutting:option4">
+						<value>Scissors</value>
+					</text>
+					<text id="/data/umbilicalCordCutting:option5">
+						<value>Other</value>
+					</text>
+					<text id="/data/umbilicalCordCutting:option6">
+						<value>NK</value>
+					</text>
+					<text id="/data/umbilicalCordCuttingOther:label">
+						<value>Please specify what was used to cut umbilical cord</value>
+					</text>
+					<text id="/data/umbilicalCordApplied:label">
+						<value>What was applied to the umbilical after it was cut</value>
+					</text>
+					<text id="/data/umbilicalCordApplied:hint">
+						<value />
+					</text>
+					<text id="/data/umbilicalCordApplied:option0">
+						<value>Shea butter</value>
+					</text>
+					<text id="/data/umbilicalCordApplied:option1">
+						<value>Black powder and shea butter</value>
+					</text>
+					<text id="/data/umbilicalCordApplied:option2">
+						<value>Western medicine</value>
+					</text>
+					<text id="/data/umbilicalCordApplied:option3">
+						<value>Nothing</value>
+					</text>
+					<text id="/data/umbilicalCordApplied:option4">
+						<value>Other</value>
+					</text>
+					<text id="/data/umbilicalCordApplied:option5">
+						<value>NK</value>
+					</text>
+					<text id="/data/umbilicalCordAppliedOther:label">
+						<value>Please specify what was applied to the umbilical cord</value>
+					</text>
+					<text id="/data/firstLiveBirth:label">
+						<value>Is this your first live birth?</value>
+					</text>
+					<text id="/data/firstLiveBirth:hint">
+						<value />
+					</text>
+					<text id="/data/firstLiveBirth:option0">
+						<value>Yes</value>
+					</text>
+					<text id="/data/firstLiveBirth:option1">
+						<value>No</value>
+					</text>
+					<text id="/data/numLiveBirths:label">
+						<value>How many live births have you had, including this child?
+						</value>
+					</text>
+					<text id="/data/numLiveBirths:hint">
+						<value />
+					</text>
+					<text id="/data/totalChildrenBorn:label">
+						<value>Total number of children born from recent pregnancy</value>
+					</text>
+					<text id="/data/totalChildrenBorn:hint">
+						<value />
+					</text>
+					<text id="/data/numLiveBirthsFromRecentPreg:label">
+						<value>Number of live births from recent pregnancy</value>
+					</text>
+					<text id="/data/numLiveBirthsFromRecentPreg:hint">
+						<value />
+					</text>
+					<text id="basicInfoLabel">
+						<value>Basic Information</value>
+					</text>
+					<text id="sourceOfInfoLabel">
+						<value>Source of Information</value>
+					</text>
+					<text id="infoOnParentsLabel">
+						<value>Information on Parents</value>
+					</text>
+					<text id="motherRecordLabel">
+						<value>Mother's Birth Record</value>
+					</text>
+					<text id="/data/children:label">
+						<value>Information on Child/Children</value>
+					</text>
+					<text id="/data/children/firstChildId:label">
+						<value>Permanent Id of child</value>
+					</text>
+					<text id="/data/children/firstChildId:hint">
+						<value />
+					</text>
+					<text id="/data/children/firstChildFirstName:label">
+						<value>First Name</value>
+					</text>
+					<text id="/data/children/firstChildFirstName:hint">
+						<value />
+					</text>
+					<text id="/data/children/firstChildLastName:label">
+						<value>Last Name</value>
+					</text>
+					<text id="/data/children/firstChildLastName:hint">
+						<value />
+					</text>
+					<text id="/data/children/firstChildSex:label">
+						<value>Sex</value>
+					</text>
+					<text id="/data/children/firstChildSex:hint">
+						<value />
+					</text>
+					<text id="/data/children/firstChildSex:option0">
+						<value>Male</value>
+					</text>
+					<text id="/data/children/firstChildSex:option1">
+						<value>Female</value>
+					</text>
+					<text id="/data/children/secondChild:label">
+						<value>Is there a second Child</value>
+					</text>
+					<text id="/data/children/secondChild:hint">
+						<value />
+					</text>
+					<text id="/data/children/secondChild:option0">
+						<value>Yes</value>
+					</text>
+					<text id="/data/children/secondChild:option1">
+						<value>No</value>
+					</text>
+					<text id="/data/children/secondChildId:label">
+						<value>Permanent Id of second child</value>
+					</text>
+					<text id="/data/children/secondChildId:hint">
+						<value />
+					</text>
+					<text id="/data/children/secondChildFirstName:label">
+						<value>First Name</value>
+					</text>
+					<text id="/data/children/secondChildFirstName:hint">
+						<value />
+					</text>
+					<text id="/data/children/secondChildLastName:label">
+						<value>Last Name</value>
+					</text>
+					<text id="/data/children/secondChildLastName:hint">
+						<value />
+					</text>
+					<text id="/data/children/secondChildSex:label">
+						<value>Sex</value>
+					</text>
+					<text id="/data/children/secondChildSex:hint">
+						<value></value>
+					</text>
+					<text id="/data/children/secondChildSex:option0">
+						<value>Male</value>
+					</text>
+					<text id="/data/children/secondChildSex:option1">
+						<value>Female</value>
+					</text>
+				</translation>
+			</itext>
+			<bind nodeset="/data/processedByMirth" type="boolean" />
+			<bind nodeset="/data/formRetired" type="boolean" />
+			<bind nodeset="/data/validationFailed" type="boolean" />
+			<bind nodeset="/data/motherId" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/data/motherName" type="string" required="true()" />
+			<bind nodeset="/data/motherLineNumber" type="int" required="true()"
+				constraint="regex(., '^[0-9]{0,2}[1-9]{1}$')" jr:constraintMsg="Mother line number must be 1, 2 or 3 digits" />
+			<bind nodeset="/data/collectedBy" type="string" required="true()"
+				constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+				jr:constraintMsg="Field Worker Id is not the right format" />
+			<bind nodeset="/data/recordedDate" type="date" constraint=". &lt;= today()"
+				required="true()" jr:constraintMsg="Date of interview cannot be in the future" />
+			<bind nodeset="/data/reportedBy" type="select1" required="true()" />
+			<bind nodeset="/data/houseId" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
+			<bind nodeset="/data/householdId" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
+			<bind nodeset="/data/householdName" type="string" required="true()" />
+			<bind nodeset="/data/childDob" type="date" required="true()"
+				constraint=". &lt; /data/recordedDate" jr:constraintMsg="The date of birth cannot be after the interview date" />
+			<bind nodeset="/data/fatherId" type="string" required="true()"
+				constraint="regex(., '^([A-Za-z]{3}[0-9]{7}$|^[Uu][Nn][Kk])$')"
+				jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/data/fatherName" type="string"
+				relevant="not(regex(../fatherId, '^[Uu][Nn][Kk]$'))" required="true()" />
+			<bind nodeset="/data/birthPlace" type="select1" required="true()" />
+			<bind nodeset="/data/birthPlaceOther" type="string" required="true()"
+				relevant="/data/birthPlace='5'" />
+			<bind nodeset="/data/umbilicalCordCutting" type="select1"
+				required="true()" />
+			<bind nodeset="/data/umbilicalCordCuttingOther" type="string"
+				relevant="../umbilicalCordCutting = 6" required="true()" />
+			<bind nodeset="/data/umbilicalCordApplied" type="select1"
+				required="true()" />
+			<bind nodeset="/data/umbilicalCordAppliedOther" type="string"
+				relevant="../umbilicalCordApplied = 5" required="true()" />
+			<bind nodeset="/data/firstLiveBirth" type="select1" required="true()" />
+			<bind nodeset="/data/numLiveBirths" type="int"
+				relevant="/data/firstLiveBirth='2'" required="true()" />
+			<bind nodeset="/data/totalChildrenBorn" type="int" required="true()" />
+			<bind nodeset="/data/numLiveBirthsFromRecentPreg" type="int"
+				required="true()" constraint=". &lt;= ../totalChildrenBorn"
+				jr:constraintMsg="Number of live births cannot be greater than total number of children born for this pregnancy" />
+			<bind nodeset="/data/children/firstChildId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')"
+				jr:constraintMsg="Permanent Id is not the right format" />
+			<bind nodeset="/data/children/firstChildFirstName" type="string"
+				required="true()" />
+			<bind nodeset="/data/children/firstChildLastName" type="string"
+				required="true()" />
+			<bind nodeset="/data/children/firstChildSex" type="select1"
+				required="true()" />
+			<bind nodeset="/data/children/secondChild" type="select1" required="true()" />
+			<bind nodeset="/data/children/secondChildId" type="string"
+				constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" required="true()"
+				relevant="/data/children/secondChild='1'" />
+			<bind nodeset="/data/children/secondChildFirstName" type="string"
+				required="true()" relevant="/data/children/secondChild='1'" />
+			<bind nodeset="/data/children/secondChildLastName" type="string"
+				required="true()" relevant="/data/children/secondChild='1'" />
+			<bind nodeset="/data/children/secondChildSex" type="select1"
+				required="true()" relevant="/data/children/secondChild='1'" />
+			<bind nodeset="/data/derivedFromUri" type="string" />
+      <bind nodeset="/data/supervisorStatus" type="int" />
+		</model>
+	</h:head>
+	<h:body>
+		<group>
+			<label ref="jr:itext('basicInfoLabel')" />
+			<input ref="/data/collectedBy">
+				<label ref="jr:itext('/data/collectedBy:label')" />
+				<hint ref="jr:itext('/data/collectedBy:hint')" />
+			</input>
+			<input ref="/data/recordedDate">
+				<label ref="jr:itext('/data/recordedDate:label')" />
+				<hint ref="jr:itext('/data/recordedDate:hint')" />
+			</input>
+		</group>
+		<group>
+			<label ref="jr:itext('sourceOfInfoLabel')" />
+			<select1 ref="/data/reportedBy">
+				<label ref="jr:itext('/data/reportedBy:label')" />
+				<hint ref="jr:itext('/data/reportedBy:hint')" />
+				<item>
+					<label ref="jr:itext('/data/reportedBy:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/reportedBy:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/reportedBy:option2')" />
+					<value>3</value>
+				</item>
+			</select1>
+		</group>
+		<group>
+			<label ref="jr:itext('infoOnParentsLabel')" />
+			<input ref="/data/houseId">
+				<label ref="jr:itext('/data/houseId:label')" />
+				<hint ref="jr:itext('/data/houseId:hint')" />
+			</input>
+			<input ref="/data/householdName">
+				<label ref="jr:itext('/data/householdName:label')" />
+				<hint ref="jr:itext('/data/householdName:hint')" />
+			</input>
+			<input ref="/data/householdId">
+				<label ref="jr:itext('/data/householdId:label')" />
+				<hint ref="jr:itext('/data/householdId:hint')" />
+			</input>
+			<input ref="/data/motherLineNumber">
+				<label ref="jr:itext('/data/motherLineNumber:label')" />
+				<hint ref="jr:itext('/data/motherLineNumber:hint')" />
+			</input>
+			<input ref="/data/motherId">
+				<label ref="jr:itext('/data/motherId:label')" />
+				<hint ref="jr:itext('/data/motherId:hint')" />
+			</input>
+			<input ref="/data/motherName">
+				<label ref="jr:itext('/data/motherName:label')" />
+				<hint ref="jr:itext('/data/motherName:hint')" />
+			</input>
+			<input ref="/data/childDob">
+				<label ref="jr:itext('/data/childDob:label')" />
+				<hint ref="jr:itext('/data/childDob:hint')" />
+			</input>
+			<input ref="/data/fatherId">
+				<label ref="jr:itext('/data/fatherId:label')" />
+				<hint ref="jr:itext('/data/fatherId:hint')" />
+			</input>
+			<input ref="/data/fatherName">
+				<label ref="jr:itext('/data/fatherName:label')" />
+				<hint ref="jr:itext('/data/fatherName:hint')" />
+			</input>
+
+			<select1 ref="/data/birthPlace">
+				<label ref="jr:itext('/data/birthPlace:label')" />
+				<hint ref="jr:itext('/data/birthPlace:hint')" />
+				<item>
+					<label ref="jr:itext('/data/birthPlace:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/birthPlace:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/birthPlace:option2')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/birthPlace:option3')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/birthPlace:option4')" />
+					<value>5</value>
+				</item>
+			</select1>
+			<input ref="/data/birthPlaceOther">
+				<label ref="jr:itext('/data/birthPlaceOther:label')" />
+				<hint ref="jr:itext('/data/birthPlaceOther:hint')" />
+			</input>
+			<select1 ref="/data/umbilicalCordCutting">
+				<label ref="jr:itext('/data/umbilicalCordCutting:label')" />
+				<hint ref="jr:itext('/data/umbilicalCordCutting:hint')" />
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordCutting:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordCutting:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordCutting:option2')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordCutting:option3')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordCutting:option4')" />
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordCutting:option5')" />
+					<value>6</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordCutting:option6')" />
+					<value>99</value>
+				</item>
+			</select1>
+			<input ref="/data/umbilicalCordCuttingOther">
+				<label ref="jr:itext('/data/umbilicalCordCuttingOther:label')" />
+			</input>
+			<select1 ref="/data/umbilicalCordApplied">
+				<label ref="jr:itext('/data/umbilicalCordApplied:label')" />
+				<hint ref="jr:itext('/data/umbilicalCordApplied:hint')" />
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordApplied:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordApplied:option1')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordApplied:option2')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordApplied:option3')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordApplied:option4')" />
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/umbilicalCordApplied:option5')" />
+					<value>99</value>
+				</item>
+			</select1>
+			<input ref="/data/umbilicalCordAppliedOther">
+				<label ref="jr:itext('/data/umbilicalCordAppliedOther:label')" />
+			</input>
+		</group>
+		<group>
+			<label ref="jr:itext('motherRecordLabel')" />
+			<select1 ref="/data/firstLiveBirth">
+				<label ref="jr:itext('/data/firstLiveBirth:label')" />
+				<hint ref="jr:itext('/data/firstLiveBirth:hint')" />
+				<item>
+					<label ref="jr:itext('/data/firstLiveBirth:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/firstLiveBirth:option1')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<input ref="/data/numLiveBirths">
+				<label ref="jr:itext('/data/numLiveBirths:label')" />
+				<hint ref="jr:itext('/data/numLiveBirths:hint')" />
+			</input>
+			<input ref="/data/totalChildrenBorn">
+				<label ref="jr:itext('/data/totalChildrenBorn:label')" />
+				<hint ref="jr:itext('/data/totalChildrenBorn:hint')" />
+			</input>
+			<input ref="/data/numLiveBirthsFromRecentPreg">
+				<label ref="jr:itext('/data/numLiveBirthsFromRecentPreg:label')" />
+				<hint ref="jr:itext('/data/numLiveBirthsFromRecentPreg:hint')" />
+			</input>
+		</group>
+		<group>
+			<label ref="jr:itext('/data/children:label')" />
+			<input ref="/data/children/firstChildId">
+				<label ref="jr:itext('/data/children/firstChildId:label')" />
+				<hint ref="jr:itext('/data/children/firstChildId:hint')" />
+			</input>
+			<input ref="/data/children/firstChildFirstName">
+				<label ref="jr:itext('/data/children/firstChildFirstName:label')" />
+				<hint ref="jr:itext('/data/children/firstChildFirstName:hint')" />
+			</input>
+			<input ref="/data/children/firstChildLastName">
+				<label ref="jr:itext('/data/children/firstChildLastName:label')" />
+				<hint ref="jr:itext('/data/children/firstChildLastName:hint')" />
+			</input>
+			<select1 ref="/data/children/firstChildSex">
+				<label ref="jr:itext('/data/children/firstChildSex:label')" />
+				<hint ref="jr:itext('/data/children/firstChildSex:hint')" />
+				<item>
+					<label ref="jr:itext('/data/children/firstChildSex:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/children/firstChildSex:option1')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<select1 ref="/data/children/secondChild">
+				<label ref="jr:itext('/data/children/secondChild:label')" />
+				<hint ref="jr:itext('/data/children/secondChild:hint')" />
+				<item>
+					<label ref="jr:itext('/data/children/secondChild:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/children/secondChild:option1')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<input ref="/data/children/secondChildId">
+				<label ref="jr:itext('/data/children/secondChildId:label')" />
+				<hint ref="jr:itext('/data/children/secondChildId:hint')" />
+			</input>
+			<input ref="/data/children/secondChildFirstName">
+				<label ref="jr:itext('/data/children/secondChildFirstName:label')" />
+				<hint ref="jr:itext('/data/children/secondChildFirstName:hint')" />
+			</input>
+			<input ref="/data/children/secondChildLastName">
+				<label ref="jr:itext('/data/children/secondChildLastName:label')" />
+				<hint ref="jr:itext('/data/children/secondChildLastName:hint')" />
+			</input>
+			<select1 ref="/data/children/secondChildSex">
+				<label ref="jr:itext('/data/children/secondChildSex:label')" />
+				<hint ref="jr:itext('/data/children/secondChildSex:hint')" />
+				<item>
+					<label ref="jr:itext('/data/children/secondChildSex:option0')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('/data/children/secondChildSex:option1')" />
+					<value>2</value>
+				</item>
+			</select1>
+		</group>
+	</h:body>
+</h:html>
