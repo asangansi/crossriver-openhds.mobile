@@ -1,0 +1,181 @@
+<list>
+  <codeTemplate>
+    <id>39d9543c-af9e-4c6e-b41e-f02e899ed1be</id>
+    <name>Construct XML Form Instance</name>
+    <tooltip>Reconstructs the form instance XML based on an ODK table name, and a result XML document returned by Mirth</tooltip>
+    <code>function reconstructInstanceXml(odkTableName, resultXml, formName) {
+	var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&apos;com.mysql.jdbc.Driver&apos;,&apos;jdbc:mysql://localhost/odk_prod&apos;,&apos;root&apos;,&apos;test&apos;);
+	var results = dbConn.executeCachedQuery(&apos;SELECT _uri, parent_uri_form_data_model, ordinal_number, element_type, element_name, persist_as_column_name FROM _form_data_model where persist_as_table_name = &quot;&apos; + odkTableName.toUpperCase() +&apos;&quot; ORDER BY _URI&apos;);
+	if (results.size() == 0) {
+		logger.info(&quot;No XML elements found for table: &quot; + odkTableName);
+		return;
+	}
+
+	var instanceXml;
+	var elementMap = {};
+	while(results.next()) {
+		var parentUri = results.getString(&quot;parent_uri_form_data_model&quot;);
+		
+		if (elementMap[parentUri] === undefined) {
+			// this is the document (root) element
+			instanceXml = new XML(&apos;&lt;&apos; + results.getString(&quot;element_name&quot;) + &apos; id=&quot;&apos; + formName + &apos;&quot;&gt;&lt;/&apos; + results.getString(&quot;element_name&quot;) + &apos;&gt;&apos;);
+			elementMap[results.getString(&quot;_uri&quot;)] = instanceXml;
+		} else {
+			var parentElement = elementMap[parentUri];
+			if (results.getString(&quot;element_type&quot;) == &quot;GROUP&quot;) {
+				// a group element is a container
+				var child = new XML(&apos;&lt;&apos; + results.getString(&quot;element_name&quot;) + &apos;/&gt;&apos;);
+				parentElement.appendChild(child);
+				elementMap[results.getString(&quot;_uri&quot;)] = parentElement[results.getString(&quot;element_name&quot;)];
+			} else {
+				// an actual element within the XML
+				var propName = results.getString(&quot;persist_as_column_name&quot;).toLowerCase();
+				var value = resultXml[propName].toString();
+				if (results.getString(&quot;element_type&quot;) == &quot;JRDATE&quot;) {
+					parentElement[results.getString(&quot;element_name&quot;)] = value.substr(0, 10);
+				} else if (propName == &quot;processed_by_mirth&quot; || propName == &quot;form_retired&quot; || propName == &quot;validation_failed&quot;) {
+					parentElement[results.getString(&quot;element_name&quot;)] = false;
+				} else if (propName == &quot;derived_from_uri&quot;) {
+					parentElement[results.getString(&quot;element_name&quot;)] = resultXml[&quot;_uri&quot;].toString();
+				} else {
+					parentElement[results.getString(&quot;element_name&quot;)] = value;
+				}
+			}&#xd;		}
+        instanceXml[&apos;supervisorStatus&apos;] = 1;
+	}
+
+	dbConn.close();
+	return instanceXml.toXMLString();
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>ce2d4861-3f2b-4b81-929d-19c0416ea25f</id>
+    <name>Check for OpenHDS Visit</name>
+    <tooltip>Checks for an OpenHDS Visit by looking at the date of the visit, and the location</tooltip>
+    <code>function validateVisit(houseId, interviewDate) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var visitUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/visit/&quot;;
+  var visitHouse = houseId.toUpperCase();
+  var visitDate = interviewDate.substring(0, 10);
+
+  visitUrl +=  visitHouse + &quot;/&quot; + visitDate;
+
+  try {
+    var builder = new RestfulRequestBuilder(visitUrl);
+    var response = builder.buildGet();
+
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    var responseXml = new XML(response.getResponse());
+    msg[&quot;visitId&quot;] = responseXml[&quot;extId&quot;].toString();
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request for visit information, houseid=&quot; + visitHouse +&quot;, date=&quot; + visitDate);
+  }
+
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>73b17a51-0708-4f21-8a0a-50c1beaab8e0</id>
+    <name>Execute SQL Update</name>
+    <tooltip>Executes an SQL Update Query</tooltip>
+    <code>function executeUpdateQuery(updateStr) {
+  var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
+  var result = dbConn.executeUpdate(updateStr);
+  dbConn.close();
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>cc2b3ed3-1887-47bf-9bbd-069dbdb8323d</id>
+    <name>Check if form should be retired</name>
+    <tooltip>Checks whether a form should be retired</tooltip>
+    <code>function shouldBeRetired(createDate) {
+  // check if the form should be retired
+  var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
+  var matches = timeRegex.exec(createDate);
+  if (matches != null) {
+    createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
+    var started = createDate.getTime();
+    var endDate = started + (globalMap.get(&quot;formProcessableLifetime&quot;) * 3600000);
+
+    if (endDate - (new Date().getTime()) &lt; 0) {
+      return true;
+    }
+  } else {
+    logger.warn(&quot;Create date was not set on form instance&quot;);
+  }
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>3d5c5ff3-192c-4d85-be03-3a920bf77768</id>
+    <name>Send Audit message</name>
+    <tooltip>Constructs and sends Audit message to audit channel</tooltip>
+    <code>function sendAuditMessage(origXml, errors) {
+  var obj = responseMap.get(&quot;Destination 1&quot;);
+  var msgXml = new XML(obj.getMessage());
+
+  var instanceIdXml = &quot;&lt;formInstanceId&gt;&quot; + instanceId + &quot;&lt;/formInstanceId&gt;&quot;;
+  var validationMsgs = [];
+
+  for(var i = 0; i &lt; errors.length(); i++) {
+    validationMsgs.push(&quot;&lt;validation-message&gt;&lt;message&gt;&quot; + errors[i] + &quot;&lt;/message&gt;&lt;/validation-message&gt;&quot;);
+  }
+
+  var formXml = &quot;&lt;form-instance&gt;&quot; + instanceIdXml + validationMsgs.join(&quot;&quot;) + &quot;&lt;/form-instance&gt;&quot;;
+
+  router.routeMessage(&quot;Audit Channel&quot;, formXml);
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>769a6cfd-e858-4490-97a2-1b43b17d59df</id>
+    <name>Construct Audit Message</name>
+    <tooltip>Constructs the XML document that is sent to the interopability server</tooltip>
+    <code>function constructAuditXml(instanceXml, errors, formType, formOwnerId, odkUri, formId, derivedFormUri, printToString) {
+	var xmlDoc = new XML(&quot;&lt;formSubmission /&gt;&quot;);
+	xmlDoc[&quot;formType&quot;] = formType;
+	xmlDoc[&quot;formOwnerId&quot;] = formOwnerId;
+	xmlDoc[&quot;odkUri&quot;] = odkUri;
+	xmlDoc[&quot;formId&quot;] = formId;
+	xmlDoc[&quot;derivedFromUri&quot;] = derivedFormUri;
+
+	if (errors != null) {
+	  var xmlErrors = new XML(&quot;&lt;formErrors /&gt;&quot;);
+ 	  for(var i = 0; i &lt; errors.length(); i++) {
+		var xmlError = new XML(&quot;&lt;formError&gt;&lt;error&gt;&quot; + errors[i] + &quot;&lt;/error&gt;&lt;/formError&gt;&quot;);
+		xmlErrors.appendChild(xmlError);
+	  }
+	  xmlDoc.appendChild(xmlErrors);&#xd;	}
+
+	xmlDoc[&quot;formInstanceXml&quot;] = instanceXml.toString();
+
+	if (printToString) {
+	  return xmlDoc.toString();
+    } else {
+      return xmlDoc;
+    }
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+</list>

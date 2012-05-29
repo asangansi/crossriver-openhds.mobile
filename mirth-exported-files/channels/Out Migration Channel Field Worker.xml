@@ -1,0 +1,659 @@
+<channel>
+  <id>1aad02ca-8796-43a9-aeb6-217cf6625ab2</id>
+  <name>Out Migration Channel Field Worker</name>
+  <description>This channel will read submissions from field workers. Those submissions are then forward to the mobile interop server</description>
+  <enabled>true</enabled>
+  <version>2.1.1.5490</version>
+  <lastModified>
+    <time>1335425576988</time>
+    <timezone>America/New_York</timezone>
+  </lastModified>
+  <revision>6</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Database Reader</property>
+      <property name="URL">jdbc:mysql://localhost/${odkDatabaseName}</property>
+      <property name="ack"></property>
+      <property name="ackScript"></property>
+      <property name="driver">com.mysql.jdbc.Driver</property>
+      <property name="host">query</property>
+      <property name="password">${mysqlPass}</property>
+      <property name="pollingFrequency">15000</property>
+      <property name="pollingType">interval</property>
+      <property name="processResultsInOrder">1</property>
+      <property name="query"></property>
+      <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, BASIC_INFO_INTERVIEW_DATE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_NAME, BASIC_INFO_COLLECTED_BY, DERIVED_FROM_URI, MOVE_AWAY_TO_PLACE_MOVED_TO, MOVE_AWAY_TO_PLACE_MOVED_TO_PHONE_NUMBER, MOVE_AWAY_TO_PLACE_MOVED_TO_OTHER, MOVE_AWAY_TO_PLACE_MOVED_TO_SECTION, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON, MOVE_AWAY_TO_PLACE_MOVED_TO_HOUSE_NAME, BASIC_INFO_PERM_ID, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_ID, BASIC_INFO_SEX, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_NAME, MOVE_AWAY_TO_PLACE_MOVED_TO_VILLAGE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_ID, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON_OTHER, BASIC_INFO_MIGRATION_DATE, BASIC_INFO_MIGRANT_NAME FROM &quot; +  globalMap.get(&quot;outmigrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND form_retired = false AND supervisor_status is null&quot;);
+dbConn.close();
+
+return result;</property>
+      <property name="useAck">0</property>
+      <property name="useScript">1</property>
+      <property name="username">${mysqlUser}</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGJhc2ljX2luZm9faW50ZXJ2aWV3X2RhdGU+dmFsdWU8
+L2Jhc2ljX2luZm9faW50ZXJ2aWV3X2RhdGU+DQogICAgPG1vdmVfYXdheV9mcm9tX21vdmVfYXdh
+eV9mcm9tX2hvdXNlX25hbWU+dmFsdWU8L21vdmVfYXdheV9mcm9tX21vdmVfYXdheV9mcm9tX2hv
+dXNlX25hbWU+DQogICAgPGJhc2ljX2luZm9fY29sbGVjdGVkX2J5PnZhbHVlPC9iYXNpY19pbmZv
+X2NvbGxlY3RlZF9ieT4NCiAgICA8ZGVyaXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9t
+X3VyaT4NCiAgICA8bW92ZV9hd2F5X3RvX3BsYWNlX21vdmVkX3RvPnZhbHVlPC9tb3ZlX2F3YXlf
+dG9fcGxhY2VfbW92ZWRfdG8+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19waG9u
+ZV9udW1iZXI+dmFsdWU8L21vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19waG9uZV9udW1iZXI+
+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19vdGhlcj52YWx1ZTwvbW92ZV9hd2F5
+X3RvX3BsYWNlX21vdmVkX3RvX290aGVyPg0KICAgIDxtb3ZlX2F3YXlfdG9fcGxhY2VfbW92ZWRf
+dG9fc2VjdGlvbj52YWx1ZTwvbW92ZV9hd2F5X3RvX3BsYWNlX21vdmVkX3RvX3NlY3Rpb24+DQog
+ICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19yZWFzb24+dmFsdWU8L21vdmVfYXdheV90
+b19wbGFjZV9tb3ZlZF90b19yZWFzb24+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90
+b19ob3VzZV9uYW1lPnZhbHVlPC9tb3ZlX2F3YXlfdG9fcGxhY2VfbW92ZWRfdG9faG91c2VfbmFt
+ZT4NCiAgICA8YmFzaWNfaW5mb19wZXJtX2lkPnZhbHVlPC9iYXNpY19pbmZvX3Blcm1faWQ+DQog
+ICAgPG1vdmVfYXdheV9mcm9tX21vdmVfYXdheV9mcm9tX2hvdXNlaG9sZF9pZD52YWx1ZTwvbW92
+ZV9hd2F5X2Zyb21fbW92ZV9hd2F5X2Zyb21faG91c2Vob2xkX2lkPg0KICAgIDxiYXNpY19pbmZv
+X3NleD52YWx1ZTwvYmFzaWNfaW5mb19zZXg+DQogICAgPG1vdmVfYXdheV9mcm9tX21vdmVfYXdh
+eV9mcm9tX2hvdXNlaG9sZF9uYW1lPnZhbHVlPC9tb3ZlX2F3YXlfZnJvbV9tb3ZlX2F3YXlfZnJv
+bV9ob3VzZWhvbGRfbmFtZT4NCiAgICA8bW92ZV9hd2F5X3RvX3BsYWNlX21vdmVkX3RvX3ZpbGxh
+Z2U+dmFsdWU8L21vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b192aWxsYWdlPg0KICAgIDxtb3Zl
+X2F3YXlfZnJvbV9tb3ZlX2F3YXlfZnJvbV9ob3VzZV9pZD52YWx1ZTwvbW92ZV9hd2F5X2Zyb21f
+bW92ZV9hd2F5X2Zyb21faG91c2VfaWQ+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90
+b19yZWFzb25fb3RoZXI+dmFsdWU8L21vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19yZWFzb25f
+b3RoZXI+DQogICAgPGJhc2ljX2luZm9fbWlncmF0aW9uX2RhdGU+dmFsdWU8L2Jhc2ljX2luZm9f
+bWlncmF0aW9uX2RhdGU+DQogICAgPGJhc2ljX2luZm9fbWlncmFudF9uYW1lPnZhbHVlPC9iYXNp
+Y19pbmZvX21pZ3JhbnRfbmFtZT4NCjwvcmVzdWx0Pg0K</inboundTemplate>
+      <outboundTemplate encoding="base64"></outboundTemplate>
+      <inboundProtocol>XML</inboundProtocol>
+      <outboundProtocol>XML</outboundProtocol>
+      <inboundProperties>
+        <property name="stripNamespaces">true</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="stripNamespaces">true</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Database Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <version>2.1.1.5490</version>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="DataType">JavaScript Writer</property>
+        <property name="host">sink</property>
+        <property name="script">var origXml = new XML(messageObject.getRawData());
+
+executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;outmigrationTableName&quot;) + &quot; SET processed_by_mirth = true WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);
+
+var instanceXml = reconstructInstanceXml(globalMap.get(&quot;outmigrationTableName&quot;), origXml, globalMap.get(&quot;outmigrationFormName&quot;));
+var auditXml = constructAuditXml(instanceXml, null, &quot;Out Migration&quot;, origXml[&apos;basic_info_collected_by&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;outmigrationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString());
+
+router.routeMessage(&quot;Form Submission Channel&quot;, auditXml);
+return;</property>
+      </properties>
+      <transformer>
+        <steps>
+          <step>
+            <sequenceNumber>0</sequenceNumber>
+            <name>collectedBy - extId (out)</name>
+            <script>tmp[&apos;collectedBy&apos;][&apos;extId&apos;] = validate(msg[&apos;basic_info_collected_by&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;collectedBy&apos;][&apos;extId&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;basic_info_collected_by&apos;].toString().toUpperCase()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>1</sequenceNumber>
+            <name>individual - extId (out)</name>
+            <script>tmp[&apos;individual&apos;][&apos;extid&apos;] = validate(msg[&apos;basic_info_perm_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;individual&apos;][&apos;extid&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;basic_info_perm_id&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>2</sequenceNumber>
+            <name>house - extId (out)</name>
+            <script>tmp[&apos;house&apos;][&apos;extId&apos;] = validate(msg[&apos;move_away_from_move_away_from_house_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;house&apos;][&apos;extId&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_from_move_away_from_house_id&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>3</sequenceNumber>
+            <name>origin (out)</name>
+            <script>tmp[&apos;origin&apos;] = validate(msg[&apos;move_away_to_place_moved_to_house_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;origin&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_house_name&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>4</sequenceNumber>
+            <name>household - extId (out)</name>
+            <script>tmp[&apos;household&apos;][&apos;extId&apos;] = validate(msg[&apos;move_away_from_move_away_from_household_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;household&apos;][&apos;extId&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_from_move_away_from_household_id&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>5</sequenceNumber>
+            <name>reason (out)</name>
+            <script>tmp[&apos;reason&apos;] = validate(msg[&apos;move_away_to_place_moved_to_reason&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;reason&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_reason&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>6</sequenceNumber>
+            <name>visit - extId (out)</name>
+            <script>tmp[&apos;visit&apos;][&apos;extId&apos;] = validate(msg[&apos;visitId&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;visit&apos;][&apos;extId&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;visitId&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>7</sequenceNumber>
+            <name>dateOfInterview (out)</name>
+            <script>tmp[&apos;dateOfInterview&apos;] = validate(msg[&apos;basic_info_interview_date&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;dateOfInterview&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;basic_info_interview_date&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>8</sequenceNumber>
+            <name>recordedDate (out)</name>
+            <script>tmp[&apos;recordedDate&apos;] = validate(msg[&apos;basic_info_migration_date&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;recordedDate&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;basic_info_migration_date&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>9</sequenceNumber>
+            <name>gender (out)</name>
+            <script>tmp[&apos;gender&apos;] = validate(msg[&apos;basic_info_sex&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;gender&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;basic_info_sex&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>10</sequenceNumber>
+            <name>householdName (out)</name>
+            <script>tmp[&apos;householdName&apos;] = validate(msg[&apos;move_away_from_move_away_from_household_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;householdName&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_from_move_away_from_household_name&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>11</sequenceNumber>
+            <name>placeMovedTo (out)</name>
+            <script>tmp[&apos;placeMovedTo&apos;] = validate(msg[&apos;move_away_to_place_moved_to&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;placeMovedTo&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>12</sequenceNumber>
+            <name>houseName (out)</name>
+            <script>tmp[&apos;houseName&apos;] = validate(msg[&apos;move_away_to_place_moved_to_house_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;houseName&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_house_name&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>13</sequenceNumber>
+            <name>section (out)</name>
+            <script>tmp[&apos;section&apos;] = validate(msg[&apos;move_away_to_place_moved_to_section&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;section&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_section&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>14</sequenceNumber>
+            <name>village (out)</name>
+            <script>tmp[&apos;village&apos;] = validate(msg[&apos;move_away_to_place_moved_to_village&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;village&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_village&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>15</sequenceNumber>
+            <name>phoneNumber (out)</name>
+            <script>tmp[&apos;phoneNumber&apos;] = validate(msg[&apos;move_away_to_place_moved_to_phone_number&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;phoneNumber&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_phone_number&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>16</sequenceNumber>
+            <name>placeMovedToOther (out)</name>
+            <script>tmp[&apos;placeMovedToOther&apos;] = validate(msg[&apos;move_away_to_place_moved_to_other&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;placeMovedToOther&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_other&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>17</sequenceNumber>
+            <name>reasonForMigrationOther (out)</name>
+            <script>tmp[&apos;reasonForMigrationOther&apos;] = validate(msg[&apos;move_away_to_place_moved_to_reason_other&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;reasonForMigrationOther&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;move_away_to_place_moved_to_reason_other&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>18</sequenceNumber>
+            <name>instanceId (out)</name>
+            <script>tmp[&apos;instanceId&apos;] = validate(msg[&apos;instance_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;instanceId&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;instance_id&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+          <step>
+            <sequenceNumber>19</sequenceNumber>
+            <name>nameOfMigrant (out)</name>
+            <script>tmp[&apos;nameOfMigrant&apos;] = validate(msg[&apos;basic_info_migrant_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+            <type>Message Builder</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>tmp[&apos;nameOfMigrant&apos;]</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;basic_info_migrant_name&apos;].toString().toUpperCase()</string>
+              </entry>
+            </data>
+          </step>
+        </steps>
+        <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGJhc2ljX2luZm9faW50ZXJ2aWV3X2RhdGU+dmFsdWU8
+L2Jhc2ljX2luZm9faW50ZXJ2aWV3X2RhdGU+DQogICAgPG1vdmVfYXdheV9mcm9tX21vdmVfYXdh
+eV9mcm9tX2hvdXNlX25hbWU+dmFsdWU8L21vdmVfYXdheV9mcm9tX21vdmVfYXdheV9mcm9tX2hv
+dXNlX25hbWU+DQogICAgPGJhc2ljX2luZm9fY29sbGVjdGVkX2J5PnZhbHVlPC9iYXNpY19pbmZv
+X2NvbGxlY3RlZF9ieT4NCiAgICA8ZGVyaXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9t
+X3VyaT4NCiAgICA8bW92ZV9hd2F5X3RvX3BsYWNlX21vdmVkX3RvPnZhbHVlPC9tb3ZlX2F3YXlf
+dG9fcGxhY2VfbW92ZWRfdG8+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19waG9u
+ZV9udW1iZXI+dmFsdWU8L21vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19waG9uZV9udW1iZXI+
+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19vdGhlcj52YWx1ZTwvbW92ZV9hd2F5
+X3RvX3BsYWNlX21vdmVkX3RvX290aGVyPg0KICAgIDxtb3ZlX2F3YXlfdG9fcGxhY2VfbW92ZWRf
+dG9fc2VjdGlvbj52YWx1ZTwvbW92ZV9hd2F5X3RvX3BsYWNlX21vdmVkX3RvX3NlY3Rpb24+DQog
+ICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19yZWFzb24+dmFsdWU8L21vdmVfYXdheV90
+b19wbGFjZV9tb3ZlZF90b19yZWFzb24+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90
+b19ob3VzZV9uYW1lPnZhbHVlPC9tb3ZlX2F3YXlfdG9fcGxhY2VfbW92ZWRfdG9faG91c2VfbmFt
+ZT4NCiAgICA8YmFzaWNfaW5mb19wZXJtX2lkPnZhbHVlPC9iYXNpY19pbmZvX3Blcm1faWQ+DQog
+ICAgPG1vdmVfYXdheV9mcm9tX21vdmVfYXdheV9mcm9tX2hvdXNlaG9sZF9pZD52YWx1ZTwvbW92
+ZV9hd2F5X2Zyb21fbW92ZV9hd2F5X2Zyb21faG91c2Vob2xkX2lkPg0KICAgIDxiYXNpY19pbmZv
+X3NleD52YWx1ZTwvYmFzaWNfaW5mb19zZXg+DQogICAgPG1vdmVfYXdheV9mcm9tX21vdmVfYXdh
+eV9mcm9tX2hvdXNlaG9sZF9uYW1lPnZhbHVlPC9tb3ZlX2F3YXlfZnJvbV9tb3ZlX2F3YXlfZnJv
+bV9ob3VzZWhvbGRfbmFtZT4NCiAgICA8bW92ZV9hd2F5X3RvX3BsYWNlX21vdmVkX3RvX3ZpbGxh
+Z2U+dmFsdWU8L21vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b192aWxsYWdlPg0KICAgIDxtb3Zl
+X2F3YXlfZnJvbV9tb3ZlX2F3YXlfZnJvbV9ob3VzZV9pZD52YWx1ZTwvbW92ZV9hd2F5X2Zyb21f
+bW92ZV9hd2F5X2Zyb21faG91c2VfaWQ+DQogICAgPG1vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90
+b19yZWFzb25fb3RoZXI+dmFsdWU8L21vdmVfYXdheV90b19wbGFjZV9tb3ZlZF90b19yZWFzb25f
+b3RoZXI+DQogICAgPGJhc2ljX2luZm9fbWlncmF0aW9uX2RhdGU+dmFsdWU8L2Jhc2ljX2luZm9f
+bWlncmF0aW9uX2RhdGU+DQogICAgPGJhc2ljX2luZm9fbWlncmFudF9uYW1lPnZhbHVlPC9iYXNp
+Y19pbmZvX21pZ3JhbnRfbmFtZT4NCjwvcmVzdWx0Pg0K</inboundTemplate>
+        <outboundTemplate encoding="base64">PG91dG1pZ3JhdGlvbj4KICA8aW5zdGFuY2VJZCAvPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJ
+ZCAvPgogIDwvY29sbGVjdGVkQnk+CiAgPGluZGl2aWR1YWw+CiAgICA8ZXh0aWQgLz4KICA8L2lu
+ZGl2aWR1YWw+CiAgPGhvdXNlPgogICAgPGV4dElkIC8+CiAgPC9ob3VzZT4KICA8b3JpZ2luIC8+
+CiAgPGhvdXNlaG9sZD4KICAgIDxleHRJZCAvPgogIDwvaG91c2Vob2xkPgogIDxyZWFzb24gLz4K
+ICA8dmlzaXQ+CiAgICA8ZXh0SWQgLz4KICA8L3Zpc2l0PgogIDxkYXRlT2ZJbnRlcnZpZXcgLz4K
+ICA8cmVjb3JkZWREYXRlIC8+CiAgPG5hbWVPZk1pZ3JhbnQgLz4KICA8Z2VuZGVyIC8+CiAgPGhv
+dXNlaG9sZE5hbWUgLz4KICA8cGxhY2VNb3ZlZFRvIC8+CiAgPGhvdXNlTmFtZSAvPgogIDxzZWN0
+aW9uIC8+CiAgPHZpbGxhZ2UgLz4KICA8cGhvbmVOdW1iZXIgLz4KICA8cGxhY2VNb3ZlZFRvT3Ro
+ZXIgLz4KICA8cmVhc29uRm9yTWlncmF0aW9uT3RoZXIgLz4KPC9vdXRtaWdyYXRpb24+</outboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>JavaScript Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.1.1.5490</version>
+    </connector>
+  </destinationConnectors>
+  <properties>
+    <property name="clearGlobalChannelMap">true</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="encryptData">false</property>
+    <property name="error_messages_only">false</property>
+    <property name="initialState">started</property>
+    <property name="max_message_age">-1</property>
+    <property name="store_messages">true</property>
+    <property name="synchronous">true</property>
+    <property name="transactional">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript></postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</shutdownScript>
+</channel>
