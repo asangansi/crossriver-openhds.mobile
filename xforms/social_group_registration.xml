@@ -65,12 +65,12 @@
           </text>
         </translation>
       </itext>
-      <bind nodeset="/data/socialGroupId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format"/>
+      <bind nodeset="/data/socialGroupId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format"/>
       <bind nodeset="/data/name" type="string" required="true()" />
       <bind nodeset="/data/type" type="select1" required="true()" />
-      <bind nodeset="/data/socialGroupHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
+      <bind nodeset="/data/socialGroupHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
       <bind nodeset="/data/fieldWorkerId" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')" jr:constraintMsg="Field Worker Id is not the right format"/>
-      <bind nodeset="/data/respondentId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+      <bind nodeset="/data/respondentId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
       <bind nodeset="/data/dateOfInterview" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date of interview cannot be in the future"/>
     </model>
   </h:head>

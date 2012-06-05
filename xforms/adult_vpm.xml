@@ -4473,9 +4473,9 @@
         </translation>
       </itext>
       <bind nodeset="/data/background/deceasedName" type="string" required="true()"/>
-      <bind nodeset="/data/background/permId" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" 
+      <bind nodeset="/data/background/permId" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" 
             jr:constraintMsg="Permanent Id is not the right format" />
-      <bind nodeset="/data/background/houseId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" 
+      <bind nodeset="/data/background/houseId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')" 
             jr:constraintMsg="House Id is not the right format"/>
       <bind nodeset="/data/background/houseName" type="string"/>
       <bind nodeset="/data/background/collectedBy" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"

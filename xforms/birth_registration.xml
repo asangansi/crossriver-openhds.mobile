@@ -337,7 +337,7 @@
 			<bind nodeset="/data/formRetired" type="boolean" />
 			<bind nodeset="/data/validationFailed" type="boolean" />
 			<bind nodeset="/data/motherId" type="string" required="true()"
-				constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+				constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/data/motherName" type="string" required="true()" />
 			<bind nodeset="/data/motherLineNumber" type="int" required="true()"
 				constraint="regex(., '^[0-9]{0,2}[1-9]{1}$')" jr:constraintMsg="Mother line number must be 1, 2 or 3 digits" />
@@ -348,14 +348,14 @@
 				required="true()" jr:constraintMsg="Date of interview cannot be in the future" />
 			<bind nodeset="/data/reportedBy" type="select1" required="true()" />
 			<bind nodeset="/data/houseId" type="string" required="true()"
-				constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
+				constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
 			<bind nodeset="/data/householdId" type="string" required="true()"
-				constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
+				constraint="regex(., '^[A-Za-z]{6}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
 			<bind nodeset="/data/householdName" type="string" required="true()" />
 			<bind nodeset="/data/childDob" type="date" required="true()"
 				constraint=". &lt; /data/recordedDate" jr:constraintMsg="The date of birth cannot be after the interview date" />
 			<bind nodeset="/data/fatherId" type="string" required="true()"
-				constraint="regex(., '^([A-Za-z]{3}[0-9]{7}$|^[Uu][Nn][Kk])$')"
+				constraint="regex(., '^([A-Za-z]{6}[0-9]{7}$|^[Uu][Nn][Kk])$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/data/fatherName" type="string"
 				relevant="not(regex(../fatherId, '^[Uu][Nn][Kk]$'))" required="true()" />
@@ -378,7 +378,7 @@
 				required="true()" constraint=". &lt;= ../totalChildrenBorn"
 				jr:constraintMsg="Number of live births cannot be greater than total number of children born for this pregnancy" />
 			<bind nodeset="/data/children/firstChildId" type="string"
-				required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')"
+				required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/data/children/firstChildFirstName" type="string"
 				required="true()" />
@@ -388,7 +388,7 @@
 				required="true()" />
 			<bind nodeset="/data/children/secondChild" type="select1" required="true()" />
 			<bind nodeset="/data/children/secondChildId" type="string"
-				constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" required="true()"
+				constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" required="true()"
 				relevant="/data/children/secondChild='1'" />
 			<bind nodeset="/data/children/secondChildFirstName" type="string"
 				required="true()" relevant="/data/children/secondChild='1'" />

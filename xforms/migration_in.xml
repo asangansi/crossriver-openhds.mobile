@@ -63,14 +63,14 @@
 				constraint=". &lt; ../DINT"
 				jr:constraintMsg="The date of the in migration cannot be after the interview date" />
 			<bind nodeset="/migration_in/COMP_ID" type="string" required="true()"
-				constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
+				constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
 			<bind nodeset="/migration_in/CurrH_N" required="true()" type="string" />
 			<bind nodeset="/migration_in/CurrHH_N" type="string" required="true()" />
 			<bind nodeset="/migration_in/CurrHH_ID" type="string" required="true()"
 				constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
 			<bind nodeset="/migration_in/EVER_REG" required="true()" type="select1" />
 			<bind nodeset="/migration_in/PERM_ID" required="false()" type="string"
-				constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+				constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/migration_in/TEMP_ID" type="int" required="true()"
 				constraint="regex(., '^[0-9]{0,2}[1-9]{1}$')" jr:constraintMsg="Current individual number must be 1, 2 or 3 digits" />
 			<bind nodeset="/migration_in/relationshipToGroupHead" required="true()"
@@ -120,11 +120,11 @@
 				jr:constraintMsg="The birth date must be before the in migration date" />
 			<bind nodeset="/migration_in/Section6/MinPerson_MOTHER_ID"
 				required="true()" type="string"
-				constraint="regex(., '^([A-Za-z]{3}[0-9]{7}$|^[Uu][Nn][Kk])$')"
+				constraint="regex(., '^([A-Za-z]{6}[0-9]{7}$|^[Uu][Nn][Kk])$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/migration_in/Section6/MinPerson_FATHER_ID"
 				required="true()" type="string"
-				constraint="regex(., '^([A-Za-z]{3}[0-9]{7}$|^[Uu][Nn][Kk])$')"
+				constraint="regex(., '^([A-Za-z]{6}[0-9]{7}$|^[Uu][Nn][Kk])$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/migration_in/Section6/MinPerson_EDUCATION"
 				required="true()" type="int" />

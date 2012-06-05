@@ -96,8 +96,8 @@
       <bind nodeset="/data/location/locationNew" type="select1" required="true()" />
       <bind nodeset="/data/location/village" type="string" required="true()" relevant="../locationNew = '1'" constraint="regex(., '^[A-Za-z]{3}$')" jr:constraintMsg="Village must only be 3 characters"/>
       <bind nodeset="/data/location/locationName" type="string" required="true()" relevant="../locationNew = '1'" />
-      <bind nodeset="/data/location/locationId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
-      <bind nodeset="/data/location/locationHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" relevant="../locationNew = '1'"/>
+      <bind nodeset="/data/location/locationId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
+      <bind nodeset="/data/location/locationHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" relevant="../locationNew = '1'"/>
       <bind nodeset="/data/location/type" type="select1" required="true()" relevant="../locationNew = '1'"/>
       <bind nodeset="/data/visitDate" type="date" required="true()" constraint=". &lt;= today()" jr:constraintMsg="Visit date cannot be in the future"/>
       <bind nodeset="/data/roundNumber" type="int" required="true()" constraint=". &gt; 0" jr:constraintMsg="Round number should be greater than 0"/>
