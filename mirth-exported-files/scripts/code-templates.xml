@@ -100,16 +100,16 @@
   </codeTemplate>
   <codeTemplate>
     <id>cc2b3ed3-1887-47bf-9bbd-069dbdb8323d</id>
-    <name>Check if form should be retired</name>
-    <tooltip>Checks whether a form should be retired</tooltip>
-    <code>function shouldBeRetired(createDate) {
+    <name>Warn Timeout Check</name>
+    <tooltip>Checks weather a form has gone past the warning timeout period</tooltip>
+    <code>function shouldWarnUser(createDate) {
   // check if the form should be retired
   var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
   var matches = timeRegex.exec(createDate);
   if (matches != null) {
     createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
     var started = createDate.getTime();
-    var endDate = started + (globalMap.get(&quot;formProcessableLifetime&quot;) * 3600000);
+    var endDate = started + (globalMap.get(&quot;warningTimeout&quot;) * 3600000);
 
     if (endDate - (new Date().getTime()) &lt; 0) {
       return true;
@@ -173,6 +173,107 @@
     } else {
       return xmlDoc;
     }
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>012cf64f-ab96-4ffc-87a5-50f2089d7a73</id>
+    <name>Build XML Document from a ResultSet</name>
+    <tooltip>Converts a result set entry to the corresponding XML document (as per Mirth semantics)</tooltip>
+    <code>function  convertResultSetToXml(rs) {
+  var rsmd = rs.getMetaData();
+  var result = &lt;result /&gt;;
+
+  for (var i = 1; i &lt; rsmd.getColumnCount(); i++)  {
+    result[rsmd.getColumnName(i).toLowerCase()] = rs.getString(i);
+  }
+
+  return result;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>5a59aeeb-dbe2-4627-9cc9-40e21797cf25</id>
+    <name>Check for OpenHDS Location</name>
+    <tooltip>Makes a web service call to the OpenHDS to verify a location with a given external id exists</tooltip>
+    <code>function validateLocation(houseId) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var locationUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/location/&quot;;
+  locationUrl += houseId.toUpperCase();
+
+  try {
+    var builder = new RestfulRequestBuilder(locationUrl);
+    var response = builder.buildGet();
+
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request to check location exists for houseid=&quot; + houseId);
+  }
+
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>08b087c0-8580-44a4-b4a0-a36fe656e478</id>
+    <name>Check for OpenHDS Household</name>
+    <tooltip>Makes a web service call to the OpenHDS to verify a household with</tooltip>
+    <code>function validateSocialGroup(householdId) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var householdUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/socialgroup/&quot;;
+  householdUrl += householdId.toUpperCase();
+
+  try {
+    var builder = new RestfulRequestBuilder(householdUrl);
+    var response = builder.buildGet();
+
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request to check household exists for householdid=&quot; + householdId);
+  }
+
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.1.1.5490</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>4747bcef-faa6-4f68-96fd-d6da6c499a16</id>
+    <name>Fail Timeout Check</name>
+    <tooltip>Check if form has gone past failed timeout</tooltip>
+    <code>function shouldFailForm(createDate) {
+  // check if the form should be retired
+  var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
+  var matches = timeRegex.exec(createDate);
+  if (matches != null) {
+    createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
+    var started = createDate.getTime();
+    var endDate = started + (globalMap.get(&quot;failTimeout&quot;) * 3600000);
+
+    if (endDate - (new Date().getTime()) &lt; 0) {
+      return true;
+    }
+  } else {
+    logger.warn(&quot;Create date was not set on form instance&quot;);
+  }
+  return false;
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>

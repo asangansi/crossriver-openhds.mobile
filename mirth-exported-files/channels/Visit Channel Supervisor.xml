@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.1.1.5490</version>
   <lastModified>
-    <time>1337224868703</time>
+    <time>1340734272265</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>36</revision>
+  <revision>17</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, visit_date, field_worker, house_id, round_number, derived_from_uri FROM &quot; +  globalMap.get(&quot;visitTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, visit_date, derived_from_uri, field_worker_id, round_number, location_id FROM &quot; +  globalMap.get(&quot;visitTableName&quot;) + &quot; WHERE processed_by_mirth is null AND supervisor_status = 1&quot;);
 dbConn.close();
 
 return result;</property>
@@ -33,113 +33,17 @@ return result;</property>
       <property name="username">${mysqlUser}</property>
     </properties>
     <transformer>
-      <steps>
-        <step>
-          <sequenceNumber>0</sequenceNumber>
-          <name>visitLocation - extId (out)</name>
-          <script>tmp[&apos;visitLocation&apos;][&apos;extId&apos;] = validate(msg[&apos;house_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;visitLocation&apos;][&apos;extId&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;house_id&apos;].toString().toUpperCase()</string>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>1</sequenceNumber>
-          <name>visitDate (out)</name>
-          <script>tmp[&apos;visitDate&apos;] = validate(msg[&apos;visit_date&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;visitDate&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;visit_date&apos;].toString().toUpperCase()</string>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>2</sequenceNumber>
-          <name>roundNumber (out)</name>
-          <script>tmp[&apos;roundNumber&apos;] = validate(msg[&apos;round_number&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;roundNumber&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;round_number&apos;].toString().toUpperCase()</string>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>3</sequenceNumber>
-          <name>collectedBy - extId (out)</name>
-          <script>tmp[&apos;collectedBy&apos;][&apos;extId&apos;] = validate(msg[&apos;field_worker&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;collectedBy&apos;][&apos;extId&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;field_worker&apos;].toString().toUpperCase()</string>
-            </entry>
-          </data>
-        </step>
-      </steps>
+      <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
 cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDx2aXNpdF9kYXRlPnZhbHVlPC92
-aXNpdF9kYXRlPg0KICAgIDxmaWVsZF93b3JrZXI+dmFsdWU8L2ZpZWxkX3dvcmtlcj4NCiAgICA8
-aG91c2VfaWQ+dmFsdWU8L2hvdXNlX2lkPg0KICAgIDxyb3VuZF9udW1iZXI+dmFsdWU8L3JvdW5k
-X251bWJlcj4NCiAgICA8ZGVyaXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4N
-CjwvcmVzdWx0Pg0K</inboundTemplate>
-      <outboundTemplate encoding="base64">PHZpc2l0PgogIDx2aXNpdExvY2F0aW9uPgogICAgPGV4dElkIC8+CiAgPC92aXNpdExvY2F0aW9u
-PgogIDx2aXNpdERhdGUgLz4KICA8cm91bmROdW1iZXIgLz4KICA8Y29sbGVjdGVkQnk+CiAgICA8
-ZXh0SWQgLz4KICA8L2NvbGxlY3RlZEJ5Pgo8L3Zpc2l0Pg==</outboundTemplate>
+aXNpdF9kYXRlPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZhbHVlPC9kZXJpdmVkX2Zyb21fdXJp
+Pg0KICAgIDxmaWVsZF93b3JrZXJfaWQ+dmFsdWU8L2ZpZWxkX3dvcmtlcl9pZD4NCiAgICA8cm91
+bmRfbnVtYmVyPnZhbHVlPC9yb3VuZF9udW1iZXI+DQogICAgPGxvY2F0aW9uX2lkPnZhbHVlPC9s
+b2NhdGlvbl9pZD4NCjwvcmVzdWx0Pg0K</inboundTemplate>
+      <outboundTemplate encoding="base64">PHZpc2l0PgogIDx2aXNpdExvY2F0aW9uPgogICAgPGV4dElkPjwvZXh0SWQ+CiAgPC92aXNpdExv
+Y2F0aW9uPgogIDx2aXNpdERhdGU+PC92aXNpdERhdGU+CiAgIDxyb3VuZE51bWJlcj48L3JvdW5k
+TnVtYmVyPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZD48L2V4dElkPgogIDwvY29sbGVjdGVk
+Qnk+CjwvdmlzaXQ+</outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
       <inboundProperties>
@@ -150,7 +54,21 @@ ZXh0SWQgLz4KICA8L2NvbGxlY3RlZEJ5Pgo8L3Zpc2l0Pg==</outboundTemplate>
       </outboundProperties>
     </transformer>
     <filter>
-      <rules/>
+      <rules>
+        <rule>
+          <sequenceNumber>0</sequenceNumber>
+          <name>Location Check</name>
+          <data class="map">
+            <entry>
+              <string>Script</string>
+              <string>return validateLocation(msg[&apos;location_id&apos;].toString());</string>
+            </entry>
+          </data>
+          <type>JavaScript</type>
+          <script>return validateLocation(msg[&apos;location_id&apos;].toString());</script>
+          <operator>NONE</operator>
+        </rule>
+      </rules>
     </filter>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
@@ -161,28 +79,10 @@ ZXh0SWQgLz4KICA8L2NvbGxlY3RlZEJ5Pgo8L3Zpc2l0Pg==</outboundTemplate>
     <connector>
       <name>Destination 1</name>
       <properties>
-        <property name="DataType">HTTP Sender</property>
-        <property name="dispatcherAuthenticationType">Basic</property>
-        <property name="dispatcherCharset">UTF-8</property>
-        <property name="dispatcherContent">${message.transformedData}</property>
-        <property name="dispatcherContentType">text/plain</property>
-        <property name="dispatcherHeaders">&lt;properties&gt;
-  &lt;property name=&quot;Content-type&quot;&gt;application/xml&lt;/property&gt;
-&lt;/properties&gt;</property>
-        <property name="dispatcherIncludeHeadersInResponse">0</property>
-        <property name="dispatcherMethod">post</property>
-        <property name="dispatcherMultipart">0</property>
-        <property name="dispatcherParameters">&lt;properties/&gt;</property>
-        <property name="dispatcherPassword">${openhdsPassword}</property>
-        <property name="dispatcherReplyChannelId">sink</property>
-        <property name="dispatcherSocketTimeout">30000</property>
-        <property name="dispatcherUseAuthentication">1</property>
-        <property name="dispatcherUsername">${openhdsUser}</property>
-        <property name="host">${openhdsUrl}/api/rest/corewebservice/visit</property>
-        <property name="queuePollInterval">200</property>
-        <property name="reconnectMillisecs">10000</property>
-        <property name="rotateQueue">0</property>
-        <property name="usePersistentQueues">0</property>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">cfd0753f-9870-4974-877f-029758d4e051</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
       </properties>
       <transformer>
         <steps/>
@@ -208,7 +108,7 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
       <filter>
         <rules/>
       </filter>
-      <transportName>HTTP Sender</transportName>
+      <transportName>Channel Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
       <version>2.1.1.5490</version>
@@ -216,7 +116,7 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
   </destinationConnectors>
   <properties>
     <property name="clearGlobalChannelMap">true</property>
-    <property name="dont_store_filtered">false</property>
+    <property name="dont_store_filtered">true</property>
     <property name="encryptData">false</property>
     <property name="error_messages_only">false</property>
     <property name="initialState">started</property>
@@ -227,25 +127,7 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
   </properties>
   <preprocessingScript>// Modify the message variable below to pre process data
 return message;</preprocessingScript>
-  <postprocessingScript>var obj = responseMap.get(&quot;Destination 1&quot;);
-var msgXml = new XML(obj.getMessage());
-var origXml = new XML(messageObject.getRawData());
-var invalidForm = msgXml[&quot;errors&quot;].length() &gt; 0 ? true : false;
-
-executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;visitTableName&quot;) + &quot; SET processed_by_mirth = true, validation_failed = &quot; + invalidForm + &quot; WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);
-
-var instanceXml = reconstructInstanceXml(globalMap.get(&quot;visitTableName&quot;), origXml, globalMap.get(&quot;visitFormName&quot;));
-
-if (invalidForm) {
-  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Visit&quot;, origXml[&apos;field_worker&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;visitFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), true);
-  router.routeMessage(&quot;Form Submission Channel&quot;, auditXml);
-} else {
-  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Visit&quot;, origXml[&apos;field_worker&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;visitFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), false);
-  var completedForm = new XML(&quot;&lt;completedFormSubmission /&gt;&quot;);
-  completedForm.appendChild(auditXml);
-  completedForm[&quot;completedFormSubmissionId&quot;] = obj.getMessage();
-  router.routeMessage(&quot;Form Complete Channel&quot;, completedForm);
-}&#xd;return;</postprocessingScript>
+  <postprocessingScript></postprocessingScript>
   <deployScript>// This script executes once when the channel is deployed
 // You only have access to the globalMap and globalChannelMap here to persist data
 return;</deployScript>

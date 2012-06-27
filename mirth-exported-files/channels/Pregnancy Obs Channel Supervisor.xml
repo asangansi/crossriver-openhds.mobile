@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.1.1.5490</version>
   <lastModified>
-    <time>1337225174968</time>
+    <time>1340744205562</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>16</revision>
+  <revision>4</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND form_retired = false AND supervisor_status = &apos;1&apos;&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
 dbConn.close();
 
 return result;</property>
@@ -33,392 +33,7 @@ return result;</property>
       <property name="username">root</property>
     </properties>
     <transformer>
-      <steps>
-        <step>
-          <sequenceNumber>0</sequenceNumber>
-          <name>collectedBy - extId (out)</name>
-          <script>tmp[&apos;collectedBy&apos;][&apos;extId&apos;] = validate(msg[&apos;fw&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;collectedBy&apos;][&apos;extId&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;fw&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>1</sequenceNumber>
-          <name>mother - extid (out)</name>
-          <script>tmp[&apos;mother&apos;][&apos;extid&apos;] = validate(msg[&apos;perm_id_pw&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;mother&apos;][&apos;extid&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;perm_id_pw&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>2</sequenceNumber>
-          <name>house - extId (out)</name>
-          <script>tmp[&apos;house&apos;][&apos;extId&apos;] = validate(msg[&apos;comp_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;house&apos;][&apos;extId&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;comp_id&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>3</sequenceNumber>
-          <name>household - extId (out)</name>
-          <script>tmp[&apos;household&apos;][&apos;extId&apos;] = validate(msg[&apos;hh_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;household&apos;][&apos;extId&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;hh_id&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>4</sequenceNumber>
-          <name>recordedDate (out)</name>
-          <script>tmp[&apos;recordedDate&apos;] = validate(msg[&apos;dint&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;recordedDate&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;dint&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>5</sequenceNumber>
-          <name>estimatedDateOfConception (out)</name>
-          <script>tmp[&apos;estimatedDateOfConception&apos;] = validate(msg[&apos;lmp&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;estimatedDateOfConception&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;lmp&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>6</sequenceNumber>
-          <name>visit - extId (out)</name>
-          <script>tmp[&apos;visit&apos;][&apos;extId&apos;] = validate(msg[&apos;visitId&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;visit&apos;][&apos;extId&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;visitId&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>7</sequenceNumber>
-          <name>pregWomanName (out)</name>
-          <script>tmp[&apos;pregWomanName&apos;] = validate(msg[&apos;name_pw&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;pregWomanName&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;name_pw&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>8</sequenceNumber>
-          <name>numMonthsOfPregnancy (out)</name>
-          <script>tmp[&apos;numMonthsOfPregnancy&apos;] = validate(msg[&apos;mpreg&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;numMonthsOfPregnancy&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;mpreg&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>9</sequenceNumber>
-          <name>attendedAnteNatalClinic (out)</name>
-          <script>tmp[&apos;attendedAnteNatalClinic&apos;] = validate(msg[&apos;attend_cli&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;attendedAnteNatalClinic&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;attend_cli&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>10</sequenceNumber>
-          <name>receivedTTInjection (out)</name>
-          <script>tmp[&apos;receivedTTInjection&apos;] = validate(msg[&apos;tt_inject&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;receivedTTInjection&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;tt_inject&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>11</sequenceNumber>
-          <name>firstPregnancy (out)</name>
-          <script>tmp[&apos;firstPregnancy&apos;] = validate(msg[&apos;first_pg&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;firstPregnancy&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;first_pg&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>12</sequenceNumber>
-          <name>healthFacility (out)</name>
-          <script>tmp[&apos;healthFacility&apos;] = validate(msg[&apos;health_fac&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;healthFacility&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;health_fac&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>13</sequenceNumber>
-          <name>healthFacilityOther (out)</name>
-          <script>tmp[&apos;healthFacilityOther&apos;] = validate(msg[&apos;health_fac_other&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;healthFacilityOther&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;health_fac_other&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>14</sequenceNumber>
-          <name>householdName (out)</name>
-          <script>tmp[&apos;householdName&apos;] = validate(msg[&apos;hh_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;householdName&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;hh_name&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-        <step>
-          <sequenceNumber>15</sequenceNumber>
-          <name>reportedBy (out)</name>
-          <script>tmp[&apos;reportedBy&apos;] = validate(msg[&apos;reportby&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
-          <type>Message Builder</type>
-          <data class="map">
-            <entry>
-              <string>Variable</string>
-              <string>tmp[&apos;reportedBy&apos;]</string>
-            </entry>
-            <entry>
-              <string>DefaultValue</string>
-              <string></string>
-            </entry>
-            <entry>
-              <string>Mapping</string>
-              <string>msg[&apos;reportby&apos;].toString().toUpperCase()</string>
-            </entry>
-            <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-          </data>
-        </step>
-      </steps>
+      <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
 cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
 ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGRlcml2ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRf
@@ -465,6 +80,32 @@ bmFuY3lvYnNlcnZhdGlvbj4=</outboundTemplate>
           <script>return validateVisit(msg[&apos;comp_id&apos;].toString(), msg[&apos;dint&apos;].toString());</script>
           <operator>NONE</operator>
         </rule>
+        <rule>
+          <sequenceNumber>1</sequenceNumber>
+          <name>Location Check</name>
+          <data class="map">
+            <entry>
+              <string>Script</string>
+              <string>return validateLocation(msg[&apos;comp_id&apos;].toString());</string>
+            </entry>
+          </data>
+          <type>JavaScript</type>
+          <script>return validateLocation(msg[&apos;comp_id&apos;].toString());</script>
+          <operator>AND</operator>
+        </rule>
+        <rule>
+          <sequenceNumber>2</sequenceNumber>
+          <name>Household Check</name>
+          <data class="map">
+            <entry>
+              <string>Script</string>
+              <string>return validateSocialGroup(msg[&apos;hh_id&apos;].toString());</string>
+            </entry>
+          </data>
+          <type>JavaScript</type>
+          <script>return validateSocialGroup(msg[&apos;hh_id&apos;].toString());</script>
+          <operator>AND</operator>
+        </rule>
       </rules>
     </filter>
     <transportName>Database Reader</transportName>
@@ -476,28 +117,10 @@ bmFuY3lvYnNlcnZhdGlvbj4=</outboundTemplate>
     <connector>
       <name>Destination 1</name>
       <properties>
-        <property name="DataType">HTTP Sender</property>
-        <property name="dispatcherAuthenticationType">Basic</property>
-        <property name="dispatcherCharset">UTF-8</property>
-        <property name="dispatcherContent">${message.transformedData}</property>
-        <property name="dispatcherContentType">text/plain</property>
-        <property name="dispatcherHeaders">&lt;properties&gt;
-  &lt;property name=&quot;Content-type&quot;&gt;application/xml&lt;/property&gt;
-&lt;/properties&gt;</property>
-        <property name="dispatcherIncludeHeadersInResponse">0</property>
-        <property name="dispatcherMethod">post</property>
-        <property name="dispatcherMultipart">0</property>
-        <property name="dispatcherParameters">&lt;properties/&gt;</property>
-        <property name="dispatcherPassword">${openhdsPassword}</property>
-        <property name="dispatcherReplyChannelId">sink</property>
-        <property name="dispatcherSocketTimeout">30000</property>
-        <property name="dispatcherUseAuthentication">1</property>
-        <property name="dispatcherUsername">${openhdsUser}</property>
-        <property name="host">${openhdsUrl}/api/rest/corewebservice/pregnancyobservation</property>
-        <property name="queuePollInterval">200</property>
-        <property name="reconnectMillisecs">10000</property>
-        <property name="rotateQueue">0</property>
-        <property name="usePersistentQueues">0</property>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">bfa7dc3a-af2e-40fe-a908-1f5d489ade21</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
       </properties>
       <transformer>
         <steps/>
@@ -521,7 +144,7 @@ IC8+CiAgPGRlY2Vhc2VkTmFtZSAvPgogIDxob3VzZWhvbGROYW1lIC8+CjwvZGVhdGg+</inboundTem
       <filter>
         <rules/>
       </filter>
-      <transportName>HTTP Sender</transportName>
+      <transportName>Channel Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
       <version>2.1.1.5490</version>
@@ -540,38 +163,7 @@ IC8+CiAgPGRlY2Vhc2VkTmFtZSAvPgogIDxob3VzZWhvbGROYW1lIC8+CjwvZGVhdGg+</inboundTem
   </properties>
   <preprocessingScript>// Modify the message variable below to pre process data
 return message;</preprocessingScript>
-  <postprocessingScript>// Mark record as being processed
-var origXml = new XML(messageObject.getRawData());
-
-if (messageObject.status == &quot;FILTERED&quot;) {
-  if(shouldBeRetired(origXml[&quot;_creation_date&quot;].toString())) {
-    executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; SET form_retired = true WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);
-  }
-
-  return;
-}
-
-// Inspect response data from web service call, and send for audit
-var obj = responseMap.get(&quot;Destination 1&quot;);
-var msgXml = new XML(obj.getMessage());
-var invalidForm = msgXml[&quot;errors&quot;].length() &gt; 0 ? true : false;
-
-executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; SET processed_by_mirth = true, validation_failed = &quot; + invalidForm + &quot; WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);
-
-var instanceXml = reconstructInstanceXml(globalMap.get(&quot;pregnancyRegistrationTableName&quot;), origXml, globalMap.get(&quot;pregnancyRegistrationFormName&quot;));
-
-if (invalidForm) {
-  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Pregnancy&quot;, origXml[&apos;fw&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;pregnancyRegistrationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), true);
-  router.routeMessage(&quot;Form Submission Channel&quot;, auditXml);
-} else {
-  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Pregnancy&quot;, origXml[&apos;fw&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;pregnancyRegistrationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), false);
-  var completedForm = new XML(&quot;&lt;completedFormSubmission /&gt;&quot;);
-  completedForm.appendChild(auditXml);
-  completedForm[&quot;completedFormSubmissionId&quot;] = obj.getMessage();
-  router.routeMessage(&quot;Form Complete Channel&quot;, completedForm);
-}
-
-return;</postprocessingScript>
+  <postprocessingScript></postprocessingScript>
   <deployScript>// This script executes once when the channel is deployed
 // You only have access to the globalMap and globalChannelMap here to persist data
 return;</deployScript>

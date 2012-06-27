@@ -8,7 +8,6 @@
 				<data id="death_registration_v3">
           <derivedFromUri />
 					<processedByMirth>0</processedByMirth>
-					<formRetired>0</formRetired>
 					<validationFailed>0</validationFailed>
           <supervisorStatus />
 					<basicInformation>
@@ -142,7 +141,6 @@
 				</translation>
 			</itext>
 			<bind nodeset="/data/processedByMirth" type="boolean" />
-			<bind nodeset="/data/formRetired" type="boolean" />
 			<bind nodeset="/data/validationFailed" type="boolean" />
 			<bind nodeset="/data/derivedFromUri" type="string" />
 			<bind nodeset="/data/basicInformation/fieldWorker" type="string"

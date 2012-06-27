@@ -10,84 +10,64 @@ return;</string>
     <string>/** Database Information */
 
 globalMap.put(&quot;jdbcDriver&quot;, &quot;com.mysql.jdbc.Driver&quot;);
-
-// Database JDBC URL
 globalMap.put(&quot;odkJdbcDatabaseUrl&quot;, &quot;jdbc:mysql://localhost/odk_prod&quot;);
-
-// Databaase User name
 globalMap.put(&quot;dbUser&quot;, &quot;root&quot;);
-
-// Database Password
 globalMap.put(&quot;dbPass&quot;, &quot;test&quot;);
 
 /** OpenHDS Information */
 
-// URL to OpenHDS
-globalMap.put(&quot;openhdsUrl&quot;, &quot;localhost:8090/openhds&quot;);
-
-// OpenHDS User name to use
+globalMap.put(&quot;openhdsUrl&quot;, &quot;localhost:8080/openhds&quot;);
 globalMap.put(&quot;openhdsUser&quot;, &quot;admin&quot;);
-
-// OpenHDS Password for user
 globalMap.put(&quot;openhdsPassword&quot;, &quot;test&quot;);
 
 /** Mobile Interop */
-
-// Mobile Interop URL
-globalMap.put(&quot;mobileInteropServer&quot;, &quot;localhost:8081/openhds-mobile-interop-server&quot;);
-
-// Mobile Interop User
+globalMap.put(&quot;mobileInteropServer&quot;, &quot;localhost:8081/mobile-interop&quot;);
 globalMap.put(&quot;mobileInteropUser&quot;, &quot;admin&quot;);
-
-// Mobile Interop Password
 globalMap.put(&quot;mobileInteropPassword&quot;, &quot;test&quot;);
 
-/** ODK Table Names 
- * There are 2 parameters used for each event table:
- * - The keys without the &apos;Legacy&apos; suffix are required
- * - The keys with the &apos;Legacy&apos; suffix are optional
- * The legacy names are present for situations where modifications 
- * have been made to a form definition. In this case, Mirth can process
- * both the new form definitions, and the old. In other words, 2 channels
- * would exist, 1 processing the new form and 1 processing the old. When
- * the old is finally phased out, the channel can be eliminated
- */
+/** Properties relating processing of event forms - Specified in HOURS */
+
+// this is the amount of time to wait before starting to send warnings to user that a form has been
+// waiting to be processed
+globalMap.put(&quot;warningTimeout&quot;, &quot;.1&quot;); // 1 day
+
+// this is the amount of time to wait before actually forcing the form to send (and fail)
+globalMap.put(&quot;failTimeout&quot;, &quot;96&quot;); // 4 days
+
+
+// ODK Table Names 
 
 // Out Migration
-globalMap.put(&quot;outmigrationTableNameLegacy&quot;, &quot;migration_out_registration_v2_core&quot;);
 globalMap.put(&quot;outmigrationTableName&quot;, &quot;migration_out_registration_v3_core&quot;);
 globalMap.put(&quot;outmigrationFormName&quot;, &quot;migration_out_registration_v3&quot;);
 
 // Birth Registration
-globalMap.put(&quot;birthRegistrationTableNameLegacy&quot;, &quot;birth_registration_v2_core&quot;);
 globalMap.put(&quot;birthRegistrationTableName&quot;, &quot;birth_registration_v3_core&quot;);
 globalMap.put(&quot;birthRegistrationFormName&quot;, &quot;birth_registration_v3&quot;);
 
 // Death Registration
-globalMap.put(&quot;deathRegistrationTableNameLegacy&quot;, &quot;death_registration_v2_core&quot;);
 globalMap.put(&quot;deathRegistrationTableName&quot;, &quot;death_registration_v3_core&quot;);
 globalMap.put(&quot;deathRegistrationFormName&quot;, &quot;death_registration_v3&quot;);
 
 // Migration In
-globalMap.put(&quot;migrationInTableNameLegacy&quot;, &quot;migration_in_registration_v2_core&quot;);
 globalMap.put(&quot;migrationInTableName&quot;, &quot;migration_in_registration_v3_core&quot;);
 globalMap.put(&quot;migrationInFormName&quot;, &quot;migration_in_registration_v3&quot;);
 
 // Pregnancy Registration
-globalMap.put(&quot;pregnancyRegistrationTableNameLegacy&quot;, &quot;pregnancy_registration_v2_core&quot;);
 globalMap.put(&quot;pregnancyRegistrationTableName&quot;, &quot;pregnancy_registration_v3_core&quot;);
 globalMap.put(&quot;pregnancyRegistrationFormName&quot;, &quot;pregnancy_registration_v3&quot;);
 
 // Visit Registration
-globalMap.put(&quot;visitTableNameLegacy&quot;, &quot;&quot;);
-globalMap.put(&quot;visitTableName&quot;, &quot;visit_registration_core&quot;);
-globalMap.put(&quot;visitFormName&quot;, &quot;visit_registration&quot;);
+globalMap.put(&quot;visitTableName&quot;, &quot;visit_registration_v2_core&quot;);
+globalMap.put(&quot;visitFormName&quot;, &quot;visit_registration_v2&quot;);
 
-/** Properties relating processing of event forms */
+// Location Registration
+globalMap.put(&quot;locationTableName&quot;, &quot;location_registration_core&quot;);
+globalMap.put(&quot;locationFormName&quot;, &quot;location_registration&quot;);
 
-// the max amount of time a form is allowed wait to be processed
-// specified in hours (168 hours = 1 week)
-globalMap.put(&quot;formProcessableLifetime&quot;, &quot;168&quot;);
+// Social Group Registration
+globalMap.put(&quot;socialgroupTableName&quot;, &quot;social_group_registration_core&quot;);
+globalMap.put(&quot;socialgroupFormName&quot;, &quot;social_group_registration&quot;);
 
 return;</string>
   </entry>

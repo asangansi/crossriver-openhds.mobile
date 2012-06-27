@@ -5,18 +5,13 @@
       <instance>
         <data id="visit_registration_v2">
           <fieldWorkerId/>
-          <location>
-            <locationNew/>
-            <village/>
-            <locationName/>
-            <locationId/>
-            <locationHead/>
-            <type/>
-          </location>
+          <locationId/>
           <visitDate/>
           <roundNumber/>
           <derivedFromUri />
           <supervisorStatus />
+          <processedByMirth />
+          <validationFailed>0</validationFailed>
         </data>
       </instance>
       <itext>
@@ -27,56 +22,11 @@
           <text id="/data/fieldWorkerId:hint">
             <value/>
           </text>
-          <text id="/data/location:label">
-            <value>Location Information</value>
-          </text>
-          <text id="/data/location/locationNew:label">
-            <value>Is this a new location?</value>
-          </text>
-          <text id="/data/location/locationNew:hint">
-            <value/>
-          </text>
-          <text id="/data/location/locationNew:option0">
-            <value>Yes</value>
-          </text>
-          <text id="/data/location/locationNew:option1">
-            <value>No</value>
-          </text>
-          <text id="/data/location/village:label">
-            <value>Village</value>
-          </text>
-          <text id="/data/location/village:hint">
-            <value/>
-          </text>
-          <text id="/data/location/locationName:label">
-            <value>Location Name</value>
-          </text>
-          <text id="/data/location/locationName:hint">
-            <value/>
-          </text>
-          <text id="/data/location/locationId:label">
+          <text id="/data/locationId:label">
             <value>House Id</value>
           </text>
-          <text id="/data/location/locationId:hint">
+          <text id="/data/locationId:hint">
             <value/>
-          </text>
-          <text id="/data/location/locationHead:label">
-            <value>Location Head</value>
-          </text>
-          <text id="/data/location/locationHead:hint">
-            <value/>
-          </text>
-          <text id="/data/location/type:label">
-            <value>Location Type</value>
-          </text>
-          <text id="/data/location/type:hint">
-            <value/>
-          </text>
-          <text id="/data/location/type:option0">
-            <value>Rural</value>
-          </text>
-          <text id="/data/location/type:option1">
-            <value>Urban</value>
           </text>
           <text id="/data/visitDate:label">
             <value>Visit Date</value>
@@ -93,16 +43,13 @@
         </translation>
       </itext>
       <bind nodeset="/data/fieldWorkerId" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')" jr:constraintMsg="Field Worker Id is not the right format"/>
-      <bind nodeset="/data/location/locationNew" type="select1" required="true()" />
-      <bind nodeset="/data/location/village" type="string" required="true()" relevant="../locationNew = '1'" constraint="regex(., '^[A-Za-z]{3}$')" jr:constraintMsg="Village must only be 3 characters"/>
-      <bind nodeset="/data/location/locationName" type="string" required="true()" relevant="../locationNew = '1'" />
-      <bind nodeset="/data/location/locationId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
-      <bind nodeset="/data/location/locationHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{3}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" relevant="../locationNew = '1'"/>
-      <bind nodeset="/data/location/type" type="select1" required="true()" relevant="../locationNew = '1'"/>
+      <bind nodeset="/data/locationId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
       <bind nodeset="/data/visitDate" type="date" required="true()" constraint=". &lt;= today()" jr:constraintMsg="Visit date cannot be in the future"/>
       <bind nodeset="/data/roundNumber" type="int" required="true()" constraint=". &gt; 0" jr:constraintMsg="Round number should be greater than 0"/>
 			<bind nodeset="/data/derivedFromUri" type="string" />
       <bind nodeset="/data/supervisorStatus" type="int" />
+      <bind nodeset="/data/processedByMirth" type="int" />
+      <bind nodeset="/data/validationFailed" type="boolean" />
     </model>
   </h:head>
   <h:body>
@@ -110,49 +57,10 @@
       <label ref="jr:itext('/data/fieldWorkerId:label')"/>
       <hint ref="jr:itext('/data/fieldWorkerId:hint')"/>
     </input>
-    <group>
-      <label ref="jr:itext('/data/location:label')"/>
-      <select1 ref="/data/location/locationNew">
-        <label ref="jr:itext('/data/location/locationNew:label')"/>
-        <hint ref="jr:itext('/data/location/locationNew:hint')"/>
-        <item>
-          <label ref="jr:itext('/data/location/locationNew:option0')"/>
-          <value>1</value>
-        </item>
-        <item>
-          <label ref="jr:itext('/data/location/locationNew:option1')"/>
-          <value>2</value>
-        </item>
-      </select1>
-      <input ref="/data/location/village">
-        <label ref="jr:itext('/data/location/village:label')"/>
-        <hint ref="jr:itext('/data/location/village:hint')"/>
-      </input>
-      <input ref="/data/location/locationName">
-        <label ref="jr:itext('/data/location/locationName:label')"/>
-        <hint ref="jr:itext('/data/location/locationName:hint')"/>
-      </input>
-      <input ref="/data/location/locationId">
-        <label ref="jr:itext('/data/location/locationId:label')"/>
-        <hint ref="jr:itext('/data/location/locationId:hint')"/>
-      </input>
-      <input ref="/data/location/locationHead">
-        <label ref="jr:itext('/data/location/locationHead:label')"/>
-        <hint ref="jr:itext('/data/location/locationHead:hint')"/>
-      </input>
-      <select1 ref="/data/location/type">
-        <label ref="jr:itext('/data/location/type:label')"/>
-        <hint ref="jr:itext('/data/location/type:hint')"/>
-        <item>
-          <label ref="jr:itext('/data/location/type:option0')"/>
-          <value>RUR</value>
-        </item>
-        <item>
-          <label ref="jr:itext('/data/location/type:option1')"/>
-          <value>URB</value>
-        </item>
-      </select1>
-    </group>
+    <input ref="/data/locationId">
+      <label ref="jr:itext('/data/locationId:label')"/>
+      <hint ref="jr:itext('/data/locationId:hint')"/>
+    </input>
     <input ref="/data/visitDate">
       <label ref="jr:itext('/data/visitDate:label')"/>
       <hint ref="jr:itext('/data/visitDate:hint')"/>

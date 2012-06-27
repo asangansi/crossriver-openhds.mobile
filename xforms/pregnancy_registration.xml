@@ -8,7 +8,6 @@
 				<crhdss-pregnancy-registration id="pregnancy_registration_v3">
           <derivedFromUri />
 					<processedByMirth>0</processedByMirth>
-					<formRetired>0</formRetired>
 					<validationFailed>0</validationFailed>
           <supervisorStatus />
 					<FW />
@@ -30,7 +29,6 @@
 			</instance>
 			<bind nodeset="/crhdss-pregnancy-registration/processedByMirth"
 				type="boolean" />
-			<bind nodeset="/crhdss-pregnancy-registration/formRetired" type="boolean" />
 			<bind nodeset="/crhdss-pregnancy-registration/validationFailed" type="boolean" />
 			<bind nodeset="/crhdss-pregnancy-registration/FW" required="true()"
 				type="string" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"

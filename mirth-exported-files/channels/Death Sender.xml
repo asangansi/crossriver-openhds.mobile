@@ -1,0 +1,450 @@
+<channel>
+  <id>089877a5-7084-4404-9273-95b662ff23fb</id>
+  <name>Death Sender</name>
+  <description></description>
+  <enabled>true</enabled>
+  <version>2.1.1.5490</version>
+  <lastModified>
+    <time>1340741254171</time>
+    <timezone>America/New_York</timezone>
+  </lastModified>
+  <revision>1</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Channel Reader</property>
+      <property name="responseValue">None</property>
+    </properties>
+    <transformer>
+      <steps>
+        <step>
+          <sequenceNumber>0</sequenceNumber>
+          <name>house - extId (out)</name>
+          <script>tmp[&apos;house&apos;][&apos;extId&apos;] = validate(msg[&apos;basic_information_house_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;house&apos;][&apos;extId&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_house_id&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>1</sequenceNumber>
+          <name>household - extId (out)</name>
+          <script>tmp[&apos;household&apos;][&apos;extId&apos;] = validate(msg[&apos;basic_information_household_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;household&apos;][&apos;extId&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_household_id&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>2</sequenceNumber>
+          <name>individual - extId (out)</name>
+          <script>tmp[&apos;individual&apos;][&apos;extid&apos;] = validate(msg[&apos;basic_information_permanent_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;individual&apos;][&apos;extid&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_permanent_id&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>3</sequenceNumber>
+          <name>collectedBy - extId (out)</name>
+          <script>tmp[&apos;collectedBy&apos;][&apos;extId&apos;] = validate(msg[&apos;basic_information_field_worker&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;collectedBy&apos;][&apos;extId&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_field_worker&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>4</sequenceNumber>
+          <name>deathDate (out)</name>
+          <script>tmp[&apos;deathDate&apos;] = validate(msg[&apos;basic_information_date_of_death&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;deathDate&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_date_of_death&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>5</sequenceNumber>
+          <name>reportedBy (out)</name>
+          <script>tmp[&apos;reportedBy&apos;] = validate(msg[&apos;sorce_of_informaton_reported_by&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;reportedBy&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;sorce_of_informaton_reported_by&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>6</sequenceNumber>
+          <name>deathPlace (out)</name>
+          <script>tmp[&apos;deathPlace&apos;] = validate(msg[&apos;basic_information_place_of_death&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;deathPlace&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_place_of_death&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>7</sequenceNumber>
+          <name>sex (out)</name>
+          <script>tmp[&apos;sex&apos;] = validate(msg[&apos;basic_information_sex&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;sex&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_sex&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>8</sequenceNumber>
+          <name>placeOfDeathOther (out)</name>
+          <script>tmp[&apos;placeOfDeathOther&apos;] = validate(msg[&apos;basic_information_place_of_death_other&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;placeOfDeathOther&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_place_of_death_other&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>9</sequenceNumber>
+          <name>deceasedName (out)</name>
+          <script>tmp[&apos;deceasedName&apos;] = validate(msg[&apos;basic_information_deceased_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;deceasedName&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_deceased_name&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>10</sequenceNumber>
+          <name>householdName (out)</name>
+          <script>tmp[&apos;householdName&apos;] = validate(msg[&apos;basic_information_household_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;householdName&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_household_name&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>11</sequenceNumber>
+          <name>recordedDate (out)</name>
+          <script>tmp[&apos;recordedDate&apos;] = validate(msg[&apos;basic_information_date_of_interview&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;recordedDate&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;basic_information_date_of_interview&apos;].toString().toUpperCase()</string>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>12</sequenceNumber>
+          <name>visitDeath - extId (out)</name>
+          <script>tmp[&apos;visitDeath&apos;][&apos;extId&apos;] = validate(msg[&apos;visitId&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;visitDeath&apos;][&apos;extId&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;visitId&apos;].toString()</string>
+            </entry>
+          </data>
+        </step>
+      </steps>
+      <inboundTemplate encoding="base64"></inboundTemplate>
+      <outboundTemplate encoding="base64">PGRlYXRoPgogIDxob3VzZT4KICAgIDxleHRJZCAvPgogIDwvaG91c2U+CiAgPGhvdXNlaG9sZD4K
+ICAgIDxleHRJZCAvPgogIDwvaG91c2Vob2xkPgogIDxpbmRpdmlkdWFsPgogICAgPGV4dGlkIC8+
+CiAgPC9pbmRpdmlkdWFsPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZCAvPgogIDwvY29sbGVj
+dGVkQnk+CiAgPGRlYXRoRGF0ZSAvPgogIDxyZXBvcnRlZEJ5IC8+CiAgPHJlY29yZGVkRGF0ZSAv
+PgogIDxkZWF0aFBsYWNlIC8+CiAgPGdlbmRlciAvPgogIDx2aXNpdERlYXRoPgogICAgPGV4dElk
+IC8+CiAgPC92aXNpdERlYXRoPgogIDxwbGFjZU9mRGVhdGhPdGhlciAvPgogIDxkZWNlYXNlZE5h
+bWUgLz4KICA8aG91c2Vob2xkTmFtZSAvPgo8L2RlYXRoPg==</outboundTemplate>
+      <inboundProtocol>XML</inboundProtocol>
+      <outboundProtocol>XML</outboundProtocol>
+      <inboundProperties>
+        <property name="stripNamespaces">true</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="stripNamespaces">true</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <version>2.1.1.5490</version>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="DataType">HTTP Sender</property>
+        <property name="dispatcherAuthenticationType">Basic</property>
+        <property name="dispatcherCharset">UTF-8</property>
+        <property name="dispatcherContent">${message.transformedData}</property>
+        <property name="dispatcherContentType">text/plain</property>
+        <property name="dispatcherHeaders">&lt;properties&gt;
+  &lt;property name=&quot;Content-type&quot;&gt;application/xml&lt;/property&gt;
+&lt;/properties&gt;</property>
+        <property name="dispatcherIncludeHeadersInResponse">0</property>
+        <property name="dispatcherMethod">post</property>
+        <property name="dispatcherMultipart">0</property>
+        <property name="dispatcherParameters">&lt;properties/&gt;</property>
+        <property name="dispatcherPassword">${openhdsPassword}</property>
+        <property name="dispatcherReplyChannelId">sink</property>
+        <property name="dispatcherSocketTimeout">30000</property>
+        <property name="dispatcherUseAuthentication">1</property>
+        <property name="dispatcherUsername">${openhdsUser}</property>
+        <property name="host">${openhdsUrl}/api/rest/corewebservice/death</property>
+        <property name="queuePollInterval">200</property>
+        <property name="reconnectMillisecs">10000</property>
+        <property name="rotateQueue">0</property>
+        <property name="usePersistentQueues">0</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <outboundTemplate encoding="base64"></outboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>HTTP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.1.1.5490</version>
+    </connector>
+  </destinationConnectors>
+  <properties>
+    <property name="clearGlobalChannelMap">true</property>
+    <property name="dont_store_filtered">true</property>
+    <property name="encryptData">false</property>
+    <property name="error_messages_only">false</property>
+    <property name="initialState">started</property>
+    <property name="max_message_age">-1</property>
+    <property name="store_messages">true</property>
+    <property name="synchronous">true</property>
+    <property name="transactional">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// Mark record as being processed
+var origXml = new XML(messageObject.getRawData());
+
+// Inspect response data from web service call, and send for audit
+var obj = responseMap.get(&quot;Destination 1&quot;);
+var msgXml = new XML(obj.getMessage());
+var invalidForm = msgXml[&quot;errors&quot;].length() &gt; 0 ? true : false;
+
+executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;deathRegistrationTableName&quot;) + &quot; SET processed_by_mirth = true, validation_failed = &quot; + invalidForm + &quot; WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);
+
+var instanceXml = reconstructInstanceXml(globalMap.get(&quot;deathRegistrationTableName&quot;), origXml, globalMap.get(&quot;deathRegistrationFormName&quot;));
+
+if (invalidForm) {
+  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Death&quot;, origXml[&apos;basic_information_field_worker&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;deathRegistrationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), true);
+  router.routeMessage(&quot;Form Submission Channel&quot;, auditXml);
+} else {
+  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Death&quot;, origXml[&apos;basic_information_field_worker&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;deathRegistrationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), false);
+  var completedForm = new XML(&quot;&lt;completedFormSubmission /&gt;&quot;);
+  completedForm.appendChild(auditXml);
+  completedForm[&quot;completedFormSubmissionId&quot;] = obj.getMessage();
+  router.routeMessage(&quot;Form Complete Channel&quot;, completedForm);
+}
+
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</shutdownScript>
+</channel>
