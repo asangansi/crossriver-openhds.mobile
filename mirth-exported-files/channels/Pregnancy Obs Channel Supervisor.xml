@@ -3,12 +3,12 @@
   <name>Pregnancy Obs Channel Supervisor</name>
   <description></description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340744205562</time>
+    <time>1340840773000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>4</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -111,14 +111,14 @@ bmFuY3lvYnNlcnZhdGlvbj4=</outboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
       <name>Destination 1</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">bfa7dc3a-af2e-40fe-a908-1f5d489ade21</property>
+        <property name="host">sink</property>
         <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>
@@ -147,7 +147,7 @@ IC8+CiAgPGRlY2Vhc2VkTmFtZSAvPgogIDxob3VzZWhvbGROYW1lIC8+CjwvZGVhdGg+</inboundTem
       <transportName>Channel Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

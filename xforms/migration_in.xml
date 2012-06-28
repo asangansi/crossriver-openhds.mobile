@@ -2,10 +2,10 @@
 	xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<h:head>
-		<h:title>In Migration v3</h:title>
+		<h:title>In Migration v4</h:title>
 		<model>
 			<instance>
-				<migration_in id="migration_in_registration_v3">
+				<migration_in id="migration_in_registration_v4">
           <derivedFromUri />
 					<processedByMirth>0</processedByMirth>
 					<validationFailed>0</validationFailed>

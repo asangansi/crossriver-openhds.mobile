@@ -3,12 +3,12 @@
   <name>Visit Channel Supervisor</name>
   <description>This channel will read submissions that are submitted from the supervisors. This is accomplished by filtering on a field in the form (supervisor_status)</description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340734272265</time>
+    <time>1340840839000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>17</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -73,7 +73,7 @@ Qnk+CjwvdmlzaXQ+</outboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
@@ -111,7 +111,7 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
       <transportName>Channel Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

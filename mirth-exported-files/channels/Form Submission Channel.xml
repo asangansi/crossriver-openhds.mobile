@@ -3,9 +3,9 @@
   <name>Form Submission Channel</name>
   <description></description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1337724159438</time>
+    <time>1340840694000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
   <revision>1</revision>
@@ -34,7 +34,7 @@
     <transportName>Channel Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
@@ -80,7 +80,7 @@
       <transportName>HTTP Sender</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

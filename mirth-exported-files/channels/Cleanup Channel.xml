@@ -3,12 +3,12 @@
   <name>Cleanup Channel</name>
   <description>This channel is run once a day and attempts to clean up any records. Cleanup is defined as any forms that have yet to be processed (processed_by_mirth = false) and are thus waiting for processing. Processing will not occur based on 3 filters: no visit found, no location found or no household found. This channel checks the submission dates of such forms, and if they are past configurable thresholds, forces them to be processed.</description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340743554250</time>
+    <time>1340840660000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>42</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -84,14 +84,14 @@ return entries;</property>
     <transportName>JavaScript Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
       <name>Visit</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">cfd0753f-9870-4974-877f-029758d4e051</property>
+        <property name="host">sink</property>
         <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>
@@ -127,7 +127,7 @@ return entries;</property>
       <transportName>Channel Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

@@ -3,12 +3,12 @@
   <name>Social Group Channel Supervisor</name>
   <description>This channel will read submissions that are submitted from the supervisors. This is accomplished by filtering on a field in the form (supervisor_status)</description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340740830859</time>
+    <time>1340840796000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>10</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -58,28 +58,27 @@ PC9kZXJpdmVkX2Zyb21fdXJpPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
       <name>Destination 1</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">c79f3b74-d2ac-47e0-86cb-c307a4b98921</property>
+        <property name="host">sink</property>
         <property name="synchronised">0</property>
         <property name="template">${message.rawData}</property>
       </properties>
       <transformer>
         <steps/>
-        <inboundTemplate encoding="base64">PG91dG1pZ3JhdGlvbj4KICA8aW5zdGFuY2VJZCAvPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJ
-ZCAvPgogIDwvY29sbGVjdGVkQnk+CiAgPGluZGl2aWR1YWw+CiAgICA8ZXh0aWQgLz4KICA8L2lu
-ZGl2aWR1YWw+CiAgPGhvdXNlPgogICAgPGV4dElkIC8+CiAgPC9ob3VzZT4KICA8b3JpZ2luIC8+
-CiAgPGhvdXNlaG9sZD4KICAgIDxleHRJZCAvPgogIDwvaG91c2Vob2xkPgogIDxyZWFzb24gLz4K
-ICA8dmlzaXQ+CiAgICA8ZXh0SWQgLz4KICA8L3Zpc2l0PgogIDxkYXRlT2ZJbnRlcnZpZXcgLz4K
-ICA8cmVjb3JkZWREYXRlIC8+CiAgPG5hbWVPZk1pZ3JhdCAvPgogIDxnZW5kZXIgLz4KICA8aG91
-c2Vob2xkTmFtZSAvPgogIDxwbGFjZU1vdmVkVG8gLz4KICA8aG91c2VOYW1lIC8+CiAgPHNlY3Rp
-b24gLz4KICA8dmlsbGFnZSAvPgogIDxwaG9uZU51bWJlciAvPgogIDxwbGFjZU1vdmVkVG9PdGhl
-ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTemplate>
+        <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxkYXRlX29mX2ludGVydmlldz52
+YWx1ZTwvZGF0ZV9vZl9pbnRlcnZpZXc+DQogICAgPG5hbWU+dmFsdWU8L25hbWU+DQogICAgPHNv
+Y2lhbF9ncm91cF9oZWFkPnZhbHVlPC9zb2NpYWxfZ3JvdXBfaGVhZD4NCiAgICA8ZmllbGRfd29y
+a2VyX2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPHNvY2lhbF9ncm91cF9pZD52YWx1
+ZTwvc29jaWFsX2dyb3VwX2lkPg0KICAgIDxyZXNwb25kZW50X2lkPnZhbHVlPC9yZXNwb25kZW50
+X2lkPg0KICAgIDx0eXBlPnZhbHVlPC90eXBlPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZhbHVl
+PC9kZXJpdmVkX2Zyb21fdXJpPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>
@@ -96,7 +95,7 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
       <transportName>Channel Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

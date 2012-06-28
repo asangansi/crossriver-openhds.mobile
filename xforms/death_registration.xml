@@ -2,10 +2,10 @@
 	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
-		<h:title>Death Registration v3</h:title>
+		<h:title>Death Registration v4</h:title>
 		<model>
 			<instance>
-				<data id="death_registration_v3">
+				<data id="death_registration_v4">
           <derivedFromUri />
 					<processedByMirth>0</processedByMirth>
 					<validationFailed>0</validationFailed>

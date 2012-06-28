@@ -3,12 +3,12 @@
   <name>In Migration Channel Supervisor</name>
   <description></description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340744165468</time>
+    <time>1340840711000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>6</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -137,14 +137,14 @@ YWxFZHVjYXRpb25ZZWFycyAvPgo8L2lubWlncmF0aW9uPg==</outboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
       <name>Destination 1</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">5f77391a-bf55-446f-bc5e-c96b87bbcc0c</property>
+        <property name="host">sink</property>
         <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>
@@ -175,7 +175,7 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
       <transportName>Channel Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

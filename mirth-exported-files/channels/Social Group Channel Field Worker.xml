@@ -3,12 +3,12 @@
   <name>Social Group Channel Field Worker</name>
   <description>This channel will read submissions from field workers. Those submissions are then forward to the mobile interop server</description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340733751265</time>
+    <time>1340840787000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>4</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -57,7 +57,7 @@ X2lkPg0KICAgIDx0eXBlPnZhbHVlPC90eXBlPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
@@ -100,7 +100,7 @@ X2lkPg0KICAgIDx0eXBlPnZhbHVlPC90eXBlPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
       <transportName>JavaScript Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

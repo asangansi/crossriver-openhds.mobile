@@ -3,12 +3,12 @@
   <name>Birth Channel Field Worker</name>
   <description>This channel will read submissions from field workers. Those submissions are then forward to the mobile interop server</description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1337724122047</time>
+    <time>1340840608000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>2</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, MOTHER_ID, HOUSEHOLD_NAME, CHILDREN_SECOND_CHILD_SEX, CHILDREN_FIRST_CHILD_SEX, FATHER_ID, CHILDREN_SECOND_CHILD_LAST_NAME, FIRST_LIVE_BIRTH, CHILDREN_SECOND_CHILD_FIRST_NAME, CHILDREN_FIRST_CHILD_LAST_NAME, TOTAL_CHILDREN_BORN, FATHER_NAME, NUM_LIVE_BIRTHS_FROM_RECENT_PREG, CHILDREN_SECOND_CHILD_ID, DERIVED_FROM_URI, CHILDREN_FIRST_CHILD_ID, CHILDREN_FIRST_CHILD_FIRST_NAME, HOUSE_ID, BIRTH_PLACE_OTHER, MOTHER_NAME, UMBILICAL_CORD_APPLIED, REPORTED_BY, RECORDED_DATE, HOUSEHOLD_ID, CHILD_DOB, COLLECTED_BY, UMBILICAL_CORD_CUTTING, BIRTH_PLACE, NUM_LIVE_BIRTHS, MOTHER_LINE_NUMBER FROM &quot; + globalMap.get(&quot;birthRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND form_retired = false AND supervisor_status is null&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, MOTHER_ID, HOUSEHOLD_NAME, CHILDREN_SECOND_CHILD_SEX, CHILDREN_FIRST_CHILD_SEX, FATHER_ID, CHILDREN_SECOND_CHILD_LAST_NAME, FIRST_LIVE_BIRTH, CHILDREN_SECOND_CHILD_FIRST_NAME, CHILDREN_FIRST_CHILD_LAST_NAME, TOTAL_CHILDREN_BORN, FATHER_NAME, NUM_LIVE_BIRTHS_FROM_RECENT_PREG, CHILDREN_SECOND_CHILD_ID, DERIVED_FROM_URI, CHILDREN_FIRST_CHILD_ID, CHILDREN_FIRST_CHILD_FIRST_NAME, HOUSE_ID, BIRTH_PLACE_OTHER, MOTHER_NAME, UMBILICAL_CORD_APPLIED, REPORTED_BY, RECORDED_DATE, HOUSEHOLD_ID, CHILD_DOB, COLLECTED_BY, UMBILICAL_CORD_CUTTING, BIRTH_PLACE, NUM_LIVE_BIRTHS, MOTHER_LINE_NUMBER FROM &quot; + globalMap.get(&quot;birthRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status is null&quot;);
 dbConn.close();
 
 return result;</property>
@@ -80,7 +80,7 @@ L3Jlc3VsdD4NCg==</inboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
@@ -856,7 +856,7 @@ PG51bUxpdmVCaXJ0aHMgLz4KPC9wcmVnbmFuY3lvdXRjb21lPg==</outboundTemplate>
       <transportName>JavaScript Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

@@ -3,12 +3,12 @@
   <name>Location Channel Supervisor</name>
   <description>This channel will read submissions that are submitted from the supervisors. This is accomplished by filtering on a field in the form (supervisor_status)</description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340733721640</time>
+    <time>1340840740000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>12</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -207,7 +207,7 @@ aWQ+PC9leHRpZD4KICA8L2xvY2F0aW9uSGVhZD4KPC9sb2NhdGlvbj4=</outboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
@@ -263,7 +263,7 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
       <transportName>HTTP Sender</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>

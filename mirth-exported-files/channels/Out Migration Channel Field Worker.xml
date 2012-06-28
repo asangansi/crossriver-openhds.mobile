@@ -3,12 +3,12 @@
   <name>Out Migration Channel Field Worker</name>
   <description>This channel will read submissions from field workers. Those submissions are then forward to the mobile interop server</description>
   <enabled>true</enabled>
-  <version>2.1.1.5490</version>
+  <version>2.2.1.5861</version>
   <lastModified>
-    <time>1337724173891</time>
+    <time>1340841383000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>2</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, BASIC_INFO_INTERVIEW_DATE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_NAME, BASIC_INFO_COLLECTED_BY, DERIVED_FROM_URI, MOVE_AWAY_TO_PLACE_MOVED_TO, MOVE_AWAY_TO_PLACE_MOVED_TO_PHONE_NUMBER, MOVE_AWAY_TO_PLACE_MOVED_TO_OTHER, MOVE_AWAY_TO_PLACE_MOVED_TO_SECTION, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON, MOVE_AWAY_TO_PLACE_MOVED_TO_HOUSE_NAME, BASIC_INFO_PERM_ID, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_ID, BASIC_INFO_SEX, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_NAME, MOVE_AWAY_TO_PLACE_MOVED_TO_VILLAGE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_ID, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON_OTHER, BASIC_INFO_MIGRATION_DATE, BASIC_INFO_MIGRANT_NAME FROM &quot; +  globalMap.get(&quot;outmigrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND form_retired = false AND supervisor_status is null&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, BASIC_INFO_INTERVIEW_DATE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_NAME, BASIC_INFO_COLLECTED_BY, DERIVED_FROM_URI, MOVE_AWAY_TO_PLACE_MOVED_TO, MOVE_AWAY_TO_PLACE_MOVED_TO_PHONE_NUMBER, MOVE_AWAY_TO_PLACE_MOVED_TO_OTHER, MOVE_AWAY_TO_PLACE_MOVED_TO_SECTION, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON, MOVE_AWAY_TO_PLACE_MOVED_TO_HOUSE_NAME, BASIC_INFO_PERM_ID, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_ID, BASIC_INFO_SEX, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_NAME, MOVE_AWAY_TO_PLACE_MOVED_TO_VILLAGE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_ID, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON_OTHER, BASIC_INFO_MIGRATION_DATE, BASIC_INFO_MIGRANT_NAME FROM &quot; +  globalMap.get(&quot;outmigrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status is null&quot;);
 dbConn.close();
 
 return result;</property>
@@ -79,7 +79,7 @@ Y19pbmZvX21pZ3JhbnRfbmFtZT4NCjwvcmVzdWx0Pg0K</inboundTemplate>
     <transportName>Database Reader</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </sourceConnector>
   <destinationConnectors>
     <connector>
@@ -633,7 +633,7 @@ ZXIgLz4KICA8cmVhc29uRm9yTWlncmF0aW9uT3RoZXIgLz4KPC9vdXRtaWdyYXRpb24+</outboundTe
       <transportName>JavaScript Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
-      <version>2.1.1.5490</version>
+      <version>2.2.1.5861</version>
     </connector>
   </destinationConnectors>
   <properties>
