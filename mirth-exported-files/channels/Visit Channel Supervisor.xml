@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340840839000</time>
+    <time>1340907666234</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -40,10 +40,7 @@ aXNpdF9kYXRlPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZhbHVlPC9kZXJpdmVkX2Zyb21fdXJp
 Pg0KICAgIDxmaWVsZF93b3JrZXJfaWQ+dmFsdWU8L2ZpZWxkX3dvcmtlcl9pZD4NCiAgICA8cm91
 bmRfbnVtYmVyPnZhbHVlPC9yb3VuZF9udW1iZXI+DQogICAgPGxvY2F0aW9uX2lkPnZhbHVlPC9s
 b2NhdGlvbl9pZD4NCjwvcmVzdWx0Pg0K</inboundTemplate>
-      <outboundTemplate encoding="base64">PHZpc2l0PgogIDx2aXNpdExvY2F0aW9uPgogICAgPGV4dElkPjwvZXh0SWQ+CiAgPC92aXNpdExv
-Y2F0aW9uPgogIDx2aXNpdERhdGU+PC92aXNpdERhdGU+CiAgIDxyb3VuZE51bWJlcj48L3JvdW5k
-TnVtYmVyPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZD48L2V4dElkPgogIDwvY29sbGVjdGVk
-Qnk+CjwvdmlzaXQ+</outboundTemplate>
+      <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
       <inboundProperties>
@@ -86,15 +83,7 @@ Qnk+CjwvdmlzaXQ+</outboundTemplate>
       </properties>
       <transformer>
         <steps/>
-        <inboundTemplate encoding="base64">PG91dG1pZ3JhdGlvbj4KICA8aW5zdGFuY2VJZCAvPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJ
-ZCAvPgogIDwvY29sbGVjdGVkQnk+CiAgPGluZGl2aWR1YWw+CiAgICA8ZXh0aWQgLz4KICA8L2lu
-ZGl2aWR1YWw+CiAgPGhvdXNlPgogICAgPGV4dElkIC8+CiAgPC9ob3VzZT4KICA8b3JpZ2luIC8+
-CiAgPGhvdXNlaG9sZD4KICAgIDxleHRJZCAvPgogIDwvaG91c2Vob2xkPgogIDxyZWFzb24gLz4K
-ICA8dmlzaXQ+CiAgICA8ZXh0SWQgLz4KICA8L3Zpc2l0PgogIDxkYXRlT2ZJbnRlcnZpZXcgLz4K
-ICA8cmVjb3JkZWREYXRlIC8+CiAgPG5hbWVPZk1pZ3JhdCAvPgogIDxnZW5kZXIgLz4KICA8aG91
-c2Vob2xkTmFtZSAvPgogIDxwbGFjZU1vdmVkVG8gLz4KICA8aG91c2VOYW1lIC8+CiAgPHNlY3Rp
-b24gLz4KICA8dmlsbGFnZSAvPgogIDxwaG9uZU51bWJlciAvPgogIDxwbGFjZU1vdmVkVG9PdGhl
-ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTemplate>
+        <inboundTemplate encoding="base64"></inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>

@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340840660000</time>
+    <time>1340913100671</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>6</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -22,12 +22,13 @@ var warningMsgs = [];
 function iterateResult(result, formName) {
   while(result.next()) {
     var xml = convertResultSetToXml(result);
-    if (shouldWarnUser(xml[&quot;_creation_date&quot;].toString())) {
-      warningMsgs.push(formName + &quot; (WARN): &quot; + xml[&quot;_uri&quot;].toString());
-    } else if (shouldFailForm(xml[&quot;_creation_date&quot;].toString())) {
+    if (shouldFailForm(xml[&quot;_creation_date&quot;].toString())) {
       xml.@form = formName;
       entries.add(xml.toString());
-    }
+    } else if (shouldWarnUser(xml[&quot;_creation_date&quot;].toString())) {
+      warningMsgs.push(formName + &quot; (WARN): &quot; + xml[&quot;_uri&quot;].toString());
+      logger.warn(&quot;Found a form that hasn&apos;t been processed within warning timeout limit: &quot; + formName + &quot; (WARN): &quot; + xml[&quot;_uri&quot;].toString());
+    } 
   }
 }
 
@@ -35,27 +36,27 @@ var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&q
 
 // visits
 var visitResults = dbConn.executeCachedQuery(&quot;SELECT _URI, _creation_date, visit_date, derived_from_uri, field_worker_id, round_number, location_id FROM &quot; +  globalMap.get(&quot;visitTableName&quot;) + &quot; WHERE processed_by_mirth is null AND supervisor_status = 1&quot;);
-iterateResult(visitResults, &quot;Visit&quot;);
+iterateResult(visitResults, &quot;visit&quot;);
 
 // births
 var birthResult = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, MOTHER_ID, HOUSEHOLD_NAME, CHILDREN_SECOND_CHILD_SEX, CHILDREN_FIRST_CHILD_SEX, FATHER_ID, CHILDREN_SECOND_CHILD_LAST_NAME, FIRST_LIVE_BIRTH, CHILDREN_SECOND_CHILD_FIRST_NAME, CHILDREN_FIRST_CHILD_LAST_NAME, TOTAL_CHILDREN_BORN, FATHER_NAME, NUM_LIVE_BIRTHS_FROM_RECENT_PREG, CHILDREN_SECOND_CHILD_ID, DERIVED_FROM_URI, CHILDREN_FIRST_CHILD_ID, CHILDREN_FIRST_CHILD_FIRST_NAME, HOUSE_ID, BIRTH_PLACE_OTHER, MOTHER_NAME, UMBILICAL_CORD_APPLIED, REPORTED_BY, RECORDED_DATE, HOUSEHOLD_ID, CHILD_DOB, COLLECTED_BY, UMBILICAL_CORD_CUTTING, BIRTH_PLACE, NUM_LIVE_BIRTHS, MOTHER_LINE_NUMBER FROM &quot; + globalMap.get(&quot;birthRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
-iterateResult(birthResult, &quot;Birth&quot;);
+iterateResult(birthResult, &quot;birth&quot;);
 
 // deaths
 var deathResult = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, BASIC_INFORMATION_HOUSEHOLD_ID, SORCE_OF_INFORMATON_REPORTED_BY, BASIC_INFORMATION_PERMANENT_ID, BASIC_INFORMATION_DATE_OF_DEATH, BASIC_INFORMATION_FIELD_WORKER, BASIC_INFORMATION_DATE_OF_INTERVIEW, BASIC_INFORMATION_PLACE_OF_DEATH, BASIC_INFORMATION_SEX, BASIC_INFORMATION_HOUSE_ID, BASIC_INFORMATION_PLACE_OF_DEATH_OTHER, BASIC_INFORMATION_DECEASED_NAME, BASIC_INFORMATION_HOUSEHOLD_NAME FROM &quot; + globalMap.get(&quot;deathRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
-iterateResult(deathResult, &quot;Death&quot;);
+iterateResult(deathResult, &quot;death&quot;);
 
 // in migrations
 var migrationInResult = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, SECTION5_FR_SEC, SECTION6_MIN_PERSON_FN, SECTION6_MIN_PERSON_LN, RELATIONSHIP_TO_GROUP_HEAD, SECTION5_FR_VILL, SECTION5_FR_PN, PERM_ID, EVER_REG, CURR_HH_ID, COMP_ID, SECTION6_MIN_PERSON_MOTHER_ID, FW, REASONFORMIGRATION, TEMP_ID, SECTION6_MIN_PERSON_BIRTHDATE, SECTION5_FR_HN, MFROM_HH_N, SECTION6_MIN_PERSON_FATHER_ID, FROM_OTHER, SECTION6_SEX, MFROM_HN, DERIVED_FROM_URI, SECTION5_FR_ON, OLD_NAME, MFROM_VILL, SECTION5_FR_HH_N, CURR_HH_N, DATE_MI, CURR_H_N, SECTION6_MIN_PERSON_EDUCATION, MFROM_SEC, DINT, FROM_FIELD, MFROM_PN, REASONFORMIGRATION_OTHER FROM &quot; +  globalMap.get(&quot;migrationInTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
-iterateResult(migrationInResult, &quot;In Migration&quot;);
+iterateResult(migrationInResult, &quot;inmigration&quot;);
 
 // out migrations
 var outmigrationResult = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, BASIC_INFO_INTERVIEW_DATE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_NAME, BASIC_INFO_COLLECTED_BY, DERIVED_FROM_URI, MOVE_AWAY_TO_PLACE_MOVED_TO, MOVE_AWAY_TO_PLACE_MOVED_TO_PHONE_NUMBER, MOVE_AWAY_TO_PLACE_MOVED_TO_OTHER, MOVE_AWAY_TO_PLACE_MOVED_TO_SECTION, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON, MOVE_AWAY_TO_PLACE_MOVED_TO_HOUSE_NAME, BASIC_INFO_PERM_ID, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_ID, BASIC_INFO_SEX, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_NAME, MOVE_AWAY_TO_PLACE_MOVED_TO_VILLAGE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_ID, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON_OTHER, BASIC_INFO_MIGRATION_DATE, BASIC_INFO_MIGRANT_NAME FROM &quot; +  globalMap.get(&quot;outmigrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
-iterateResult(outmigrationResult, &quot;Out Migration&quot;);
+iterateResult(outmigrationResult, &quot;outmigration&quot;);
 
 // pregnancy obs
 var obsResult = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
-iterateResult(obsResult, &quot;Pregnancy Observation&quot;);
+iterateResult(obsResult, &quot;pregnancyobservation&quot;);
 
 if (warningMsgs.length &gt; 0) {
   var body = warningMsgs.join(&quot;\n&quot;);
@@ -91,7 +92,7 @@ return entries;</property>
       <name>Visit</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">sink</property>
+        <property name="host">cfd0753f-9870-4974-877f-029758d4e051</property>
         <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>
@@ -120,6 +121,48 @@ return entries;</property>
             </data>
             <type>JavaScript</type>
             <script>return msg[&apos;@form&apos;].toString() === &quot;visit&quot;;</script>
+            <operator>NONE</operator>
+          </rule>
+        </rules>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+    <connector>
+      <name>In Migration</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">5f77391a-bf55-446f-bc5e-c96b87bbcc0c</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules>
+          <rule>
+            <sequenceNumber>0</sequenceNumber>
+            <name>Visit Filter</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>return msg[&apos;@form&apos;].toString() === &quot;inmigration&quot;;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>return msg[&apos;@form&apos;].toString() === &quot;inmigration&quot;;</script>
             <operator>NONE</operator>
           </rule>
         </rules>

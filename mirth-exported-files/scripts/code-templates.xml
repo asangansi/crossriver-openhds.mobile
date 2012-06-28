@@ -49,7 +49,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>ce2d4861-3f2b-4b81-929d-19c0416ea25f</id>
@@ -83,7 +83,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>73b17a51-0708-4f21-8a0a-50c1beaab8e0</id>
@@ -96,7 +96,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>cc2b3ed3-1887-47bf-9bbd-069dbdb8323d</id>
@@ -109,7 +109,7 @@
   if (matches != null) {
     createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
     var started = createDate.getTime();
-    var endDate = started + (globalMap.get(&quot;warningTimeout&quot;) * 3600000);
+    var endDate = started + (globalMap.get(&quot;warningTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
 
     if (endDate - (new Date().getTime()) &lt; 0) {
       return true;
@@ -121,7 +121,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>3d5c5ff3-192c-4d85-be03-3a920bf77768</id>
@@ -144,7 +144,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>769a6cfd-e858-4490-97a2-1b43b17d59df</id>
@@ -176,7 +176,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>012cf64f-ab96-4ffc-87a5-50f2089d7a73</id>
@@ -186,15 +186,19 @@
   var rsmd = rs.getMetaData();
   var result = &lt;result /&gt;;
 
-  for (var i = 1; i &lt; rsmd.getColumnCount(); i++)  {
-    result[rsmd.getColumnName(i).toLowerCase()] = rs.getString(i);
+  for (var i = 1; i &lt;= rsmd.getColumnCount(); i++)  {
+	var value = rs.getString(i);
+    if (value === &quot;null&quot;) {
+      value = null;
+    }
+    result[rsmd.getColumnName(i).toLowerCase()] = value;
   }
 
   return result;
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>5a59aeeb-dbe2-4627-9cc9-40e21797cf25</id>
@@ -209,7 +213,6 @@
   try {
     var builder = new RestfulRequestBuilder(locationUrl);
     var response = builder.buildGet();
-
     if (response.getStatusCode() != 200) {
       return false;
     }
@@ -223,7 +226,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>08b087c0-8580-44a4-b4a0-a36fe656e478</id>
@@ -252,7 +255,7 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
     <id>4747bcef-faa6-4f68-96fd-d6da6c499a16</id>
@@ -265,7 +268,7 @@
   if (matches != null) {
     createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
     var started = createDate.getTime();
-    var endDate = started + (globalMap.get(&quot;failTimeout&quot;) * 3600000);
+    var endDate = started + (globalMap.get(&quot;failTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
 
     if (endDate - (new Date().getTime()) &lt; 0) {
       return true;
@@ -277,6 +280,6 @@
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
-    <version>2.1.1.5490</version>
+    <version>2.2.1.5861</version>
   </codeTemplate>
 </list>

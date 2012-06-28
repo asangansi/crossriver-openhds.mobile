@@ -29,33 +29,37 @@ globalMap.put(&quot;mobileInteropPassword&quot;, &quot;test&quot;);
 
 // this is the amount of time to wait before starting to send warnings to user that a form has been
 // waiting to be processed
-globalMap.put(&quot;warningTimeout&quot;, &quot;.1&quot;); // 1 day
+// DEFAULT = 24 hours = 1 day
+globalMap.put(&quot;warningTimeout&quot;, 1); // 1 day
 
 // this is the amount of time to wait before actually forcing the form to send (and fail)
-globalMap.put(&quot;failTimeout&quot;, &quot;96&quot;); // 4 days
+// DEFAULT = 96 hours = 4 days
+globalMap.put(&quot;failTimeout&quot;, 3); // 4 days
 
+// DEFAULT = 3600000 milliseconds = 1 hour
+globalMap.put(&quot;timeoutUnit&quot;, 60000);
 
 // ODK Table Names 
 
 // Out Migration
-globalMap.put(&quot;outmigrationTableName&quot;, &quot;migration_out_registration_v3_core&quot;);
-globalMap.put(&quot;outmigrationFormName&quot;, &quot;migration_out_registration_v3&quot;);
+globalMap.put(&quot;outmigrationTableName&quot;, &quot;migration_out_registration_v4_core&quot;);
+globalMap.put(&quot;outmigrationFormName&quot;, &quot;migration_out_registration_v4&quot;);
 
 // Birth Registration
-globalMap.put(&quot;birthRegistrationTableName&quot;, &quot;birth_registration_v3_core&quot;);
-globalMap.put(&quot;birthRegistrationFormName&quot;, &quot;birth_registration_v3&quot;);
+globalMap.put(&quot;birthRegistrationTableName&quot;, &quot;birth_registration_v4_core&quot;);
+globalMap.put(&quot;birthRegistrationFormName&quot;, &quot;birth_registration_v4&quot;);
 
 // Death Registration
-globalMap.put(&quot;deathRegistrationTableName&quot;, &quot;death_registration_v3_core&quot;);
-globalMap.put(&quot;deathRegistrationFormName&quot;, &quot;death_registration_v3&quot;);
+globalMap.put(&quot;deathRegistrationTableName&quot;, &quot;death_registration_v4_core&quot;);
+globalMap.put(&quot;deathRegistrationFormName&quot;, &quot;death_registration_v4&quot;);
 
 // Migration In
-globalMap.put(&quot;migrationInTableName&quot;, &quot;migration_in_registration_v3_core&quot;);
-globalMap.put(&quot;migrationInFormName&quot;, &quot;migration_in_registration_v3&quot;);
+globalMap.put(&quot;migrationInTableName&quot;, &quot;migration_in_registration_v4_core&quot;);
+globalMap.put(&quot;migrationInFormName&quot;, &quot;migration_in_registration_v4&quot;);
 
 // Pregnancy Registration
-globalMap.put(&quot;pregnancyRegistrationTableName&quot;, &quot;pregnancy_registration_v3_core&quot;);
-globalMap.put(&quot;pregnancyRegistrationFormName&quot;, &quot;pregnancy_registration_v3&quot;);
+globalMap.put(&quot;pregnancyRegistrationTableName&quot;, &quot;pregnancy_registration_v4_core&quot;);
+globalMap.put(&quot;pregnancyRegistrationFormName&quot;, &quot;pregnancy_registration_v4&quot;);
 
 // Visit Registration
 globalMap.put(&quot;visitTableName&quot;, &quot;visit_registration_v2_core&quot;);

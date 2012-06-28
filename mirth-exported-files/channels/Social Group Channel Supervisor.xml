@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340840796000</time>
+    <time>1340914333031</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>2</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -65,8 +65,8 @@ PC9kZXJpdmVkX2Zyb21fdXJpPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
       <name>Destination 1</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">sink</property>
-        <property name="synchronised">0</property>
+        <property name="host">c79f3b74-d2ac-47e0-86cb-c307a4b98921</property>
+        <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>
       <transformer>

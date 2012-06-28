@@ -65,7 +65,7 @@
 			<bind nodeset="/migration_in/CurrH_N" required="true()" type="string" />
 			<bind nodeset="/migration_in/CurrHH_N" type="string" required="true()" />
 			<bind nodeset="/migration_in/CurrHH_ID" type="string" required="true()"
-				constraint="regex(., '^[A-Za-z]{3}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
+				constraint="regex(., '^[A-Za-z]{6}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
 			<bind nodeset="/migration_in/EVER_REG" required="true()" type="select1" />
 			<bind nodeset="/migration_in/PERM_ID" required="false()" type="string"
 				constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />

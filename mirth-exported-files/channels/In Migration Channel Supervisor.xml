@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340840711000</time>
+    <time>1340914427406</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -64,24 +64,7 @@ PG1mcm9tX3NlYz52YWx1ZTwvbWZyb21fc2VjPg0KICAgIDxkaW50PnZhbHVlPC9kaW50Pg0KICAg
 IDxmcm9tX2ZpZWxkPnZhbHVlPC9mcm9tX2ZpZWxkPg0KICAgIDxtZnJvbV9wbj52YWx1ZTwvbWZy
 b21fcG4+DQogICAgPHJlYXNvbmZvcm1pZ3JhdGlvbl9vdGhlcj52YWx1ZTwvcmVhc29uZm9ybWln
 cmF0aW9uX290aGVyPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
-      <outboundTemplate encoding="base64">PGlubWlncmF0aW9uPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZCAvPg0gIDwvY29sbGVjdGVk
-Qnk+CiAgPGluZGl2aWR1YWw+CiAgICA8ZXh0aWQgLz4KICA8L2luZGl2aWR1YWw+CiAgPG1vdmVk
-SW5QZXJzb25MYXN0TmFtZSAvPgogIDxtb3ZlZEluUGVyc29uRmlyc3ROYW1lIC8+CiAgPG1vdmVk
-SW5QZXJzb25HZW5kZXIgLz4KICA8bW92ZWRJblBlcnNvbkRvYiAvPgogIDxtb3ZlZEluUGVyc29u
-TW90aGVyPgogICAgPGV4dGlkIC8+CiAgPC9tb3ZlZEluUGVyc29uTW90aGVyPgogIDxtb3ZlZElu
-UGVyc29uRmF0aGVyPgogICAgPGV4dGlkIC8+CiAgPC9tb3ZlZEluUGVyc29uRmF0aGVyPgogIDxo
-b3VzZT4KICAgIDxleHRJZCAvPgogIDwvaG91c2U+CiAgPG9yaWdpbiAvPgogIDxob3VzZWhvbGQ+
-CiAgICA8ZXh0SWQgLz4KICA8L2hvdXNlaG9sZD4KICA8cmVhc29uIC8+CiAgPGRhdGVPZkludGVy
-dmlldyAvPgogIDxyZWNvcmRlZERhdGUgLz4KICA8dmlzaXQ+CiAgICA8ZXh0SWQgLz4KICA8L3Zp
-c2l0PgogIDxldmVyUmVnaXN0ZXJlZCAvPgogIDxiSXNUb0EgLz4KICA8aG91c2VOYW1lIC8+CiAg
-PGhvdXNlaG9sZE5hbWUgLz4KICA8Y3VycmVudEluZGl2aWR1YWxOdW1iZXIgLz4KICA8cmVhc29u
-T3RoZXIgLz4KICA8b3JpZ2luT3RoZXIgLz4KICA8b2xkTmFtZU1vdmluZ0Zyb20gLz4KICA8aG91
-c2VOYW1lTW92aW5nRnJvbSAvPgogIDxob3VzZWhvbGROYW1lTW92aW5nRnJvbSAvPgogIDxzZWN0
-aW9uTW92aW5nRnJvbSAvPgogIDx2aWxsYWdlTW92aW5nRnJvbSAvPgogIDxjZWxsUGhvbmVOdW1i
-ZXJNb3ZpbmdGcm9tIC8+CiAgPG9sZE5hbWVGaXJzdFJlZyAvPgogIDxob3VzZU5hbWVGaXJzdFJl
-ZyAvPgogIDxob3VzZWhvbGROYW1lRmlyc3RSZWcgLz4KICA8c2VjdGlvbkZpcnN0UmVnIC8+CiAg
-PHZpbGxhZ2VGaXJzdFJlZyAvPgogIDxjZWxsUGhvbmVOdW1iZXJGaXJzdFJlZyAvPgogIDxmb3Jt
-YWxFZHVjYXRpb25ZZWFycyAvPgo8L2lubWlncmF0aW9uPg==</outboundTemplate>
+      <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
       <inboundProperties>
@@ -144,7 +127,7 @@ YWxFZHVjYXRpb25ZZWFycyAvPgo8L2lubWlncmF0aW9uPg==</outboundTemplate>
       <name>Destination 1</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">sink</property>
+        <property name="host">5f77391a-bf55-446f-bc5e-c96b87bbcc0c</property>
         <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>
