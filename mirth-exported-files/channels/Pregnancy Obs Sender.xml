@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340899837031</time>
+    <time>1341184144000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>2</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -509,12 +509,16 @@ IC8+CiAgPGRlY2Vhc2VkTmFtZSAvPgogIDxob3VzZWhvbGROYW1lIC8+CjwvZGVhdGg+</inboundTem
   </properties>
   <preprocessingScript>// Modify the message variable below to pre process data
 return message;</preprocessingScript>
-  <postprocessingScript>// Mark record as being processed
-var origXml = new XML(messageObject.getRawData());
+  <postprocessingScript>var obj = responseMap.get(&quot;Destination 1&quot;);
+var status = obj.getStatus().toString();
 
-// Inspect response data from web service call, and send for audit
-var obj = responseMap.get(&quot;Destination 1&quot;);
+if (status.indexOf(&quot;FAILURE&quot;) === 0) {
+  logger.warn(&quot;There was an HTTP error sending a form&quot;);
+  return;
+}
+
 var msgXml = new XML(obj.getMessage());
+var origXml = new XML(messageObject.getRawData());
 var invalidForm = msgXml[&quot;errors&quot;].length() &gt; 0 ? true : false;
 
 executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; SET processed_by_mirth = true, validation_failed = &quot; + invalidForm + &quot; WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);

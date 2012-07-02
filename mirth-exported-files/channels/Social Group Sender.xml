@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340899854203</time>
+    <time>1341176938000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>9</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -287,6 +287,13 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
   <preprocessingScript>// Modify the message variable below to pre process data
 return message;</preprocessingScript>
   <postprocessingScript>var obj = responseMap.get(&quot;Destination 1&quot;);
+var status = obj.getStatus().toString();
+
+if (status.indexOf(&quot;FAILURE&quot;) === 0) {
+  logger.warn(&quot;There was an HTTP error sending a form&quot;);
+  return;
+}
+
 var msgXml = new XML(obj.getMessage());
 var origXml = new XML(messageObject.getRawData());
 var invalidForm = msgXml[&quot;errors&quot;].length() &gt; 0 ? true : false;

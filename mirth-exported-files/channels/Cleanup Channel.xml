@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340913100671</time>
+    <time>1341191015000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>6</revision>
+  <revision>7</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -163,6 +163,174 @@ return entries;</property>
             </data>
             <type>JavaScript</type>
             <script>return msg[&apos;@form&apos;].toString() === &quot;inmigration&quot;;</script>
+            <operator>NONE</operator>
+          </rule>
+        </rules>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+    <connector>
+      <name>Death</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">089877a5-7084-4404-9273-95b662ff23fb</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules>
+          <rule>
+            <sequenceNumber>0</sequenceNumber>
+            <name>Death Filter</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>return msg[&apos;@form&apos;].toString() === &quot;death&quot;;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>return msg[&apos;@form&apos;].toString() === &quot;death&quot;;</script>
+            <operator>NONE</operator>
+          </rule>
+        </rules>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+    <connector>
+      <name>Birth</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">1a15fd23-bde7-4646-9e40-b79a8933aa8f</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules>
+          <rule>
+            <sequenceNumber>0</sequenceNumber>
+            <name>Death Filter</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>return msg[&apos;@form&apos;].toString() === &quot;birth&quot;;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>return msg[&apos;@form&apos;].toString() === &quot;birth&quot;;</script>
+            <operator>NONE</operator>
+          </rule>
+        </rules>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+    <connector>
+      <name>Pregnancy Obs</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">bfa7dc3a-af2e-40fe-a908-1f5d489ade21</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules>
+          <rule>
+            <sequenceNumber>0</sequenceNumber>
+            <name>Death Filter</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>return msg[&apos;@form&apos;].toString() === &quot;pregnancyobservation&quot;;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>return msg[&apos;@form&apos;].toString() === &quot;pregnancyobservation&quot;;</script>
+            <operator>NONE</operator>
+          </rule>
+        </rules>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+    <connector>
+      <name>Out Migration</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">8f288ebc-008d-42ab-9a15-8e6637dcee16</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules>
+          <rule>
+            <sequenceNumber>0</sequenceNumber>
+            <name>Death Filter</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>return msg[&apos;@form&apos;].toString() === &quot;outmigration&quot;;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>return msg[&apos;@form&apos;].toString() === &quot;outmigration&quot;;</script>
             <operator>NONE</operator>
           </rule>
         </rules>

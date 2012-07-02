@@ -5,7 +5,7 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340899841656</time>
+    <time>1341168079000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
   <revision>1</revision>
@@ -35,7 +35,12 @@ return result;</property>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxkYXRlX29mX2ludGVydmlldz52
+YWx1ZTwvZGF0ZV9vZl9pbnRlcnZpZXc+DQogICAgPG5hbWU+dmFsdWU8L25hbWU+DQogICAgPHNv
+Y2lhbF9ncm91cF9oZWFkPnZhbHVlPC9zb2NpYWxfZ3JvdXBfaGVhZD4NCiAgICA8ZmllbGRfd29y
+a2VyX2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPHNvY2lhbF9ncm91cF9pZD52YWx1
+ZTwvc29jaWFsX2dyb3VwX2lkPg0KICAgIDxyZXNwb25kZW50X2lkPnZhbHVlPC9yZXNwb25kZW50
+X2lkPg0KICAgIDx0eXBlPnZhbHVlPC90eXBlPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -73,7 +78,12 @@ return;</property>
       <transformer>
         <steps/>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxkYXRlX29mX2ludGVydmlldz52
+YWx1ZTwvZGF0ZV9vZl9pbnRlcnZpZXc+DQogICAgPG5hbWU+dmFsdWU8L25hbWU+DQogICAgPHNv
+Y2lhbF9ncm91cF9oZWFkPnZhbHVlPC9zb2NpYWxfZ3JvdXBfaGVhZD4NCiAgICA8ZmllbGRfd29y
+a2VyX2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPHNvY2lhbF9ncm91cF9pZD52YWx1
+ZTwvc29jaWFsX2dyb3VwX2lkPg0KICAgIDxyZXNwb25kZW50X2lkPnZhbHVlPC9yZXNwb25kZW50
+X2lkPg0KICAgIDx0eXBlPnZhbHVlPC90eXBlPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>

@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340899832281</time>
+    <time>1341184108000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -46,16 +46,7 @@ bHVlPC9hdHRlbmRfY2xpPg0KICAgIDxwZXJtX2lkX3B3PnZhbHVlPC9wZXJtX2lkX3B3Pg0KICAg
 IDxkaW50PnZhbHVlPC9kaW50Pg0KICAgIDxuYW1lX3B3PnZhbHVlPC9uYW1lX3B3Pg0KICAgIDxm
 aXJzdF9wZz52YWx1ZTwvZmlyc3RfcGc+DQogICAgPG1wcmVnPnZhbHVlPC9tcHJlZz4NCiAgICA8
 bG1wPnZhbHVlPC9sbXA+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
-      <outboundTemplate encoding="base64">PHByZWduYW5jeW9ic2VydmF0aW9uPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZCAvPgogIDwv
-Y29sbGVjdGVkQnk+CiAgPG1vdGhlcj4KICAgIDxleHRpZCAvPgogIDwvbW90aGVyPgkKICA8aG91
-c2U+CiAgICA8ZXh0SWQgLz4KICA8L2hvdXNlPgogIDxob3VzZWhvbGQ+CiAgICA8ZXh0SWQgLz4K
-ICA8L2hvdXNlaG9sZD4KICA8ZXhwZWN0ZWREZWxpdmVyeURhdGUgLz4KICA8cmVjb3JkZWREYXRl
-IC8+CiAgPGVzdGltYXRlZERhdGVPZkNvbmNlcHRpb24gLz4KICA8dmlzaXQ+CiAgICA8ZXh0SWQg
-Lz4KICA8L3Zpc2l0PgogIDxwcmVnV29tYW5OYW1lIC8+CiAgPG51bU1vbnRoc09mUHJlZ25hbmN5
-IC8+CiAgPGF0dGVuZGVkQW50ZU5hdGFsQ2xpbmljIC8+CiAgPHJlY2VpdmVkVFRJbmplY3Rpb24g
-Lz4KICA8Zmlyc3RQcmVnbmFuY3kgLz4KICA8aGVhbHRoRmFjaWxpdHkgLz4KICA8aGVhbHRoRmFj
-aWxpdHlPdGhlciAvPgogIDxob3VzZWhvbGROYW1lIC8+CiAgPHJlcG9ydGVkQnkgLz4KPC9wcmVn
-bmFuY3lvYnNlcnZhdGlvbj4=</outboundTemplate>
+      <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
       <inboundProperties>
@@ -118,7 +109,7 @@ bmFuY3lvYnNlcnZhdGlvbj4=</outboundTemplate>
       <name>Destination 1</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">sink</property>
+        <property name="host">bfa7dc3a-af2e-40fe-a908-1f5d489ade21</property>
         <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>

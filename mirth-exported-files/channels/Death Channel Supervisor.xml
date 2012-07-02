@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340899760171</time>
+    <time>1341187940000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -35,14 +35,26 @@ return result;</property>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
-      <outboundTemplate encoding="base64">PGRlYXRoPgogIDxob3VzZT4KICAgIDxleHRJZCAvPgogIDwvaG91c2U+CiAgPGhvdXNlaG9sZD4K
-ICAgIDxleHRJZCAvPgogIDwvaG91c2Vob2xkPgogIDxpbmRpdmlkdWFsPgogICAgPGV4dGlkIC8+
-CiAgPC9pbmRpdmlkdWFsPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZCAvPgogIDwvY29sbGVj
-dGVkQnk+CiAgPGRlYXRoRGF0ZSAvPgogIDxyZXBvcnRlZEJ5IC8+CiAgPHJlY29yZGVkRGF0ZSAv
-PgogIDxkZWF0aFBsYWNlIC8+CiAgPGdlbmRlciAvPgogIDx2aXNpdERlYXRoPgogICAgPGV4dElk
-IC8+CiAgPC92aXNpdERlYXRoPgogIDxwbGFjZU9mRGVhdGhPdGhlciAvPgogIDxkZWNlYXNlZE5h
-bWUgLz4KICA8aG91c2Vob2xkTmFtZSAvPgo8L2RlYXRoPg==</outboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGRlcml2ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRf
+ZnJvbV91cmk+DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX2hvdXNlaG9sZF9pZD52YWx1ZTwvYmFz
+aWNfaW5mb3JtYXRpb25faG91c2Vob2xkX2lkPg0KICAgIDxzb3JjZV9vZl9pbmZvcm1hdG9uX3Jl
+cG9ydGVkX2J5PnZhbHVlPC9zb3JjZV9vZl9pbmZvcm1hdG9uX3JlcG9ydGVkX2J5Pg0KICAgIDxi
+YXNpY19pbmZvcm1hdGlvbl9wZXJtYW5lbnRfaWQ+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3Bl
+cm1hbmVudF9pZD4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fZGF0ZV9vZl9kZWF0aD52YWx1ZTwv
+YmFzaWNfaW5mb3JtYXRpb25fZGF0ZV9vZl9kZWF0aD4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25f
+ZmllbGRfd29ya2VyPnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9maWVsZF93b3JrZXI+DQogICAg
+PGJhc2ljX2luZm9ybWF0aW9uX2RhdGVfb2ZfaW50ZXJ2aWV3PnZhbHVlPC9iYXNpY19pbmZvcm1h
+dGlvbl9kYXRlX29mX2ludGVydmlldz4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fcGxhY2Vfb2Zf
+ZGVhdGg+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3BsYWNlX29mX2RlYXRoPg0KICAgIDxiYXNp
+Y19pbmZvcm1hdGlvbl9zZXg+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3NleD4NCiAgICA8YmFz
+aWNfaW5mb3JtYXRpb25faG91c2VfaWQ+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX2hvdXNlX2lk
+Pg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9wbGFjZV9vZl9kZWF0aF9vdGhlcj52YWx1ZTwvYmFz
+aWNfaW5mb3JtYXRpb25fcGxhY2Vfb2ZfZGVhdGhfb3RoZXI+DQogICAgPGJhc2ljX2luZm9ybWF0
+aW9uX2RlY2Vhc2VkX25hbWU+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX2RlY2Vhc2VkX25hbWU+
+DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX2hvdXNlaG9sZF9uYW1lPnZhbHVlPC9iYXNpY19pbmZv
+cm1hdGlvbl9ob3VzZWhvbGRfbmFtZT4NCjwvcmVzdWx0Pg0K</inboundTemplate>
+      <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
       <inboundProperties>
@@ -105,7 +117,7 @@ bWUgLz4KICA8aG91c2Vob2xkTmFtZSAvPgo8L2RlYXRoPg==</outboundTemplate>
       <name>Destination 1</name>
       <properties>
         <property name="DataType">Channel Writer</property>
-        <property name="host">sink</property>
+        <property name="host">089877a5-7084-4404-9273-95b662ff23fb</property>
         <property name="synchronised">1</property>
         <property name="template">${message.rawData}</property>
       </properties>

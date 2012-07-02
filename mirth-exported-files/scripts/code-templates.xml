@@ -1,5 +1,56 @@
 <list>
   <codeTemplate>
+    <id>012cf64f-ab96-4ffc-87a5-50f2089d7a73</id>
+    <name>Build XML Document from a ResultSet</name>
+    <tooltip>Converts a result set entry to the corresponding XML document (as per Mirth semantics)</tooltip>
+    <code>function  convertResultSetToXml(rs) {
+  var rsmd = rs.getMetaData();
+  var result = &lt;result /&gt;;
+
+  for (var i = 1; i &lt;= rsmd.getColumnCount(); i++)  {
+	var value = rs.getString(i);
+    if (value === &quot;null&quot;) {
+      value = null;
+    }
+    result[rsmd.getColumnName(i).toLowerCase()] = value;
+  }
+
+  return result;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>08b087c0-8580-44a4-b4a0-a36fe656e478</id>
+    <name>Check for OpenHDS Household</name>
+    <tooltip>Makes a web service call to the OpenHDS to verify a household with</tooltip>
+    <code>function validateSocialGroup(householdId) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var householdUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/socialgroup/&quot;;
+  householdUrl += householdId.toUpperCase();
+
+  try {
+    var builder = new RestfulRequestBuilder(householdUrl);
+    var response = builder.buildGet();
+
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request to check household exists for householdid=&quot; + householdId);
+  }
+
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
     <id>39d9543c-af9e-4c6e-b41e-f02e899ed1be</id>
     <name>Construct XML Form Instance</name>
     <tooltip>Reconstructs the form instance XML based on an ODK table name, and a result XML document returned by Mirth</tooltip>
@@ -52,78 +103,6 @@
     <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
-    <id>ce2d4861-3f2b-4b81-929d-19c0416ea25f</id>
-    <name>Check for OpenHDS Visit</name>
-    <tooltip>Checks for an OpenHDS Visit by looking at the date of the visit, and the location</tooltip>
-    <code>function validateVisit(houseId, interviewDate) {
-  importPackage(Packages.org.openhds.mirth);
-
-  var visitUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/visit/&quot;;
-  var visitHouse = houseId.toUpperCase();
-  var visitDate = interviewDate.substring(0, 10);
-
-  visitUrl +=  visitHouse + &quot;/&quot; + visitDate;
-
-  try {
-    var builder = new RestfulRequestBuilder(visitUrl);
-    var response = builder.buildGet();
-
-    if (response.getStatusCode() != 200) {
-      return false;
-    }
-
-    var responseXml = new XML(response.getResponse());
-    msg[&quot;visitId&quot;] = responseXml[&quot;extId&quot;].toString();
-    return true;
-  } catch(exception) {
-    logger.error(&quot;Error sending request for visit information, houseid=&quot; + visitHouse +&quot;, date=&quot; + visitDate);
-  }
-
-  return false;
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
-    <id>73b17a51-0708-4f21-8a0a-50c1beaab8e0</id>
-    <name>Execute SQL Update</name>
-    <tooltip>Executes an SQL Update Query</tooltip>
-    <code>function executeUpdateQuery(updateStr) {
-  var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-  var result = dbConn.executeUpdate(updateStr);
-  dbConn.close();
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
-    <id>cc2b3ed3-1887-47bf-9bbd-069dbdb8323d</id>
-    <name>Warn Timeout Check</name>
-    <tooltip>Checks weather a form has gone past the warning timeout period</tooltip>
-    <code>function shouldWarnUser(createDate) {
-  // check if the form should be retired
-  var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
-  var matches = timeRegex.exec(createDate);
-  if (matches != null) {
-    createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
-    var started = createDate.getTime();
-    var endDate = started + (globalMap.get(&quot;warningTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
-
-    if (endDate - (new Date().getTime()) &lt; 0) {
-      return true;
-    }
-  } else {
-    logger.warn(&quot;Create date was not set on form instance&quot;);
-  }
-  return false;
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
     <id>3d5c5ff3-192c-4d85-be03-3a920bf77768</id>
     <name>Send Audit message</name>
     <tooltip>Constructs and sends Audit message to audit channel</tooltip>
@@ -141,6 +120,72 @@
   var formXml = &quot;&lt;form-instance&gt;&quot; + instanceIdXml + validationMsgs.join(&quot;&quot;) + &quot;&lt;/form-instance&gt;&quot;;
 
   router.routeMessage(&quot;Audit Channel&quot;, formXml);
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>4747bcef-faa6-4f68-96fd-d6da6c499a16</id>
+    <name>Fail Timeout Check</name>
+    <tooltip>Check if form has gone past failed timeout</tooltip>
+    <code>function shouldFailForm(createDate) {
+  // check if the form should be retired
+  var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
+  var matches = timeRegex.exec(createDate);
+  if (matches != null) {
+    createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
+    var started = createDate.getTime();
+    var endDate = started + (globalMap.get(&quot;failTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
+
+    if (endDate - (new Date().getTime()) &lt; 0) {
+      return true;
+    }
+  } else {
+    logger.warn(&quot;Create date was not set on form instance&quot;);
+  }
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>5a59aeeb-dbe2-4627-9cc9-40e21797cf25</id>
+    <name>Check for OpenHDS Location</name>
+    <tooltip>Makes a web service call to the OpenHDS to verify a location with a given external id exists</tooltip>
+    <code>function validateLocation(houseId) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var locationUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/location/&quot;;
+  locationUrl += houseId.toUpperCase();
+
+  try {
+    var builder = new RestfulRequestBuilder(locationUrl);
+    var response = builder.buildGet();
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request to check location exists for houseid=&quot; + houseId);
+  }
+
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>73b17a51-0708-4f21-8a0a-50c1beaab8e0</id>
+    <name>Execute SQL Update</name>
+    <tooltip>Executes an SQL Update Query</tooltip>
+    <code>function executeUpdateQuery(updateStr) {
+  var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
+  var result = dbConn.executeUpdate(updateStr);
+  dbConn.close();
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>
@@ -179,96 +224,17 @@
     <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
-    <id>012cf64f-ab96-4ffc-87a5-50f2089d7a73</id>
-    <name>Build XML Document from a ResultSet</name>
-    <tooltip>Converts a result set entry to the corresponding XML document (as per Mirth semantics)</tooltip>
-    <code>function  convertResultSetToXml(rs) {
-  var rsmd = rs.getMetaData();
-  var result = &lt;result /&gt;;
-
-  for (var i = 1; i &lt;= rsmd.getColumnCount(); i++)  {
-	var value = rs.getString(i);
-    if (value === &quot;null&quot;) {
-      value = null;
-    }
-    result[rsmd.getColumnName(i).toLowerCase()] = value;
-  }
-
-  return result;
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
-    <id>5a59aeeb-dbe2-4627-9cc9-40e21797cf25</id>
-    <name>Check for OpenHDS Location</name>
-    <tooltip>Makes a web service call to the OpenHDS to verify a location with a given external id exists</tooltip>
-    <code>function validateLocation(houseId) {
-  importPackage(Packages.org.openhds.mirth);
-
-  var locationUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/location/&quot;;
-  locationUrl += houseId.toUpperCase();
-
-  try {
-    var builder = new RestfulRequestBuilder(locationUrl);
-    var response = builder.buildGet();
-    if (response.getStatusCode() != 200) {
-      return false;
-    }
-
-    return true;
-  } catch(exception) {
-    logger.error(&quot;Error sending request to check location exists for houseid=&quot; + houseId);
-  }
-
-  return false;
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
-    <id>08b087c0-8580-44a4-b4a0-a36fe656e478</id>
-    <name>Check for OpenHDS Household</name>
-    <tooltip>Makes a web service call to the OpenHDS to verify a household with</tooltip>
-    <code>function validateSocialGroup(householdId) {
-  importPackage(Packages.org.openhds.mirth);
-
-  var householdUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/socialgroup/&quot;;
-  householdUrl += householdId.toUpperCase();
-
-  try {
-    var builder = new RestfulRequestBuilder(householdUrl);
-    var response = builder.buildGet();
-
-    if (response.getStatusCode() != 200) {
-      return false;
-    }
-
-    return true;
-  } catch(exception) {
-    logger.error(&quot;Error sending request to check household exists for householdid=&quot; + householdId);
-  }
-
-  return false;
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
-    <id>4747bcef-faa6-4f68-96fd-d6da6c499a16</id>
-    <name>Fail Timeout Check</name>
-    <tooltip>Check if form has gone past failed timeout</tooltip>
-    <code>function shouldFailForm(createDate) {
+    <id>cc2b3ed3-1887-47bf-9bbd-069dbdb8323d</id>
+    <name>Warn Timeout Check</name>
+    <tooltip>Checks weather a form has gone past the warning timeout period</tooltip>
+    <code>function shouldWarnUser(createDate) {
   // check if the form should be retired
   var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
   var matches = timeRegex.exec(createDate);
   if (matches != null) {
     createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
     var started = createDate.getTime();
-    var endDate = started + (globalMap.get(&quot;failTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
+    var endDate = started + (globalMap.get(&quot;warningTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
 
     if (endDate - (new Date().getTime()) &lt; 0) {
       return true;
@@ -276,6 +242,40 @@
   } else {
     logger.warn(&quot;Create date was not set on form instance&quot;);
   }
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>ce2d4861-3f2b-4b81-929d-19c0416ea25f</id>
+    <name>Check for OpenHDS Visit</name>
+    <tooltip>Checks for an OpenHDS Visit by looking at the date of the visit, and the location</tooltip>
+    <code>function validateVisit(houseId, interviewDate) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var visitUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/visit/&quot;;
+  var visitHouse = houseId.toUpperCase();
+  var visitDate = interviewDate.substring(0, 10);
+
+  visitUrl +=  visitHouse + &quot;/&quot; + visitDate;
+
+  try {
+    var builder = new RestfulRequestBuilder(visitUrl);
+    var response = builder.buildGet();
+
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    var responseXml = new XML(response.getResponse());
+    msg[&quot;visitId&quot;] = responseXml[&quot;extId&quot;].toString();
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request for visit information, houseid=&quot; + visitHouse +&quot;, date=&quot; + visitDate);
+  }
+
   return false;
 }</code>
     <type>FUNCTION</type>

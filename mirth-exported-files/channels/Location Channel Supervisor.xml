@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1340899798765</time>
+    <time>1341177214000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>4</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -180,7 +180,13 @@ return result;</property>
         </step>
       </steps>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxsb2NhdGlvbl92aWxsYWdlPnZh
+bHVlPC9sb2NhdGlvbl92aWxsYWdlPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZhbHVlPC9kZXJp
+dmVkX2Zyb21fdXJpPg0KICAgIDxsb2NhdGlvbl9oZWFkPnZhbHVlPC9sb2NhdGlvbl9oZWFkPg0K
+ICAgIDxmaWVsZF93b3JrZXJfaWQ+dmFsdWU8L2ZpZWxkX3dvcmtlcl9pZD4NCiAgICA8bG9jYXRp
+b25fdHlwZT52YWx1ZTwvbG9jYXRpb25fdHlwZT4NCiAgICA8bG9jYXRpb25fbmFtZT52YWx1ZTwv
+bG9jYXRpb25fbmFtZT4NCiAgICA8bG9jYXRpb25faWQ+dmFsdWU8L2xvY2F0aW9uX2lkPg0KPC9y
+ZXN1bHQ+DQo=</inboundTemplate>
       <outboundTemplate encoding="base64">PGxvY2F0aW9uPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZD48L2V4dElkPgogIDwvY29sbGVj
 dGVkQnk+CiAgPGV4dElkPjwvZXh0SWQ+CiAgPGxvY2F0aW9uTmFtZT48L2xvY2F0aW9uTmFtZT4K
 ICA8bG9jYXRpb25MZXZlbD4KICAgIDxleHRJZD48L2V4dElkPgogIDwvbG9jYXRpb25MZXZlbD4K
@@ -274,6 +280,13 @@ ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTem
   <preprocessingScript>// Modify the message variable below to pre process data
 return message;</preprocessingScript>
   <postprocessingScript>var obj = responseMap.get(&quot;Destination 1&quot;);
+var status = obj.getStatus().toString();
+
+if (status.indexOf(&quot;FAILURE&quot;) === 0) {
+  logger.warn(&quot;There was an HTTP error sending a form&quot;);
+  return;
+}
+
 var msgXml = new XML(obj.getMessage());
 var origXml = new XML(messageObject.getRawData());
 var invalidForm = msgXml[&quot;errors&quot;].length() &gt; 0 ? true : false;
