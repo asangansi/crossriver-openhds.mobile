@@ -20,6 +20,9 @@
           <text id="/data/visitId:label">
             <value>Visit Id</value>
           </text>
+          <text id="/data/visitId:hint">
+            <value/>
+          </text>
           <text id="/data/fieldWorkerId:label">
             <value>Field Worker Id</value>
           </text>
