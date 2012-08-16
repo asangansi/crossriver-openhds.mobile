@@ -134,7 +134,7 @@
           </text>
         </translation>
       </itext>
-      <bind nodeset="/data/childId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
+      <bind nodeset="/data/childId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
       <bind nodeset="/data/collectedBy" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')" jr:constraintMsg="Field Worker Id is not the right format"/>
       <bind nodeset="/data/dates/bcg" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date cannot be in the future"/>
       <bind nodeset="/data/dates/polio1" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date cannot be in the future"/>

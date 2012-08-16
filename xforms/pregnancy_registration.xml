@@ -37,7 +37,7 @@
 				required="true()" jr:constraintMsg="Date of interview cannot be in the future"
 				type="date" />
 			<bind nodeset="/crhdss-pregnancy-registration/PERM_ID_PW"
-				required="true()" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')"
+				required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/crhdss-pregnancy-registration/Name_PW" required="true()"
 				type="string" />
@@ -59,12 +59,12 @@
 			<bind nodeset="/crhdss-pregnancy-registration/FIRST_PG"
 				required="true()" type="select1" />
 			<bind nodeset="/crhdss-pregnancy-registration/COMP_ID" required="true()"
-				type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')"
+				type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')"
 				jr:constraintMsg="House Id is not the right format" />
 			<bind nodeset="/crhdss-pregnancy-registration/HH_NAME" required="true()"
 				type="string" />
 			<bind nodeset="/crhdss-pregnancy-registration/HH_ID" required="true()"
-				type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{5}$')"
+				type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')"
 				jr:constraintMsg="Household Id is not the right format" />
 			<bind nodeset="/crhdss-pregnancy-registration/REPORTBY"
 				required="true()" type="select1" />

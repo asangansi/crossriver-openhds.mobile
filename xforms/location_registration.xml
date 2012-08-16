@@ -68,8 +68,8 @@
       <bind nodeset="/data/fieldWorkerId" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')" jr:constraintMsg="Field Worker Id is not the right format"/>      
       <bind nodeset="/data/locationVillage" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}$')" jr:constraintMsg="Village must only be 3 characters"/>
       <bind nodeset="/data/locationName" type="string" required="true()" />
-      <bind nodeset="/data/locationId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
-      <bind nodeset="/data/locationHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+      <bind nodeset="/data/locationId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
+      <bind nodeset="/data/locationHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
       <bind nodeset="/data/locationType" type="select1" required="true()" />
 			<bind nodeset="/data/derivedFromUri" type="string" />
       <bind nodeset="/data/supervisorStatus" type="int" />

@@ -2085,9 +2085,9 @@
         </translation>
       </itext>
       <bind nodeset="/data/backgroundInfo/nameOfChild" type="string"/>
-      <bind nodeset="/data/backgroundInfo/permIdOfChild" type="string" constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" 
+      <bind nodeset="/data/backgroundInfo/permIdOfChild" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" 
             jr:constraintMsg="Permanent Id is not the right format"/>
-      <bind nodeset="/data/backgroundInfo/houseId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')" 
+      <bind nodeset="/data/backgroundInfo/houseId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')" 
             jr:constraintMsg="House Id is not the right format"/>
       <bind nodeset="/data/backgroundInfo/houseName" type="string"/>
       <bind nodeset="/data/backgroundInfo/fieldWorker" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
