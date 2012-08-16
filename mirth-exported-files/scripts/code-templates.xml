@@ -55,7 +55,7 @@
     <name>Construct XML Form Instance</name>
     <tooltip>Reconstructs the form instance XML based on an ODK table name, and a result XML document returned by Mirth</tooltip>
     <code>function reconstructInstanceXml(odkTableName, resultXml, formName) {
-	var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&apos;com.mysql.jdbc.Driver&apos;,&apos;jdbc:mysql://localhost/odk_prod&apos;,&apos;root&apos;,&apos;test&apos;);
+	var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
 	var results = dbConn.executeCachedQuery(&apos;SELECT _uri, parent_uri_form_data_model, ordinal_number, element_type, element_name, persist_as_column_name FROM _form_data_model where persist_as_table_name = &quot;&apos; + odkTableName.toUpperCase() +&apos;&quot; ORDER BY _URI&apos;);
 	if (results.size() == 0) {
 		logger.info(&quot;No XML elements found for table: &quot; + odkTableName);
