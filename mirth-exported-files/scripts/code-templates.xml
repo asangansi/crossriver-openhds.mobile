@@ -282,4 +282,32 @@
     <scope>2</scope>
     <version>2.2.1.5861</version>
   </codeTemplate>
+  <codeTemplate>
+    <id>fc25e10f-42ab-4610-952d-9cd0e5b82948</id>
+    <name>Check for Individual in OpenHDS</name>
+    <tooltip>Check for a registered Individual in the OpenHDS</tooltip>
+    <code>function validateIndividual(indivId) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var individualUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/individual/&quot;;
+  individualUrl += indivId.toUpperCase();
+
+  try {
+    var builder = new RestfulRequestBuilder(individualUrl);
+    var response = builder.buildGet();
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request to check individual exists for indivId=&quot; + indivId);
+  }
+
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
 </list>

@@ -4,9 +4,10 @@
     <model>
       <instance>
         <data id="vaccination">
-          <meta>
-			<instanceId />
-		  </meta>
+          <derivedFromUri />
+					<processedByMirth>0</processedByMirth>
+					<validationFailed>0</validationFailed>
+          <supervisorStatus />
           <childId/>
           <collectedBy/>
           <dates>
@@ -148,7 +149,10 @@
       <bind nodeset="/data/bcgScar" type="select1"/>
       <bind nodeset="/data/dropInMouth" type="select1"/>
       <bind nodeset="/data/injectionOnThigh" type="select1"/>
-      <bind nodeset="/data/meta/instanceId" type="string" />
+			<bind nodeset="/data/derivedFromUri" type="string" />
+      <bind nodeset="/data/supervisorStatus" type="int" />
+      <bind nodeset="/data/processedByMirth" type="int" />
+      <bind nodeset="/data/validationFailed" type="boolean" />
     </model>
   </h:head>
   <h:body>

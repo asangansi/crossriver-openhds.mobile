@@ -1,0 +1,497 @@
+<channel>
+  <id>9969a21b-e059-4a38-a2d3-aa18bcc690d2</id>
+  <name>Vaccination Sender</name>
+  <description>This channel is responsible for sending a vaccination event to the openhds</description>
+  <enabled>true</enabled>
+  <version>2.2.1.5861</version>
+  <lastModified>
+    <time>1345421311000</time>
+    <timezone>America/New_York</timezone>
+  </lastModified>
+  <revision>8</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Channel Reader</property>
+      <property name="responseValue">None</property>
+    </properties>
+    <transformer>
+      <steps>
+        <step>
+          <sequenceNumber>0</sequenceNumber>
+          <name>child - extid (out)</name>
+          <script>tmp[&apos;child&apos;][&apos;extid&apos;] = validate(msg[&apos;child_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;child&apos;][&apos;extid&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;child_id&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>1</sequenceNumber>
+          <name>bcg (out)</name>
+          <script>tmp[&apos;bcg&apos;] = validate(msg[&apos;dates_bcg&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;bcg&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_bcg&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>2</sequenceNumber>
+          <name>polio1 (out)</name>
+          <script>tmp[&apos;polio1&apos;] = validate(msg[&apos;dates_polio1&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;polio1&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_polio1&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>3</sequenceNumber>
+          <name>polio2 (out)</name>
+          <script>tmp[&apos;polio2&apos;] = validate(msg[&apos;dates_polio2&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;polio2&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_polio2&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>4</sequenceNumber>
+          <name>polio3 (out)</name>
+          <script>tmp[&apos;polio3&apos;] = validate(msg[&apos;dates_polio3&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;polio3&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_polio3&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>5</sequenceNumber>
+          <name>polio4 (out)</name>
+          <script>tmp[&apos;polio4&apos;] = validate(msg[&apos;dates_polio4&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;polio4&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_polio4&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>6</sequenceNumber>
+          <name>dpt1 (out)</name>
+          <script>tmp[&apos;dpt1&apos;] = validate(msg[&apos;dates_dpt1&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;dpt1&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_dpt1&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>7</sequenceNumber>
+          <name>dpt2 (out)</name>
+          <script>tmp[&apos;dpt2&apos;] = validate(msg[&apos;dates_dpt2&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;dpt2&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_dpt2&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>8</sequenceNumber>
+          <name>dpt3 (out)</name>
+          <script>tmp[&apos;dpt3&apos;] = validate(msg[&apos;dates_dpt3&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;dpt3&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_dpt3&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>9</sequenceNumber>
+          <name>measels (out)</name>
+          <script>tmp[&apos;measels&apos;] = validate(msg[&apos;dates_measels&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;measels&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;dates_measels&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>10</sequenceNumber>
+          <name>dropInMouth (out)</name>
+          <script>tmp[&apos;dropInMouth&apos;] = validate(msg[&apos;drop_in_mouth&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;dropInMouth&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;drop_in_mouth&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>11</sequenceNumber>
+          <name>injection (out)</name>
+          <script>tmp[&apos;injection&apos;] = validate(msg[&apos;injection_on_thigh&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;injection&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;injection_on_thigh&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>12</sequenceNumber>
+          <name>bcgScar (out)</name>
+          <script>tmp[&apos;bcgScar&apos;] = validate(msg[&apos;bcg_scar&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;bcgScar&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;bcg_scar&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>13</sequenceNumber>
+          <name>collectedBy - extId (out)</name>
+          <script>tmp[&apos;collectedBy&apos;][&apos;extId&apos;] = validate(msg[&apos;collected_by&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;collectedBy&apos;][&apos;extId&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;collected_by&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+      </steps>
+      <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZh
+bHVlPC9kZXJpdmVkX2Zyb21fdXJpPg0KICAgIDxjaGlsZF9pZD52YWx1ZTwvY2hpbGRfaWQ+DQog
+ICAgPGNvbGxlY3RlZF9ieT52YWx1ZTwvY29sbGVjdGVkX2J5Pg0KICAgIDxkYXRlc19tZWFzZWxz
+PnZhbHVlPC9kYXRlc19tZWFzZWxzPg0KICAgIDxpbmplY3Rpb25fb25fdGhpZ2g+dmFsdWU8L2lu
+amVjdGlvbl9vbl90aGlnaD4NCiAgICA8YmNnX3NjYXI+dmFsdWU8L2JjZ19zY2FyPg0KICAgIDxk
+YXRlc19kcHQxPnZhbHVlPC9kYXRlc19kcHQxPg0KICAgIDxkYXRlc19kcHQyPnZhbHVlPC9kYXRl
+c19kcHQyPg0KICAgIDxkYXRlc19kcHQzPnZhbHVlPC9kYXRlc19kcHQzPg0KICAgIDxkcm9wX2lu
+X21vdXRoPnZhbHVlPC9kcm9wX2luX21vdXRoPg0KICAgIDxkYXRlc19iY2c+dmFsdWU8L2RhdGVz
+X2JjZz4NCiAgICA8ZGF0ZXNfcG9saW8xPnZhbHVlPC9kYXRlc19wb2xpbzE+DQogICAgPGRhdGVz
+X3BvbGlvMj52YWx1ZTwvZGF0ZXNfcG9saW8yPg0KICAgIDxkYXRlc19wb2xpbzM+dmFsdWU8L2Rh
+dGVzX3BvbGlvMz4NCiAgICA8ZGF0ZXNfcG9saW80PnZhbHVlPC9kYXRlc19wb2xpbzQ+DQo8L3Jl
+c3VsdD4NCg==</inboundTemplate>
+      <outboundTemplate encoding="base64">PHZhY2NpbmF0aW9uPgogICAgPGNoaWxkPgogICAgICAgIDxleHRpZD48L2V4dGlkPgogICAgPC9j
+aGlsZD4KICAgIDxjb2xsZWN0ZWRCeT4KICAgICAgICA8ZXh0SWQgLz4KICAgIDwvY29sbGVjdGVk
+Qnk+CiAgICA8YmNnPjwvYmNnPgogICAgPHBvbGlvMT48L3BvbGlvMT4KICAgIDxwb2xpbzI+PC9w
+b2xpbzI+CiAgICA8cG9saW8zPjwvcG9saW8zPgogICAgPHBvbGlvND48L3BvbGlvND4KICAgIDxk
+cHQxPjwvZHB0MT4KICAgIDxkcHQyPjwvZHB0Mj4KICAgIDxkcHQzPjwvZHB0Mz4KICAgIDxtZWFz
+ZWxzPjwvbWVhc2Vscz4KICAgIDxkcm9wSW5Nb3V0aD48L2Ryb3BJbk1vdXRoPgogICAgPGluamVj
+dGlvbj48L2luamVjdGlvbj4KICAgIDxiY2dTY2FyPjwvYmNnU2Nhcj4KPC92YWNjaW5hdGlvbj4=
+</outboundTemplate>
+      <inboundProtocol>XML</inboundProtocol>
+      <outboundProtocol>XML</outboundProtocol>
+      <inboundProperties>
+        <property name="stripNamespaces">true</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="stripNamespaces">true</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <version>2.2.1.5861</version>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="DataType">HTTP Sender</property>
+        <property name="dispatcherAuthenticationType">Basic</property>
+        <property name="dispatcherCharset">UTF-8</property>
+        <property name="dispatcherContent">${message.transformedData}</property>
+        <property name="dispatcherContentType">text/plain</property>
+        <property name="dispatcherHeaders">&lt;properties&gt;
+  &lt;property name=&quot;Content-type&quot;&gt;application/xml&lt;/property&gt;
+&lt;/properties&gt;</property>
+        <property name="dispatcherIncludeHeadersInResponse">0</property>
+        <property name="dispatcherMethod">post</property>
+        <property name="dispatcherMultipart">0</property>
+        <property name="dispatcherParameters">&lt;properties/&gt;</property>
+        <property name="dispatcherPassword">${openhdsPassword}</property>
+        <property name="dispatcherReplyChannelId">sink</property>
+        <property name="dispatcherSocketTimeout">30000</property>
+        <property name="dispatcherUseAuthentication">1</property>
+        <property name="dispatcherUsername">${openhdsUser}</property>
+        <property name="host">${openhdsUrl}/api/rest/corewebservice/vaccination</property>
+        <property name="queuePollInterval">200</property>
+        <property name="reconnectMillisecs">10000</property>
+        <property name="rotateQueue">0</property>
+        <property name="usePersistentQueues">0</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64">PG91dG1pZ3JhdGlvbj4KICA8aW5zdGFuY2VJZCAvPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJ
+ZCAvPgogIDwvY29sbGVjdGVkQnk+CiAgPGluZGl2aWR1YWw+CiAgICA8ZXh0aWQgLz4KICA8L2lu
+ZGl2aWR1YWw+CiAgPGhvdXNlPgogICAgPGV4dElkIC8+CiAgPC9ob3VzZT4KICA8b3JpZ2luIC8+
+CiAgPGhvdXNlaG9sZD4KICAgIDxleHRJZCAvPgogIDwvaG91c2Vob2xkPgogIDxyZWFzb24gLz4K
+ICA8dmlzaXQ+CiAgICA8ZXh0SWQgLz4KICA8L3Zpc2l0PgogIDxkYXRlT2ZJbnRlcnZpZXcgLz4K
+ICA8cmVjb3JkZWREYXRlIC8+CiAgPG5hbWVPZk1pZ3JhdCAvPgogIDxnZW5kZXIgLz4KICA8aG91
+c2Vob2xkTmFtZSAvPgogIDxwbGFjZU1vdmVkVG8gLz4KICA8aG91c2VOYW1lIC8+CiAgPHNlY3Rp
+b24gLz4KICA8dmlsbGFnZSAvPgogIDxwaG9uZU51bWJlciAvPgogIDxwbGFjZU1vdmVkVG9PdGhl
+ciAvPgogIDxyZWFzb25Gb3JNaWdyYXRpb25PdGhlciAvPgo8L291dG1pZ3JhdGlvbj4=</inboundTemplate>
+        <outboundTemplate encoding="base64"></outboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>HTTP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+  </destinationConnectors>
+  <properties>
+    <property name="clearGlobalChannelMap">true</property>
+    <property name="dont_store_filtered">true</property>
+    <property name="encryptData">false</property>
+    <property name="error_messages_only">false</property>
+    <property name="initialState">started</property>
+    <property name="max_message_age">-1</property>
+    <property name="store_messages">true</property>
+    <property name="synchronous">true</property>
+    <property name="transactional">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>var obj = responseMap.get(&quot;Destination 1&quot;);
+var status = obj.getStatus().toString();
+
+if (status.indexOf(&quot;FAILURE&quot;) === 0) {
+  logger.warn(&quot;There was an HTTP error sending a form&quot;);
+  return;
+}
+
+var msgXml = new XML(obj.getMessage());
+var origXml = new XML(messageObject.getRawData());
+var invalidForm = msgXml[&quot;errors&quot;].length() &gt; 0 ? true : false;
+
+executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;vaccinationTableName&quot;) + &quot; SET processed_by_mirth = true, validation_failed = &quot; + invalidForm + &quot; WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);
+
+var instanceXml = reconstructInstanceXml(globalMap.get(&quot;vaccinationTableName&quot;), origXml, globalMap.get(&quot;vaccinationFormName&quot;));
+
+if (invalidForm) {
+  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Vaccination&quot;, origXml[&apos;collected_by&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;vaccinationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), true);
+  router.routeMessage(&quot;Form Submission Channel&quot;, auditXml);
+} else {
+  var auditXml = constructAuditXml(instanceXml, msgXml[&quot;errors&quot;], &quot;Vaccination&quot;, origXml[&apos;collected_by&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;vaccinationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString(), false);
+  var completedForm = new XML(&quot;&lt;completedFormSubmission /&gt;&quot;);
+  completedForm.appendChild(auditXml);
+  completedForm[&quot;completedFormSubmissionId&quot;] = obj.getMessage();
+  router.routeMessage(&quot;Form Complete Channel&quot;, completedForm);
+}&#xd;return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</shutdownScript>
+</channel>

@@ -11,12 +11,12 @@ return;</string>
 globalMap.put(&quot;jdbcDriver&quot;, &quot;com.mysql.jdbc.Driver&quot;);
 globalMap.put(&quot;odkJdbcDatabaseUrl&quot;, &quot;jdbc:mysql://localhost/odk_prod&quot;);
 globalMap.put(&quot;dbUser&quot;, &quot;root&quot;);
-globalMap.put(&quot;dbPass&quot;, &quot;test&quot;);
+globalMap.put(&quot;dbPass&quot;, &quot;test1&quot;);
 
 /** OpenHDS Information */
 globalMap.put(&quot;openhdsUrl&quot;, &quot;localhost:8080/openhds&quot;);
 globalMap.put(&quot;openhdsUser&quot;, &quot;admin&quot;);
-globalMap.put(&quot;openhdsPassword&quot;, &quot;test&quot;);
+globalMap.put(&quot;openhdsPassword&quot;, &quot;HardP@ssw0rd!&quot;);
 
 /** Mobile Interop */
 globalMap.put(&quot;mobileInteropServer&quot;, &quot;localhost:8080/mobile-interop&quot;);
@@ -71,6 +71,10 @@ globalMap.put(&quot;locationFormName&quot;, &quot;location_registration&quot;);
 // Social Group Registration
 globalMap.put(&quot;socialgroupTableName&quot;, &quot;social_group_registration_core&quot;);
 globalMap.put(&quot;socialgroupFormName&quot;, &quot;social_group_registration&quot;);
+
+// Vaccination
+globalMap.put(&quot;vaccinationTableName&quot;, &quot;vaccination_core&quot;);
+globalMap.put(&quot;vaccinationFormName&quot;, &quot;vaccination&quot;);
 
 return;</string>
   </entry>
