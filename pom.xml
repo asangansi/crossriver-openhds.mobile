@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+ http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.openhds</groupId>
+  <artifactId>crhds-mobile</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>CRHDS Mobile Projects</name>
+
+  <build>
+     <pluginManagement>
+        <plugins>
+          <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-assembly-plugin</artifactId>
+             <version>2.2-beta-2</version>
+          </plugin>
+       </plugins>
+    </pluginManagement>
+  </build>
+  
+  <modules>
+     <module>mobile-xforms</module>
+     <module>mirth-exported-files</module>
+  </modules>
+</project>
