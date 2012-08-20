@@ -146,9 +146,9 @@
       <bind nodeset="/data/dates/dpt2" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date cannot be in the future"/>
       <bind nodeset="/data/dates/dpt3" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date cannot be in the future"/>
       <bind nodeset="/data/dates/measels" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date cannot be in the future"/>
-      <bind nodeset="/data/bcgScar" type="select1"/>
-      <bind nodeset="/data/dropInMouth" type="select1"/>
-      <bind nodeset="/data/injectionOnThigh" type="select1"/>
+      <bind nodeset="/data/bcgScar" required="true()" type="select1"/>
+      <bind nodeset="/data/dropInMouth" required="true()" type="select1"/>
+      <bind nodeset="/data/injectionOnThigh" required="true()" type="select1"/>
 			<bind nodeset="/data/derivedFromUri" type="string" />
       <bind nodeset="/data/supervisorStatus" type="int" />
       <bind nodeset="/data/processedByMirth" type="int" />
