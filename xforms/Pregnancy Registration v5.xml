@@ -1,19 +1,21 @@
 <h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events"
 	xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<h:head>
-		<h:title>Pregnancy Registration v4</h:title>
+	<h:head><!-- ODK Aggregate upload time: 2012-08-14T18:30:21.839+0000 on http://openhds.rcg.usm.maine.edu/ODKAggregate -->
+		<h:title>Pregnancy Registration v5</h:title>
 		<model>
 			<instance>
-				<crhdss-pregnancy-registration id="pregnancy_registration_v4">
-          <derivedFromUri />
-					<processedByMirth>0</processedByMirth>
-					<validationFailed>0</validationFailed>
-          <supervisorStatus />
-					<FW />
-					<DINT />
-					<PERM_ID_PW />
-					<Name_PW />
+				<data id="pregnancyobservation_v5">
+					<derivedFromUri />
+					<processedByMirth />
+					<validationFailed />
+					<supervisorStatus />
+					<fieldWorkerId />
+					<visitId />
+					<visitDate />
+					<individualId />
+					<firstName />
+					<lastName />
 					<MPREG />
 					<ATTEND_CLI />
 					<HEALTH_FAC />
@@ -21,77 +23,91 @@
 					<TT_INJECT />
 					<LMP />
 					<FIRST_PG />
-					<COMP_ID />
-					<HH_NAME />
-					<HH_ID />
+					<houseId />
+					<houseName />
+					<householdId />
+					<householdName />
 					<REPORTBY />
-				</crhdss-pregnancy-registration>
+				</data>
 			</instance>
-			<bind nodeset="/crhdss-pregnancy-registration/processedByMirth"
+			<bind nodeset="/data/processedByMirth"
 				type="boolean" />
-			<bind nodeset="/crhdss-pregnancy-registration/validationFailed" type="boolean" />
-			<bind nodeset="/crhdss-pregnancy-registration/FW" required="true()"
+			<bind nodeset="/data/validationFailed" type="boolean" />
+			<bind nodeset="/data/fieldWorkerId" required="true()"
 				type="string" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
 				jr:constraintMsg="Field Worker Id is not the right format" />
-			<bind nodeset="/crhdss-pregnancy-registration/DINT" constraint=". &lt;= today()"
+			<bind nodeset="/data/visitId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{10}[0-9]{5}$')"
+				jr:constraintMsg="Visit Id is not the right format" />
+			<bind nodeset="/data/visitDate" constraint=". &lt;= today()"
 				required="true()" jr:constraintMsg="Date of interview cannot be in the future"
 				type="date" />
-			<bind nodeset="/crhdss-pregnancy-registration/PERM_ID_PW"
+			<bind nodeset="/data/individualId"
 				required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
-			<bind nodeset="/crhdss-pregnancy-registration/Name_PW" required="true()"
+			<bind nodeset="/data/firstName" required="true()"
 				type="string" />
-			<bind nodeset="/crhdss-pregnancy-registration/MPREG" required="true()"
+			<bind nodeset="/data/lastName" required="true()"
+				type="string" />
+			<bind nodeset="/data/MPREG" required="true()"
 				type="int" constraint=". &gt;= 0 and . &lt;=9"
 				jr:constraintMsg="Number of months of pregnancy should be between 0 and 9" />
-			<bind nodeset="/crhdss-pregnancy-registration/ATTEND_CLI"
+			<bind nodeset="/data/ATTEND_CLI"
 				required="true()" type="select1" />
-			<bind nodeset="/crhdss-pregnancy-registration/HEALTH_FAC"
-				relevant="/crhdss-pregnancy-registration/ATTEND_CLI='1'" required="true()"
+			<bind nodeset="/data/HEALTH_FAC"
+				relevant="/data/ATTEND_CLI='1'" required="true()"
 				type="select1" />
-			<bind nodeset="/crhdss-pregnancy-registration/HEALTH_FAC_other"
+			<bind nodeset="/data/HEALTH_FAC_other"
 				relevant="selected(../HEALTH_FAC, '4')" required="true()" type="string" />
-			<bind nodeset="/crhdss-pregnancy-registration/TT_INJECT"
+			<bind nodeset="/data/TT_INJECT"
 				required="true()" type="select1" />
-			<bind nodeset="/crhdss-pregnancy-registration/LMP" required="true()"
-				type="date" constraint=". &lt; ../DINT"
+			<bind nodeset="/data/LMP" required="true()"
+				type="date" constraint=". &lt; ../visitDate"
 				jr:constraintMsg="Conception date must before the interview date" />
-			<bind nodeset="/crhdss-pregnancy-registration/FIRST_PG"
+			<bind nodeset="/data/FIRST_PG"
 				required="true()" type="select1" />
-			<bind nodeset="/crhdss-pregnancy-registration/COMP_ID" required="true()"
+			<bind nodeset="/data/houseId" required="true()"
 				type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')"
 				jr:constraintMsg="House Id is not the right format" />
-			<bind nodeset="/crhdss-pregnancy-registration/HH_NAME" required="true()"
+			<bind nodeset="/data/houseName" required="true()"
 				type="string" />
-			<bind nodeset="/crhdss-pregnancy-registration/HH_ID" required="true()"
+			<bind nodeset="/data/householdId" required="true()"
 				type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')"
 				jr:constraintMsg="Household Id is not the right format" />
-			<bind nodeset="/crhdss-pregnancy-registration/REPORTBY"
-				required="true()" type="select1" />
-			<bind nodeset="/crhdss-pregnancy-registration/derivedFromUri"
+			<bind nodeset="/data/householdName" required="true()"
 				type="string" />
-      <bind nodeset="/crhdss-pregnancy-registration/supervisorStatus" type="int" />
+			<bind nodeset="/data/REPORTBY"
+				required="true()" type="select1" />
+			<bind nodeset="/data/derivedFromUri"
+				type="string" />
+      <bind nodeset="/data/supervisorStatus" type="int" />
 		</model>
 	</h:head>
 	<h:body>
 		<group>
 			<label>Basic Information</label>
-			<input ref="/crhdss-pregnancy-registration/FW">
+			<input ref="/data/fieldWorkerId">
 				<label>Field Worker ID</label>
 			</input>
-			<input ref="/crhdss-pregnancy-registration/DINT">
+			<input ref="/data/visitId">
+				<label>Visit ID</label>
+			</input>
+			<input ref="/data/visitDate">
 				<label>Date of Interview</label>
 			</input>
-			<input ref="/crhdss-pregnancy-registration/PERM_ID_PW">
+			<input ref="/data/individualId">
 				<label>Permanent ID of Pregnant Woman</label>
 			</input>
-			<input ref="/crhdss-pregnancy-registration/Name_PW">
-				<label>Name of Pregnant Woman</label>
+			<input ref="/data/firstName">
+				<label>First name of Pregnant Woman</label>
 			</input>
-			<input ref="/crhdss-pregnancy-registration/MPREG">
+			<input ref="/data/lastName">
+				<label>Last name of Pregnant Woman</label>
+			</input>
+			<input ref="/data/MPREG">
 				<label>Number of Months of Pregnancy:</label>
 			</input>
-			<select1 ref="/crhdss-pregnancy-registration/ATTEND_CLI">
+			<select1 ref="/data/ATTEND_CLI">
 				<label>Have you ever attended any Ante-Natal Clinic?</label>
 				<item>
 					<label>Yes</label>
@@ -102,7 +118,7 @@
 					<value>2</value>
 				</item>
 			</select1>
-			<select1 ref="/crhdss-pregnancy-registration/HEALTH_FAC">
+			<select1 ref="/data/HEALTH_FAC">
 				<label>Which Health Facility did you attend?</label>
 				<item>
 					<label>1. Hospital</label>
@@ -125,10 +141,10 @@
 					<value>8</value>
 				</item>
 			</select1>
-			<input ref="/crhdss-pregnancy-registration/HEALTH_FAC_other">
+			<input ref="/data/HEALTH_FAC_other">
 				<label>Specify other.</label>
 			</input>
-			<select1 ref="/crhdss-pregnancy-registration/TT_INJECT">
+			<select1 ref="/data/TT_INJECT">
 				<label>Have you received TT injection?</label>
 				<item>
 					<label>Yes</label>
@@ -139,10 +155,10 @@
 					<value>2</value>
 				</item>
 			</select1>
-			<input ref="/crhdss-pregnancy-registration/LMP">
+			<input ref="/data/LMP">
 				<label>Estimated Date of Conception:</label>
 			</input>
-			<select1 ref="/crhdss-pregnancy-registration/FIRST_PG">
+			<select1 ref="/data/FIRST_PG">
 				<label>Is this your first pregnancy?</label>
 				<item>
 					<label>Yes</label>
@@ -156,16 +172,19 @@
 		</group>
 		<group>
 			<label>Source of Information</label>
-			<input ref="/crhdss-pregnancy-registration/COMP_ID">
+			<input ref="/data/houseId">
 				<label>House ID:</label>
 			</input>
-			<input ref="/crhdss-pregnancy-registration/HH_NAME">
-				<label>Household Name:</label>
+			<input ref="/data/houseName">
+				<label>House Name:</label>
 			</input>
-			<input ref="/crhdss-pregnancy-registration/HH_ID">
+			<input ref="/data/householdId">
 				<label>Household ID:</label>
 			</input>
-			<select1 ref="/crhdss-pregnancy-registration/REPORTBY">
+			<input ref="/data/householdName">
+				<label>Household Name:</label>
+			</input>
+			<select1 ref="/data/REPORTBY">
 				<label>Reported By:</label>
 				<item>
 					<label>1. FW</label>

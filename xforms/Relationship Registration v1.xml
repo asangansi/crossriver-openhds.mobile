@@ -1,0 +1,161 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head><!-- ODK Aggregate upload time: 2012-08-14T18:30:02.136+0000 on http://openhds.rcg.usm.maine.edu/ODKAggregate -->
+    <h:title>Relationship Registration v1</h:title>
+    <model>
+      <instance>
+        <data id="relationship_registration_v1">
+          <womanId/>
+          <manId/>
+          <relationshipType/>
+          <startDate/>
+          <endType />
+          <endDate/>
+          <fieldWorkerId/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/womanId:label">
+            <value>Individual A</value>
+          </text>
+          <text id="/data/womanId:hint">
+            <value>Permanent ID</value>
+          </text>
+          <text id="/data/manId:label">
+            <value>Individual B</value>
+          </text>
+          <text id="/data/manId:hint">
+            <value>Permanent ID</value>
+          </text>
+          <text id="/data/relationshipType:label">
+            <value>Relationship Type</value>
+          </text>
+          <text id="/data/relationshipType:hint">
+            <value/>
+          </text>
+          <text id="/data/relationshipType:option0">
+            <value>Never Married</value>
+          </text>
+          <text id="/data/relationshipType:option1">
+            <value>Married</value>
+          </text>
+          <text id="/data/relationshipType:option2">
+            <value>Separated/Divorced</value>
+          </text>
+          <text id="/data/relationshipType:option3">
+            <value>Widowed</value>
+          </text>
+          <text id="/data/relationshipType:option4">
+            <value>Living Together</value>
+          </text>
+          <text id="/data/startDate:label">
+            <value>Start Date</value>
+          </text>
+          <text id="/data/startDate:hint">
+            <value/>
+          </text>
+          <text id="/data/endType:label">
+            <value>End Type</value>
+          </text>
+          <text id="/data/endType:hint">
+            <value/>
+          </text>
+          <text id="/data/endType:option0">
+            <value>None</value>
+          </text>
+          <text id="/data/endType:option1">
+            <value>Death</value>
+          </text>
+          <text id="/data/endType:option2">
+            <value>Out Migration</value>
+          </text>
+          <text id="/data/endDate:label">
+            <value>End Date</value>
+          </text>
+          <text id="/data/endDate:hint">
+            <value/>
+          </text>
+          <text id="/data/fieldWorkerId:label">
+            <value>Field Worker ID</value>
+          </text>
+          <text id="/data/fieldWorkerId:hint">
+            <value/>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/womanId" type="string" required="true()"
+		constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+      <bind nodeset="/data/manId" type="string" required="true()"
+		constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
+      <bind nodeset="/data/relationshipType" type="select1" required="true()"/>
+      <bind nodeset="/data/startDate" type="date" required="true()"/>
+      <bind nodeset="/data/endType" type="select1" required="true()" relevant="(relationshipType = '3' or relationshipType = '4')"/>
+      <bind nodeset="/data/endDate" type="date" relevant="(endType != 'NA')"/>
+      <bind nodeset="/data/fieldWorkerId" type="string" required="true()"
+		constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+		jr:constraintMsg="Field Worker Id is not the right format"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/womanId">
+      <label ref="jr:itext('/data/womanId:label')"/>
+      <hint ref="jr:itext('/data/womanId:hint')"/>
+    </input>
+    <input ref="/data/manId">
+      <label ref="jr:itext('/data/manId:label')"/>
+      <hint ref="jr:itext('/data/manId:hint')"/>
+    </input>
+    <select1 ref="/data/relationshipType">
+      <label ref="jr:itext('/data/relationshipType:label')"/>
+      <hint ref="jr:itext('/data/relationshipType:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/relationshipType:option0')"/>
+        <value>1</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipType:option1')"/>
+        <value>2</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipType:option2')"/>
+        <value>3</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipType:option3')"/>
+        <value>4</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipType:option4')"/>
+        <value>5</value>
+      </item>
+    </select1>
+    <input ref="/data/startDate">
+      <label ref="jr:itext('/data/startDate:label')"/>
+      <hint ref="jr:itext('/data/startDate:hint')"/>
+    </input>
+    <select1 ref="/data/endType">
+      <label ref="jr:itext('/data/endType:label')"/>
+      <hint ref="jr:itext('/data/endType:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/endType:option0')"/>
+        <value>NA</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/endType:option1')"/>
+        <value>DTH</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/endType:option2')"/>
+        <value>OMG</value>
+      </item>
+    </select1>
+    <input ref="/data/endDate">
+      <label ref="jr:itext('/data/endDate:label')"/>
+      <hint ref="jr:itext('/data/endDate:hint')"/>
+    </input>
+    <input ref="/data/fieldWorkerId">
+      <label ref="jr:itext('/data/fieldWorkerId:label')"/>
+      <hint ref="jr:itext('/data/fieldWorkerId:hint')"/>
+    </input>
+  </h:body>
+</h:html>

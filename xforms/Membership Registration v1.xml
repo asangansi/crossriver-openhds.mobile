@@ -1,0 +1,293 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head><!-- ODK Aggregate upload time: 2012-08-14T18:30:49.152+0000 on http://openhds.rcg.usm.maine.edu/ODKAggregate -->
+    <h:title>Membership Registration v1</h:title>
+    <model>
+      <instance>
+        <data id="membership_registration_v1">
+          <individualId/>
+		  <firstName/>
+		  <lastName/>
+		  <householdId/>
+		  <householdName/>
+          <relationshipToGroupHead/>
+          <startDate/>
+          <startType />
+          <endDate/>
+		  <endType/>
+          <fieldWorkerId/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/individualId:label">
+            <value>Individual ID</value>
+          </text>
+          <text id="/data/individualId:hint">
+            <value>Permanent ID</value>
+          </text>
+         <text id="/data/firstName:label">
+			<value>First name of Individual</value>
+		 </text>
+		 <text id="/data/firstName:hint">
+			<value />
+		 </text>
+		 <text id="/data/lastName:label">
+			<value>Last name of Individual</value>
+		 </text>
+		 <text id="/data/lastName:hint">
+			<value />
+		 </text>
+		 <text id="/data/householdId:label">
+			<value>Household Id</value>
+		 </text>
+		 <text id="/data/householdId:hint">
+			<value />
+		 </text>
+		 <text id="/data/householdName:label">
+			<value>Household Name</value>
+		 </text>
+		 <text id="/data/householdName:hint">
+			<value />
+		 </text>
+         <text id="/data/relationshipToGroupHead:label">
+            <value>Relationship To Group Head</value>
+         </text>
+          <text id="/data/relationshipToGroupHead:hint">
+            <value/>
+          </text>
+          <text id="/data/relationshipToGroupHead:option0">
+            <value>Head</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option1">
+            <value>Spouse</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option2">
+            <value>Son/Daughter</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option3">
+            <value>Parent</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option4">
+            <value>Son/Daughter-in-law</value>
+          </text>
+		  <text id="/data/relationshipToGroupHead:option5">
+            <value>Grandchild</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option6">
+            <value>Mother/Father-in-law</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option7">
+            <value>Brother/Sister</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option8">
+            <value>Adopted/Foster child/Stepchild</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option9">
+            <value>Not Related</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option10">
+            <value>Co-wife</value>
+          </text>
+		  <text id="/data/relationshipToGroupHead:option11">
+            <value>Other Relative</value>
+          </text>
+          <text id="/data/relationshipToGroupHead:option12">
+            <value>Don't Known</value>
+          </text>
+		  <text id="/data/startDate:label">
+            <value>Start Date</value>
+          </text>
+          <text id="/data/startDate:hint">
+            <value/>
+          </text>
+		  <text id="/data/startType:label">
+            <value>Start Type</value>
+          </text>
+          <text id="/data/startType:hint">
+            <value/>
+          </text>
+          <text id="/data/startType:option0">
+            <value>Birth</value>
+          </text>
+          <text id="/data/startType:option1">
+            <value>In Migration</value>
+          </text>
+          <text id="/data/startType:option2">
+            <value>Marriage</value>
+          </text>
+		  <text id="/data/startType:option3">
+            <value>Enumeration</value>
+          </text>
+          <text id="/data/endDate:label">
+            <value>End Date</value>
+          </text>
+          <text id="/data/endDate:hint">
+            <value/>
+          </text>
+          <text id="/data/endType:label">
+            <value>End Type</value>
+          </text>
+          <text id="/data/endType:hint">
+            <value/>
+          </text>
+          <text id="/data/endType:option0">
+            <value>None</value>
+          </text>
+          <text id="/data/endType:option1">
+            <value>Death</value>
+          </text>
+          <text id="/data/endType:option2">
+            <value>Out Migration</value>
+          </text>
+          <text id="/data/fieldWorkerId:label">
+            <value>Field Worker ID</value>
+          </text>
+          <text id="/data/fieldWorkerId:hint">
+            <value/>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/individualId" type="string" required="true()"
+		constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+	  <bind nodeset="/data/firstName" type="string" required="true()" />
+	  <bind nodeset="/data/lastName" type="string" required="true()" />
+	  <bind nodeset="/data/householdId" type="string" required="true()"
+				constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
+	  <bind nodeset="/data/householdName" type="string" required="true()" />
+	  <bind nodeset="/data/relationshipToGroupHead" type="select1" required="true()"/>
+      <bind nodeset="/data/startDate" type="date" required="true()"/>
+	  <bind nodeset="/data/startType" type="select1" required="true()"/>
+      <bind nodeset="/data/endDate" type="date" />
+	  <bind nodeset="/data/endType" type="select1" required="true()" />
+      <bind nodeset="/data/fieldWorkerId" type="string" required="true()"
+		constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
+		jr:constraintMsg="Field Worker Id is not the right format"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/individualId">
+      <label ref="jr:itext('/data/individualId:label')"/>
+      <hint ref="jr:itext('/data/individualId:hint')"/>
+    </input>
+	<input ref="/data/firstName">
+		<label ref="jr:itext('/data/firstName:label')" />
+		<hint ref="jr:itext('/data/firstName:hint')" />
+	</input>
+	<input ref="/data/lastName">
+		<label ref="jr:itext('/data/lastName:label')" />
+		<hint ref="jr:itext('/data/lastName:hint')" />
+	</input>
+	<input ref="/data/householdId">
+		<label ref="jr:itext('/data/householdId:label')" />
+		<hint ref="jr:itext('/data/householdId:hint')" />
+	</input>
+	<input ref="/data/householdName">
+		<label ref="jr:itext('/data/householdName:label')" />
+		<hint ref="jr:itext('/data/householdName:hint')" />
+	</input>
+    <select1 ref="/data/relationshipToGroupHead">
+      <label ref="jr:itext('/data/relationshipToGroupHead:label')"/>
+      <hint ref="jr:itext('/data/relationshipToGroupHead:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option0')"/>
+        <value>01</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option1')"/>
+        <value>02</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option2')"/>
+        <value>03</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option3')"/>
+        <value>04</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option4')"/>
+        <value>05</value>
+      </item>
+	  <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option5')"/>
+        <value>06</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option6')"/>
+        <value>07</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option7')"/>
+        <value>08</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option8')"/>
+        <value>09</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option9')"/>
+        <value>10</value>
+      </item>
+	  <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option10')"/>
+        <value>11</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option11')"/>
+        <value>12</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/relationshipToGroupHead:option12')"/>
+        <value>99</value>
+      </item>
+    </select1>
+    <input ref="/data/startDate">
+      <label ref="jr:itext('/data/startDate:label')"/>
+      <hint ref="jr:itext('/data/startDate:hint')"/>
+    </input>
+    <select1 ref="/data/startType">
+      <label ref="jr:itext('/data/startType:label')"/>
+      <hint ref="jr:itext('/data/startType:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/startType:option0')"/>
+        <value>BIR</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/startType:option1')"/>
+        <value>IMG</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/startType:option2')"/>
+        <value>MAR</value>
+      </item>
+	  <item>
+        <label ref="jr:itext('/data/startType:option3')"/>
+        <value>ENU</value>
+      </item>
+    </select1>
+    <input ref="/data/endDate">
+      <label ref="jr:itext('/data/endDate:label')"/>
+      <hint ref="jr:itext('/data/endDate:hint')"/>
+    </input>
+	<select1 ref="/data/endType">
+      <label ref="jr:itext('/data/endType:label')"/>
+      <hint ref="jr:itext('/data/endType:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/endType:option0')"/>
+        <value>DTH</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/endType:option1')"/>
+        <value>OMG</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/endType:option2')"/>
+        <value>NA</value>
+      </item>
+    </select1>
+    <input ref="/data/fieldWorkerId">
+      <label ref="jr:itext('/data/fieldWorkerId:label')"/>
+      <hint ref="jr:itext('/data/fieldWorkerId:hint')"/>
+    </input>
+  </h:body>
+</h:html>

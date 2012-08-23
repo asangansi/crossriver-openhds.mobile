@@ -1,25 +1,27 @@
 <h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
 	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:jr="http://openrosa.org/javarosa">
-	<h:head>
-		<h:title>Death Registration v4</h:title>
+	<h:head><!-- ODK Aggregate upload time: 2012-08-14T18:29:38.449+0000 on http://openhds.rcg.usm.maine.edu/ODKAggregate -->
+		<h:title>Death Registration v5</h:title>
 		<model>
 			<instance>
-				<data id="death_registration_v4">
-          <derivedFromUri />
-					<processedByMirth>0</processedByMirth>
-					<validationFailed>0</validationFailed>
-          <supervisorStatus />
+				<data id="death_registration_v5">
+					<derivedFromUri />
+					<processedByMirth />
+					<validationFailed />
+					<supervisorStatus />
 					<basicInformation>
-						<fieldWorker />
-						<dateOfInterview />
-						<permanentId />
+						<fieldWorkerId />
+						<visitId />
+						<visitDate />
+						<individualId />
 						<houseId />
 						<householdName />
 						<householdId />
 						<dateOfDeath />
-						<deceasedName />
-						<sex>1</sex>
+						<firstName />
+						<lastName />
+						<gender />
 						<placeOfDeath />
 						<placeOfDeathOther />
 					</basicInformation>
@@ -36,22 +38,28 @@
 					<text id="/data/sourceOfInformation:label">
 						<value>2. Source of Information</value>
 					</text>
-					<text id="/data/basicInformation/fieldWorker:label">
+					<text id="/data/basicInformation/fieldWorkerId:label">
 						<value>Field Worker</value>
 					</text>
-					<text id="/data/basicInformation/fieldWorker:hint">
+					<text id="/data/basicInformation/fieldWorkerId:hint">
 						<value />
 					</text>
-					<text id="/data/basicInformation/dateOfInterview:label">
+					<text id="/data/basicInformation/visitId:label">
+						<value>Visit ID</value>
+					</text>
+					<text id="/data/basicInformation/visitId:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/visitDate:label">
 						<value>Date of Interview</value>
 					</text>
-					<text id="/data/basicInformation/dateOfInterview:hint">
+					<text id="/data/basicInformation/visitDate:hint">
 						<value />
 					</text>
-					<text id="/data/basicInformation/permanentId:label">
+					<text id="/data/basicInformation/individualId:label">
 						<value>Permanent ID</value>
 					</text>
-					<text id="/data/basicInformation/permanentId:hint">
+					<text id="/data/basicInformation/individualId:hint">
 						<value />
 					</text>
 					<text id="/data/basicInformation/houseId:label">
@@ -78,22 +86,28 @@
 					<text id="/data/basicInformation/dateOfDeath:hint">
 						<value />
 					</text>
-					<text id="/data/basicInformation/deceasedName:label">
-						<value>Deceased Name</value>
+					<text id="/data/basicInformation/firstName:label">
+						<value>Deceased First Name</value>
 					</text>
-					<text id="/data/basicInformation/deceasedName:hint">
+					<text id="/data/basicInformation/firstName:hint">
 						<value />
 					</text>
-					<text id="/data/basicInformation/sex:label">
-						<value>Sex</value>
+					<text id="/data/basicInformation/lastName:label">
+						<value>Deceased Last Name</value>
 					</text>
-					<text id="/data/basicInformation/sex:hint">
+					<text id="/data/basicInformation/lastName:hint">
 						<value />
 					</text>
-					<text id="/data/basicInformation/sex:option0">
+					<text id="/data/basicInformation/gender:label">
+						<value>Gender</value>
+					</text>
+					<text id="/data/basicInformation/gender:hint">
+						<value />
+					</text>
+					<text id="/data/basicInformation/gender:option0">
 						<value>Male</value>
 					</text>
-					<text id="/data/basicInformation/sex:option1">
+					<text id="/data/basicInformation/gender:option1">
 						<value>Female</value>
 					</text>
 					<text id="/data/basicInformation/placeOfDeath:label">
@@ -143,13 +157,16 @@
 			<bind nodeset="/data/processedByMirth" type="boolean" />
 			<bind nodeset="/data/validationFailed" type="boolean" />
 			<bind nodeset="/data/derivedFromUri" type="string" />
-			<bind nodeset="/data/basicInformation/fieldWorker" type="string"
+			<bind nodeset="/data/basicInformation/fieldWorkerId" type="string"
 				required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
 				jr:constraintMsg="Field Worker Id is not the right format" />
-			<bind nodeset="/data/basicInformation/dateOfInterview" type="date"
+			<bind nodeset="/data/basicInformation/visitId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{10}[0-9]{5}$')"
+				jr:constraintMsg="Visit Id is not the right format" />
+			<bind nodeset="/data/basicInformation/visitDate" type="date"
 				required="true()" constraint=". &lt;= today()"
-				jr:constraintMsg="Date of interview cannot be in the future" />
-			<bind nodeset="/data/basicInformation/permanentId" type="string"
+				jr:constraintMsg="Visit date cannot be in the future" />
+			<bind nodeset="/data/basicInformation/individualId" type="string"
 				required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/data/basicInformation/houseId" type="string"
@@ -162,9 +179,11 @@
 				jr:constraintMsg="Household Id is not the right format" />
 			<bind nodeset="/data/basicInformation/dateOfDeath" type="date"
 				constraint=". &lt; /data/basicInformation/dateOfInterview" jr:constraintMsg="The date of death cannot be after the interview date" />
-			<bind nodeset="/data/basicInformation/deceasedName" type="string"
+			<bind nodeset="/data/basicInformation/firstName" type="string"
 				required="true()" />
-			<bind nodeset="/data/basicInformation/sex" type="select1"
+			<bind nodeset="/data/basicInformation/lastName" type="string"
+				required="true()" />
+			<bind nodeset="/data/basicInformation/gender" type="select1"
 				required="true()" />
 			<bind nodeset="/data/basicInformation/placeOfDeath" type="select1"
 				required="true()" />
@@ -178,17 +197,21 @@
 	<h:body>
 		<group>
 			<label ref="jr:itext('/data/basicInformation:label')" />
-			<input ref="/data/basicInformation/fieldWorker">
-				<label ref="jr:itext('/data/basicInformation/fieldWorker:label')" />
-				<hint ref="jr:itext('/data/basicInformation/fieldWorker:hint')" />
+			<input ref="/data/basicInformation/fieldWorkerId">
+				<label ref="jr:itext('/data/basicInformation/fieldWorkerId:label')" />
+				<hint ref="jr:itext('/data/basicInformation/fieldWorkerId:hint')" />
 			</input>
-			<input ref="/data/basicInformation/dateOfInterview">
-				<label ref="jr:itext('/data/basicInformation/dateOfInterview:label')" />
-				<hint ref="jr:itext('/data/basicInformation/dateOfInterview:hint')" />
+			<input ref="/data/basicInformation/visitId">
+				<label ref="jr:itext('/data/basicInformation/visitId:label')" />
+				<hint ref="jr:itext('/data/basicInformation/visitId:hint')" />
 			</input>
-			<input ref="/data/basicInformation/permanentId">
-				<label ref="jr:itext('/data/basicInformation/permanentId:label')" />
-				<hint ref="jr:itext('/data/basicInformation/permanentId:hint')" />
+			<input ref="/data/basicInformation/visitDate">
+				<label ref="jr:itext('/data/basicInformation/visitDate:label')" />
+				<hint ref="jr:itext('/data/basicInformation/visitDate:hint')" />
+			</input>
+			<input ref="/data/basicInformation/individualId">
+				<label ref="jr:itext('/data/basicInformation/individualId:label')" />
+				<hint ref="jr:itext('/data/basicInformation/individualId:hint')" />
 			</input>
 			<input ref="/data/basicInformation/houseId">
 				<label ref="jr:itext('/data/basicInformation/houseId:label')" />
@@ -206,19 +229,23 @@
 				<label ref="jr:itext('/data/basicInformation/dateOfDeath:label')" />
 				<hint ref="jr:itext('/data/basicInformation/dateOfDeath:hint')" />
 			</input>
-			<input ref="/data/basicInformation/deceasedName">
-				<label ref="jr:itext('/data/basicInformation/deceasedName:label')" />
-				<hint ref="jr:itext('/data/basicInformation/deceasedName:hint')" />
+			<input ref="/data/basicInformation/firstName">
+				<label ref="jr:itext('/data/basicInformation/firstName:label')" />
+				<hint ref="jr:itext('/data/basicInformation/firstName:hint')" />
 			</input>
-			<select1 ref="/data/basicInformation/sex">
-				<label ref="jr:itext('/data/basicInformation/sex:label')" />
-				<hint ref="jr:itext('/data/basicInformation/sex:hint')" />
+			<input ref="/data/basicInformation/lastName">
+				<label ref="jr:itext('/data/basicInformation/lastName:label')" />
+				<hint ref="jr:itext('/data/basicInformation/lastName:hint')" />
+			</input>
+			<select1 ref="/data/basicInformation/gender">
+				<label ref="jr:itext('/data/basicInformation/gender:label')" />
+				<hint ref="jr:itext('/data/basicInformation/gender:hint')" />
 				<item>
-					<label ref="jr:itext('/data/basicInformation/sex:option0')" />
+					<label ref="jr:itext('/data/basicInformation/gender:option0')" />
 					<value>1</value>
 				</item>
 				<item>
-					<label ref="jr:itext('/data/basicInformation/sex:option1')" />
+					<label ref="jr:itext('/data/basicInformation/gender:option1')" />
 					<value>2</value>
 				</item>
 			</select1>

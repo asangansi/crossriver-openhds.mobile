@@ -2,27 +2,29 @@
 	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
-		<h:title>Out Migration v4</h:title>
+		<h:title>Out Migration Registration v5</h:title>
 		<model>
 			<instance>
-				<data id="migration_out_registration_v4">
-          <derivedFromUri />
-					<processedByMirth>0</processedByMirth>
-					<validationFailed>0</validationFailed>
-          <supervisorStatus />
+				<data id="outmigration_registration_v4">
+					<derivedFromUri />
+					<processedByMirth />
+					<validationFailed />
+					<supervisorStatus />
 					<basicInfo>
-						<collectedBy />
-						<interviewDate />
+						<fieldWorkerId />
+						<visitId />
+						<visitDate />
 						<migrationDate />
-						<permId />
-						<migrantName />
-						<sex />
+						<individualId />
+						<firstName />
+						<lastName />
+						<gender />
 					</basicInfo>
 					<moveAwayFrom>
-						<moveAwayFromHouseId />
-						<moveAwayFromHouseName />
-						<moveAwayFromHouseholdId />
-						<moveAwayFromHouseholdName />
+						<houseId />
+						<houseName />
+						<householdId />
+						<householdName />
 					</moveAwayFrom>
 					<moveAwayTo>
 						<placeMovedTo />
@@ -41,16 +43,22 @@
 					<text id="/data/basicInfo:label">
 						<value>Basic Information</value>
 					</text>
-					<text id="/data/basicInfo/collectedBy:label">
+					<text id="/data/basicInfo/fieldWorkerId:label">
 						<value>Field Worker Id</value>
 					</text>
-					<text id="/data/basicInfo/collectedBy:hint">
+					<text id="/data/basicInfo/fieldWorkerId:hint">
 						<value />
 					</text>
-					<text id="/data/basicInfo/interviewDate:label">
+					<text id="/data/basicInfo/visitId:label">
+						<value>Visit Id</value>
+					</text>
+					<text id="/data/basicInfo/visitId:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/visitDate:label">
 						<value>Date of Interview</value>
 					</text>
-					<text id="/data/basicInfo/interviewDate:hint">
+					<text id="/data/basicInfo/visitDate:hint">
 						<value />
 					</text>
 					<text id="/data/basicInfo/migrationDate:label">
@@ -59,55 +67,61 @@
 					<text id="/data/basicInfo/migrationDate:hint">
 						<value />
 					</text>
-					<text id="/data/basicInfo/permId:label">
+					<text id="/data/basicInfo/individualId:label">
 						<value>Permanent Id</value>
 					</text>
-					<text id="/data/basicInfo/permId:hint">
+					<text id="/data/basicInfo/individualId:hint">
 						<value />
 					</text>
-					<text id="/data/basicInfo/migrantName:label">
-						<value>Name of Migrant</value>
+					<text id="/data/basicInfo/firstName:label">
+						<value>First name of Migrant</value>
 					</text>
-					<text id="/data/basicInfo/migrantName:hint">
+					<text id="/data/basicInfo/firstName:hint">
 						<value />
 					</text>
-					<text id="/data/basicInfo/sex:label">
-						<value>Sex</value>
+					<text id="/data/basicInfo/lastName:label">
+						<value>Last name of Migrant</value>
 					</text>
-					<text id="/data/basicInfo/sex:hint">
+					<text id="/data/basicInfo/lastName:hint">
 						<value />
 					</text>
-					<text id="/data/basicInfo/sex:option0">
+					<text id="/data/basicInfo/gender:label">
+						<value>Gender</value>
+					</text>
+					<text id="/data/basicInfo/gender:hint">
+						<value />
+					</text>
+					<text id="/data/basicInfo/gender:option0">
 						<value>Male</value>
 					</text>
-					<text id="/data/basicInfo/sex:option1">
+					<text id="/data/basicInfo/gender:option1">
 						<value>Female</value>
 					</text>
 					<text id="/data/moveAwayFrom:label">
 						<value>Move Away From</value>
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseId:label">
+					<text id="/data/moveAwayFrom/houseId:label">
 						<value>House Id</value>
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseId:hint">
+					<text id="/data/moveAwayFrom/houseId:hint">
 						<value />
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseName:label">
+					<text id="/data/moveAwayFrom/houseName:label">
 						<value>House Name</value>
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseName:hint">
+					<text id="/data/moveAwayFrom/houseName:hint">
 						<value />
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseholdId:label">
+					<text id="/data/moveAwayFrom/householdId:label">
 						<value>Household Id</value>
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseholdId:hint">
+					<text id="/data/moveAwayFrom/householdId:hint">
 						<value />
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseholdName:label">
+					<text id="/data/moveAwayFrom/householdName:label">
 						<value>Household Name</value>
 					</text>
-					<text id="/data/moveAwayFrom/moveAwayFromHouseholdName:hint">
+					<text id="/data/moveAwayFrom/householdName:hint">
 						<value />
 					</text>
 					<text id="/data/moveAwayTo:label">
@@ -201,29 +215,34 @@
 			</itext>
 			<bind nodeset="/data/processedByMirth" type="boolean" />
 			<bind nodeset="/data/validationFailed" type="boolean" />
-			<bind nodeset="/data/basicInfo/collectedBy" type="string"
+			<bind nodeset="/data/basicInfo/fieldWorkerId" type="string"
 				required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
 				jr:constraintMsg="Field Worker Id is not the right format" />
-			<bind nodeset="/data/basicInfo/interviewDate" type="date"
+			<bind nodeset="/data/basicInfo/visitId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{7}[0-9]{5}$')"
+				jr:constraintMsg="Visit Id is not the right format" />
+			<bind nodeset="/data/basicInfo/visitDate" type="date"
 				constraint=". &lt;= today()" required="true()"
 				jr:constraintMsg="Date of interview cannot be in the future" />
 			<bind nodeset="/data/basicInfo/migrationDate" type="date"
-				required="true()" constraint=". &lt; ../interviewDate"
+				required="true()" constraint=". &lt; ../visitDate"
 				jr:constraintMsg="The date of migration cannot be after the interview date" />
-			<bind nodeset="/data/basicInfo/permId" type="string" required="true()"
+			<bind nodeset="/data/basicInfo/individualId" type="string" required="true()"
 				constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
-			<bind nodeset="/data/basicInfo/migrantName" type="string"
+			<bind nodeset="/data/basicInfo/firstName" type="string"
 				required="true()" />
-			<bind nodeset="/data/basicInfo/sex" type="select1" required="true()" />
-			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseId" type="string"
+			<bind nodeset="/data/basicInfo/lastName" type="string"
+				required="true()" />
+			<bind nodeset="/data/basicInfo/gender" type="select1" required="true()" />
+			<bind nodeset="/data/moveAwayFrom/houseId" type="string"
 				required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')"
 				jr:constraintMsg="House Id is not the right format" />
-			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseName" type="string"
+			<bind nodeset="/data/moveAwayFrom/houseName" type="string"
 				required="true()" />
-			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseholdId" type="string"
+			<bind nodeset="/data/moveAwayFrom/householdId" type="string"
 				required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')"
 				jr:constraintMsg="Household Id is not the right format" />
-			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseholdName"
+			<bind nodeset="/data/moveAwayFrom/householdName"
 				type="string" required="true()" />
 			<bind nodeset="/data/moveAwayTo/placeMovedTo" type="select1"
 				required="true()" />
@@ -249,59 +268,67 @@
 	<h:body>
 		<group>
 			<label ref="jr:itext('/data/basicInfo:label')" />
-			<input ref="/data/basicInfo/collectedBy">
-				<label ref="jr:itext('/data/basicInfo/collectedBy:label')" />
-				<hint ref="jr:itext('/data/basicInfo/collectedBy:hint')" />
+			<input ref="/data/basicInfo/fieldWorkerId">
+				<label ref="jr:itext('/data/basicInfo/fieldWorkerId:label')" />
+				<hint ref="jr:itext('/data/basicInfo/fieldWorkerId:hint')" />
 			</input>
-			<input ref="/data/basicInfo/interviewDate">
-				<label ref="jr:itext('/data/basicInfo/interviewDate:label')" />
-				<hint ref="jr:itext('/data/basicInfo/interviewDate:hint')" />
+			<input ref="/data/basicInfo/visitId">
+				<label ref="jr:itext('/data/basicInfo/visitId:label')" />
+				<hint ref="jr:itext('/data/basicInfo/visitId:hint')" />
+			</input>
+			<input ref="/data/basicInfo/visitDate">
+				<label ref="jr:itext('/data/basicInfo/visitDate:label')" />
+				<hint ref="jr:itext('/data/basicInfo/visitDate:hint')" />
 			</input>
 			<input ref="/data/basicInfo/migrationDate">
 				<label ref="jr:itext('/data/basicInfo/migrationDate:label')" />
 				<hint ref="jr:itext('/data/basicInfo/migrationDate:hint')" />
 			</input>
-			<input ref="/data/basicInfo/permId">
-				<label ref="jr:itext('/data/basicInfo/permId:label')" />
-				<hint ref="jr:itext('/data/basicInfo/permId:hint')" />
+			<input ref="/data/basicInfo/individualId">
+				<label ref="jr:itext('/data/basicInfo/individualId:label')" />
+				<hint ref="jr:itext('/data/basicInfo/individualId:hint')" />
 			</input>
-			<input ref="/data/basicInfo/migrantName">
-				<label ref="jr:itext('/data/basicInfo/migrantName:label')" />
-				<hint ref="jr:itext('/data/basicInfo/migrantName:hint')" />
+			<input ref="/data/basicInfo/firstName">
+				<label ref="jr:itext('/data/basicInfo/firstName:label')" />
+				<hint ref="jr:itext('/data/basicInfo/firstName:hint')" />
 			</input>
-			<select1 ref="/data/basicInfo/sex">
-				<label ref="jr:itext('/data/basicInfo/sex:label')" />
-				<hint ref="jr:itext('/data/basicInfo/sex:hint')" />
+			<input ref="/data/basicInfo/lastName">
+				<label ref="jr:itext('/data/basicInfo/lastName:label')" />
+				<hint ref="jr:itext('/data/basicInfo/lastName:hint')" />
+			</input>
+			<select1 ref="/data/basicInfo/gender">
+				<label ref="jr:itext('/data/basicInfo/gender:label')" />
+				<hint ref="jr:itext('/data/basicInfo/gender:hint')" />
 				<item>
-					<label ref="jr:itext('/data/basicInfo/sex:option0')" />
+					<label ref="jr:itext('/data/basicInfo/gender:option0')" />
 					<value>1</value>
 				</item>
 				<item>
-					<label ref="jr:itext('/data/basicInfo/sex:option1')" />
+					<label ref="jr:itext('/data/basicInfo/gender:option1')" />
 					<value>2</value>
 				</item>
 			</select1>
 		</group>
 		<group>
 			<label ref="jr:itext('/data/moveAwayFrom:label')" />
-			<input ref="/data/moveAwayFrom/moveAwayFromHouseId">
-				<label ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseId:label')" />
-				<hint ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseId:hint')" />
+			<input ref="/data/moveAwayFrom/houseId">
+				<label ref="jr:itext('/data/moveAwayFrom/houseId:label')" />
+				<hint ref="jr:itext('/data/moveAwayFrom/houseId:hint')" />
 			</input>
-			<input ref="/data/moveAwayFrom/moveAwayFromHouseName">
-				<label ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseName:label')" />
-				<hint ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseName:hint')" />
+			<input ref="/data/moveAwayFrom/houseName">
+				<label ref="jr:itext('/data/moveAwayFrom/houseName:label')" />
+				<hint ref="jr:itext('/data/moveAwayFrom/houseName:hint')" />
 			</input>
-			<input ref="/data/moveAwayFrom/moveAwayFromHouseholdName">
+			<input ref="/data/moveAwayFrom/householdId">
 				<label
-					ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdName:label')" />
+					ref="jr:itext('/data/moveAwayFrom/householdId:label')" />
+				<hint ref="jr:itext('/data/moveAwayFrom/householdId:hint')" />
+			</input>
+			<input ref="/data/moveAwayFrom/householdName">
+				<label
+					ref="jr:itext('/data/moveAwayFrom/householdName:label')" />
 				<hint
-					ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdName:hint')" />
-			</input>
-			<input ref="/data/moveAwayFrom/moveAwayFromHouseholdId">
-				<label
-					ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdId:label')" />
-				<hint ref="jr:itext('/data/moveAwayFrom/moveAwayFromHouseholdId:hint')" />
+					ref="jr:itext('/data/moveAwayFrom/householdName:hint')" />
 			</input>
 		</group>
 		<group>

@@ -1,19 +1,20 @@
 <h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
-  <h:head>
-    <h:title>Location Registration</h:title>
+  <h:head><!-- ODK Aggregate upload time: 2012-08-16T18:53:08.851+0000 on http://openhds.rcg.usm.maine.edu/ODKAggregate -->
+    <h:title>Location Registration v1</h:title>
     <model>
       <instance>
-        <data id="location_registration">
+        <data id="location_registration_v1">
           <fieldWorkerId/>
-          <locationVillage/>
-          <locationName/>
-          <locationId/>
-          <locationHead/>
+          <hierarchyId/>
+		  <houseId/>
+          <houseName/>
+          <individualId/>
           <locationType/>
+		  <latlong/>
           <derivedFromUri />
           <supervisorStatus />
           <processedByMirth />
-          <validationFailed>0</validationFailed>
+          <validationFailed />
         </data>
       </instance>
       <itext>
@@ -27,28 +28,28 @@
           <text id="/data/location:label">
             <value>Location Information</value>
           </text>
-          <text id="/data/locationVillage:label">
+          <text id="/data/hierarchyId:label">
             <value>Village</value>
           </text>
-          <text id="/data/locationVillage:hint">
+          <text id="/data/hierarchyId:hint">
             <value/>
           </text>
-          <text id="/data/locationName:label">
-            <value>Location Name</value>
-          </text>
-          <text id="/data/locationName:hint">
-            <value/>
-          </text>
-          <text id="/data/locationId:label">
+		  <text id="/data/houseId:label">
             <value>House Id</value>
           </text>
-          <text id="/data/locationId:hint">
+          <text id="/data/houseId:hint">
             <value/>
           </text>
-          <text id="/data/locationHead:label">
+          <text id="/data/houseName:label">
+            <value>Location Name</value>
+          </text>
+          <text id="/data/houseName:hint">
+            <value/>
+          </text>
+          <text id="/data/individualId:label">
             <value>Location Head</value>
           </text>
-          <text id="/data/locationHead:hint">
+          <text id="/data/individualId:hint">
             <value/>
           </text>
           <text id="/data/locationType:label">
@@ -63,15 +64,22 @@
           <text id="/data/locationType:option1">
             <value>Urban</value>
           </text>
+		  <text id="/data/latlong:label">
+            <value>Geo Point</value>
+          </text>
+          <text id="/data/latlong:hint">
+            <value/>
+          </text>
         </translation>
       </itext>
       <bind nodeset="/data/fieldWorkerId" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')" jr:constraintMsg="Field Worker Id is not the right format"/>      
-      <bind nodeset="/data/locationVillage" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}$')" jr:constraintMsg="Village must only be 3 characters"/>
-      <bind nodeset="/data/locationName" type="string" required="true()" />
-      <bind nodeset="/data/locationId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
-      <bind nodeset="/data/locationHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+      <bind nodeset="/data/hierarchyId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{3}$')" jr:constraintMsg="Village must only be 3 characters"/>
+      <bind nodeset="/data/houseId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format"/>
+	  <bind nodeset="/data/houseName" type="string" required="true()" />
+      <bind nodeset="/data/individualId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
       <bind nodeset="/data/locationType" type="select1" required="true()" />
-			<bind nodeset="/data/derivedFromUri" type="string" />
+	  <bind nodeset="/data/latlong" type="geopoint" required="true()" />
+	  <bind nodeset="/data/derivedFromUri" type="string" />
       <bind nodeset="/data/supervisorStatus" type="int" />
       <bind nodeset="/data/processedByMirth" type="int" />
       <bind nodeset="/data/validationFailed" type="boolean" />
@@ -82,21 +90,21 @@
       <label ref="jr:itext('/data/fieldWorkerId:label')"/>
       <hint ref="jr:itext('/data/fieldWorkerId:hint')"/>
     </input>
-    <input ref="/data/locationVillage">
-      <label ref="jr:itext('/data/locationVillage:label')"/>
-      <hint ref="jr:itext('/data/locationVillage:hint')"/>
+    <input ref="/data/hierarchyId">
+      <label ref="jr:itext('/data/hierarchyId:label')"/>
+      <hint ref="jr:itext('/data/hierarchyId:hint')"/>
     </input>
-    <input ref="/data/locationName">
-      <label ref="jr:itext('/data/locationName:label')"/>
-      <hint ref="jr:itext('/data/locationName:hint')"/>
+	<input ref="/data/houseId">
+      <label ref="jr:itext('/data/houseId:label')"/>
+      <hint ref="jr:itext('/data/houseId:hint')"/>
     </input>
-    <input ref="/data/locationId">
-      <label ref="jr:itext('/data/locationId:label')"/>
-      <hint ref="jr:itext('/data/locationId:hint')"/>
+    <input ref="/data/houseName">
+      <label ref="jr:itext('/data/houseName:label')"/>
+      <hint ref="jr:itext('/data/houseName:hint')"/>
     </input>
-    <input ref="/data/locationHead">
-      <label ref="jr:itext('/data/locationHead:label')"/>
-      <hint ref="jr:itext('/data/locationHead:hint')"/>
+    <input ref="/data/individualId">
+      <label ref="jr:itext('/data/individualId:label')"/>
+      <hint ref="jr:itext('/data/individualId:hint')"/>
     </input>
     <select1 ref="/data/locationType">
       <label ref="jr:itext('/data/locationType:label')"/>
@@ -110,5 +118,9 @@
         <value>URB</value>
       </item>
     </select1>
+	<input ref="/data/latlong">
+      <label ref="jr:itext('/data/latlong:label')"/>
+      <hint ref="jr:itext('/data/latlong:hint')"/>
+    </input>
   </h:body>
 </h:html>

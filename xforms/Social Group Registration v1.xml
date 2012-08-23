@@ -1,34 +1,34 @@
 <h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
-  <h:head>
-    <h:title>Register New Social Group</h:title>
+  <h:head><!-- ODK Aggregate upload time: 2012-08-16T15:24:07.226+0000 on http://openhds.rcg.usm.maine.edu/ODKAggregate -->
+    <h:title>Social Group Registration v1</h:title>
     <model>
       <instance>
-        <data id="social_group_registration">
-          <socialGroupId/>
-          <name/>
+        <data id="socialgroup_registration_v1">
+          <householdId/>
+		  <householdName/>
           <type/>
-          <socialGroupHead/>
+          <individualId/>
           <fieldWorkerId/>
-          <respondentId/>
-          <dateOfInterview/>
-          <derivedFromUri />
-          <supervisorStatus />
-          <processedByMirth />
-          <validationFailed>0</validationFailed>
+          <respondent/>
+          <visitDate/>
+          <derivedFromUri/>
+          <supervisorStatus/>
+          <processedByMirth/>
+          <validationFailed/>
         </data>
       </instance>
       <itext>
         <translation lang="eng">
-          <text id="/data/socialGroupId:label">
+          <text id="/data/householdId:label">
             <value>Social Group Id</value>
           </text>
-          <text id="/data/socialGroupId:hint">
+          <text id="/data/householdId:hint">
             <value/>
           </text>
-          <text id="/data/name:label">
+          <text id="/data/householdName:label">
             <value>Social Group Name</value>
           </text>
-          <text id="/data/name:hint">
+          <text id="/data/householdName:hint">
             <value/>
           </text>
           <text id="/data/type:label">
@@ -43,10 +43,10 @@
           <text id="/data/type:option1">
             <value>Family</value>
           </text>
-          <text id="/data/socialGroupHead:label">
+          <text id="/data/individualId:label">
             <value>Social Group Head</value>
           </text>
-          <text id="/data/socialGroupHead:hint">
+          <text id="/data/individualId:hint">
             <value/>
           </text>
           <text id="/data/fieldWorkerId:label">
@@ -55,41 +55,41 @@
           <text id="/data/fieldWorkerId:hint">
             <value/>
           </text>
-          <text id="/data/respondentId:label">
+          <text id="/data/respondent:label">
             <value>Respondent Id</value>
           </text>
-          <text id="/data/respondentId:hint">
+          <text id="/data/respondent:hint">
             <value/>
           </text>
-          <text id="/data/dateOfInterview:label">
+          <text id="/data/visitDate:label">
             <value>Date of Interview</value>
           </text>
-          <text id="/data/dateOfInterview:hint">
+          <text id="/data/visitDate:hint">
             <value/>
           </text>
         </translation>
       </itext>
-      <bind nodeset="/data/socialGroupId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format"/>
-      <bind nodeset="/data/name" type="string" required="true()" />
+      <bind nodeset="/data/householdId" type="string" required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format"/>
+      <bind nodeset="/data/householdName" type="string" required="true()" />
       <bind nodeset="/data/type" type="select1" required="true()" />
-      <bind nodeset="/data/socialGroupHead" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
+      <bind nodeset="/data/individualId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format"/>
       <bind nodeset="/data/fieldWorkerId" type="string" required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')" jr:constraintMsg="Field Worker Id is not the right format"/>
-      <bind nodeset="/data/respondentId" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
-      <bind nodeset="/data/dateOfInterview" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date of interview cannot be in the future"/>
-			<bind nodeset="/data/derivedFromUri" type="string" />
+      <bind nodeset="/data/respondent" required="true()" type="string" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+      <bind nodeset="/data/visitDate" type="date" constraint=". &lt;= today()" required="true()" jr:constraintMsg="Date of interview cannot be in the future"/>
+	  <bind nodeset="/data/derivedFromUri" type="string" />
       <bind nodeset="/data/supervisorStatus" type="int" />
       <bind nodeset="/data/processedByMirth" type="int" />
       <bind nodeset="/data/validationFailed" type="boolean" />
     </model>
   </h:head>
   <h:body>
-    <input ref="/data/socialGroupId">
-      <label ref="jr:itext('/data/socialGroupId:label')"/>
-      <hint ref="jr:itext('/data/socialGroupId:hint')"/>
+    <input ref="/data/householdId">
+      <label ref="jr:itext('/data/householdId:label')"/>
+      <hint ref="jr:itext('/data/householdId:hint')"/>
     </input>
-    <input ref="/data/name">
-      <label ref="jr:itext('/data/name:label')"/>
-      <hint ref="jr:itext('/data/name:hint')"/>
+    <input ref="/data/householdName">
+      <label ref="jr:itext('/data/householdName:label')"/>
+      <hint ref="jr:itext('/data/householdName:hint')"/>
     </input>
     <select1 ref="/data/type">
       <label ref="jr:itext('/data/type:label')"/>
@@ -103,21 +103,21 @@
         <value>FAM</value>
       </item>
     </select1>
-    <input ref="/data/socialGroupHead">
-      <label ref="jr:itext('/data/socialGroupHead:label')"/>
-      <hint ref="jr:itext('/data/socialGroupHead:hint')"/>
+    <input ref="/data/individualId">
+      <label ref="jr:itext('/data/individualId:label')"/>
+      <hint ref="jr:itext('/data/individualId:hint')"/>
     </input>
     <input ref="/data/fieldWorkerId">
       <label ref="jr:itext('/data/fieldWorkerId:label')"/>
       <hint ref="jr:itext('/data/fieldWorkerId:hint')"/>
     </input>
-    <input ref="/data/respondentId">
-      <label ref="jr:itext('/data/respondentId:label')"/>
-      <hint ref="jr:itext('/data/respondentId:hint')"/>
+    <input ref="/data/respondent">
+      <label ref="jr:itext('/data/respondent:label')"/>
+      <hint ref="jr:itext('/data/respondent:hint')"/>
     </input>
-    <input ref="/data/dateOfInterview">
-      <label ref="jr:itext('/data/dateOfInterview:label')"/>
-      <hint ref="jr:itext('/data/dateOfInterview:hint')"/>
+    <input ref="/data/visitDate">
+      <label ref="jr:itext('/data/visitDate:label')"/>
+      <hint ref="jr:itext('/data/visitDate:hint')"/>
     </input>
   </h:body>
 </h:html>

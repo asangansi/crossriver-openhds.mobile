@@ -1,27 +1,31 @@
 <h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
 	xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:jr="http://openrosa.org/javarosa">
-	<h:head>
-		<h:title>Birth Registration v4</h:title>
+	<h:head><!-- ODK Aggregate upload time: 2012-08-14T18:29:28.308+0000 on http://openhds.rcg.usm.maine.edu/ODKAggregate -->
+		<h:title>Birth Registration v5</h:title>
 		<model>
 			<instance>
-				<data id="birth_registration_v4">
-          <derivedFromUri />
-					<processedByMirth>0</processedByMirth>
-					<validationFailed>0</validationFailed>
-          <supervisorStatus/>
-					<motherId />
-					<motherName />
+				<data id="birth_registration_v5">
+					<derivedFromUri />
+					<processedByMirth />
+					<validationFailed />
+					<supervisorStatus/>
+					<individualId />
+					<firstName />
+					<lastName />
 					<motherLineNumber />
-					<collectedBy />
-					<recordedDate />
+					<fieldWorkerId />
+					<visitId />
+					<visitDate />
 					<reportedBy />
 					<houseId />
+					<houseName />
 					<householdId />
 					<householdName />
 					<childDob />
-					<fatherId />
-					<fatherName />
+					<childFatherId />
+					<childFatherFirstName />
+					<childFatherLastName />
 					<birthPlace />
 					<birthPlaceOther />
 					<umbilicalCordCutting />
@@ -33,12 +37,12 @@
 					<totalChildrenBorn />
 					<numLiveBirthsFromRecentPreg />
 					<children>
-						<firstChildId />
+						<child1Id />
 						<firstChildFirstName />
 						<firstChildLastName />
 						<firstChildSex />
 						<secondChild />
-						<secondChildId />
+						<child2Id />
 						<secondChildFirstName />
 						<secondChildLastName />
 						<secondChildSex />
@@ -47,16 +51,22 @@
 			</instance>
 			<itext>
 				<translation lang="eng">
-					<text id="/data/motherId:label">
+					<text id="/data/individualId:label">
 						<value>Permanent ID of Mother</value>
 					</text>
-					<text id="/data/motherId:hint">
+					<text id="/data/individualId:hint">
 						<value />
 					</text>
-					<text id="/data/motherName:label">
-						<value>Name of Mother</value>
+					<text id="/data/firstName:label">
+						<value>First name of Mother</value>
 					</text>
-					<text id="/data/motherName:hint">
+					<text id="/data/firstName:hint">
+						<value />
+					</text>
+					<text id="/data/lastName:label">
+						<value>Last name of Mother</value>
+					</text>
+					<text id="/data/lastName:hint">
 						<value />
 					</text>
 					<text id="/data/motherLineNumber:label">
@@ -65,16 +75,22 @@
 					<text id="/data/motherLineNumber:hint">
 						<value />
 					</text>
-					<text id="/data/collectedBy:label">
+					<text id="/data/fieldWorkerId:label">
 						<value>Field Worker Id</value>
 					</text>
-					<text id="/data/collectedBy:hint">
+					<text id="/data/fieldWorkerId:hint">
 						<value />
 					</text>
-					<text id="/data/recordedDate:label">
+					<text id="/data/visitId:label">
+						<value>Visit ID</value>
+					</text>
+					<text id="/data/visitId:hint">
+						<value />
+					</text>
+					<text id="/data/visitDate:label">
 						<value>Date of Interview</value>
 					</text>
-					<text id="/data/recordedDate:hint">
+					<text id="/data/visitDate:hint">
 						<value />
 					</text>
 					<text id="/data/reportedBy:label">
@@ -98,6 +114,12 @@
 					<text id="/data/houseId:hint">
 						<value />
 					</text>
+					<text id="/data/houseName:label">
+						<value>House Name</value>
+					</text>
+					<text id="/data/houseName:hint">
+						<value />
+					</text>
 					<text id="/data/householdId:label">
 						<value>Household Id</value>
 					</text>
@@ -116,16 +138,22 @@
 					<text id="/data/childDob:hint">
 						<value />
 					</text>
-					<text id="/data/fatherId:label">
+					<text id="/data/childFatherId:label">
 						<value>Permanent ID of Father</value>
 					</text>
-					<text id="/data/fatherId:hint">
+					<text id="/data/childFatherId:hint">
 						<value>Enter UNK for Unknown</value>
 					</text>
-					<text id="/data/fatherName:label">
-						<value>Name of Father</value>
+					<text id="/data/childFatherFirstName:label">
+						<value>First name of Father</value>
 					</text>
-					<text id="/data/fatherName:hint">
+					<text id="/data/childFatherFirstName:hint">
+						<value />
+					</text>
+					<text id="/data/childFatherLastName:label">
+						<value>Last name of Father</value>
+					</text>
+					<text id="/data/childFatherLastName:hint">
 						<value />
 					</text>
 					<text id="/data/birthPlace:label">
@@ -258,10 +286,10 @@
 					<text id="/data/children:label">
 						<value>Information on Child/Children</value>
 					</text>
-					<text id="/data/children/firstChildId:label">
+					<text id="/data/children/child1Id:label">
 						<value>Permanent Id of child</value>
 					</text>
-					<text id="/data/children/firstChildId:hint">
+					<text id="/data/children/child1Id:hint">
 						<value />
 					</text>
 					<text id="/data/children/firstChildFirstName:label">
@@ -300,10 +328,10 @@
 					<text id="/data/children/secondChild:option1">
 						<value>No</value>
 					</text>
-					<text id="/data/children/secondChildId:label">
+					<text id="/data/children/child2Id:label">
 						<value>Permanent Id of second child</value>
 					</text>
-					<text id="/data/children/secondChildId:hint">
+					<text id="/data/children/child2Id:hint">
 						<value />
 					</text>
 					<text id="/data/children/secondChildFirstName:label">
@@ -334,28 +362,35 @@
 			</itext>
 			<bind nodeset="/data/processedByMirth" type="boolean" />
 			<bind nodeset="/data/validationFailed" type="boolean" />
-			<bind nodeset="/data/motherId" type="string" required="true()"
+			<bind nodeset="/data/individualId" type="string" required="true()"
 				constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
-			<bind nodeset="/data/motherName" type="string" required="true()" />
+			<bind nodeset="/data/firstName" type="string" required="true()" />
+			<bind nodeset="/data/lastName" type="string" required="true()" />
 			<bind nodeset="/data/motherLineNumber" type="int" required="true()"
 				constraint="regex(., '^[0-9]{0,2}[1-9]{1}$')" jr:constraintMsg="Mother line number must be 1, 2 or 3 digits" />
-			<bind nodeset="/data/collectedBy" type="string" required="true()"
+			<bind nodeset="/data/fieldWorkerId" type="string" required="true()"
 				constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
 				jr:constraintMsg="Field Worker Id is not the right format" />
-			<bind nodeset="/data/recordedDate" type="date" constraint=". &lt;= today()"
+			<bind nodeset="/data/visitId" type="string"
+				required="true()" constraint="regex(., '^[A-Za-z]{10}[0-9]{5}$')"
+				jr:constraintMsg="Visit Id is not the right format" />
+			<bind nodeset="/data/visitDate" type="date" constraint=". &lt;= today()"
 				required="true()" jr:constraintMsg="Date of interview cannot be in the future" />
 			<bind nodeset="/data/reportedBy" type="select1" required="true()" />
 			<bind nodeset="/data/houseId" type="string" required="true()"
 				constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')" jr:constraintMsg="House Id is not the right format" />
+			<bind nodeset="/data/houseName" type="string" required="true()" />
 			<bind nodeset="/data/householdId" type="string" required="true()"
 				constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')" jr:constraintMsg="Household Id is not the right format" />
 			<bind nodeset="/data/householdName" type="string" required="true()" />
 			<bind nodeset="/data/childDob" type="date" required="true()"
-				constraint=". &lt; /data/recordedDate" jr:constraintMsg="The date of birth cannot be after the interview date" />
-			<bind nodeset="/data/fatherId" type="string" required="true()"
+				constraint=". &lt; /data/visitDate" jr:constraintMsg="The date of birth cannot be after the interview date" />
+			<bind nodeset="/data/childFatherId" type="string" required="true()"
 				constraint="regex(., '^([A-Za-z]{9}[0-9]{7}$|^[Uu][Nn][Kk])$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
-			<bind nodeset="/data/fatherName" type="string"
+			<bind nodeset="/data/childFatherFirstName" type="string"
+				relevant="not(regex(../fatherId, '^[Uu][Nn][Kk]$'))" required="true()" />
+			<bind nodeset="/data/childFatherLastName" type="string"
 				relevant="not(regex(../fatherId, '^[Uu][Nn][Kk]$'))" required="true()" />
 			<bind nodeset="/data/birthPlace" type="select1" required="true()" />
 			<bind nodeset="/data/birthPlaceOther" type="string" required="true()"
@@ -375,7 +410,7 @@
 			<bind nodeset="/data/numLiveBirthsFromRecentPreg" type="int"
 				required="true()" constraint=". &lt;= ../totalChildrenBorn"
 				jr:constraintMsg="Number of live births cannot be greater than total number of children born for this pregnancy" />
-			<bind nodeset="/data/children/firstChildId" type="string"
+			<bind nodeset="/data/children/child1Id" type="string"
 				required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')"
 				jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/data/children/firstChildFirstName" type="string"
@@ -385,7 +420,7 @@
 			<bind nodeset="/data/children/firstChildSex" type="select1"
 				required="true()" />
 			<bind nodeset="/data/children/secondChild" type="select1" required="true()" />
-			<bind nodeset="/data/children/secondChildId" type="string"
+			<bind nodeset="/data/children/child2Id" type="string"
 				constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" required="true()"
 				relevant="/data/children/secondChild='1'" />
 			<bind nodeset="/data/children/secondChildFirstName" type="string"
@@ -401,13 +436,17 @@
 	<h:body>
 		<group>
 			<label ref="jr:itext('basicInfoLabel')" />
-			<input ref="/data/collectedBy">
-				<label ref="jr:itext('/data/collectedBy:label')" />
-				<hint ref="jr:itext('/data/collectedBy:hint')" />
+			<input ref="/data/fieldWorkerId">
+				<label ref="jr:itext('/data/fieldWorkerId:label')" />
+				<hint ref="jr:itext('/data/fieldWorkerId:hint')" />
 			</input>
-			<input ref="/data/recordedDate">
-				<label ref="jr:itext('/data/recordedDate:label')" />
-				<hint ref="jr:itext('/data/recordedDate:hint')" />
+			<input ref="/data/visitId">
+				<label ref="jr:itext('/data/visitId:label')" />
+				<hint ref="jr:itext('/data/visitId:hint')" />
+			</input>
+			<input ref="/data/visitDate">
+				<label ref="jr:itext('/data/visitDate:label')" />
+				<hint ref="jr:itext('/data/visitDate:hint')" />
 			</input>
 		</group>
 		<group>
@@ -435,37 +474,49 @@
 				<label ref="jr:itext('/data/houseId:label')" />
 				<hint ref="jr:itext('/data/houseId:hint')" />
 			</input>
-			<input ref="/data/householdName">
-				<label ref="jr:itext('/data/householdName:label')" />
-				<hint ref="jr:itext('/data/householdName:hint')" />
+			<input ref="/data/houseName">
+				<label ref="jr:itext('/data/houseName:label')" />
+				<hint ref="jr:itext('/data/houseName:hint')" />
 			</input>
 			<input ref="/data/householdId">
 				<label ref="jr:itext('/data/householdId:label')" />
 				<hint ref="jr:itext('/data/householdId:hint')" />
 			</input>
+			<input ref="/data/householdName">
+				<label ref="jr:itext('/data/householdName:label')" />
+				<hint ref="jr:itext('/data/householdName:hint')" />
+			</input>
 			<input ref="/data/motherLineNumber">
 				<label ref="jr:itext('/data/motherLineNumber:label')" />
 				<hint ref="jr:itext('/data/motherLineNumber:hint')" />
 			</input>
-			<input ref="/data/motherId">
-				<label ref="jr:itext('/data/motherId:label')" />
-				<hint ref="jr:itext('/data/motherId:hint')" />
+			<input ref="/data/individualId">
+				<label ref="jr:itext('/data/individualId:label')" />
+				<hint ref="jr:itext('/data/individualId:hint')" />
 			</input>
-			<input ref="/data/motherName">
-				<label ref="jr:itext('/data/motherName:label')" />
-				<hint ref="jr:itext('/data/motherName:hint')" />
+			<input ref="/data/firstName">
+				<label ref="jr:itext('/data/firstName:label')" />
+				<hint ref="jr:itext('/data/firstName:hint')" />
+			</input>
+			<input ref="/data/lastName">
+				<label ref="jr:itext('/data/lastName:label')" />
+				<hint ref="jr:itext('/data/lastName:hint')" />
 			</input>
 			<input ref="/data/childDob">
 				<label ref="jr:itext('/data/childDob:label')" />
 				<hint ref="jr:itext('/data/childDob:hint')" />
 			</input>
-			<input ref="/data/fatherId">
-				<label ref="jr:itext('/data/fatherId:label')" />
-				<hint ref="jr:itext('/data/fatherId:hint')" />
+			<input ref="/data/childFatherId">
+				<label ref="jr:itext('/data/childFatherId:label')" />
+				<hint ref="jr:itext('/data/childFatherId:hint')" />
 			</input>
-			<input ref="/data/fatherName">
-				<label ref="jr:itext('/data/fatherName:label')" />
-				<hint ref="jr:itext('/data/fatherName:hint')" />
+			<input ref="/data/childFatherFirstName">
+				<label ref="jr:itext('/data/childFatherFirstName:label')" />
+				<hint ref="jr:itext('/data/childFatherFirstName:hint')" />
+			</input>
+			<input ref="/data/childFatherLastName">
+				<label ref="jr:itext('/data/childFatherLastName:label')" />
+				<hint ref="jr:itext('/data/childFatherLastName:hint')" />
 			</input>
 
 			<select1 ref="/data/birthPlace">
@@ -592,9 +643,9 @@
 		</group>
 		<group>
 			<label ref="jr:itext('/data/children:label')" />
-			<input ref="/data/children/firstChildId">
-				<label ref="jr:itext('/data/children/firstChildId:label')" />
-				<hint ref="jr:itext('/data/children/firstChildId:hint')" />
+			<input ref="/data/children/child1Id">
+				<label ref="jr:itext('/data/children/child1Id:label')" />
+				<hint ref="jr:itext('/data/children/child1Id:hint')" />
 			</input>
 			<input ref="/data/children/firstChildFirstName">
 				<label ref="jr:itext('/data/children/firstChildFirstName:label')" />
@@ -628,9 +679,9 @@
 					<value>2</value>
 				</item>
 			</select1>
-			<input ref="/data/children/secondChildId">
-				<label ref="jr:itext('/data/children/secondChildId:label')" />
-				<hint ref="jr:itext('/data/children/secondChildId:hint')" />
+			<input ref="/data/children/child2Id">
+				<label ref="jr:itext('/data/children/child2Id:label')" />
+				<hint ref="jr:itext('/data/children/child2Id:hint')" />
 			</input>
 			<input ref="/data/children/secondChildFirstName">
 				<label ref="jr:itext('/data/children/secondChildFirstName:label')" />
