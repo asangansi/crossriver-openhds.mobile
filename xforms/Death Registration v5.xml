@@ -177,8 +177,8 @@
 			<bind nodeset="/data/basicInformation/householdId" type="string"
 				required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')"
 				jr:constraintMsg="Household Id is not the right format" />
-			<bind nodeset="/data/basicInformation/dateOfDeath" type="date"
-				constraint=". &lt; /data/basicInformation/dateOfInterview" jr:constraintMsg="The date of death cannot be after the interview date" />
+			<bind nodeset="/data/basicInformation/dateOfDeath" type="date" required="true()"
+				constraint=". &lt; /data/basicInformation/visitDate" jr:constraintMsg="The date of death cannot be after the interview date" />
 			<bind nodeset="/data/basicInformation/firstName" type="string"
 				required="true()" />
 			<bind nodeset="/data/basicInformation/lastName" type="string"
