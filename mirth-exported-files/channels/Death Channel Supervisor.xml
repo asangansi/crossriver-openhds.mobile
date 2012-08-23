@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341187940000</time>
+    <time>1345755041671</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>3</revision>
+  <revision>4</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, BASIC_INFORMATION_HOUSEHOLD_ID, SORCE_OF_INFORMATON_REPORTED_BY, BASIC_INFORMATION_PERMANENT_ID, BASIC_INFORMATION_DATE_OF_DEATH, BASIC_INFORMATION_FIELD_WORKER, BASIC_INFORMATION_DATE_OF_INTERVIEW, BASIC_INFORMATION_PLACE_OF_DEATH, BASIC_INFORMATION_SEX, BASIC_INFORMATION_HOUSE_ID, BASIC_INFORMATION_PLACE_OF_DEATH_OTHER, BASIC_INFORMATION_DECEASED_NAME, BASIC_INFORMATION_HOUSEHOLD_NAME FROM &quot; + globalMap.get(&quot;deathRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, BASIC_INFORMATION_HOUSEHOLD_ID, SORCE_OF_INFORMATON_REPORTED_BY, BASIC_INFORMATION_FIELD_WORKER_ID, SUPERVISOR_STATUS, BASIC_INFORMATION_DATE_OF_DEATH, VALIDATION_FAILED, BASIC_INFORMATION_VISIT_DATE, BASIC_INFORMATION_FIRST_NAME, BASIC_INFORMATION_PLACE_OF_DEATH, BASIC_INFORMATION_LAST_NAME, DERIVED_FROM_URI, BASIC_INFORMATION_PLACE_OF_DEATH_OTHER, BASIC_INFORMATION_VISIT_ID, BASIC_INFORMATION_HOUSE_ID, BASIC_INFORMATION_GENDER, BASIC_INFORMATION_HOUSEHOLD_NAME, PROCESSED_BY_MIRTH, BASIC_INFORMATION_INDIVIDUAL_ID FROM &quot; + globalMap.get(&quot;deathRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
 dbConn.close();
 
 return result;</property>
@@ -36,24 +36,29 @@ return result;</property>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
 cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGRlcml2ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRf
-ZnJvbV91cmk+DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX2hvdXNlaG9sZF9pZD52YWx1ZTwvYmFz
-aWNfaW5mb3JtYXRpb25faG91c2Vob2xkX2lkPg0KICAgIDxzb3JjZV9vZl9pbmZvcm1hdG9uX3Jl
-cG9ydGVkX2J5PnZhbHVlPC9zb3JjZV9vZl9pbmZvcm1hdG9uX3JlcG9ydGVkX2J5Pg0KICAgIDxi
-YXNpY19pbmZvcm1hdGlvbl9wZXJtYW5lbnRfaWQ+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3Bl
-cm1hbmVudF9pZD4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fZGF0ZV9vZl9kZWF0aD52YWx1ZTwv
-YmFzaWNfaW5mb3JtYXRpb25fZGF0ZV9vZl9kZWF0aD4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25f
-ZmllbGRfd29ya2VyPnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9maWVsZF93b3JrZXI+DQogICAg
-PGJhc2ljX2luZm9ybWF0aW9uX2RhdGVfb2ZfaW50ZXJ2aWV3PnZhbHVlPC9iYXNpY19pbmZvcm1h
-dGlvbl9kYXRlX29mX2ludGVydmlldz4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fcGxhY2Vfb2Zf
-ZGVhdGg+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3BsYWNlX29mX2RlYXRoPg0KICAgIDxiYXNp
-Y19pbmZvcm1hdGlvbl9zZXg+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3NleD4NCiAgICA8YmFz
-aWNfaW5mb3JtYXRpb25faG91c2VfaWQ+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX2hvdXNlX2lk
-Pg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9wbGFjZV9vZl9kZWF0aF9vdGhlcj52YWx1ZTwvYmFz
-aWNfaW5mb3JtYXRpb25fcGxhY2Vfb2ZfZGVhdGhfb3RoZXI+DQogICAgPGJhc2ljX2luZm9ybWF0
-aW9uX2RlY2Vhc2VkX25hbWU+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX2RlY2Vhc2VkX25hbWU+
-DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX2hvdXNlaG9sZF9uYW1lPnZhbHVlPC9iYXNpY19pbmZv
-cm1hdGlvbl9ob3VzZWhvbGRfbmFtZT4NCjwvcmVzdWx0Pg0K</inboundTemplate>
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX2hvdXNlaG9sZF9pZD52
+YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25faG91c2Vob2xkX2lkPg0KICAgIDxzb3JjZV9vZl9pbmZv
+cm1hdG9uX3JlcG9ydGVkX2J5PnZhbHVlPC9zb3JjZV9vZl9pbmZvcm1hdG9uX3JlcG9ydGVkX2J5
+Pg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9maWVsZF93b3JrZXJfaWQ+dmFsdWU8L2Jhc2ljX2lu
+Zm9ybWF0aW9uX2ZpZWxkX3dvcmtlcl9pZD4NCiAgICA8c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8
+L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9kYXRlX29mX2RlYXRo
+PnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9kYXRlX29mX2RlYXRoPg0KICAgIDx2YWxpZGF0aW9u
+X2ZhaWxlZD52YWx1ZTwvdmFsaWRhdGlvbl9mYWlsZWQ+DQogICAgPGJhc2ljX2luZm9ybWF0aW9u
+X3Zpc2l0X2RhdGU+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3Zpc2l0X2RhdGU+DQogICAgPGJh
+c2ljX2luZm9ybWF0aW9uX2ZpcnN0X25hbWU+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX2ZpcnN0
+X25hbWU+DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX3BsYWNlX29mX2RlYXRoPnZhbHVlPC9iYXNp
+Y19pbmZvcm1hdGlvbl9wbGFjZV9vZl9kZWF0aD4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fbGFz
+dF9uYW1lPnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9sYXN0X25hbWU+DQogICAgPGRlcml2ZWRf
+ZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRfZnJvbV91cmk+DQogICAgPGJhc2ljX2luZm9ybWF0aW9u
+X3BsYWNlX29mX2RlYXRoX290aGVyPnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9wbGFjZV9vZl9k
+ZWF0aF9vdGhlcj4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fdmlzaXRfaWQ+dmFsdWU8L2Jhc2lj
+X2luZm9ybWF0aW9uX3Zpc2l0X2lkPg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9ob3VzZV9pZD52
+YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25faG91c2VfaWQ+DQogICAgPGJhc2ljX2luZm9ybWF0aW9u
+X2dlbmRlcj52YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25fZ2VuZGVyPg0KICAgIDxiYXNpY19pbmZv
+cm1hdGlvbl9ob3VzZWhvbGRfbmFtZT52YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25faG91c2Vob2xk
+X25hbWU+DQogICAgPHByb2Nlc3NlZF9ieV9taXJ0aD52YWx1ZTwvcHJvY2Vzc2VkX2J5X21pcnRo
+Pg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9pbmRpdmlkdWFsX2lkPnZhbHVlPC9iYXNpY19pbmZv
+cm1hdGlvbl9pbmRpdmlkdWFsX2lkPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -72,28 +77,15 @@ cm1hdGlvbl9ob3VzZWhvbGRfbmFtZT4NCjwvcmVzdWx0Pg0K</inboundTemplate>
           <data class="map">
             <entry>
               <string>Script</string>
-              <string>return validateVisit(msg[&apos;basic_information_house_id&apos;].toString(), msg[&apos;basic_information_date_of_interview&apos;].toString());</string>
+              <string>return validateVisit(msg[&apos;basic_information_house_id&apos;].toString(), msg[&apos;basic_information_visit_date&apos;].toString());</string>
             </entry>
           </data>
           <type>JavaScript</type>
-          <script>return validateVisit(msg[&apos;basic_information_house_id&apos;].toString(), msg[&apos;basic_information_date_of_interview&apos;].toString());</script>
+          <script>return validateVisit(msg[&apos;basic_information_house_id&apos;].toString(), msg[&apos;basic_information_visit_date&apos;].toString());</script>
           <operator>NONE</operator>
         </rule>
         <rule>
           <sequenceNumber>1</sequenceNumber>
-          <name>Location Check</name>
-          <data class="map">
-            <entry>
-              <string>Script</string>
-              <string>return validateLocation(msg[&apos;basic_information_house_id&apos;].toString());</string>
-            </entry>
-          </data>
-          <type>JavaScript</type>
-          <script>return validateLocation(msg[&apos;basic_information_house_id&apos;].toString());</script>
-          <operator>AND</operator>
-        </rule>
-        <rule>
-          <sequenceNumber>2</sequenceNumber>
           <name>Household Check</name>
           <data class="map">
             <entry>
@@ -123,7 +115,31 @@ cm1hdGlvbl9ob3VzZWhvbGRfbmFtZT4NCjwvcmVzdWx0Pg0K</inboundTemplate>
       </properties>
       <transformer>
         <steps/>
-        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX2hvdXNlaG9sZF9pZD52
+YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25faG91c2Vob2xkX2lkPg0KICAgIDxzb3JjZV9vZl9pbmZv
+cm1hdG9uX3JlcG9ydGVkX2J5PnZhbHVlPC9zb3JjZV9vZl9pbmZvcm1hdG9uX3JlcG9ydGVkX2J5
+Pg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9maWVsZF93b3JrZXJfaWQ+dmFsdWU8L2Jhc2ljX2lu
+Zm9ybWF0aW9uX2ZpZWxkX3dvcmtlcl9pZD4NCiAgICA8c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8
+L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9kYXRlX29mX2RlYXRo
+PnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9kYXRlX29mX2RlYXRoPg0KICAgIDx2YWxpZGF0aW9u
+X2ZhaWxlZD52YWx1ZTwvdmFsaWRhdGlvbl9mYWlsZWQ+DQogICAgPGJhc2ljX2luZm9ybWF0aW9u
+X3Zpc2l0X2RhdGU+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX3Zpc2l0X2RhdGU+DQogICAgPGJh
+c2ljX2luZm9ybWF0aW9uX2ZpcnN0X25hbWU+dmFsdWU8L2Jhc2ljX2luZm9ybWF0aW9uX2ZpcnN0
+X25hbWU+DQogICAgPGJhc2ljX2luZm9ybWF0aW9uX3BsYWNlX29mX2RlYXRoPnZhbHVlPC9iYXNp
+Y19pbmZvcm1hdGlvbl9wbGFjZV9vZl9kZWF0aD4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fbGFz
+dF9uYW1lPnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9sYXN0X25hbWU+DQogICAgPGRlcml2ZWRf
+ZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRfZnJvbV91cmk+DQogICAgPGJhc2ljX2luZm9ybWF0aW9u
+X3BsYWNlX29mX2RlYXRoX290aGVyPnZhbHVlPC9iYXNpY19pbmZvcm1hdGlvbl9wbGFjZV9vZl9k
+ZWF0aF9vdGhlcj4NCiAgICA8YmFzaWNfaW5mb3JtYXRpb25fdmlzaXRfaWQ+dmFsdWU8L2Jhc2lj
+X2luZm9ybWF0aW9uX3Zpc2l0X2lkPg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9ob3VzZV9pZD52
+YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25faG91c2VfaWQ+DQogICAgPGJhc2ljX2luZm9ybWF0aW9u
+X2dlbmRlcj52YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25fZ2VuZGVyPg0KICAgIDxiYXNpY19pbmZv
+cm1hdGlvbl9ob3VzZWhvbGRfbmFtZT52YWx1ZTwvYmFzaWNfaW5mb3JtYXRpb25faG91c2Vob2xk
+X25hbWU+DQogICAgPHByb2Nlc3NlZF9ieV9taXJ0aD52YWx1ZTwvcHJvY2Vzc2VkX2J5X21pcnRo
+Pg0KICAgIDxiYXNpY19pbmZvcm1hdGlvbl9pbmRpdmlkdWFsX2lkPnZhbHVlPC9iYXNpY19pbmZv
+cm1hdGlvbl9pbmRpdmlkdWFsX2lkPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>

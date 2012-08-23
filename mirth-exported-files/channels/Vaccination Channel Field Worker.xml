@@ -1,14 +1,14 @@
 <channel>
-  <id>55cb6232-c530-4cf4-bff5-3809bc186ad5</id>
-  <name>Social Group Channel Supervisor</name>
-  <description>This channel will read submissions that are submitted from the supervisors. This is accomplished by filtering on a field in the form (supervisor_status)</description>
+  <id>34bb24b1-34f6-4646-ae55-5fbba9cd4079</id>
+  <name>Vaccination Channel Field Worker</name>
+  <description>This channel will read submissions from field workers. Those submissions are then forward to the mobile interop server</description>
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1345753197671</time>
+    <time>1345256476000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>2</revision>
+  <revision>8</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, VISIT_DATE, SUPERVISOR_STATUS, DERIVED_FROM_URI, FIELD_WORKER_ID, HOUSEHOLD_NAME, HOUSEHOLD_ID, VALIDATION_FAILED, PROCESSED_BY_MIRTH, INDIVIDUAL_ID, TYPE, RESPONDENT FROM &quot; +  globalMap.get(&quot;socialgroupTableName&quot;) + &quot; WHERE processed_by_mirth is null AND supervisor_status = 1&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, derived_from_uri, child_id, collected_by, dates_measels, injection_on_thigh, bcg_scar, dates_dpt1, dates_dpt2, dates_dpt3, drop_in_mouth, dates_bcg, dates_polio1, dates_polio2, dates_polio3, dates_polio4 FROM &quot; +  globalMap.get(&quot;vaccinationTableName&quot;) + &quot; WHERE processed_by_mirth is false AND supervisor_status is null&quot;);
 dbConn.close();
 
 return result;</property>
@@ -35,16 +35,18 @@ return result;</property>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHZpc2l0X2RhdGU+dmFsdWU8L3Zpc2l0X2RhdGU+DQog
-ICAgPHN1cGVydmlzb3Jfc3RhdHVzPnZhbHVlPC9zdXBlcnZpc29yX3N0YXR1cz4NCiAgICA8ZGVy
-aXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8ZmllbGRfd29ya2Vy
-X2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGhvdXNlaG9sZF9uYW1lPnZhbHVlPC9o
-b3VzZWhvbGRfbmFtZT4NCiAgICA8aG91c2Vob2xkX2lkPnZhbHVlPC9ob3VzZWhvbGRfaWQ+DQog
-ICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxlZD4NCiAgICA8cHJv
-Y2Vzc2VkX2J5X21pcnRoPnZhbHVlPC9wcm9jZXNzZWRfYnlfbWlydGg+DQogICAgPGluZGl2aWR1
-YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+DQogICAgPHR5cGU+dmFsdWU8L3R5cGU+DQogICAg
-PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZh
+bHVlPC9kZXJpdmVkX2Zyb21fdXJpPg0KICAgIDxjaGlsZF9pZD52YWx1ZTwvY2hpbGRfaWQ+DQog
+ICAgPGNvbGxlY3RlZF9ieT52YWx1ZTwvY29sbGVjdGVkX2J5Pg0KICAgIDxkYXRlc19tZWFzZWxz
+PnZhbHVlPC9kYXRlc19tZWFzZWxzPg0KICAgIDxpbmplY3Rpb25fb25fdGhpZ2g+dmFsdWU8L2lu
+amVjdGlvbl9vbl90aGlnaD4NCiAgICA8YmNnX3NjYXI+dmFsdWU8L2JjZ19zY2FyPg0KICAgIDxk
+YXRlc19kcHQxPnZhbHVlPC9kYXRlc19kcHQxPg0KICAgIDxkYXRlc19kcHQyPnZhbHVlPC9kYXRl
+c19kcHQyPg0KICAgIDxkYXRlc19kcHQzPnZhbHVlPC9kYXRlc19kcHQzPg0KICAgIDxkcm9wX2lu
+X21vdXRoPnZhbHVlPC9kcm9wX2luX21vdXRoPg0KICAgIDxkYXRlc19iY2c+dmFsdWU8L2RhdGVz
+X2JjZz4NCiAgICA8ZGF0ZXNfcG9saW8xPnZhbHVlPC9kYXRlc19wb2xpbzE+DQogICAgPGRhdGVz
+X3BvbGlvMj52YWx1ZTwvZGF0ZXNfcG9saW8yPg0KICAgIDxkYXRlc19wb2xpbzM+dmFsdWU8L2Rh
+dGVzX3BvbGlvMz4NCiAgICA8ZGF0ZXNfcG9saW80PnZhbHVlPC9kYXRlc19wb2xpbzQ+DQo8L3Jl
+c3VsdD4NCg==</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -67,25 +69,36 @@ PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
     <connector>
       <name>Destination 1</name>
       <properties>
-        <property name="DataType">Channel Writer</property>
-        <property name="host">c79f3b74-d2ac-47e0-86cb-c307a4b98921</property>
-        <property name="synchronised">1</property>
-        <property name="template">${message.rawData}</property>
+        <property name="DataType">JavaScript Writer</property>
+        <property name="host">sink</property>
+        <property name="script">var origXml = new XML(messageObject.getRawData());
+
+executeUpdateQuery(&quot;UPDATE &quot; + globalMap.get(&quot;vaccinationTableName&quot;) + &quot; SET processed_by_mirth = true WHERE _URI = &apos;&quot; + origXml[&apos;_uri&apos;].toString() + &quot;&apos;&quot;);
+
+var instanceXml = reconstructInstanceXml(globalMap.get(&quot;vaccinationTableName&quot;), origXml, globalMap.get(&quot;vaccinationFormName&quot;));
+
+var auditXml = constructAuditXml(instanceXml, null, &quot;Vaccination&quot;, origXml[&apos;collected_by&apos;].toString(), origXml[&apos;_uri&apos;].toString(), globalMap.get(&quot;vaccinationFormName&quot;), origXml[&apos;derived_from_uri&apos;].toString());
+router.routeMessage(&quot;Form Submission Channel&quot;, auditXml);
+return;</property>
       </properties>
       <transformer>
         <steps/>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHZpc2l0X2RhdGU+dmFsdWU8L3Zpc2l0X2RhdGU+DQog
-ICAgPHN1cGVydmlzb3Jfc3RhdHVzPnZhbHVlPC9zdXBlcnZpc29yX3N0YXR1cz4NCiAgICA8ZGVy
-aXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8ZmllbGRfd29ya2Vy
-X2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGhvdXNlaG9sZF9uYW1lPnZhbHVlPC9o
-b3VzZWhvbGRfbmFtZT4NCiAgICA8aG91c2Vob2xkX2lkPnZhbHVlPC9ob3VzZWhvbGRfaWQ+DQog
-ICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxlZD4NCiAgICA8cHJv
-Y2Vzc2VkX2J5X21pcnRoPnZhbHVlPC9wcm9jZXNzZWRfYnlfbWlydGg+DQogICAgPGluZGl2aWR1
-YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+DQogICAgPHR5cGU+dmFsdWU8L3R5cGU+DQogICAg
-PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
-        <outboundTemplate encoding="base64"></outboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZh
+bHVlPC9kZXJpdmVkX2Zyb21fdXJpPg0KICAgIDxjaGlsZF9pZD52YWx1ZTwvY2hpbGRfaWQ+DQog
+ICAgPGNvbGxlY3RlZF9ieT52YWx1ZTwvY29sbGVjdGVkX2J5Pg0KICAgIDxkYXRlc19tZWFzZWxz
+PnZhbHVlPC9kYXRlc19tZWFzZWxzPg0KICAgIDxpbmplY3Rpb25fb25fdGhpZ2g+dmFsdWU8L2lu
+amVjdGlvbl9vbl90aGlnaD4NCiAgICA8YmNnX3NjYXI+dmFsdWU8L2JjZ19zY2FyPg0KICAgIDxk
+YXRlc19kcHQxPnZhbHVlPC9kYXRlc19kcHQxPg0KICAgIDxkYXRlc19kcHQyPnZhbHVlPC9kYXRl
+c19kcHQyPg0KICAgIDxkYXRlc19kcHQzPnZhbHVlPC9kYXRlc19kcHQzPg0KICAgIDxkcm9wX2lu
+X21vdXRoPnZhbHVlPC9kcm9wX2luX21vdXRoPg0KICAgIDxkYXRlc19iY2c+dmFsdWU8L2RhdGVz
+X2JjZz4NCiAgICA8ZGF0ZXNfcG9saW8xPnZhbHVlPC9kYXRlc19wb2xpbzE+DQogICAgPGRhdGVz
+X3BvbGlvMj52YWx1ZTwvZGF0ZXNfcG9saW8yPg0KICAgIDxkYXRlc19wb2xpbzM+dmFsdWU8L2Rh
+dGVzX3BvbGlvMz4NCiAgICA8ZGF0ZXNfcG9saW80PnZhbHVlPC9kYXRlc19wb2xpbzQ+DQo8L3Jl
+c3VsdD4NCg==</inboundTemplate>
+        <outboundTemplate encoding="base64">PHZpc2l0PgogIDx2aXNpdExvY2F0aW9uPgogICAgPGV4dElkIC8+CiAgPC92aXNpdExvY2F0aW9u
+PgogIDx2aXNpdERhdGUgLz4KICA8cm91bmROdW1iZXIgLz4KICA8Y29sbGVjdGVkQnk+CiAgICA8
+ZXh0SWQgLz4KICA8L2NvbGxlY3RlZEJ5Pgo8L3Zpc2l0Pg==</outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>
         <inboundProperties>
@@ -98,7 +111,7 @@ PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
       <filter>
         <rules/>
       </filter>
-      <transportName>Channel Writer</transportName>
+      <transportName>JavaScript Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
       <version>2.2.1.5861</version>
@@ -106,7 +119,7 @@ PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
   </destinationConnectors>
   <properties>
     <property name="clearGlobalChannelMap">true</property>
-    <property name="dont_store_filtered">true</property>
+    <property name="dont_store_filtered">false</property>
     <property name="encryptData">false</property>
     <property name="error_messages_only">false</property>
     <property name="initialState">started</property>

@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341191015000</time>
+    <time>1345423503000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>7</revision>
+  <revision>8</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -57,6 +57,10 @@ iterateResult(outmigrationResult, &quot;outmigration&quot;);
 // pregnancy obs
 var obsResult = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
 iterateResult(obsResult, &quot;pregnancyobservation&quot;);
+
+// vaccination
+var vacResult = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, derived_from_uri, child_id, collected_by, dates_measels, injection_on_thigh, bcg_scar, dates_dpt1, dates_dpt2, dates_dpt3, drop_in_mouth, dates_bcg, dates_polio1, dates_polio2, dates_polio3, dates_polio4 FROM &quot; +  globalMap.get(&quot;vaccinationTableName&quot;) + &quot; WHERE (processed_by_mirth is false OR processed_by_mirth is null) AND supervisor_status = 1&quot;);
+iterateResult(vacResult, &quot;vaccination&quot;);
 
 if (warningMsgs.length &gt; 0) {
   var body = warningMsgs.join(&quot;\n&quot;);
@@ -331,6 +335,48 @@ return entries;</property>
             </data>
             <type>JavaScript</type>
             <script>return msg[&apos;@form&apos;].toString() === &quot;outmigration&quot;;</script>
+            <operator>NONE</operator>
+          </rule>
+        </rules>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+    <connector>
+      <name>Vaccination</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="host">9969a21b-e059-4a38-a2d3-aa18bcc690d2</property>
+        <property name="synchronised">1</property>
+        <property name="template">${message.rawData}</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules>
+          <rule>
+            <sequenceNumber>0</sequenceNumber>
+            <name>Death Filter</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>return msg[&apos;@form&apos;].toString() === &quot;vaccination&quot;;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>return msg[&apos;@form&apos;].toString() === &quot;vaccination&quot;;</script>
             <operator>NONE</operator>
           </rule>
         </rules>

@@ -63,7 +63,12 @@
 	}
 
 	var instanceXml;
+    // elementMap is a dictionary where key-&gt;value = uri-&gt;XML element
+    // this allows for easily accessing  an elements parent when reconstructing the XML
 	var elementMap = {};
+    var geopoints = {};
+    var geopointList = [];
+
 	while(results.next()) {
 		var parentUri = results.getString(&quot;parent_uri_form_data_model&quot;);
 		
@@ -73,11 +78,25 @@
 			elementMap[results.getString(&quot;_uri&quot;)] = instanceXml;
 		} else {
 			var parentElement = elementMap[parentUri];
-			if (results.getString(&quot;element_type&quot;) == &quot;GROUP&quot;) {
+			if (results.getString(&quot;element_type&quot;) == &quot;GROUP&quot; || results.getString(&quot;element_type&quot;) == &quot;GEOPOINT&quot;) {
 				// a group element is a container
 				var child = new XML(&apos;&lt;&apos; + results.getString(&quot;element_name&quot;) + &apos;/&gt;&apos;);
 				parentElement.appendChild(child);
 				elementMap[results.getString(&quot;_uri&quot;)] = parentElement[results.getString(&quot;element_name&quot;)];
+                if (results.getString(&quot;element_type&quot;) == &quot;GEOPOINT&quot;) {
+                   // the geopoint type is represented in the XForm as _LAT _LNG _ALT _ACC (e.g. &lt;latlong&gt;43.000 75.000 0 50&lt;/latlong&gt;)
+                   // in the database, it is reprensted as 4 distinct columns (columns are suffixed with _LAT, _LNG, _ALT, or _ACC)
+                   // in order for them to be output correctly, the columns be concatenated together
+                   var geopoint = {};
+                   geopoint[&quot;element&quot;] = elementMap[results.getString(&quot;_uri&quot;)];
+                   geopoints[results.getString(&quot;element_name&quot;).toLowerCase()] = geopoint;
+                   geopointList.push(geopoint);
+                }
+            } else if (geopoints[results.getString(&quot;element_name&quot;).toLowerCase()]) {
+               var point = geopoints[results.getString(&quot;element_name&quot;).toLowerCase()];
+               var colName = results.getString(&quot;persist_as_column_name&quot;).toLowerCase();
+               var part = colName.substring(colName.lastIndexOf(&quot;_&quot;) + 1);
+               point[part] = parseFloat(resultXml[colName].toString());
 			} else {
 				// an actual element within the XML
 				var propName = results.getString(&quot;persist_as_column_name&quot;).toLowerCase();
@@ -94,6 +113,10 @@
 			}&#xd;		}
         instanceXml[&apos;supervisorStatus&apos;] = 1;
 	}
+
+    for(var i = 0; i &lt; geopointList.length; i++) {
+        geopointList[i][&quot;element&quot;].appendChild(new XML(geopointList[i][&quot;lat&quot;] + &quot; &quot; + geopointList[i][&quot;lng&quot;] + &quot; &quot; + geopointList[i][&quot;alt&quot;] + &quot; &quot; + geopointList[i][&quot;acc&quot;]));
+    }
 
 	dbConn.close();
 	return instanceXml.toXMLString();
@@ -274,6 +297,34 @@
     return true;
   } catch(exception) {
     logger.error(&quot;Error sending request for visit information, houseid=&quot; + visitHouse +&quot;, date=&quot; + visitDate);
+  }
+
+  return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>fc25e10f-42ab-4610-952d-9cd0e5b82948</id>
+    <name>Check for Individual in OpenHDS</name>
+    <tooltip>Check for a registered Individual in the OpenHDS</tooltip>
+    <code>function validateIndividual(indivId) {
+  importPackage(Packages.org.openhds.mirth);
+
+  var individualUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/individual/&quot;;
+  individualUrl += indivId.toUpperCase();
+
+  try {
+    var builder = new RestfulRequestBuilder(individualUrl);
+    var response = builder.buildGet();
+    if (response.getStatusCode() != 200) {
+      return false;
+    }
+
+    return true;
+  } catch(exception) {
+    logger.error(&quot;Error sending request to check individual exists for indivId=&quot; + indivId);
   }
 
   return false;

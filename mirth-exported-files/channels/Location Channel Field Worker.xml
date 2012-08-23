@@ -5,37 +5,51 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341168040000</time>
+    <time>1345751461578</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>26</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
       <property name="DataType">Database Reader</property>
-      <property name="URL">jdbc:mysql://localhost/${odkDatabaseName}</property>
+      <property name="URL">${jdbcUrl}</property>
       <property name="ack"></property>
-      <property name="ackScript"></property>
+      <property name="ackScript">// This update script will be executed once for ever result returned from the above query.
+var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&apos;com.mysql.jdbc.Driver&apos;,&apos;${jdbcUrl}&apos;,&apos;&apos;,&apos;&apos;);
+
+dbConn.close();</property>
       <property name="driver">com.mysql.jdbc.Driver</property>
       <property name="host">query</property>
-      <property name="password">${mysqlPass}</property>
+      <property name="password"></property>
       <property name="pollingFrequency">15000</property>
       <property name="pollingType">interval</property>
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, location_village, derived_from_uri, location_head, field_worker_id, location_type, location_name, location_id FROM &quot; +  globalMap.get(&quot;locationTableName&quot;) + &quot; WHERE processed_by_mirth is null AND supervisor_status is null &quot;);
-dbConn.close();
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, LATLONG_LNG, SUPERVISOR_STATUS, HOUSE_ID, LOCATION_TYPE, VALIDATION_FAILED, HOUSE_NAME, HIERARCHY_ID, LATLONG_ALT, DERIVED_FROM_URI, FIELD_WORKER_ID, LATLONG_LAT, PROCESSED_BY_MIRTH, INDIVIDUAL_ID, LATLONG_ACC FROM &quot; +  globalMap.get(&quot;locationTableName&quot;) + &quot; WHERE processed_by_mirth is null AND supervisor_status is null &quot;);
 
+dbConn.close();
 return result;</property>
       <property name="useAck">0</property>
       <property name="useScript">1</property>
-      <property name="username">${mysqlUser}</property>
+      <property name="username"></property>
     </properties>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGxhdGxvbmdfbG5nPnZhbHVlPC9sYXRsb25nX2xuZz4N
+CiAgICA8c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxo
+b3VzZV9pZD52YWx1ZTwvaG91c2VfaWQ+DQogICAgPGxvY2F0aW9uX3R5cGU+dmFsdWU8L2xvY2F0
+aW9uX3R5cGU+DQogICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxl
+ZD4NCiAgICA8aG91c2VfbmFtZT52YWx1ZTwvaG91c2VfbmFtZT4NCiAgICA8aGllcmFyY2h5X2lk
+PnZhbHVlPC9oaWVyYXJjaHlfaWQ+DQogICAgPGxhdGxvbmdfYWx0PnZhbHVlPC9sYXRsb25nX2Fs
+dD4NCiAgICA8ZGVyaXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8
+ZmllbGRfd29ya2VyX2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGxhdGxvbmdfbGF0
+PnZhbHVlPC9sYXRsb25nX2xhdD4NCiAgICA8cHJvY2Vzc2VkX2J5X21pcnRoPnZhbHVlPC9wcm9j
+ZXNzZWRfYnlfbWlydGg+DQogICAgPGluZGl2aWR1YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+
+DQogICAgPGxhdGxvbmdfYWNjPnZhbHVlPC9sYXRsb25nX2FjYz4NCjwvcmVzdWx0Pg0K</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -73,7 +87,18 @@ return;</property>
       <transformer>
         <steps/>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGxhdGxvbmdfbG5nPnZhbHVlPC9sYXRsb25nX2xuZz4N
+CiAgICA8c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxo
+b3VzZV9pZD52YWx1ZTwvaG91c2VfaWQ+DQogICAgPGxvY2F0aW9uX3R5cGU+dmFsdWU8L2xvY2F0
+aW9uX3R5cGU+DQogICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxl
+ZD4NCiAgICA8aG91c2VfbmFtZT52YWx1ZTwvaG91c2VfbmFtZT4NCiAgICA8aGllcmFyY2h5X2lk
+PnZhbHVlPC9oaWVyYXJjaHlfaWQ+DQogICAgPGxhdGxvbmdfYWx0PnZhbHVlPC9sYXRsb25nX2Fs
+dD4NCiAgICA8ZGVyaXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8
+ZmllbGRfd29ya2VyX2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGxhdGxvbmdfbGF0
+PnZhbHVlPC9sYXRsb25nX2xhdD4NCiAgICA8cHJvY2Vzc2VkX2J5X21pcnRoPnZhbHVlPC9wcm9j
+ZXNzZWRfYnlfbWlydGg+DQogICAgPGluZGl2aWR1YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+
+DQogICAgPGxhdGxvbmdfYWNjPnZhbHVlPC9sYXRsb25nX2FjYz4NCjwvcmVzdWx0Pg0K</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>

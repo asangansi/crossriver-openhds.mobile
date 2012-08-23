@@ -16,7 +16,7 @@ globalMap.put(&quot;dbPass&quot;, &quot;test&quot;);
 /** OpenHDS Information */
 globalMap.put(&quot;openhdsUrl&quot;, &quot;localhost:8080/openhds&quot;);
 globalMap.put(&quot;openhdsUser&quot;, &quot;admin&quot;);
-globalMap.put(&quot;openhdsPassword&quot;, &quot;test&quot;);
+globalMap.put(&quot;openhdsPassword&quot;, &quot;HardP@ssw0rd!&quot;);
 
 /** Mobile Interop */
 globalMap.put(&quot;mobileInteropServer&quot;, &quot;localhost:8080/mobile-interop&quot;);
@@ -49,8 +49,8 @@ globalMap.put(&quot;birthRegistrationTableName&quot;, &quot;birth_registration_v
 globalMap.put(&quot;birthRegistrationFormName&quot;, &quot;birth_registration_v4&quot;);
 
 // Death Registration
-globalMap.put(&quot;deathRegistrationTableName&quot;, &quot;death_registration_v4_core&quot;);
-globalMap.put(&quot;deathRegistrationFormName&quot;, &quot;death_registration_v4&quot;);
+globalMap.put(&quot;deathRegistrationTableName&quot;, &quot;death_registration_v5_core&quot;);
+globalMap.put(&quot;deathRegistrationFormName&quot;, &quot;death_registration_v5&quot;);
 
 // Migration In
 globalMap.put(&quot;migrationInTableName&quot;, &quot;migration_in_registration_v4_core&quot;);
@@ -61,16 +61,20 @@ globalMap.put(&quot;pregnancyRegistrationTableName&quot;, &quot;pregnancy_regist
 globalMap.put(&quot;pregnancyRegistrationFormName&quot;, &quot;pregnancy_registration_v4&quot;);
 
 // Visit Registration
-globalMap.put(&quot;visitTableName&quot;, &quot;visit_registration_v2_core&quot;);
-globalMap.put(&quot;visitFormName&quot;, &quot;visit_registration_v2&quot;);
+globalMap.put(&quot;visitTableName&quot;, &quot;visit_registration_v3_core&quot;);
+globalMap.put(&quot;visitFormName&quot;, &quot;visit_registration_v3&quot;);
 
 // Location Registration
-globalMap.put(&quot;locationTableName&quot;, &quot;location_registration_core&quot;);
-globalMap.put(&quot;locationFormName&quot;, &quot;location_registration&quot;);
+globalMap.put(&quot;locationTableName&quot;, &quot;location_registration_v1_core&quot;);
+globalMap.put(&quot;locationFormName&quot;, &quot;location_registration_v1&quot;);
 
 // Social Group Registration
-globalMap.put(&quot;socialgroupTableName&quot;, &quot;social_group_registration_core&quot;);
-globalMap.put(&quot;socialgroupFormName&quot;, &quot;social_group_registration&quot;);
+globalMap.put(&quot;socialgroupTableName&quot;, &quot;socialgroup_registration_v1_core&quot;);
+globalMap.put(&quot;socialgroupFormName&quot;, &quot;socialgroup_registration_v1&quot;);
+
+// Vaccination
+globalMap.put(&quot;vaccinationTableName&quot;, &quot;vaccination_core&quot;);
+globalMap.put(&quot;vaccinationFormName&quot;, &quot;vaccination&quot;);
 
 return;</string>
   </entry>

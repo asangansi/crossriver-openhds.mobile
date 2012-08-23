@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341177214000</time>
+    <time>1345752062406</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>4</revision>
+  <revision>2</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, location_village, derived_from_uri, location_head, field_worker_id, location_type, location_name, location_id FROM &quot; +  globalMap.get(&quot;locationTableName&quot;) + &quot; WHERE processed_by_mirth is null AND supervisor_status = &apos;1&apos;&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, LATLONG_LNG, HOUSE_ID, LOCATION_TYPE, HOUSE_NAME, HIERARCHY_ID, LATLONG_ALT, DERIVED_FROM_URI, FIELD_WORKER_ID, LATLONG_LAT, PROCESSED_BY_MIRTH, INDIVIDUAL_ID, LATLONG_ACC FROM &quot; +  globalMap.get(&quot;locationTableName&quot;) + &quot; WHERE processed_by_mirth is null AND supervisor_status = &apos;1&apos;&quot;);
 dbConn.close();
 
 return result;</property>
@@ -37,7 +37,7 @@ return result;</property>
         <step>
           <sequenceNumber>0</sequenceNumber>
           <name>collectedBy - extId (out)</name>
-          <script>tmp[&apos;collectedBy&apos;][&apos;extId&apos;] = validate(msg[&apos;field_worker_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <script>tmp[&apos;collectedBy&apos;][&apos;extId&apos;] = validate(msg[&apos;field_worker_id&apos;].toString(), &apos;&apos;, new Array());</script>
           <type>Message Builder</type>
           <data class="map">
             <entry>
@@ -50,7 +50,7 @@ return result;</property>
             </entry>
             <entry>
               <string>Mapping</string>
-              <string>msg[&apos;field_worker_id&apos;].toString().toUpperCase()</string>
+              <string>msg[&apos;field_worker_id&apos;].toString()</string>
             </entry>
             <entry>
               <string>RegularExpressions</string>
@@ -61,7 +61,7 @@ return result;</property>
         <step>
           <sequenceNumber>1</sequenceNumber>
           <name>extId (out)</name>
-          <script>tmp[&apos;extId&apos;] = validate(msg[&apos;location_id&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <script>tmp[&apos;extId&apos;] = validate(msg[&apos;house_id&apos;].toString(), &apos;&apos;, new Array());</script>
           <type>Message Builder</type>
           <data class="map">
             <entry>
@@ -74,7 +74,7 @@ return result;</property>
             </entry>
             <entry>
               <string>Mapping</string>
-              <string>msg[&apos;location_id&apos;].toString().toUpperCase()</string>
+              <string>msg[&apos;house_id&apos;].toString()</string>
             </entry>
             <entry>
               <string>RegularExpressions</string>
@@ -85,7 +85,7 @@ return result;</property>
         <step>
           <sequenceNumber>2</sequenceNumber>
           <name>locationName (out)</name>
-          <script>tmp[&apos;locationName&apos;] = validate(msg[&apos;location_name&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <script>tmp[&apos;locationName&apos;] = validate(msg[&apos;house_name&apos;].toString(), &apos;&apos;, new Array());</script>
           <type>Message Builder</type>
           <data class="map">
             <entry>
@@ -98,7 +98,7 @@ return result;</property>
             </entry>
             <entry>
               <string>Mapping</string>
-              <string>msg[&apos;location_name&apos;].toString().toUpperCase()</string>
+              <string>msg[&apos;house_name&apos;].toString()</string>
             </entry>
             <entry>
               <string>RegularExpressions</string>
@@ -109,7 +109,7 @@ return result;</property>
         <step>
           <sequenceNumber>3</sequenceNumber>
           <name>locationLevel - extId (out)</name>
-          <script>tmp[&apos;locationLevel&apos;][&apos;extId&apos;] = validate(msg[&apos;location_village&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <script>tmp[&apos;locationLevel&apos;][&apos;extId&apos;] = validate(msg[&apos;hierarchy_id&apos;].toString(), &apos;&apos;, new Array());</script>
           <type>Message Builder</type>
           <data class="map">
             <entry>
@@ -122,7 +122,7 @@ return result;</property>
             </entry>
             <entry>
               <string>Mapping</string>
-              <string>msg[&apos;location_village&apos;].toString().toUpperCase()</string>
+              <string>msg[&apos;hierarchy_id&apos;].toString()</string>
             </entry>
             <entry>
               <string>RegularExpressions</string>
@@ -133,7 +133,7 @@ return result;</property>
         <step>
           <sequenceNumber>4</sequenceNumber>
           <name>locationType (out)</name>
-          <script>tmp[&apos;locationType&apos;] = validate(msg[&apos;location_type&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <script>tmp[&apos;locationType&apos;] = validate(msg[&apos;location_type&apos;].toString(), &apos;&apos;, new Array());</script>
           <type>Message Builder</type>
           <data class="map">
             <entry>
@@ -146,7 +146,7 @@ return result;</property>
             </entry>
             <entry>
               <string>Mapping</string>
-              <string>msg[&apos;location_type&apos;].toString().toUpperCase()</string>
+              <string>msg[&apos;location_type&apos;].toString()</string>
             </entry>
             <entry>
               <string>RegularExpressions</string>
@@ -157,7 +157,7 @@ return result;</property>
         <step>
           <sequenceNumber>5</sequenceNumber>
           <name>locationHead - extid (out)</name>
-          <script>tmp[&apos;locationHead&apos;][&apos;extid&apos;] = validate(msg[&apos;location_head&apos;].toString().toUpperCase(), &apos;&apos;, new Array());</script>
+          <script>tmp[&apos;locationHead&apos;][&apos;extid&apos;] = validate(msg[&apos;individual_id&apos;].toString(), &apos;&apos;, new Array());</script>
           <type>Message Builder</type>
           <data class="map">
             <entry>
@@ -170,7 +170,103 @@ return result;</property>
             </entry>
             <entry>
               <string>Mapping</string>
-              <string>msg[&apos;location_head&apos;].toString().toUpperCase()</string>
+              <string>msg[&apos;individual_id&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>6</sequenceNumber>
+          <name>longitude (out)</name>
+          <script>tmp[&apos;longitude&apos;] = validate(msg[&apos;latlong_lng&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;longitude&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;latlong_lng&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>7</sequenceNumber>
+          <name>latitude (out)</name>
+          <script>tmp[&apos;latitude&apos;] = validate(msg[&apos;latlong_lat&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;latitude&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;latlong_lat&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>8</sequenceNumber>
+          <name>accuracy (out)</name>
+          <script>tmp[&apos;accuracy&apos;] = validate(msg[&apos;latlong_acc&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;accuracy&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;latlong_acc&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+          </data>
+        </step>
+        <step>
+          <sequenceNumber>9</sequenceNumber>
+          <name>altitude (out)</name>
+          <script>tmp[&apos;altitude&apos;] = validate(msg[&apos;latlong_alt&apos;].toString(), &apos;&apos;, new Array());</script>
+          <type>Message Builder</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>tmp[&apos;altitude&apos;]</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;latlong_alt&apos;].toString()</string>
             </entry>
             <entry>
               <string>RegularExpressions</string>
@@ -180,18 +276,23 @@ return result;</property>
         </step>
       </steps>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxsb2NhdGlvbl92aWxsYWdlPnZh
-bHVlPC9sb2NhdGlvbl92aWxsYWdlPg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZhbHVlPC9kZXJp
-dmVkX2Zyb21fdXJpPg0KICAgIDxsb2NhdGlvbl9oZWFkPnZhbHVlPC9sb2NhdGlvbl9oZWFkPg0K
-ICAgIDxmaWVsZF93b3JrZXJfaWQ+dmFsdWU8L2ZpZWxkX3dvcmtlcl9pZD4NCiAgICA8bG9jYXRp
-b25fdHlwZT52YWx1ZTwvbG9jYXRpb25fdHlwZT4NCiAgICA8bG9jYXRpb25fbmFtZT52YWx1ZTwv
-bG9jYXRpb25fbmFtZT4NCiAgICA8bG9jYXRpb25faWQ+dmFsdWU8L2xvY2F0aW9uX2lkPg0KPC9y
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGxhdGxvbmdfbG5nPnZhbHVlPC9sYXRsb25nX2xuZz4N
+CiAgICA8aG91c2VfaWQ+dmFsdWU8L2hvdXNlX2lkPg0KICAgIDxsb2NhdGlvbl90eXBlPnZhbHVl
+PC9sb2NhdGlvbl90eXBlPg0KICAgIDxob3VzZV9uYW1lPnZhbHVlPC9ob3VzZV9uYW1lPg0KICAg
+IDxoaWVyYXJjaHlfaWQ+dmFsdWU8L2hpZXJhcmNoeV9pZD4NCiAgICA8bGF0bG9uZ19hbHQ+dmFs
+dWU8L2xhdGxvbmdfYWx0Pg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZhbHVlPC9kZXJpdmVkX2Zy
+b21fdXJpPg0KICAgIDxmaWVsZF93b3JrZXJfaWQ+dmFsdWU8L2ZpZWxkX3dvcmtlcl9pZD4NCiAg
+ICA8bGF0bG9uZ19sYXQ+dmFsdWU8L2xhdGxvbmdfbGF0Pg0KICAgIDxwcm9jZXNzZWRfYnlfbWly
+dGg+dmFsdWU8L3Byb2Nlc3NlZF9ieV9taXJ0aD4NCiAgICA8aW5kaXZpZHVhbF9pZD52YWx1ZTwv
+aW5kaXZpZHVhbF9pZD4NCiAgICA8bGF0bG9uZ19hY2M+dmFsdWU8L2xhdGxvbmdfYWNjPg0KPC9y
 ZXN1bHQ+DQo=</inboundTemplate>
       <outboundTemplate encoding="base64">PGxvY2F0aW9uPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZD48L2V4dElkPgogIDwvY29sbGVj
 dGVkQnk+CiAgPGV4dElkPjwvZXh0SWQ+CiAgPGxvY2F0aW9uTmFtZT48L2xvY2F0aW9uTmFtZT4K
 ICA8bG9jYXRpb25MZXZlbD4KICAgIDxleHRJZD48L2V4dElkPgogIDwvbG9jYXRpb25MZXZlbD4K
 ICA8bG9jYXRpb25UeXBlPjwvbG9jYXRpb25UeXBlPgogIDxsb2NhdGlvbkhlYWQ+CiAgICA8ZXh0
-aWQ+PC9leHRpZD4KICA8L2xvY2F0aW9uSGVhZD4KPC9sb2NhdGlvbj4=</outboundTemplate>
+aWQ+PC9leHRpZD4KICA8L2xvY2F0aW9uSGVhZD4KICA8bG9uZ2l0dWRlIC8+CiAgPGxhdGl0dWRl
+IC8+CiAgPGFjY3VyYWN5IC8+CiAgPGFsdGl0dWRlIC8+CjwvbG9jYXRpb24+</outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
       <inboundProperties>
