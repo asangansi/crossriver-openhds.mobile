@@ -211,17 +211,17 @@
 				required="true()" constraint=". &lt; ../interviewDate"
 				jr:constraintMsg="The date of migration cannot be after the interview date" />
 			<bind nodeset="/data/basicInfo/permId" type="string" required="true()"
-				constraint="regex(., '^[A-Za-z]{6}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
+				constraint="regex(., '^[A-Za-z]{9}[0-9]{7}$')" jr:constraintMsg="Permanent Id is not the right format" />
 			<bind nodeset="/data/basicInfo/migrantName" type="string"
 				required="true()" />
 			<bind nodeset="/data/basicInfo/sex" type="select1" required="true()" />
 			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseId" type="string"
-				required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{3}$')"
+				required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{3}$')"
 				jr:constraintMsg="House Id is not the right format" />
 			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseName" type="string"
 				required="true()" />
 			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseholdId" type="string"
-				required="true()" constraint="regex(., '^[A-Za-z]{6}[0-9]{5}$')"
+				required="true()" constraint="regex(., '^[A-Za-z]{9}[0-9]{5}$')"
 				jr:constraintMsg="Household Id is not the right format" />
 			<bind nodeset="/data/moveAwayFrom/moveAwayFromHouseholdName"
 				type="string" required="true()" />
