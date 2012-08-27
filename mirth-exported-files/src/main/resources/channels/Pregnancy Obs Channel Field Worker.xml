@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1345825607000</time>
+    <time>1346076692859</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>3</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -35,23 +35,7 @@ return result;</property>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHJlcG9ydGJ5PnZhbHVlPC9yZXBvcnRieT4NCiAgICA8
-c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxob3VzZV9p
-ZD52YWx1ZTwvaG91c2VfaWQ+DQogICAgPGhvdXNlaG9sZF9uYW1lPnZhbHVlPC9ob3VzZWhvbGRf
-bmFtZT4NCiAgICA8dHRfaW5qZWN0PnZhbHVlPC90dF9pbmplY3Q+DQogICAgPGhlYWx0aF9mYWM+
-dmFsdWU8L2hlYWx0aF9mYWM+DQogICAgPGhvdXNlX25hbWU+dmFsdWU8L2hvdXNlX25hbWU+DQog
-ICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxlZD4NCiAgICA8aGVh
-bHRoX2ZhY19vdGhlcj52YWx1ZTwvaGVhbHRoX2ZhY19vdGhlcj4NCiAgICA8bGFzdF9uYW1lPnZh
-bHVlPC9sYXN0X25hbWU+DQogICAgPHZpc2l0X2lkPnZhbHVlPC92aXNpdF9pZD4NCiAgICA8dmlz
-aXRfZGF0ZT52YWx1ZTwvdmlzaXRfZGF0ZT4NCiAgICA8YXR0ZW5kX2NsaT52YWx1ZTwvYXR0ZW5k
-X2NsaT4NCiAgICA8ZGVyaXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAg
-ICA8Zmlyc3RfbmFtZT52YWx1ZTwvZmlyc3RfbmFtZT4NCiAgICA8ZmllbGRfd29ya2VyX2lkPnZh
-bHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGhvdXNlaG9sZF9pZD52YWx1ZTwvaG91c2Vob2xk
-X2lkPg0KICAgIDxmaXJzdF9wZz52YWx1ZTwvZmlyc3RfcGc+DQogICAgPHByb2Nlc3NlZF9ieV9t
-aXJ0aD52YWx1ZTwvcHJvY2Vzc2VkX2J5X21pcnRoPg0KICAgIDxpbmRpdmlkdWFsX2lkPnZhbHVl
-PC9pbmRpdmlkdWFsX2lkPg0KICAgIDxsbXA+dmFsdWU8L2xtcD4NCiAgICA8bXByZWc+dmFsdWU8
-L21wcmVnPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
+cmVzdWx0Lz4NCg==</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -474,23 +458,7 @@ return;</property>
           </step>
         </steps>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHJlcG9ydGJ5PnZhbHVlPC9yZXBvcnRieT4NCiAgICA8
-c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxob3VzZV9p
-ZD52YWx1ZTwvaG91c2VfaWQ+DQogICAgPGhvdXNlaG9sZF9uYW1lPnZhbHVlPC9ob3VzZWhvbGRf
-bmFtZT4NCiAgICA8dHRfaW5qZWN0PnZhbHVlPC90dF9pbmplY3Q+DQogICAgPGhlYWx0aF9mYWM+
-dmFsdWU8L2hlYWx0aF9mYWM+DQogICAgPGhvdXNlX25hbWU+dmFsdWU8L2hvdXNlX25hbWU+DQog
-ICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxlZD4NCiAgICA8aGVh
-bHRoX2ZhY19vdGhlcj52YWx1ZTwvaGVhbHRoX2ZhY19vdGhlcj4NCiAgICA8bGFzdF9uYW1lPnZh
-bHVlPC9sYXN0X25hbWU+DQogICAgPHZpc2l0X2lkPnZhbHVlPC92aXNpdF9pZD4NCiAgICA8dmlz
-aXRfZGF0ZT52YWx1ZTwvdmlzaXRfZGF0ZT4NCiAgICA8YXR0ZW5kX2NsaT52YWx1ZTwvYXR0ZW5k
-X2NsaT4NCiAgICA8ZGVyaXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAg
-ICA8Zmlyc3RfbmFtZT52YWx1ZTwvZmlyc3RfbmFtZT4NCiAgICA8ZmllbGRfd29ya2VyX2lkPnZh
-bHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGhvdXNlaG9sZF9pZD52YWx1ZTwvaG91c2Vob2xk
-X2lkPg0KICAgIDxmaXJzdF9wZz52YWx1ZTwvZmlyc3RfcGc+DQogICAgPHByb2Nlc3NlZF9ieV9t
-aXJ0aD52YWx1ZTwvcHJvY2Vzc2VkX2J5X21pcnRoPg0KICAgIDxpbmRpdmlkdWFsX2lkPnZhbHVl
-PC9pbmRpdmlkdWFsX2lkPg0KICAgIDxsbXA+dmFsdWU8L2xtcD4NCiAgICA8bXByZWc+dmFsdWU8
-L21wcmVnPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
+cmVzdWx0Lz4NCg==</inboundTemplate>
         <outboundTemplate encoding="base64">PHByZWduYW5jeW9ic2VydmF0aW9uPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZCAvPgogIDwv
 Y29sbGVjdGVkQnk+CiAgPG1vdGhlcj4KICAgIDxleHRpZCAvPgogIDwvbW90aGVyPgkKICA8aG91
 c2U+CiAgICA8ZXh0SWQgLz4KICA8L2hvdXNlPgogIDxob3VzZWhvbGQ+CiAgICA8ZXh0SWQgLz4K

@@ -5,7 +5,7 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341185937000</time>
+    <time>1346080214890</time>
     <timezone>America/New_York</timezone>
   </lastModified>
   <revision>4</revision>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, MOTHER_ID, HOUSEHOLD_NAME, CHILDREN_SECOND_CHILD, CHILDREN_SECOND_CHILD_SEX, CHILDREN_FIRST_CHILD_SEX, FATHER_ID, CHILDREN_SECOND_CHILD_LAST_NAME, FIRST_LIVE_BIRTH, CHILDREN_SECOND_CHILD_FIRST_NAME, CHILDREN_FIRST_CHILD_LAST_NAME, TOTAL_CHILDREN_BORN, FATHER_NAME, NUM_LIVE_BIRTHS_FROM_RECENT_PREG, CHILDREN_SECOND_CHILD_ID, DERIVED_FROM_URI, CHILDREN_FIRST_CHILD_ID, CHILDREN_FIRST_CHILD_FIRST_NAME, HOUSE_ID, BIRTH_PLACE_OTHER, MOTHER_NAME, UMBILICAL_CORD_APPLIED, REPORTED_BY, RECORDED_DATE, HOUSEHOLD_ID, CHILD_DOB, COLLECTED_BY, UMBILICAL_CORD_CUTTING, BIRTH_PLACE, NUM_LIVE_BIRTHS, MOTHER_LINE_NUMBER FROM &quot; + globalMap.get(&quot;birthRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, UMBILICAL_CORD_APPLIED_OTHER, SUPERVISOR_STATUS, HOUSEHOLD_NAME, CHILDREN_CHILD2_ID, VALIDATION_FAILED, CHILDREN_SECOND_CHILD_SEX, CHILDREN_FIRST_CHILD_SEX, VISIT_DATE, CHILDREN_SECOND_CHILD_LAST_NAME, CHILD_FATHER_ID, FIRST_LIVE_BIRTH, FIRST_NAME, CHILD_FATHER_LAST_NAME, CHILDREN_SECOND_CHILD_FIRST_NAME, CHILDREN_FIRST_CHILD_LAST_NAME, TOTAL_CHILDREN_BORN, CHILDREN_SECOND_CHILD, NUM_LIVE_BIRTHS_FROM_RECENT_PREG, INDIVIDUAL_ID, CHILD_FATHER_FIRST_NAME, CHILDREN_CHILD1_ID, CHILDREN_FIRST_CHILD_FIRST_NAME, HOUSE_ID, HOUSE_NAME, BIRTH_PLACE_OTHER, UMBILICAL_CORD_APPLIED, LAST_NAME, VISIT_ID, REPORTED_BY, DERIVED_FROM_URI, FIELD_WORKER_ID, HOUSEHOLD_ID, CHILD_DOB, UMBILICAL_CORD_CUTTING, NUM_LIVE_BIRTHS, PROCESSED_BY_MIRTH, BIRTH_PLACE, MOTHER_LINE_NUMBER, UMBILICAL_CORD_CUTTING_OTHER FROM &quot; + globalMap.get(&quot;birthRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
 dbConn.close();
 
 return result;</property>
@@ -36,35 +36,43 @@ return result;</property>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
 cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPG1vdGhlcl9pZD52YWx1ZTwvbW90aGVyX2lkPg0KICAg
-IDxob3VzZWhvbGRfbmFtZT52YWx1ZTwvaG91c2Vob2xkX25hbWU+DQogICAgPGNoaWxkcmVuX3Nl
-Y29uZF9jaGlsZD52YWx1ZTwvY2hpbGRyZW5fc2Vjb25kX2NoaWxkPg0KICAgIDxjaGlsZHJlbl9z
-ZWNvbmRfY2hpbGRfc2V4PnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRfY2hpbGRfc2V4Pg0KICAgIDxj
-aGlsZHJlbl9maXJzdF9jaGlsZF9zZXg+dmFsdWU8L2NoaWxkcmVuX2ZpcnN0X2NoaWxkX3NleD4N
-CiAgICA8ZmF0aGVyX2lkPnZhbHVlPC9mYXRoZXJfaWQ+DQogICAgPGNoaWxkcmVuX3NlY29uZF9j
-aGlsZF9sYXN0X25hbWU+dmFsdWU8L2NoaWxkcmVuX3NlY29uZF9jaGlsZF9sYXN0X25hbWU+DQog
-ICAgPGZpcnN0X2xpdmVfYmlydGg+dmFsdWU8L2ZpcnN0X2xpdmVfYmlydGg+DQogICAgPGNoaWxk
-cmVuX3NlY29uZF9jaGlsZF9maXJzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRfY2hpbGRf
-Zmlyc3RfbmFtZT4NCiAgICA8Y2hpbGRyZW5fZmlyc3RfY2hpbGRfbGFzdF9uYW1lPnZhbHVlPC9j
-aGlsZHJlbl9maXJzdF9jaGlsZF9sYXN0X25hbWU+DQogICAgPHRvdGFsX2NoaWxkcmVuX2Jvcm4+
-dmFsdWU8L3RvdGFsX2NoaWxkcmVuX2Jvcm4+DQogICAgPGZhdGhlcl9uYW1lPnZhbHVlPC9mYXRo
-ZXJfbmFtZT4NCiAgICA8bnVtX2xpdmVfYmlydGhzX2Zyb21fcmVjZW50X3ByZWc+dmFsdWU8L251
-bV9saXZlX2JpcnRoc19mcm9tX3JlY2VudF9wcmVnPg0KICAgIDxjaGlsZHJlbl9zZWNvbmRfY2hp
-bGRfaWQ+dmFsdWU8L2NoaWxkcmVuX3NlY29uZF9jaGlsZF9pZD4NCiAgICA8ZGVyaXZlZF9mcm9t
-X3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8Y2hpbGRyZW5fZmlyc3RfY2hpbGRf
-aWQ+dmFsdWU8L2NoaWxkcmVuX2ZpcnN0X2NoaWxkX2lkPg0KICAgIDxjaGlsZHJlbl9maXJzdF9j
-aGlsZF9maXJzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9maXJzdF9jaGlsZF9maXJzdF9uYW1lPg0K
-ICAgIDxob3VzZV9pZD52YWx1ZTwvaG91c2VfaWQ+DQogICAgPGJpcnRoX3BsYWNlX290aGVyPnZh
-bHVlPC9iaXJ0aF9wbGFjZV9vdGhlcj4NCiAgICA8bW90aGVyX25hbWU+dmFsdWU8L21vdGhlcl9u
-YW1lPg0KICAgIDx1bWJpbGljYWxfY29yZF9hcHBsaWVkPnZhbHVlPC91bWJpbGljYWxfY29yZF9h
-cHBsaWVkPg0KICAgIDxyZXBvcnRlZF9ieT52YWx1ZTwvcmVwb3J0ZWRfYnk+DQogICAgPHJlY29y
-ZGVkX2RhdGU+dmFsdWU8L3JlY29yZGVkX2RhdGU+DQogICAgPGhvdXNlaG9sZF9pZD52YWx1ZTwv
-aG91c2Vob2xkX2lkPg0KICAgIDxjaGlsZF9kb2I+dmFsdWU8L2NoaWxkX2RvYj4NCiAgICA8Y29s
-bGVjdGVkX2J5PnZhbHVlPC9jb2xsZWN0ZWRfYnk+DQogICAgPHVtYmlsaWNhbF9jb3JkX2N1dHRp
-bmc+dmFsdWU8L3VtYmlsaWNhbF9jb3JkX2N1dHRpbmc+DQogICAgPGJpcnRoX3BsYWNlPnZhbHVl
-PC9iaXJ0aF9wbGFjZT4NCiAgICA8bnVtX2xpdmVfYmlydGhzPnZhbHVlPC9udW1fbGl2ZV9iaXJ0
-aHM+DQogICAgPG1vdGhlcl9saW5lX251bWJlcj52YWx1ZTwvbW90aGVyX2xpbmVfbnVtYmVyPg0K
-PC9yZXN1bHQ+DQo=</inboundTemplate>
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHVtYmlsaWNhbF9jb3JkX2FwcGxpZWRfb3RoZXI+dmFs
+dWU8L3VtYmlsaWNhbF9jb3JkX2FwcGxpZWRfb3RoZXI+DQogICAgPHN1cGVydmlzb3Jfc3RhdHVz
+PnZhbHVlPC9zdXBlcnZpc29yX3N0YXR1cz4NCiAgICA8aG91c2Vob2xkX25hbWU+dmFsdWU8L2hv
+dXNlaG9sZF9uYW1lPg0KICAgIDxjaGlsZHJlbl9jaGlsZDJfaWQ+dmFsdWU8L2NoaWxkcmVuX2No
+aWxkMl9pZD4NCiAgICA8dmFsaWRhdGlvbl9mYWlsZWQ+dmFsdWU8L3ZhbGlkYXRpb25fZmFpbGVk
+Pg0KICAgIDxjaGlsZHJlbl9zZWNvbmRfY2hpbGRfc2V4PnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRf
+Y2hpbGRfc2V4Pg0KICAgIDxjaGlsZHJlbl9maXJzdF9jaGlsZF9zZXg+dmFsdWU8L2NoaWxkcmVu
+X2ZpcnN0X2NoaWxkX3NleD4NCiAgICA8dmlzaXRfZGF0ZT52YWx1ZTwvdmlzaXRfZGF0ZT4NCiAg
+ICA8Y2hpbGRyZW5fc2Vjb25kX2NoaWxkX2xhc3RfbmFtZT52YWx1ZTwvY2hpbGRyZW5fc2Vjb25k
+X2NoaWxkX2xhc3RfbmFtZT4NCiAgICA8Y2hpbGRfZmF0aGVyX2lkPnZhbHVlPC9jaGlsZF9mYXRo
+ZXJfaWQ+DQogICAgPGZpcnN0X2xpdmVfYmlydGg+dmFsdWU8L2ZpcnN0X2xpdmVfYmlydGg+DQog
+ICAgPGZpcnN0X25hbWU+dmFsdWU8L2ZpcnN0X25hbWU+DQogICAgPGNoaWxkX2ZhdGhlcl9sYXN0
+X25hbWU+dmFsdWU8L2NoaWxkX2ZhdGhlcl9sYXN0X25hbWU+DQogICAgPGNoaWxkcmVuX3NlY29u
+ZF9jaGlsZF9maXJzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRfY2hpbGRfZmlyc3RfbmFt
+ZT4NCiAgICA8Y2hpbGRyZW5fZmlyc3RfY2hpbGRfbGFzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9m
+aXJzdF9jaGlsZF9sYXN0X25hbWU+DQogICAgPHRvdGFsX2NoaWxkcmVuX2Jvcm4+dmFsdWU8L3Rv
+dGFsX2NoaWxkcmVuX2Jvcm4+DQogICAgPGNoaWxkcmVuX3NlY29uZF9jaGlsZD52YWx1ZTwvY2hp
+bGRyZW5fc2Vjb25kX2NoaWxkPg0KICAgIDxudW1fbGl2ZV9iaXJ0aHNfZnJvbV9yZWNlbnRfcHJl
+Zz52YWx1ZTwvbnVtX2xpdmVfYmlydGhzX2Zyb21fcmVjZW50X3ByZWc+DQogICAgPGluZGl2aWR1
+YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+DQogICAgPGNoaWxkX2ZhdGhlcl9maXJzdF9uYW1l
+PnZhbHVlPC9jaGlsZF9mYXRoZXJfZmlyc3RfbmFtZT4NCiAgICA8Y2hpbGRyZW5fY2hpbGQxX2lk
+PnZhbHVlPC9jaGlsZHJlbl9jaGlsZDFfaWQ+DQogICAgPGNoaWxkcmVuX2ZpcnN0X2NoaWxkX2Zp
+cnN0X25hbWU+dmFsdWU8L2NoaWxkcmVuX2ZpcnN0X2NoaWxkX2ZpcnN0X25hbWU+DQogICAgPGhv
+dXNlX2lkPnZhbHVlPC9ob3VzZV9pZD4NCiAgICA8aG91c2VfbmFtZT52YWx1ZTwvaG91c2VfbmFt
+ZT4NCiAgICA8YmlydGhfcGxhY2Vfb3RoZXI+dmFsdWU8L2JpcnRoX3BsYWNlX290aGVyPg0KICAg
+IDx1bWJpbGljYWxfY29yZF9hcHBsaWVkPnZhbHVlPC91bWJpbGljYWxfY29yZF9hcHBsaWVkPg0K
+ICAgIDxsYXN0X25hbWU+dmFsdWU8L2xhc3RfbmFtZT4NCiAgICA8dmlzaXRfaWQ+dmFsdWU8L3Zp
+c2l0X2lkPg0KICAgIDxyZXBvcnRlZF9ieT52YWx1ZTwvcmVwb3J0ZWRfYnk+DQogICAgPGRlcml2
+ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRfZnJvbV91cmk+DQogICAgPGZpZWxkX3dvcmtlcl9p
+ZD52YWx1ZTwvZmllbGRfd29ya2VyX2lkPg0KICAgIDxob3VzZWhvbGRfaWQ+dmFsdWU8L2hvdXNl
+aG9sZF9pZD4NCiAgICA8Y2hpbGRfZG9iPnZhbHVlPC9jaGlsZF9kb2I+DQogICAgPHVtYmlsaWNh
+bF9jb3JkX2N1dHRpbmc+dmFsdWU8L3VtYmlsaWNhbF9jb3JkX2N1dHRpbmc+DQogICAgPG51bV9s
+aXZlX2JpcnRocz52YWx1ZTwvbnVtX2xpdmVfYmlydGhzPg0KICAgIDxwcm9jZXNzZWRfYnlfbWly
+dGg+dmFsdWU8L3Byb2Nlc3NlZF9ieV9taXJ0aD4NCiAgICA8YmlydGhfcGxhY2U+dmFsdWU8L2Jp
+cnRoX3BsYWNlPg0KICAgIDxtb3RoZXJfbGluZV9udW1iZXI+dmFsdWU8L21vdGhlcl9saW5lX251
+bWJlcj4NCiAgICA8dW1iaWxpY2FsX2NvcmRfY3V0dGluZ19vdGhlcj52YWx1ZTwvdW1iaWxpY2Fs
+X2NvcmRfY3V0dGluZ19vdGhlcj4NCjwvcmVzdWx0Pg0K</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -83,28 +91,15 @@ PC9yZXN1bHQ+DQo=</inboundTemplate>
           <data class="map">
             <entry>
               <string>Script</string>
-              <string>return validateVisit(msg[&apos;house_id&apos;].toString(), msg[&apos;recorded_date&apos;].toString());</string>
+              <string>return validateVisit(msg[&apos;house_id&apos;].toString(), msg[&apos;visit_date&apos;].toString());</string>
             </entry>
           </data>
           <type>JavaScript</type>
-          <script>return validateVisit(msg[&apos;house_id&apos;].toString(), msg[&apos;recorded_date&apos;].toString());</script>
+          <script>return validateVisit(msg[&apos;house_id&apos;].toString(), msg[&apos;visit_date&apos;].toString());</script>
           <operator>NONE</operator>
         </rule>
         <rule>
           <sequenceNumber>1</sequenceNumber>
-          <name>Location Check</name>
-          <data class="map">
-            <entry>
-              <string>Script</string>
-              <string>return validateLocation(msg[&apos;house_id&apos;].toString());</string>
-            </entry>
-          </data>
-          <type>JavaScript</type>
-          <script>return validateLocation(msg[&apos;house_id&apos;].toString());</script>
-          <operator>AND</operator>
-        </rule>
-        <rule>
-          <sequenceNumber>2</sequenceNumber>
           <name>Household Check</name>
           <data class="map">
             <entry>
@@ -136,35 +131,43 @@ PC9yZXN1bHQ+DQo=</inboundTemplate>
         <steps/>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
 cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPG1vdGhlcl9pZD52YWx1ZTwvbW90aGVyX2lkPg0KICAg
-IDxob3VzZWhvbGRfbmFtZT52YWx1ZTwvaG91c2Vob2xkX25hbWU+DQogICAgPGNoaWxkcmVuX3Nl
-Y29uZF9jaGlsZD52YWx1ZTwvY2hpbGRyZW5fc2Vjb25kX2NoaWxkPg0KICAgIDxjaGlsZHJlbl9z
-ZWNvbmRfY2hpbGRfc2V4PnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRfY2hpbGRfc2V4Pg0KICAgIDxj
-aGlsZHJlbl9maXJzdF9jaGlsZF9zZXg+dmFsdWU8L2NoaWxkcmVuX2ZpcnN0X2NoaWxkX3NleD4N
-CiAgICA8ZmF0aGVyX2lkPnZhbHVlPC9mYXRoZXJfaWQ+DQogICAgPGNoaWxkcmVuX3NlY29uZF9j
-aGlsZF9sYXN0X25hbWU+dmFsdWU8L2NoaWxkcmVuX3NlY29uZF9jaGlsZF9sYXN0X25hbWU+DQog
-ICAgPGZpcnN0X2xpdmVfYmlydGg+dmFsdWU8L2ZpcnN0X2xpdmVfYmlydGg+DQogICAgPGNoaWxk
-cmVuX3NlY29uZF9jaGlsZF9maXJzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRfY2hpbGRf
-Zmlyc3RfbmFtZT4NCiAgICA8Y2hpbGRyZW5fZmlyc3RfY2hpbGRfbGFzdF9uYW1lPnZhbHVlPC9j
-aGlsZHJlbl9maXJzdF9jaGlsZF9sYXN0X25hbWU+DQogICAgPHRvdGFsX2NoaWxkcmVuX2Jvcm4+
-dmFsdWU8L3RvdGFsX2NoaWxkcmVuX2Jvcm4+DQogICAgPGZhdGhlcl9uYW1lPnZhbHVlPC9mYXRo
-ZXJfbmFtZT4NCiAgICA8bnVtX2xpdmVfYmlydGhzX2Zyb21fcmVjZW50X3ByZWc+dmFsdWU8L251
-bV9saXZlX2JpcnRoc19mcm9tX3JlY2VudF9wcmVnPg0KICAgIDxjaGlsZHJlbl9zZWNvbmRfY2hp
-bGRfaWQ+dmFsdWU8L2NoaWxkcmVuX3NlY29uZF9jaGlsZF9pZD4NCiAgICA8ZGVyaXZlZF9mcm9t
-X3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8Y2hpbGRyZW5fZmlyc3RfY2hpbGRf
-aWQ+dmFsdWU8L2NoaWxkcmVuX2ZpcnN0X2NoaWxkX2lkPg0KICAgIDxjaGlsZHJlbl9maXJzdF9j
-aGlsZF9maXJzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9maXJzdF9jaGlsZF9maXJzdF9uYW1lPg0K
-ICAgIDxob3VzZV9pZD52YWx1ZTwvaG91c2VfaWQ+DQogICAgPGJpcnRoX3BsYWNlX290aGVyPnZh
-bHVlPC9iaXJ0aF9wbGFjZV9vdGhlcj4NCiAgICA8bW90aGVyX25hbWU+dmFsdWU8L21vdGhlcl9u
-YW1lPg0KICAgIDx1bWJpbGljYWxfY29yZF9hcHBsaWVkPnZhbHVlPC91bWJpbGljYWxfY29yZF9h
-cHBsaWVkPg0KICAgIDxyZXBvcnRlZF9ieT52YWx1ZTwvcmVwb3J0ZWRfYnk+DQogICAgPHJlY29y
-ZGVkX2RhdGU+dmFsdWU8L3JlY29yZGVkX2RhdGU+DQogICAgPGhvdXNlaG9sZF9pZD52YWx1ZTwv
-aG91c2Vob2xkX2lkPg0KICAgIDxjaGlsZF9kb2I+dmFsdWU8L2NoaWxkX2RvYj4NCiAgICA8Y29s
-bGVjdGVkX2J5PnZhbHVlPC9jb2xsZWN0ZWRfYnk+DQogICAgPHVtYmlsaWNhbF9jb3JkX2N1dHRp
-bmc+dmFsdWU8L3VtYmlsaWNhbF9jb3JkX2N1dHRpbmc+DQogICAgPGJpcnRoX3BsYWNlPnZhbHVl
-PC9iaXJ0aF9wbGFjZT4NCiAgICA8bnVtX2xpdmVfYmlydGhzPnZhbHVlPC9udW1fbGl2ZV9iaXJ0
-aHM+DQogICAgPG1vdGhlcl9saW5lX251bWJlcj52YWx1ZTwvbW90aGVyX2xpbmVfbnVtYmVyPg0K
-PC9yZXN1bHQ+DQo=</inboundTemplate>
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHVtYmlsaWNhbF9jb3JkX2FwcGxpZWRfb3RoZXI+dmFs
+dWU8L3VtYmlsaWNhbF9jb3JkX2FwcGxpZWRfb3RoZXI+DQogICAgPHN1cGVydmlzb3Jfc3RhdHVz
+PnZhbHVlPC9zdXBlcnZpc29yX3N0YXR1cz4NCiAgICA8aG91c2Vob2xkX25hbWU+dmFsdWU8L2hv
+dXNlaG9sZF9uYW1lPg0KICAgIDxjaGlsZHJlbl9jaGlsZDJfaWQ+dmFsdWU8L2NoaWxkcmVuX2No
+aWxkMl9pZD4NCiAgICA8dmFsaWRhdGlvbl9mYWlsZWQ+dmFsdWU8L3ZhbGlkYXRpb25fZmFpbGVk
+Pg0KICAgIDxjaGlsZHJlbl9zZWNvbmRfY2hpbGRfc2V4PnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRf
+Y2hpbGRfc2V4Pg0KICAgIDxjaGlsZHJlbl9maXJzdF9jaGlsZF9zZXg+dmFsdWU8L2NoaWxkcmVu
+X2ZpcnN0X2NoaWxkX3NleD4NCiAgICA8dmlzaXRfZGF0ZT52YWx1ZTwvdmlzaXRfZGF0ZT4NCiAg
+ICA8Y2hpbGRyZW5fc2Vjb25kX2NoaWxkX2xhc3RfbmFtZT52YWx1ZTwvY2hpbGRyZW5fc2Vjb25k
+X2NoaWxkX2xhc3RfbmFtZT4NCiAgICA8Y2hpbGRfZmF0aGVyX2lkPnZhbHVlPC9jaGlsZF9mYXRo
+ZXJfaWQ+DQogICAgPGZpcnN0X2xpdmVfYmlydGg+dmFsdWU8L2ZpcnN0X2xpdmVfYmlydGg+DQog
+ICAgPGZpcnN0X25hbWU+dmFsdWU8L2ZpcnN0X25hbWU+DQogICAgPGNoaWxkX2ZhdGhlcl9sYXN0
+X25hbWU+dmFsdWU8L2NoaWxkX2ZhdGhlcl9sYXN0X25hbWU+DQogICAgPGNoaWxkcmVuX3NlY29u
+ZF9jaGlsZF9maXJzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9zZWNvbmRfY2hpbGRfZmlyc3RfbmFt
+ZT4NCiAgICA8Y2hpbGRyZW5fZmlyc3RfY2hpbGRfbGFzdF9uYW1lPnZhbHVlPC9jaGlsZHJlbl9m
+aXJzdF9jaGlsZF9sYXN0X25hbWU+DQogICAgPHRvdGFsX2NoaWxkcmVuX2Jvcm4+dmFsdWU8L3Rv
+dGFsX2NoaWxkcmVuX2Jvcm4+DQogICAgPGNoaWxkcmVuX3NlY29uZF9jaGlsZD52YWx1ZTwvY2hp
+bGRyZW5fc2Vjb25kX2NoaWxkPg0KICAgIDxudW1fbGl2ZV9iaXJ0aHNfZnJvbV9yZWNlbnRfcHJl
+Zz52YWx1ZTwvbnVtX2xpdmVfYmlydGhzX2Zyb21fcmVjZW50X3ByZWc+DQogICAgPGluZGl2aWR1
+YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+DQogICAgPGNoaWxkX2ZhdGhlcl9maXJzdF9uYW1l
+PnZhbHVlPC9jaGlsZF9mYXRoZXJfZmlyc3RfbmFtZT4NCiAgICA8Y2hpbGRyZW5fY2hpbGQxX2lk
+PnZhbHVlPC9jaGlsZHJlbl9jaGlsZDFfaWQ+DQogICAgPGNoaWxkcmVuX2ZpcnN0X2NoaWxkX2Zp
+cnN0X25hbWU+dmFsdWU8L2NoaWxkcmVuX2ZpcnN0X2NoaWxkX2ZpcnN0X25hbWU+DQogICAgPGhv
+dXNlX2lkPnZhbHVlPC9ob3VzZV9pZD4NCiAgICA8aG91c2VfbmFtZT52YWx1ZTwvaG91c2VfbmFt
+ZT4NCiAgICA8YmlydGhfcGxhY2Vfb3RoZXI+dmFsdWU8L2JpcnRoX3BsYWNlX290aGVyPg0KICAg
+IDx1bWJpbGljYWxfY29yZF9hcHBsaWVkPnZhbHVlPC91bWJpbGljYWxfY29yZF9hcHBsaWVkPg0K
+ICAgIDxsYXN0X25hbWU+dmFsdWU8L2xhc3RfbmFtZT4NCiAgICA8dmlzaXRfaWQ+dmFsdWU8L3Zp
+c2l0X2lkPg0KICAgIDxyZXBvcnRlZF9ieT52YWx1ZTwvcmVwb3J0ZWRfYnk+DQogICAgPGRlcml2
+ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRfZnJvbV91cmk+DQogICAgPGZpZWxkX3dvcmtlcl9p
+ZD52YWx1ZTwvZmllbGRfd29ya2VyX2lkPg0KICAgIDxob3VzZWhvbGRfaWQ+dmFsdWU8L2hvdXNl
+aG9sZF9pZD4NCiAgICA8Y2hpbGRfZG9iPnZhbHVlPC9jaGlsZF9kb2I+DQogICAgPHVtYmlsaWNh
+bF9jb3JkX2N1dHRpbmc+dmFsdWU8L3VtYmlsaWNhbF9jb3JkX2N1dHRpbmc+DQogICAgPG51bV9s
+aXZlX2JpcnRocz52YWx1ZTwvbnVtX2xpdmVfYmlydGhzPg0KICAgIDxwcm9jZXNzZWRfYnlfbWly
+dGg+dmFsdWU8L3Byb2Nlc3NlZF9ieV9taXJ0aD4NCiAgICA8YmlydGhfcGxhY2U+dmFsdWU8L2Jp
+cnRoX3BsYWNlPg0KICAgIDxtb3RoZXJfbGluZV9udW1iZXI+dmFsdWU8L21vdGhlcl9saW5lX251
+bWJlcj4NCiAgICA8dW1iaWxpY2FsX2NvcmRfY3V0dGluZ19vdGhlcj52YWx1ZTwvdW1iaWxpY2Fs
+X2NvcmRfY3V0dGluZ19vdGhlcj4NCjwvcmVzdWx0Pg0K</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>
