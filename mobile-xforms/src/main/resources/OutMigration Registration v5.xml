@@ -219,7 +219,7 @@
 				required="true()" constraint="regex(., '^[Ff][Ww][A-Za-z]{2}[0-9]{1}$')"
 				jr:constraintMsg="Field Worker Id is not the right format" />
 			<bind nodeset="/data/basicInfo/visitId" type="string"
-				required="true()" constraint="regex(., '^[A-Za-z]{7}[0-9]{5}$')"
+				required="true()" constraint="regex(., '^[Vv][A-Za-z]{9}[0-9]{5}$')"
 				jr:constraintMsg="Visit Id is not the right format" />
 			<bind nodeset="/data/basicInfo/visitDate" type="date"
 				constraint=". &lt;= today()" required="true()"

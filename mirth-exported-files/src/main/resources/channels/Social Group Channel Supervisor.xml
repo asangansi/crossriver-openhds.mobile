@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1345753197671</time>
+    <time>1345816778000</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>2</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -35,16 +35,7 @@ return result;</property>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHZpc2l0X2RhdGU+dmFsdWU8L3Zpc2l0X2RhdGU+DQog
-ICAgPHN1cGVydmlzb3Jfc3RhdHVzPnZhbHVlPC9zdXBlcnZpc29yX3N0YXR1cz4NCiAgICA8ZGVy
-aXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8ZmllbGRfd29ya2Vy
-X2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGhvdXNlaG9sZF9uYW1lPnZhbHVlPC9o
-b3VzZWhvbGRfbmFtZT4NCiAgICA8aG91c2Vob2xkX2lkPnZhbHVlPC9ob3VzZWhvbGRfaWQ+DQog
-ICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxlZD4NCiAgICA8cHJv
-Y2Vzc2VkX2J5X21pcnRoPnZhbHVlPC9wcm9jZXNzZWRfYnlfbWlydGg+DQogICAgPGluZGl2aWR1
-YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+DQogICAgPHR5cGU+dmFsdWU8L3R5cGU+DQogICAg
-PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
+cmVzdWx0Lz4NCg==</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -75,16 +66,7 @@ PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
       <transformer>
         <steps/>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
-ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHZpc2l0X2RhdGU+dmFsdWU8L3Zpc2l0X2RhdGU+DQog
-ICAgPHN1cGVydmlzb3Jfc3RhdHVzPnZhbHVlPC9zdXBlcnZpc29yX3N0YXR1cz4NCiAgICA8ZGVy
-aXZlZF9mcm9tX3VyaT52YWx1ZTwvZGVyaXZlZF9mcm9tX3VyaT4NCiAgICA8ZmllbGRfd29ya2Vy
-X2lkPnZhbHVlPC9maWVsZF93b3JrZXJfaWQ+DQogICAgPGhvdXNlaG9sZF9uYW1lPnZhbHVlPC9o
-b3VzZWhvbGRfbmFtZT4NCiAgICA8aG91c2Vob2xkX2lkPnZhbHVlPC9ob3VzZWhvbGRfaWQ+DQog
-ICAgPHZhbGlkYXRpb25fZmFpbGVkPnZhbHVlPC92YWxpZGF0aW9uX2ZhaWxlZD4NCiAgICA8cHJv
-Y2Vzc2VkX2J5X21pcnRoPnZhbHVlPC9wcm9jZXNzZWRfYnlfbWlydGg+DQogICAgPGluZGl2aWR1
-YWxfaWQ+dmFsdWU8L2luZGl2aWR1YWxfaWQ+DQogICAgPHR5cGU+dmFsdWU8L3R5cGU+DQogICAg
-PHJlc3BvbmRlbnQ+dmFsdWU8L3Jlc3BvbmRlbnQ+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
+cmVzdWx0Lz4NCg==</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>

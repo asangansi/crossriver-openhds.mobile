@@ -11,7 +11,7 @@ return;</string>
 globalMap.put(&quot;jdbcDriver&quot;, &quot;com.mysql.jdbc.Driver&quot;);
 globalMap.put(&quot;odkJdbcDatabaseUrl&quot;, &quot;jdbc:mysql://localhost/odk_prod&quot;);
 globalMap.put(&quot;dbUser&quot;, &quot;root&quot;);
-globalMap.put(&quot;dbPass&quot;, &quot;test&quot;);
+globalMap.put(&quot;dbPass&quot;, &quot;test1&quot;);
 
 /** OpenHDS Information */
 globalMap.put(&quot;openhdsUrl&quot;, &quot;localhost:8080/openhds&quot;);
@@ -41,8 +41,8 @@ globalMap.put(&quot;timeoutUnit&quot;, 3600000);
 // ODK Table Names 
 
 // Out Migration
-globalMap.put(&quot;outmigrationTableName&quot;, &quot;migration_out_registration_v4_core&quot;);
-globalMap.put(&quot;outmigrationFormName&quot;, &quot;migration_out_registration_v4&quot;);
+globalMap.put(&quot;outmigrationTableName&quot;, &quot;outmigration_registration_v4_core&quot;);
+globalMap.put(&quot;outmigrationFormName&quot;, &quot;outmigration_registration_v4&quot;);
 
 // Birth Registration
 globalMap.put(&quot;birthRegistrationTableName&quot;, &quot;birth_registration_v4_core&quot;);
@@ -57,8 +57,8 @@ globalMap.put(&quot;migrationInTableName&quot;, &quot;migration_in_registration_
 globalMap.put(&quot;migrationInFormName&quot;, &quot;migration_in_registration_v4&quot;);
 
 // Pregnancy Registration
-globalMap.put(&quot;pregnancyRegistrationTableName&quot;, &quot;pregnancy_registration_v4_core&quot;);
-globalMap.put(&quot;pregnancyRegistrationFormName&quot;, &quot;pregnancy_registration_v4&quot;);
+globalMap.put(&quot;pregnancyRegistrationTableName&quot;, &quot;pregnancyobservation_v5_core&quot;);
+globalMap.put(&quot;pregnancyRegistrationFormName&quot;, &quot;pregnancyobservation_v5&quot;);
 
 // Visit Registration
 globalMap.put(&quot;visitTableName&quot;, &quot;visit_registration_v3_core&quot;);

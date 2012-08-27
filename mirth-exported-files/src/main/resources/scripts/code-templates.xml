@@ -182,7 +182,7 @@
 
   var locationUrl = &quot;http://&quot; + globalMap.get(&quot;openhdsUrl&quot;) + &quot;/api/rest/corewebservice/location/&quot;;
   locationUrl += houseId.toUpperCase();
-
+  logger.info(locationUrl);
   try {
     var builder = new RestfulRequestBuilder(locationUrl);
     var response = builder.buildGet();
@@ -293,7 +293,6 @@
     }
 
     var responseXml = new XML(response.getResponse());
-    msg[&quot;visitId&quot;] = responseXml[&quot;extId&quot;].toString();
     return true;
   } catch(exception) {
     logger.error(&quot;Error sending request for visit information, houseid=&quot; + visitHouse +&quot;, date=&quot; + visitDate);
