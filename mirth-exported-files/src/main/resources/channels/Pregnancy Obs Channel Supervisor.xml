@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341184108000</time>
+    <time>1346811330342</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>3</revision>
+  <revision>5</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -19,12 +19,13 @@
       <property name="driver">com.mysql.jdbc.Driver</property>
       <property name="host">query</property>
       <property name="password">test</property>
-      <property name="pollingFrequency">15000</property>
+      <property name="pollingFrequency">45000</property>
       <property name="pollingType">interval</property>
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
+var delayedTime = getDefermentDateTime();
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos; AND _CREATION_DATE &lt; &apos;&quot; + delayedTime + &quot;&apos; LIMIT 5&quot;);
 dbConn.close();
 
 return result;</property>
@@ -71,32 +72,6 @@ bG1wPnZhbHVlPC9sbXA+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
           <script>return validateVisit(msg[&apos;comp_id&apos;].toString(), msg[&apos;dint&apos;].toString());</script>
           <operator>NONE</operator>
         </rule>
-        <rule>
-          <sequenceNumber>1</sequenceNumber>
-          <name>Location Check</name>
-          <data class="map">
-            <entry>
-              <string>Script</string>
-              <string>return validateLocation(msg[&apos;comp_id&apos;].toString());</string>
-            </entry>
-          </data>
-          <type>JavaScript</type>
-          <script>return validateLocation(msg[&apos;comp_id&apos;].toString());</script>
-          <operator>AND</operator>
-        </rule>
-        <rule>
-          <sequenceNumber>2</sequenceNumber>
-          <name>Household Check</name>
-          <data class="map">
-            <entry>
-              <string>Script</string>
-              <string>return validateSocialGroup(msg[&apos;hh_id&apos;].toString());</string>
-            </entry>
-          </data>
-          <type>JavaScript</type>
-          <script>return validateSocialGroup(msg[&apos;hh_id&apos;].toString());</script>
-          <operator>AND</operator>
-        </rule>
       </rules>
     </filter>
     <transportName>Database Reader</transportName>
@@ -115,13 +90,18 @@ bG1wPnZhbHVlPC9sbXA+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
       </properties>
       <transformer>
         <steps/>
-        <inboundTemplate encoding="base64">PGRlYXRoPgogIDxpbnN0YW5jZUlkIC8+CiAgPGhvdXNlPgogICAgPGV4dElkIC8+CiAgPC9ob3Vz
-ZT4KICA8aG91c2Vob2xkPgogICAgPGV4dElkIC8+CiAgPC9ob3VzZWhvbGQ+CiAgPGluZGl2aWR1
-YWw+CiAgICA8ZXh0SWQgLz4KICA8L2luZGl2aWR1YWw+CiAgPGNvbGxlY3RlZEJ5PgogICAgPGV4
-dElkIC8+CiAgPC9jb2xsZWN0ZWRCeT4KICA8ZGVhdGhEYXRlIC8+CiAgPHJlcG9ydGVkQnkgLz4K
-ICA8ZGF0ZU9mSW50ZXJ2aWV3IC8+CiAgPGRlYXRoUGxhY2UgLz4KICA8c2V4IC8+CiAgPHZpc2l0
-RGVhdGg+CiAgICA8ZXh0SWQgLz4KICA8L3Zpc2l0RGVhdGg+CiAgPHBsYWNlT2ZEZWF0aE90aGVy
-IC8+CiAgPGRlY2Vhc2VkTmFtZSAvPgogIDxob3VzZWhvbGROYW1lIC8+CjwvZGVhdGg+</inboundTemplate>
+        <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGRlcml2ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRf
+ZnJvbV91cmk+DQogICAgPHJlcG9ydGJ5PnZhbHVlPC9yZXBvcnRieT4NCiAgICA8aGhfbmFtZT52
+YWx1ZTwvaGhfbmFtZT4NCiAgICA8aGVhbHRoX2ZhYz52YWx1ZTwvaGVhbHRoX2ZhYz4NCiAgICA8
+dHRfaW5qZWN0PnZhbHVlPC90dF9pbmplY3Q+DQogICAgPGNvbXBfaWQ+dmFsdWU8L2NvbXBfaWQ+
+DQogICAgPGhoX2lkPnZhbHVlPC9oaF9pZD4NCiAgICA8Znc+dmFsdWU8L2Z3Pg0KICAgIDxoZWFs
+dGhfZmFjX290aGVyPnZhbHVlPC9oZWFsdGhfZmFjX290aGVyPg0KICAgIDxhdHRlbmRfY2xpPnZh
+bHVlPC9hdHRlbmRfY2xpPg0KICAgIDxwZXJtX2lkX3B3PnZhbHVlPC9wZXJtX2lkX3B3Pg0KICAg
+IDxkaW50PnZhbHVlPC9kaW50Pg0KICAgIDxuYW1lX3B3PnZhbHVlPC9uYW1lX3B3Pg0KICAgIDxm
+aXJzdF9wZz52YWx1ZTwvZmlyc3RfcGc+DQogICAgPG1wcmVnPnZhbHVlPC9tcHJlZz4NCiAgICA8
+bG1wPnZhbHVlPC9sbXA+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>

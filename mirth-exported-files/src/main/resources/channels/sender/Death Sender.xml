@@ -5,7 +5,7 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341187987000</time>
+    <time>1346805076077</time>
     <timezone>America/New_York</timezone>
   </lastModified>
   <revision>2</revision>
@@ -32,12 +32,12 @@
               <string></string>
             </entry>
             <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-            <entry>
               <string>Mapping</string>
               <string>msg[&apos;basic_information_house_id&apos;].toString().toUpperCase()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
             </entry>
           </data>
         </step>
@@ -308,24 +308,24 @@
         <step>
           <sequenceNumber>12</sequenceNumber>
           <name>visitDeath - extId (out)</name>
-          <script>tmp[&apos;visitDeath&apos;][&apos;extId&apos;] = validate(msg[&apos;visitId&apos;].toString(), &apos;&apos;, new Array());</script>
+          <script>tmp[&apos;visit&apos;][&apos;extId&apos;] = validate(msg[&apos;visitId&apos;].toString(), &apos;&apos;, new Array());</script>
           <type>Message Builder</type>
           <data class="map">
             <entry>
               <string>Variable</string>
-              <string>tmp[&apos;visitDeath&apos;][&apos;extId&apos;]</string>
+              <string>tmp[&apos;visit&apos;][&apos;extId&apos;]</string>
             </entry>
             <entry>
               <string>DefaultValue</string>
               <string></string>
             </entry>
             <entry>
-              <string>RegularExpressions</string>
-              <list/>
-            </entry>
-            <entry>
               <string>Mapping</string>
               <string>msg[&apos;visitId&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
             </entry>
           </data>
         </step>
@@ -335,9 +335,9 @@
 ICAgIDxleHRJZCAvPgogIDwvaG91c2Vob2xkPgogIDxpbmRpdmlkdWFsPgogICAgPGV4dGlkIC8+
 CiAgPC9pbmRpdmlkdWFsPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZCAvPgogIDwvY29sbGVj
 dGVkQnk+CiAgPGRlYXRoRGF0ZSAvPgogIDxyZXBvcnRlZEJ5IC8+CiAgPHJlY29yZGVkRGF0ZSAv
-PgogIDxkZWF0aFBsYWNlIC8+CiAgPGdlbmRlciAvPgogIDx2aXNpdERlYXRoPgogICAgPGV4dElk
-IC8+CiAgPC92aXNpdERlYXRoPgogIDxwbGFjZU9mRGVhdGhPdGhlciAvPgogIDxkZWNlYXNlZE5h
-bWUgLz4KICA8aG91c2Vob2xkTmFtZSAvPgo8L2RlYXRoPg==</outboundTemplate>
+PgogIDxkZWF0aFBsYWNlIC8+CiAgPGdlbmRlciAvPgogIDx2aXNpdD4KICAgIDxleHRJZCAvPgog
+IDwvdmlzaXQ+CiAgPHBsYWNlT2ZEZWF0aE90aGVyIC8+CiAgPGRlY2Vhc2VkTmFtZSAvPgogIDxo
+b3VzZWhvbGROYW1lIC8+CjwvZGVhdGg+</outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
       <inboundProperties>

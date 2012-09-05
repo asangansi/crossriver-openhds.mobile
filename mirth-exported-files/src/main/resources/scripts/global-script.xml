@@ -25,18 +25,12 @@ globalMap.put(&quot;mobileInteropPassword&quot;, &quot;test&quot;);
 
 /** Properties relating processing of event forms - Specified in HOURS */
 
-// this is the amount of time to wait before starting to send warnings to user that a form has been
-// waiting to be processed
-// DEFAULT = 24 hours = 1 day
-globalMap.put(&quot;warningTimeout&quot;, 24); // 1 day
+// the amount of time to delay processing a form after it has been received by ODK
+globalMap.put(&quot;defermentTime&quot;, 15);
 
-// this is the amount of time to wait before actually forcing the form to send (and most likely fail)
-// DEFAULT = 96 hours = 4 days
-globalMap.put(&quot;failTimeout&quot;, 96); // 4 days
-
-// The timeout unit (e.g minutes, hours, days, etc.)
+// The time unit (e.g minutes, hours, days, etc.)
 // DEFAULT = 3600000 milliseconds = 1 hour
-globalMap.put(&quot;timeoutUnit&quot;, 3600000);
+globalMap.put(&quot;timeUnit&quot;, 60000);
 
 // ODK Table Names 
 

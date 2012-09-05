@@ -126,31 +126,6 @@
     <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
-    <id>4747bcef-faa6-4f68-96fd-d6da6c499a16</id>
-    <name>Fail Timeout Check</name>
-    <tooltip>Check if form has gone past failed timeout</tooltip>
-    <code>function shouldFailForm(createDate) {
-  // check if the form should be retired
-  var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
-  var matches = timeRegex.exec(createDate);
-  if (matches != null) {
-    createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
-    var started = createDate.getTime();
-    var endDate = started + (globalMap.get(&quot;failTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
-
-    if (endDate - (new Date().getTime()) &lt; 0) {
-      return true;
-    }
-  } else {
-    logger.warn(&quot;Create date was not set on form instance&quot;);
-  }
-  return false;
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
     <id>5a59aeeb-dbe2-4627-9cc9-40e21797cf25</id>
     <name>Check for OpenHDS Location</name>
     <tooltip>Makes a web service call to the OpenHDS to verify a location with a given external id exists</tooltip>
@@ -224,31 +199,6 @@
     <version>2.2.1.5861</version>
   </codeTemplate>
   <codeTemplate>
-    <id>cc2b3ed3-1887-47bf-9bbd-069dbdb8323d</id>
-    <name>Warn Timeout Check</name>
-    <tooltip>Checks weather a form has gone past the warning timeout period</tooltip>
-    <code>function shouldWarnUser(createDate) {
-  // check if the form should be retired
-  var timeRegex = /^(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2})/;
-  var matches = timeRegex.exec(createDate);
-  if (matches != null) {
-    createDate = new Date(matches[1], (matches[2] - 1), matches[3], matches[4], matches[5]);
-    var started = createDate.getTime();
-    var endDate = started + (globalMap.get(&quot;warningTimeout&quot;) * globalMap.get(&quot;timeoutUnit&quot;));
-
-    if (endDate - (new Date().getTime()) &lt; 0) {
-      return true;
-    }
-  } else {
-    logger.warn(&quot;Create date was not set on form instance&quot;);
-  }
-  return false;
-}</code>
-    <type>FUNCTION</type>
-    <scope>2</scope>
-    <version>2.2.1.5861</version>
-  </codeTemplate>
-  <codeTemplate>
     <id>ce2d4861-3f2b-4b81-929d-19c0416ea25f</id>
     <name>Check for OpenHDS Visit</name>
     <tooltip>Checks for an OpenHDS Visit by looking at the date of the visit, and the location</tooltip>
@@ -265,12 +215,11 @@
     var builder = new RestfulRequestBuilder(visitUrl);
     var response = builder.buildGet();
 
-    if (response.getStatusCode() != 200) {
-      return false;
+    if (response.getStatusCode() == 200) {
+      var responseXml = new XML(response.getResponse());
+      msg[&quot;visitId&quot;] = responseXml[&quot;extId&quot;].toString();
     }
 
-    var responseXml = new XML(response.getResponse());
-    msg[&quot;visitId&quot;] = responseXml[&quot;extId&quot;].toString();
     return true;
   } catch(exception) {
     logger.error(&quot;Error sending request for visit information, houseid=&quot; + visitHouse +&quot;, date=&quot; + visitDate);
@@ -305,6 +254,23 @@
   }
 
   return false;
+}</code>
+    <type>FUNCTION</type>
+    <scope>2</scope>
+    <version>2.2.1.5861</version>
+  </codeTemplate>
+  <codeTemplate>
+    <id>cb8c6615-6ff5-4f56-b6bb-45a831f1afbf</id>
+    <name>Get deferment datetime</name>
+    <tooltip>Retrieve a datetime based on the deferment setting</tooltip>
+    <code>function getDefermentDateTime() {
+  var currentTime = new Date().getTime();
+  var defermentTime = globalMap.get(&quot;defermentTime&quot;) * globalMap.get(&quot;timeUnit&quot;);
+  var availableTime = currentTime - defermentTime;
+  var dateTime = new Date();
+  dateTime.setTime(availableTime);
+  // 2012-10-30 15:22:35
+  return dateTime.getFullYear() + &quot;-&quot; + (dateTime.getMonth() + 1) + &quot;-&quot; + dateTime.getDate() + &quot; &quot; + dateTime.getHours() + &quot;:&quot; + dateTime.getMinutes() + &quot;:&quot; + dateTime.getSeconds();
 }</code>
     <type>FUNCTION</type>
     <scope>2</scope>

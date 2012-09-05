@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341168064000</time>
+    <time>1346790467702</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -19,12 +19,12 @@
       <property name="driver">com.mysql.jdbc.Driver</property>
       <property name="host">query</property>
       <property name="password">${mysqlPass}</property>
-      <property name="pollingFrequency">15000</property>
+      <property name="pollingFrequency">45000</property>
       <property name="pollingType">interval</property>
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status is null&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, DERIVED_FROM_URI, REPORTBY, HH_NAME, HEALTH_FAC, TT_INJECT, COMP_ID, HH_ID, FW, HEALTH_FAC_OTHER, ATTEND_CLI, PERM_ID_PW, DINT, NAME_PW, FIRST_PG, MPREG, LMP FROM &quot; + globalMap.get(&quot;pregnancyRegistrationTableName&quot;) + &quot; WHERE (processed_by_mirth = false OR processed_by_mirth is null) AND supervisor_status is null LIMIT 5&quot;);
 dbConn.close();
 
 return result;</property>
@@ -35,7 +35,17 @@ return result;</property>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGRlcml2ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRf
+ZnJvbV91cmk+DQogICAgPHJlcG9ydGJ5PnZhbHVlPC9yZXBvcnRieT4NCiAgICA8aGhfbmFtZT52
+YWx1ZTwvaGhfbmFtZT4NCiAgICA8aGVhbHRoX2ZhYz52YWx1ZTwvaGVhbHRoX2ZhYz4NCiAgICA8
+dHRfaW5qZWN0PnZhbHVlPC90dF9pbmplY3Q+DQogICAgPGNvbXBfaWQ+dmFsdWU8L2NvbXBfaWQ+
+DQogICAgPGhoX2lkPnZhbHVlPC9oaF9pZD4NCiAgICA8Znc+dmFsdWU8L2Z3Pg0KICAgIDxoZWFs
+dGhfZmFjX290aGVyPnZhbHVlPC9oZWFsdGhfZmFjX290aGVyPg0KICAgIDxhdHRlbmRfY2xpPnZh
+bHVlPC9hdHRlbmRfY2xpPg0KICAgIDxwZXJtX2lkX3B3PnZhbHVlPC9wZXJtX2lkX3B3Pg0KICAg
+IDxkaW50PnZhbHVlPC9kaW50Pg0KICAgIDxuYW1lX3B3PnZhbHVlPC9uYW1lX3B3Pg0KICAgIDxm
+aXJzdF9wZz52YWx1ZTwvZmlyc3RfcGc+DQogICAgPG1wcmVnPnZhbHVlPC9tcHJlZz4NCiAgICA8
+bG1wPnZhbHVlPC9sbXA+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -458,7 +468,17 @@ return;</property>
           </step>
         </steps>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGRlcml2ZWRfZnJvbV91cmk+dmFsdWU8L2Rlcml2ZWRf
+ZnJvbV91cmk+DQogICAgPHJlcG9ydGJ5PnZhbHVlPC9yZXBvcnRieT4NCiAgICA8aGhfbmFtZT52
+YWx1ZTwvaGhfbmFtZT4NCiAgICA8aGVhbHRoX2ZhYz52YWx1ZTwvaGVhbHRoX2ZhYz4NCiAgICA8
+dHRfaW5qZWN0PnZhbHVlPC90dF9pbmplY3Q+DQogICAgPGNvbXBfaWQ+dmFsdWU8L2NvbXBfaWQ+
+DQogICAgPGhoX2lkPnZhbHVlPC9oaF9pZD4NCiAgICA8Znc+dmFsdWU8L2Z3Pg0KICAgIDxoZWFs
+dGhfZmFjX290aGVyPnZhbHVlPC9oZWFsdGhfZmFjX290aGVyPg0KICAgIDxhdHRlbmRfY2xpPnZh
+bHVlPC9hdHRlbmRfY2xpPg0KICAgIDxwZXJtX2lkX3B3PnZhbHVlPC9wZXJtX2lkX3B3Pg0KICAg
+IDxkaW50PnZhbHVlPC9kaW50Pg0KICAgIDxuYW1lX3B3PnZhbHVlPC9uYW1lX3B3Pg0KICAgIDxm
+aXJzdF9wZz52YWx1ZTwvZmlyc3RfcGc+DQogICAgPG1wcmVnPnZhbHVlPC9tcHJlZz4NCiAgICA8
+bG1wPnZhbHVlPC9sbXA+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
         <outboundTemplate encoding="base64">PHByZWduYW5jeW9ic2VydmF0aW9uPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZCAvPgogIDwv
 Y29sbGVjdGVkQnk+CiAgPG1vdGhlcj4KICAgIDxleHRpZCAvPgogIDwvbW90aGVyPgkKICA8aG91
 c2U+CiAgICA8ZXh0SWQgLz4KICA8L2hvdXNlPgogIDxob3VzZWhvbGQ+CiAgICA8ZXh0SWQgLz4K

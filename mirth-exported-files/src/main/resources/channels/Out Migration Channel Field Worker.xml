@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341168050000</time>
+    <time>1346790457358</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -19,12 +19,12 @@
       <property name="driver">com.mysql.jdbc.Driver</property>
       <property name="host">query</property>
       <property name="password">${mysqlPass}</property>
-      <property name="pollingFrequency">15000</property>
+      <property name="pollingFrequency">45000</property>
       <property name="pollingType">interval</property>
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, BASIC_INFO_INTERVIEW_DATE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_NAME, BASIC_INFO_COLLECTED_BY, DERIVED_FROM_URI, MOVE_AWAY_TO_PLACE_MOVED_TO, MOVE_AWAY_TO_PLACE_MOVED_TO_PHONE_NUMBER, MOVE_AWAY_TO_PLACE_MOVED_TO_OTHER, MOVE_AWAY_TO_PLACE_MOVED_TO_SECTION, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON, MOVE_AWAY_TO_PLACE_MOVED_TO_HOUSE_NAME, BASIC_INFO_PERM_ID, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_ID, BASIC_INFO_SEX, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_NAME, MOVE_AWAY_TO_PLACE_MOVED_TO_VILLAGE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_ID, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON_OTHER, BASIC_INFO_MIGRATION_DATE, BASIC_INFO_MIGRANT_NAME FROM &quot; +  globalMap.get(&quot;outmigrationTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status is null&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, BASIC_INFO_INTERVIEW_DATE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_NAME, BASIC_INFO_COLLECTED_BY, DERIVED_FROM_URI, MOVE_AWAY_TO_PLACE_MOVED_TO, MOVE_AWAY_TO_PLACE_MOVED_TO_PHONE_NUMBER, MOVE_AWAY_TO_PLACE_MOVED_TO_OTHER, MOVE_AWAY_TO_PLACE_MOVED_TO_SECTION, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON, MOVE_AWAY_TO_PLACE_MOVED_TO_HOUSE_NAME, BASIC_INFO_PERM_ID, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_ID, BASIC_INFO_SEX, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSEHOLD_NAME, MOVE_AWAY_TO_PLACE_MOVED_TO_VILLAGE, MOVE_AWAY_FROM_MOVE_AWAY_FROM_HOUSE_ID, MOVE_AWAY_TO_PLACE_MOVED_TO_REASON_OTHER, BASIC_INFO_MIGRATION_DATE, BASIC_INFO_MIGRANT_NAME FROM &quot; +  globalMap.get(&quot;outmigrationTableName&quot;) + &quot; WHERE (processed_by_mirth = false OR processed_by_mirth is null) AND supervisor_status is null LIMIT 5&quot;);
 dbConn.close();
 
 return result;</property>

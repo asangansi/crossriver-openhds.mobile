@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1341176938000</time>
+    <time>1346787702420</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>9</revision>
+  <revision>1</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
