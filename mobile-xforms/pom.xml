@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.openhds</groupId>
         <artifactId>crhds-mobile</artifactId>
-        <version>1.2-SNAPSHOT</version>
+        <version>1.2</version>
     </parent>
     <artifactId>mobile-xforms</artifactId>
     <packaging>pom</packaging>

@@ -3,7 +3,7 @@
 
   <groupId>org.openhds</groupId>
   <artifactId>crhds-mobile</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <packaging>pom</packaging>
   <name>CRHDS Mobile Projects</name>
 
@@ -11,6 +11,7 @@
     <connection>scm:git:https://code.google.com/p/crossriver-openhds.mobile/</connection>
     <developerConnection>scm:git:https://code.google.com/p/crossriver-openhds.mobile/</developerConnection>
     <url>http://code.google.com/p/crossriver-openhds/source/browse/?repo=mobile</url>
+    <tag>crhds-mobile-1.2</tag>
   </scm>
 
   <build>
