@@ -5,7 +5,7 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1346076676328</time>
+    <time>1349662381248</time>
     <timezone>America/New_York</timezone>
   </lastModified>
   <revision>1</revision>
@@ -276,7 +276,17 @@ return result;</property>
         </step>
       </steps>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPGxhdGxvbmdfbG5nPnZhbHVlPC9sYXRsb25nX2xuZz4N
+CiAgICA8aG91c2VfaWQ+dmFsdWU8L2hvdXNlX2lkPg0KICAgIDxsb2NhdGlvbl90eXBlPnZhbHVl
+PC9sb2NhdGlvbl90eXBlPg0KICAgIDxob3VzZV9uYW1lPnZhbHVlPC9ob3VzZV9uYW1lPg0KICAg
+IDxoaWVyYXJjaHlfaWQ+dmFsdWU8L2hpZXJhcmNoeV9pZD4NCiAgICA8bGF0bG9uZ19hbHQ+dmFs
+dWU8L2xhdGxvbmdfYWx0Pg0KICAgIDxkZXJpdmVkX2Zyb21fdXJpPnZhbHVlPC9kZXJpdmVkX2Zy
+b21fdXJpPg0KICAgIDxmaWVsZF93b3JrZXJfaWQ+dmFsdWU8L2ZpZWxkX3dvcmtlcl9pZD4NCiAg
+ICA8bGF0bG9uZ19sYXQ+dmFsdWU8L2xhdGxvbmdfbGF0Pg0KICAgIDxwcm9jZXNzZWRfYnlfbWly
+dGg+dmFsdWU8L3Byb2Nlc3NlZF9ieV9taXJ0aD4NCiAgICA8aW5kaXZpZHVhbF9pZD52YWx1ZTwv
+aW5kaXZpZHVhbF9pZD4NCiAgICA8bGF0bG9uZ19hY2M+dmFsdWU8L2xhdGxvbmdfYWNjPg0KPC9y
+ZXN1bHQ+DQo=</inboundTemplate>
       <outboundTemplate encoding="base64">PGxvY2F0aW9uPgogIDxjb2xsZWN0ZWRCeT4KICAgIDxleHRJZD48L2V4dElkPgogIDwvY29sbGVj
 dGVkQnk+CiAgPGV4dElkPjwvZXh0SWQ+CiAgPGxvY2F0aW9uTmFtZT48L2xvY2F0aW9uTmFtZT4K
 ICA8bG9jYXRpb25MZXZlbD4KICAgIDxleHRJZD48L2V4dElkPgogIDwvbG9jYXRpb25MZXZlbD4K

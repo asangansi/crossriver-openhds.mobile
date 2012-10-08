@@ -5,10 +5,10 @@
   <enabled>true</enabled>
   <version>2.2.1.5861</version>
   <lastModified>
-    <time>1346076652281</time>
+    <time>1349707137770</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector>
     <name>sourceConnector</name>
     <properties>
@@ -24,7 +24,7 @@
       <property name="processResultsInOrder">1</property>
       <property name="query"></property>
       <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(globalMap.get(&quot;jdbcDriver&quot;), globalMap.get(&quot;odkJdbcDatabaseUrl&quot;), globalMap.get(&quot;dbUser&quot;), globalMap.get(&quot;dbPass&quot;));
-var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, SECTION5_FR_SEC, SECTION6_MIN_PERSON_FN, SECTION6_MIN_PERSON_LN, RELATIONSHIP_TO_GROUP_HEAD, SECTION5_FR_VILL, SECTION5_FR_PN, PERM_ID, EVER_REG, CURR_HH_ID, COMP_ID, SECTION6_MIN_PERSON_MOTHER_ID, FW, REASONFORMIGRATION, TEMP_ID, SECTION6_MIN_PERSON_BIRTHDATE, SECTION5_FR_HN, MFROM_HH_N, SECTION6_MIN_PERSON_FATHER_ID, FROM_OTHER, SECTION6_SEX, MFROM_HN, DERIVED_FROM_URI, SECTION5_FR_ON, OLD_NAME, MFROM_VILL, SECTION5_FR_HH_N, CURR_HH_N, DATE_MI, CURR_H_N, SECTION6_MIN_PERSON_EDUCATION, MFROM_SEC, DINT, FROM_FIELD, MFROM_PN, REASONFORMIGRATION_OTHER FROM &quot; +  globalMap.get(&quot;migrationInTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
+var result = dbConn.executeCachedQuery(&quot;SELECT _URI, _CREATION_DATE, SECTION6_LAST_NAME, SECTION6_FIRST_NAME, SECTION5_FR_SEC, SUPERVISOR_STATUS, SECTION6_GENDER, SECTION5_FR_VILL, SECTION5_FR_PN, EVER_REG, HOUSEHOLD_NAME, VALIDATION_FAILED, VISIT_ID, VISIT_DATE, SECTION6_MOTHER_ID, TEMP_ID, RELATIONSHIP_TO_GROUP_HEAD, SECTION5_FR_HN, MFROM_HH_N, INDIVIDUAL_ID, FROM_OTHER, MFROM_HN, MIGRATION_REASON, FROM_FIELD, SECTION5_FR_ON, HOUSE_ID, OLD_NAME, MFROM_VILL, SECTION5_FR_HH_N, HOUSE_NAME, DATE_MI, SECTION6_DOB, SECTION6_MIN_PERSON_EDUCATION, DERIVED_FROM_URI, MFROM_SEC, SECTION6_FATHER_ID, FIELD_WORKER_ID, MFROM_PN, HOUSEHOLD_ID, MIGRATION_REASON_OTHER FROM &quot; +  globalMap.get(&quot;migrationInTableName&quot;) + &quot; WHERE processed_by_mirth = false AND supervisor_status = &apos;1&apos;&quot;);
 dbConn.close();
 
 return result;</property>
@@ -35,7 +35,37 @@ return result;</property>
     <transformer>
       <steps/>
       <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHNlY3Rpb242X2xhc3RfbmFtZT52YWx1ZTwvc2VjdGlv
+bjZfbGFzdF9uYW1lPg0KICAgIDxzZWN0aW9uNl9maXJzdF9uYW1lPnZhbHVlPC9zZWN0aW9uNl9m
+aXJzdF9uYW1lPg0KICAgIDxzZWN0aW9uNV9mcl9zZWM+dmFsdWU8L3NlY3Rpb241X2ZyX3NlYz4N
+CiAgICA8c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxz
+ZWN0aW9uNl9nZW5kZXI+dmFsdWU8L3NlY3Rpb242X2dlbmRlcj4NCiAgICA8c2VjdGlvbjVfZnJf
+dmlsbD52YWx1ZTwvc2VjdGlvbjVfZnJfdmlsbD4NCiAgICA8c2VjdGlvbjVfZnJfcG4+dmFsdWU8
+L3NlY3Rpb241X2ZyX3BuPg0KICAgIDxldmVyX3JlZz52YWx1ZTwvZXZlcl9yZWc+DQogICAgPGhv
+dXNlaG9sZF9uYW1lPnZhbHVlPC9ob3VzZWhvbGRfbmFtZT4NCiAgICA8dmFsaWRhdGlvbl9mYWls
+ZWQ+dmFsdWU8L3ZhbGlkYXRpb25fZmFpbGVkPg0KICAgIDx2aXNpdF9pZD52YWx1ZTwvdmlzaXRf
+aWQ+DQogICAgPHZpc2l0X2RhdGU+dmFsdWU8L3Zpc2l0X2RhdGU+DQogICAgPHNlY3Rpb242X21v
+dGhlcl9pZD52YWx1ZTwvc2VjdGlvbjZfbW90aGVyX2lkPg0KICAgIDx0ZW1wX2lkPnZhbHVlPC90
+ZW1wX2lkPg0KICAgIDxyZWxhdGlvbnNoaXBfdG9fZ3JvdXBfaGVhZD52YWx1ZTwvcmVsYXRpb25z
+aGlwX3RvX2dyb3VwX2hlYWQ+DQogICAgPHNlY3Rpb241X2ZyX2huPnZhbHVlPC9zZWN0aW9uNV9m
+cl9obj4NCiAgICA8bWZyb21faGhfbj52YWx1ZTwvbWZyb21faGhfbj4NCiAgICA8aW5kaXZpZHVh
+bF9pZD52YWx1ZTwvaW5kaXZpZHVhbF9pZD4NCiAgICA8ZnJvbV9vdGhlcj52YWx1ZTwvZnJvbV9v
+dGhlcj4NCiAgICA8bWZyb21faG4+dmFsdWU8L21mcm9tX2huPg0KICAgIDxtaWdyYXRpb25fcmVh
+c29uPnZhbHVlPC9taWdyYXRpb25fcmVhc29uPg0KICAgIDxmcm9tX2ZpZWxkPnZhbHVlPC9mcm9t
+X2ZpZWxkPg0KICAgIDxzZWN0aW9uNV9mcl9vbj52YWx1ZTwvc2VjdGlvbjVfZnJfb24+DQogICAg
+PGhvdXNlX2lkPnZhbHVlPC9ob3VzZV9pZD4NCiAgICA8b2xkX25hbWU+dmFsdWU8L29sZF9uYW1l
+Pg0KICAgIDxtZnJvbV92aWxsPnZhbHVlPC9tZnJvbV92aWxsPg0KICAgIDxzZWN0aW9uNV9mcl9o
+aF9uPnZhbHVlPC9zZWN0aW9uNV9mcl9oaF9uPg0KICAgIDxob3VzZV9uYW1lPnZhbHVlPC9ob3Vz
+ZV9uYW1lPg0KICAgIDxkYXRlX21pPnZhbHVlPC9kYXRlX21pPg0KICAgIDxzZWN0aW9uNl9kb2I+
+dmFsdWU8L3NlY3Rpb242X2RvYj4NCiAgICA8c2VjdGlvbjZfbWluX3BlcnNvbl9lZHVjYXRpb24+
+dmFsdWU8L3NlY3Rpb242X21pbl9wZXJzb25fZWR1Y2F0aW9uPg0KICAgIDxkZXJpdmVkX2Zyb21f
+dXJpPnZhbHVlPC9kZXJpdmVkX2Zyb21fdXJpPg0KICAgIDxtZnJvbV9zZWM+dmFsdWU8L21mcm9t
+X3NlYz4NCiAgICA8c2VjdGlvbjZfZmF0aGVyX2lkPnZhbHVlPC9zZWN0aW9uNl9mYXRoZXJfaWQ+
+DQogICAgPGZpZWxkX3dvcmtlcl9pZD52YWx1ZTwvZmllbGRfd29ya2VyX2lkPg0KICAgIDxtZnJv
+bV9wbj52YWx1ZTwvbWZyb21fcG4+DQogICAgPGhvdXNlaG9sZF9pZD52YWx1ZTwvaG91c2Vob2xk
+X2lkPg0KICAgIDxtaWdyYXRpb25fcmVhc29uX290aGVyPnZhbHVlPC9taWdyYXRpb25fcmVhc29u
+X290aGVyPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundProtocol>XML</inboundProtocol>
       <outboundProtocol>XML</outboundProtocol>
@@ -54,37 +84,24 @@ cmVzdWx0Lz4NCg==</inboundTemplate>
           <data class="map">
             <entry>
               <string>Script</string>
-              <string>return validateVisit(msg[&apos;comp_id&apos;].toString(), msg[&apos;dint&apos;].toString());</string>
+              <string>return validateVisit(msg[&apos;house_id&apos;].toString(), msg[&apos;visit_date&apos;].toString());</string>
             </entry>
           </data>
           <type>JavaScript</type>
-          <script>return validateVisit(msg[&apos;comp_id&apos;].toString(), msg[&apos;dint&apos;].toString());</script>
+          <script>return validateVisit(msg[&apos;house_id&apos;].toString(), msg[&apos;visit_date&apos;].toString());</script>
           <operator>NONE</operator>
         </rule>
         <rule>
           <sequenceNumber>1</sequenceNumber>
-          <name>Location Check</name>
-          <data class="map">
-            <entry>
-              <string>Script</string>
-              <string>return validateLocation(msg[&apos;comp_id&apos;].toString().toUpperCase());</string>
-            </entry>
-          </data>
-          <type>JavaScript</type>
-          <script>return validateLocation(msg[&apos;comp_id&apos;].toString().toUpperCase());</script>
-          <operator>AND</operator>
-        </rule>
-        <rule>
-          <sequenceNumber>2</sequenceNumber>
           <name>Social Group Check</name>
           <data class="map">
             <entry>
               <string>Script</string>
-              <string>return validateSocialGroup(msg[&apos;curr_hh_id&apos;].toString());</string>
+              <string>return validateSocialGroup(msg[&apos;household_id&apos;].toString());</string>
             </entry>
           </data>
           <type>JavaScript</type>
-          <script>return validateSocialGroup(msg[&apos;curr_hh_id&apos;].toString());</script>
+          <script>return validateSocialGroup(msg[&apos;household_id&apos;].toString());</script>
           <operator>AND</operator>
         </rule>
       </rules>
@@ -106,7 +123,37 @@ cmVzdWx0Lz4NCg==</inboundTemplate>
       <transformer>
         <steps/>
         <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
-cmVzdWx0Lz4NCg==</inboundTemplate>
+cmVzdWx0Pg0KICAgIDxfdXJpPnZhbHVlPC9fdXJpPg0KICAgIDxfY3JlYXRpb25fZGF0ZT52YWx1
+ZTwvX2NyZWF0aW9uX2RhdGU+DQogICAgPHNlY3Rpb242X2xhc3RfbmFtZT52YWx1ZTwvc2VjdGlv
+bjZfbGFzdF9uYW1lPg0KICAgIDxzZWN0aW9uNl9maXJzdF9uYW1lPnZhbHVlPC9zZWN0aW9uNl9m
+aXJzdF9uYW1lPg0KICAgIDxzZWN0aW9uNV9mcl9zZWM+dmFsdWU8L3NlY3Rpb241X2ZyX3NlYz4N
+CiAgICA8c3VwZXJ2aXNvcl9zdGF0dXM+dmFsdWU8L3N1cGVydmlzb3Jfc3RhdHVzPg0KICAgIDxz
+ZWN0aW9uNl9nZW5kZXI+dmFsdWU8L3NlY3Rpb242X2dlbmRlcj4NCiAgICA8c2VjdGlvbjVfZnJf
+dmlsbD52YWx1ZTwvc2VjdGlvbjVfZnJfdmlsbD4NCiAgICA8c2VjdGlvbjVfZnJfcG4+dmFsdWU8
+L3NlY3Rpb241X2ZyX3BuPg0KICAgIDxldmVyX3JlZz52YWx1ZTwvZXZlcl9yZWc+DQogICAgPGhv
+dXNlaG9sZF9uYW1lPnZhbHVlPC9ob3VzZWhvbGRfbmFtZT4NCiAgICA8dmFsaWRhdGlvbl9mYWls
+ZWQ+dmFsdWU8L3ZhbGlkYXRpb25fZmFpbGVkPg0KICAgIDx2aXNpdF9pZD52YWx1ZTwvdmlzaXRf
+aWQ+DQogICAgPHZpc2l0X2RhdGU+dmFsdWU8L3Zpc2l0X2RhdGU+DQogICAgPHNlY3Rpb242X21v
+dGhlcl9pZD52YWx1ZTwvc2VjdGlvbjZfbW90aGVyX2lkPg0KICAgIDx0ZW1wX2lkPnZhbHVlPC90
+ZW1wX2lkPg0KICAgIDxyZWxhdGlvbnNoaXBfdG9fZ3JvdXBfaGVhZD52YWx1ZTwvcmVsYXRpb25z
+aGlwX3RvX2dyb3VwX2hlYWQ+DQogICAgPHNlY3Rpb241X2ZyX2huPnZhbHVlPC9zZWN0aW9uNV9m
+cl9obj4NCiAgICA8bWZyb21faGhfbj52YWx1ZTwvbWZyb21faGhfbj4NCiAgICA8aW5kaXZpZHVh
+bF9pZD52YWx1ZTwvaW5kaXZpZHVhbF9pZD4NCiAgICA8ZnJvbV9vdGhlcj52YWx1ZTwvZnJvbV9v
+dGhlcj4NCiAgICA8bWZyb21faG4+dmFsdWU8L21mcm9tX2huPg0KICAgIDxtaWdyYXRpb25fcmVh
+c29uPnZhbHVlPC9taWdyYXRpb25fcmVhc29uPg0KICAgIDxmcm9tX2ZpZWxkPnZhbHVlPC9mcm9t
+X2ZpZWxkPg0KICAgIDxzZWN0aW9uNV9mcl9vbj52YWx1ZTwvc2VjdGlvbjVfZnJfb24+DQogICAg
+PGhvdXNlX2lkPnZhbHVlPC9ob3VzZV9pZD4NCiAgICA8b2xkX25hbWU+dmFsdWU8L29sZF9uYW1l
+Pg0KICAgIDxtZnJvbV92aWxsPnZhbHVlPC9tZnJvbV92aWxsPg0KICAgIDxzZWN0aW9uNV9mcl9o
+aF9uPnZhbHVlPC9zZWN0aW9uNV9mcl9oaF9uPg0KICAgIDxob3VzZV9uYW1lPnZhbHVlPC9ob3Vz
+ZV9uYW1lPg0KICAgIDxkYXRlX21pPnZhbHVlPC9kYXRlX21pPg0KICAgIDxzZWN0aW9uNl9kb2I+
+dmFsdWU8L3NlY3Rpb242X2RvYj4NCiAgICA8c2VjdGlvbjZfbWluX3BlcnNvbl9lZHVjYXRpb24+
+dmFsdWU8L3NlY3Rpb242X21pbl9wZXJzb25fZWR1Y2F0aW9uPg0KICAgIDxkZXJpdmVkX2Zyb21f
+dXJpPnZhbHVlPC9kZXJpdmVkX2Zyb21fdXJpPg0KICAgIDxtZnJvbV9zZWM+dmFsdWU8L21mcm9t
+X3NlYz4NCiAgICA8c2VjdGlvbjZfZmF0aGVyX2lkPnZhbHVlPC9zZWN0aW9uNl9mYXRoZXJfaWQ+
+DQogICAgPGZpZWxkX3dvcmtlcl9pZD52YWx1ZTwvZmllbGRfd29ya2VyX2lkPg0KICAgIDxtZnJv
+bV9wbj52YWx1ZTwvbWZyb21fcG4+DQogICAgPGhvdXNlaG9sZF9pZD52YWx1ZTwvaG91c2Vob2xk
+X2lkPg0KICAgIDxtaWdyYXRpb25fcmVhc29uX290aGVyPnZhbHVlPC9taWdyYXRpb25fcmVhc29u
+X290aGVyPg0KPC9yZXN1bHQ+DQo=</inboundTemplate>
         <outboundTemplate encoding="base64"></outboundTemplate>
         <inboundProtocol>XML</inboundProtocol>
         <outboundProtocol>XML</outboundProtocol>
