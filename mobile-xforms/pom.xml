@@ -3,7 +3,7 @@
     <parent>
         <groupId>ng.edu.unical</groupId>
         <artifactId>crhds-mobile</artifactId>
-        <version>2.0</version>
+        <version>2.1-SNAPSHOT</version>
     </parent>
     <artifactId>mobile-xforms</artifactId>
     <packaging>pom</packaging>
